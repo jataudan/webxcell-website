@@ -14,12 +14,18 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        custom: "0px 4px 40px rgba(99, 90, 217, 0.07)",
+      },
       backgroundImage: {
         "dotted-blue":
           "repeating-linear-gradient(to right, #3B82F6 0, #3B82F6 2px, transparent 2px, transparent 4px)",
+        "custom-gradient": "linear-gradient(180deg, #00000038 0%, #00BFFF 85%)",
+        "mix-gradient":
+          "linear-gradient(180deg, rgba(50,205,50,100), rgba(0,191,255,43), rgba(100,191,255,0.6))",
       },
       backgroundColor: {
-        "custom-gray": "rgba(70, 70, 70, 1)", // Convert 255 to 1 for valid RGBA
+        "custom-gray": "rgba(70, 70, 70, 1)",
       },
       keyframes: {
         scroll: {

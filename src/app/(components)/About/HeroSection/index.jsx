@@ -6,17 +6,16 @@ import { useParams } from "next/navigation";
 
 export default function AboutHero() {
   const pathname = usePathname();
-  const { category } = useParams(); // Get the category parameter from the route
+  const { category } = useParams();
 
   const capitalizeFirstLetterOfEachWord = (str) => {
     return str
-      .split(" ") // Split string by spaces
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) // Capitalize each word
-      .join(" "); // Join the words back into a single string
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
   };
 
   const getHeading = () => {
-    // Add specific cases for headings based on the pathname
     switch (pathname) {
       case "/about-us":
         return "About Us";
@@ -34,16 +33,14 @@ export default function AboutHero() {
         return "Our Team";
 
       default:
-        // If a category exists, return the category name with each word's first letter capitalized
         if (category) {
           return capitalizeFirstLetterOfEachWord(category.replace("-", " "));
         }
-        return "Welcome"; // Default heading if no category or matching pathname is present
+        return "Welcome";
     }
   };
 
   const getBreadcrumb = () => {
-    // Build breadcrumb based on the pathname and category
     const baseBreadcrumb = [{ label: "Home", link: "/" }];
 
     switch (pathname) {
@@ -74,7 +71,7 @@ export default function AboutHero() {
             {
               label: capitalizeFirstLetterOfEachWord(
                 category.replace("-", " ")
-              ), // Capitalize each word in the category
+              ),
               link: `/services/${category}`,
             }
           );
@@ -95,7 +92,7 @@ export default function AboutHero() {
 
         {/* Breadcrumb */}
         <div className="mt-4 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
-          <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[18px] font-[plus jakarta sans]">
+          <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
             {getBreadcrumb().map((item, index) => (
               <React.Fragment key={index}>
                 {index > 0 && (

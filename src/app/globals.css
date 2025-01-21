@@ -170,3 +170,13 @@ h5 {
     #3b82f6 8px
   );
 }
+
+.slick-current,
+.slick-active {
+  margin-right: 5px;
+}
+
+.slick-initialized,
+.slick-slide {
+  margin-right: 5px;
+}

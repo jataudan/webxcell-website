@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 export default function Testimonials() {
   const testimonials = [
@@ -9,7 +14,19 @@ export default function Testimonials() {
         "when an unknown printer took away galley of type aawer awtnd there are scrambled it to make a type many  but also the leap into",
     },
     {
-      name: "Kristin Watson",
+      name: "Kristin Walk",
+      role: "Web Designer",
+      review:
+        "when an unknown printer took away galley of type aawer awtnd there are scrambled it to make a type many  but also the leap into",
+    },
+    {
+      name: "Kristin Mike",
+      role: "Web Designer",
+      review:
+        "when an unknown printer took away galley of type aawer awtnd there are scrambled it to make a type many  but also the leap into",
+    },
+    {
+      name: "Kristin Jason",
       role: "Web Designer",
       review:
         "when an unknown printer took away galley of type aawer awtnd there are scrambled it to make a type many  but also the leap into",
@@ -22,9 +39,34 @@ export default function Testimonials() {
     },
   ];
 
+  const settings = {
+    dots: false,
+    arrows: false,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1380,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section
-      className="max-[640px]:container max-[640px]:mx-auto relative w-full h-auto bg-cover bg-center flex flex-row lg:flex-row justify-between items-center px-6 md:px-10 lg:px-20 gap-12 mb-4"
+      className="relative w-full h-auto bg-cover bg-center flex flex-row lg:flex-row justify-between items-center px-6 md:px-10 lg:px-20 gap-12 mb-4"
       style={{
         backgroundImage: `url(/assets/about/testimonial-bg.png)`,
       }}
@@ -52,11 +94,12 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Slider {...settings} className="h-[357px] rounded-xl space-x-2">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="relative bg-white shadow-lg rounded-lg px-6 py-16 text-center border border-gray-200 w-full md:w-[370px] h-[357px]"
+              style={{ margin: "0 10px" }} // Add margin between slides
             >
               {/* Inverted Comma Image */}
               <div className="absolute top-4 right-4">
@@ -70,7 +113,7 @@ export default function Testimonials() {
 
               {/* Review Text */}
               <div className="text-[#FF6700] text-xl text-left mb-4">★★★★★</div>
-              <p className="text-lg  text-left mb-4 text-[#101010] italic font-[plus jakarta sans]">
+              <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-[plus jakarta sans]">
                 {testimonial.review}
               </p>
 
@@ -95,7 +138,7 @@ export default function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
+        </Slider>
       </div>
     </section>
   );

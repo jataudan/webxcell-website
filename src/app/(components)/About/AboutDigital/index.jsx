@@ -21,7 +21,7 @@ export default function AboutDigital() {
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             About Us
           </span>
-          <div className="text-3xl sm:text-4xl lg:text-[46px] mt-4 font-bold leading-[1.2] font-plus-jakarta md:space-y-4">
+          <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] font-plus-jakarta md:space-y-4">
             <div>
               <span className="text-[#000]">We’re A Leading</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f26b01] to-[#f26b01] font-extrabold">
