@@ -24,7 +24,7 @@ export default function ChooseUs() {
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8 mt-8 mb-8">
             <div className="flex items-center gap-4 translate-x-[-17px] md:translate-x-0">
               <Image
-                src="/assets/about/Growth.png"
+                src="/assets/about/growth.png"
                 alt="Growth Image"
                 width={64}
                 height={62.02}

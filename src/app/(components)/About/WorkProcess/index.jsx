@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WorkProcess() {
   return (
     <section
-      className=" relative w-full min-h-screen bg-cover bg-center flex flex-col justify-center gap-4"
+      className=" relative w-full bg-cover bg-center flex flex-col justify-center gap-4 md:p-[112px]"
       style={{
         backgroundImage: `url(/assets/about/work-process-bg.png)`,
       }}
@@ -42,7 +42,7 @@ export default function WorkProcess() {
                 In a free hour, when our power of choice is untrammeled and
               </p>
             </div>
-            <hr className="absolute right-[-125px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
 
           {/* <!-- Step 2 --> */}
@@ -80,7 +80,7 @@ export default function WorkProcess() {
             </div>
 
             {/* <!-- Connecting Line --> */}
-            <hr className="absolute right-[-125px] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
           {/* <!-- Step 3 --> */}
           <div className="flex relative">
@@ -107,7 +107,7 @@ export default function WorkProcess() {
             </div>
 
             {/* <!-- Connecting Line --> */}
-            <hr className="absolute right-[-125px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
           {/* <!-- Step 4 --> */}
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">

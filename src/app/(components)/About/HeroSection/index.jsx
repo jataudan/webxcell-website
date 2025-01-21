@@ -1,5 +1,5 @@
 "use client";
-import React from "react"; // Ensure React is imported
+import React from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useParams } from "next/navigation";
@@ -61,6 +61,7 @@ export default function AboutHero() {
         break;
       case "/faq":
         baseBreadcrumb.push({ label: "FAQ", link: "/faq" });
+        break;
       case "/our-team":
         baseBreadcrumb.push({ label: "Our Team", link: "/our-team" });
         break;
@@ -93,23 +94,27 @@ export default function AboutHero() {
         {/* Breadcrumb */}
         <div className="mt-4 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
           <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
-            {getBreadcrumb().map((item, index) => (
-              <React.Fragment key={index}>
-                {index > 0 && (
-                  <div className="px-2">
-                    <Image
-                      src="/assets/about/right-arrow.png"
-                      alt="right arrow"
-                      width={10}
-                      height={10}
-                    />
-                  </div>
-                )}
-                <a href={item.link} className="text-white">
-                  {item.label}
-                </a>
-              </React.Fragment>
-            ))}
+            {getBreadcrumb().map((item, index) => {
+              console.log("item", item.label);
+
+              return (
+                <React.Fragment key={index}>
+                  {index > 0 && (
+                    <div className="px-2">
+                      <Image
+                        src="/assets/about/right-arrow.png"
+                        alt="right arrow"
+                        width={10}
+                        height={10}
+                      />
+                    </div>
+                  )}
+                  <a href={item.link} className="text-white">
+                    {item.label}
+                  </a>
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </div>

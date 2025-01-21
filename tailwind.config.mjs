@@ -41,6 +41,9 @@ export default {
         scroll: "scroll 15s linear infinite",
         "slide-in-top": "slide-in-top 0.5s ease-out",
       },
+      screens: {
+        "2xl-custom": "1400px",
+      },
     },
   },
   plugins: [],

@@ -313,7 +313,7 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full py-4 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    className="text-[#000] w-full py-4 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500"
                   />
                   <button className="absolute top-1/2 transform -translate-y-1/2 right-[6px] text-white rounded-lg hover:bg-orange-600">
                     <Image

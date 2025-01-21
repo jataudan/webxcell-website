@@ -14,7 +14,7 @@ export default function AboutDigital() {
         />
       </div>
 
-      <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center md:min-h-screen py-10 md:p-[112px] lg:py-20 gap-10">
+      <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center py-3 md:p-[112px] gap-10">
         {/* Right Side - Content */}
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
           {/* Title */}

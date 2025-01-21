@@ -47,7 +47,7 @@ export default function AboutUs() {
 
           {/* Stat */}
           <div className="flex flex-col items-center lg:flex-row lg:items-start justify-center lg:justify-start space-y-6 lg:space-y-0 lg:space-x-8 mt-8">
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left space-y-7 md:space-y-0">
               <h4 className="text-3xl md:text-4xl font-bold text-gray-800 stylish-text">
                 200+
               </h4>
@@ -55,7 +55,7 @@ export default function AboutUs() {
                 Successful Marketing Campaigns
               </p>
             </div>
-            <div className="text-center lg:text-left">
+            <div className="text-center lg:text-left space-y-7 md:space-y-0">
               <h4 className="text-3xl md:text-4xl font-bold text-gray-800 stylish-text">
                 75%
               </h4>
@@ -76,7 +76,7 @@ export default function AboutUs() {
           </div>
 
           {/* Button */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-0">
+          <div className="mt-8 flex sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-0">
             <a
               href="#"
               className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
