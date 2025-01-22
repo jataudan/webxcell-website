@@ -1,12 +1,36 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const PortfolioCards = () => {
+  const router = useRouter();
   const portfolioData = [
-    { id: 1, title: "Generation Of Wealth", category: "Marketing" },
-    { id: 2, title: "Creative Solutions", category: "Design" },
-    { id: 3, title: "Innovative Ideas", category: "Development" },
-    { id: 4, title: "Growth Strategies", category: "Business" },
+    {
+      id: 1,
+      pageTitle: "generation-of-wealth",
+      title: "Generation Of Wealth",
+      category: "Marketing",
+    },
+    {
+      id: 2,
+      pageTitle: "creative-solutions",
+      title: "Creative Solutions",
+      category: "Design",
+    },
+    {
+      id: 3,
+      pageTitle: "innovative-ideas",
+      title: "Innovative Ideas",
+      category: "Development",
+    },
+    {
+      id: 4,
+      pageTitle: "growth-strategies",
+      title: "Growth Strategies",
+      category: "Business",
+    },
   ];
 
   return (
@@ -20,7 +44,9 @@ const PortfolioCards = () => {
               <h3 className="text-lg font-semibold">Generation Of Wealth</h3>
               <p className="text-sm">Marketing</p>
             </div>
-            <button>
+            <button
+              onClick={() => router.push(`/portfolio/generation-of-wealth`)}
+            >
               <Image
                 src="/assets/portfolio/arrow.png"
                 alt="shape"
@@ -44,7 +70,9 @@ const PortfolioCards = () => {
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm">{item.category}</p>
                 </div>
-                <button>
+                <button
+                  onClick={() => router.push(`/portfolio/${item.pageTitle}`)}
+                >
                   <Image
                     src="/assets/portfolio/arrow.png"
                     alt="shape"
@@ -73,7 +101,9 @@ const PortfolioCards = () => {
                   <h3 className="text-lg font-semibold">{item.title}</h3>
                   <p className="text-sm">{item.category}</p>
                 </div>
-                <button>
+                <button
+                  onClick={() => router.push(`/portfolio/${item.pageTitle}`)}
+                >
                   <Image
                     src="/assets/portfolio/arrow.png"
                     alt="shape"
@@ -93,7 +123,9 @@ const PortfolioCards = () => {
               <h3 className="text-lg font-semibold">Generation Of Wealth</h3>
               <p className="text-sm">Marketing</p>
             </div>
-            <button>
+            <button
+              onClick={() => router.push(`/portfolio/generation-of-wealth`)}
+            >
               <Image
                 src="/assets/portfolio/arrow.png"
                 alt="shape"

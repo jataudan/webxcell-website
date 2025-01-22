@@ -94,7 +94,7 @@ export default function ServiceDetail() {
     <>
       <ServicesHero />
 
-      <div className="relative bg-white lg:py-12 lg:px-12">
+      <div className="relative bg-white lg:py-12 lg:px-12 mb-[150px]">
         <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center px-6 py-12 gap-10">
           {/* Header Section */}
 

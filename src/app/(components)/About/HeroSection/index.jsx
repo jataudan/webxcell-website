@@ -6,12 +6,20 @@ import { useParams } from "next/navigation";
 
 export default function AboutHero() {
   const pathname = usePathname();
-  const { category } = useParams();
+  const { category, title } = useParams();
 
   const capitalizeFirstLetterOfEachWord = (str) => {
     return str
       .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .map((word) =>
+        word
+          .split("-")
+          .map(
+            (subWord) =>
+              subWord.charAt(0).toUpperCase() + subWord.slice(1).toLowerCase()
+          )
+          .join(" ")
+      )
       .join(" ");
   };
 
@@ -35,6 +43,9 @@ export default function AboutHero() {
       default:
         if (category) {
           return capitalizeFirstLetterOfEachWord(category.replace("-", " "));
+        }
+        if (title) {
+          return capitalizeFirstLetterOfEachWord(title.replace("-", " "));
         }
         return "Welcome";
     }
@@ -77,6 +88,15 @@ export default function AboutHero() {
             }
           );
         }
+        if (title) {
+          baseBreadcrumb.push(
+            { label: "Portfolio", link: "/portfolio" },
+            {
+              label: capitalizeFirstLetterOfEachWord(title.replace("-", " ")),
+              link: `/portfolio/${title}`,
+            }
+          );
+        }
         break;
     }
 
@@ -84,7 +104,7 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="relative w-full h-[537px] bg-custom-gray bg-center flex flex-col items-center px-6 md:px-20 lg:px-40">
+    <section className="relative w-full h-[400px] md:h-[537px] bg-custom-gray bg-center flex flex-col items-center px-6 md:px-20 lg:px-40">
       <div className="relative mt-[120px] flex flex-col items-center justify-center text-white px-4 text-center h-screen">
         {/* Heading */}
         <p className="sm:text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4">
@@ -92,7 +112,7 @@ export default function AboutHero() {
         </p>
 
         {/* Breadcrumb */}
-        <div className="mt-4 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
+        <div className="mt-0 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
           <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
             {getBreadcrumb().map((item, index) => {
               return (

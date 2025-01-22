@@ -23,6 +23,9 @@ export default {
         "custom-gradient": "linear-gradient(180deg, #00000038 0%, #00BFFF 85%)",
         "mix-gradient":
           "linear-gradient(180deg, rgba(50,205,50,100), rgba(0,191,255,43), rgba(100,191,255,0.6))",
+        "portfolio-gradient": "linear-gradient(#635AD9, #219BE4)",
+        "portfolio-custome-gradient":
+          "linear-gradient(180deg, rgba(99,90,217,100), rgba(97,140,239,43), rgba(96,178,255,0.36))",
       },
       backgroundColor: {
         "custom-gray": "rgba(70, 70, 70, 1)",

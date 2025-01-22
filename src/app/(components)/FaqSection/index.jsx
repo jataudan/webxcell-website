@@ -28,15 +28,17 @@ export default function FaqSection() {
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             FAQ{" "}
           </span>
-          <div className="text-[50px]  mt-4 font-extrabold  font-plus-jakarta ">
-            <span className="text-[#000]">Frequently Asked Questions</span>{" "}
+          <div className="mt-4 font-extrabold font-plus-jakarta ">
+            <span className="text-[#000] text-[18px] md:text-[50px]">
+              Frequently Asked Questions
+            </span>{" "}
           </div>
 
           <div className="mt-12">
             <div className="space-y-4">
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-[570px] transition-all group-open:bg-[#F3F7FB]">
+              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
                 <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-[47px]">
                     <Image
                       src="/assets/faq/icon-plus.png"
                       alt="plus "
@@ -52,11 +54,11 @@ export default function FaqSection() {
                       className="group-open:block hidden"
                     />
                   </div>
-                  <span className="faq-heading text-base text-[#101010] font-bold font-plus-jakarta ">
+                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
                     Do you offer a warranty for your work?
                   </span>
                 </summary>
-                <p className="mt-2 text-base text-[#101010] group-open:block hidden">
+                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
                   Nullam interdum libero vitae pretium aliquam donec nibh purus
                   laoreet in ullamcorper vel malesuada sit amet enim. Nullam
                   interdum libero vitae pretium aliquam donec nibh purus laoreet
@@ -64,9 +66,9 @@ export default function FaqSection() {
                 </p>
               </details>
 
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-[570px] transition-all group-open:bg-[#F3F7FB]">
+              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
                 <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-[75px]">
                     <Image
                       src="/assets/faq/icon-plus.png"
                       alt="plus "
@@ -82,11 +84,11 @@ export default function FaqSection() {
                       className="group-open:block hidden"
                     />
                   </div>
-                  <span className="faq-heading text-base text-[#101010] font-bold font-plus-jakarta ">
-                    Can you help with User Interface and User Experience design?{" "}
+                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta">
+                    Can you help with User Interface and User Experience design?
                   </span>
                 </summary>
-                <p className="mt-2 text-base text-[#101010] group-open:block hidden">
+                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
                   Nullam interdum libero vitae pretium aliquam donec nibh purus
                   laoreet in ullamcorper vel malesuada sit amet enim. Nullam
                   interdum libero vitae pretium aliquam donec nibh purus laoreet
@@ -94,9 +96,9 @@ export default function FaqSection() {
                 </p>
               </details>
 
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-[570px] transition-all group-open:bg-[#F3F7FB]">
+              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
                 <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-[75px]">
                     <Image
                       src="/assets/faq/icon-plus.png"
                       alt="plus "
@@ -112,11 +114,11 @@ export default function FaqSection() {
                       className="group-open:block hidden"
                     />
                   </div>
-                  <span className="faq-heading text-base text-[#101010] font-bold font-plus-jakarta ">
+                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
                     Do you help with creating SEO Strategy for total dominance?{" "}
                   </span>
                 </summary>
-                <p className="mt-2 text-base text-[#101010] group-open:block hidden">
+                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
                   Nullam interdum libero vitae pretium aliquam donec nibh purus
                   laoreet in ullamcorper vel malesuada sit amet enim. Nullam
                   interdum libero vitae pretium aliquam donec nibh purus laoreet

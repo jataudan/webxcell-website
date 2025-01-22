@@ -4,10 +4,10 @@ import React from "react";
 
 const faq = () => {
   return (
-    <div>
+    <>
       <FAQHero />
       <FaqSection />
-    </div>
+    </>
   );
 };
 

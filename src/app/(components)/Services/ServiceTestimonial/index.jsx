@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ServiceTestimonial() {
   return (
-    <div className="relative bg-white my-24">
+    <div className="relative bg-white my-24 mb-[150px]">
       <div className="absolute left-0 top-[9px] lg:bottom-[120px] hidden sm:block">
         <Image
           src="/assets/Service/pattern-left.png"

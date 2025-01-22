@@ -110,7 +110,7 @@ export default function ProfessionalTeam() {
   ];
 
   return (
-    <div className="relative bg-white py-20">
+    <div className="relative bg-white py-20 mb-[150px]">
       <div className="container mx-auto px-6 md:px-10 lg:px-20">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center mb-12">
@@ -128,7 +128,7 @@ export default function ProfessionalTeam() {
             <a href="/our-team">
               <button className="rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
                 <div className="flex items-center justify-center px-6 py-2 bg-white rounded-full font-bold text-[#FF6700] uppercase text-sm">
-                  View all Members  
+                  View all Members
                 </div>
               </button>{" "}
             </a>
