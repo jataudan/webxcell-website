@@ -59,7 +59,7 @@ const ContactUsForm = () => {
             className="w-full px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
           ></textarea>
           {/* Button */}
-          <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0">
+          <div className="mt-8 flex sm:flex-row justify-center lg:justify-start items-center">
             <a
               href="#"
               className="bg-[#ECF8FF] text-[#f26b01] mr-4 px-6 py-3 rounded-full text-sm sm:text-lg font-bold"
@@ -71,6 +71,7 @@ const ContactUsForm = () => {
               alt="arrow"
               width={52}
               height={52}
+              className="w-[42px] h-[42px] md:w-[52px] md:h-[52px]"
             />
           </div>
         </form>

@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className="relative">
       {(pathname === "/contact-us" || pathname == "/portfolio") && (
-        <div className="hidden md:flex absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
+        <div className="flex absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
           {/* Left Image */}
           <div className="relative hidden lg:block w-1/2 h-[327px]">
             <div className="absolute bottom-[53px] left-[-33px]">
@@ -20,7 +20,7 @@ const Footer = () => {
                 height={80}
               />
             </div>
-            <div className="absolute top-[10px] left-[63px]">
+            <div className="absolute hidden lg:block top-[10px] left-[63px]">
               <Image
                 src="/assets/contact-info/person.png"
                 alt="Person"
@@ -28,7 +28,7 @@ const Footer = () => {
                 height={266}
               />
             </div>
-            <div className="absolute top-[90px] left-[428px]">
+            <div className="absolute hidden lg:block top-[90px] left-[428px]">
               <Image
                 src="/assets/contact-info/Direction.png"
                 alt="message"
@@ -36,7 +36,7 @@ const Footer = () => {
                 height={18}
               />
             </div>
-            <div className="absolute top-[113px] left-[328px]">
+            <div className="absolute hidden lg:block top-[113px] left-[328px]">
               <Image
                 src="/assets/contact-info/Frame.png"
                 alt="message"
@@ -91,7 +91,7 @@ const Footer = () => {
           <div className="flex flex-col justify-center">
             <div className="flex flex-wrap justify-start md:justify-around py-10 px-10 md:py-40 gap-10">
               {/* Logo and Social Links */}
-              <div className="flex flex-col gap-5 items-start">
+              <div className="flex flex-col gap-5 items-start mt-[96px] md:mt-0">
                 <Image
                   src="/assets/footer/logo.png"
                   alt="logo"

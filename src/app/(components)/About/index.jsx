@@ -79,7 +79,7 @@ export default function AboutUs() {
           <div className="mt-8 flex sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-0">
             <a
               href="#"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+              className="bg-orange-500 uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
             >
               About us
             </a>

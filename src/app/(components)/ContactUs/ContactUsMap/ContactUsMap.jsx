@@ -32,7 +32,7 @@ const MapWithInfo = () => {
       ></iframe>
 
       {/* Information Box with Triangular Shape */}
-      <div className="absolute top-10 right-10 bg-[#00BFFF] text-white p-6 w-[300px] shadow-lg font-plus-jakarta">
+      <div className="hidden md:block absolute top-10 right-10 bg-[#00BFFF] text-white p-6 w-[300px] shadow-lg font-plus-jakarta">
         {/* Triangular Shape */}
         {/* <div className="absolute -top-[10px] left-[-20px] rotate-[135.9deg] w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-b-[18px] border-b-[#00BFFF]" /> */}
         <h3 className="text-xl font-bold mb-4">Contact Info</h3>

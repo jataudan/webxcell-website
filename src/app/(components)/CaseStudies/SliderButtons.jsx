@@ -1,17 +1,25 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useSwiper } from 'swiper/react';
+import Image from "next/image";
 
-const SliderButtons = ({ containerStyles, btnStyles, iconStyles }) => {
-  const swiper = useSwiper();
+const SliderButtons = ({ containerStyles, btnStyles, onPrev, onNext }) => {
   return (
     <div className={containerStyles}>
-      <button className={btnStyles} onClick={() => swiper.slidePrev()}>
-        <Image src="/assets/case-studies/left.png" alt="" width={86} height={86} />
+      <button className={btnStyles} onClick={onPrev}>
+        <Image
+          src="/assets/case-studies/left.png"
+          alt="Previous"
+          width={86}
+          height={86}
+        />
       </button>
-      <button className={btnStyles} onClick={() => swiper.slideNext()}>
-        <Image src="/assets/case-studies/right.png" alt="" width={86} height={86} />
+      <button className={btnStyles} onClick={onNext}>
+        <Image
+          src="/assets/case-studies/right.png"
+          alt="Next"
+          width={86}
+          height={86}
+        />
       </button>
     </div>
   );

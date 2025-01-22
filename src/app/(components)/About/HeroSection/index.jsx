@@ -95,8 +95,6 @@ export default function AboutHero() {
         <div className="mt-4 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
           <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
             {getBreadcrumb().map((item, index) => {
-              console.log("item", item.label);
-
               return (
                 <React.Fragment key={index}>
                   {index > 0 && (

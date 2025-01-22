@@ -54,7 +54,7 @@ const BlogSection = () => {
         <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center ">
           <Link
             href="/blog"
-            className="bg-[#fde9d9] text-[#f26b01] px-6 py-3 rounded-full text-lg sm:text-lg font-medium"
+            className="bg-[#fde9d9] uppercase text-[#f26b01] px-6 py-3 rounded-full text-lg sm:text-lg font-medium"
           >
             View All News
           </Link>
