@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const OffService = () => {
@@ -36,18 +37,20 @@ const OffService = () => {
 
           {/* Button */}
           <div className="mt-8 mb-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
-            <a
-              href="#"
+            <Link
+              href="/contact-us"
               className="bg-orange-500 uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
             >
               get started
-            </a>
-            <Image
-              src="/assets/hero-section/arrow.png"
-              alt="Arrow"
-              width={52}
-              height={52}
-            />
+            </Link>
+            <Link href="/contact-us">
+              <Image
+                src="/assets/hero-section/arrow.png"
+                alt="Arrow"
+                width={52}
+                height={52}
+              />
+            </Link>
           </div>
         </div>
         <div className="absolute right-[180px] bottom-[24px] hidden sm:block">

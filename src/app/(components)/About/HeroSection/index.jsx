@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 
 export default function AboutHero() {
   const pathname = usePathname();
-  const { category, title } = useParams();
+  const { category, title, slug, role } = useParams();
 
   const capitalizeFirstLetterOfEachWord = (str) => {
     return str
@@ -46,6 +46,12 @@ export default function AboutHero() {
         }
         if (title) {
           return capitalizeFirstLetterOfEachWord(title.replace("-", " "));
+        }
+        if (slug) {
+          return capitalizeFirstLetterOfEachWord(slug.replace("-", " "));
+        }
+        if (role) {
+          return capitalizeFirstLetterOfEachWord(role.replace("-", " "));
         }
         return "Welcome";
     }
@@ -97,6 +103,24 @@ export default function AboutHero() {
             }
           );
         }
+        if (slug) {
+          baseBreadcrumb.push(
+            { label: "Portfolio", link: "/blog" },
+            {
+              label: capitalizeFirstLetterOfEachWord(slug.replace("-", " ")),
+              link: `/blog/${slug}`,
+            }
+          );
+        }
+        if (role) {
+          baseBreadcrumb.push(
+            { label: "Our Team", link: "/our-team" },
+            {
+              label: capitalizeFirstLetterOfEachWord(role.replace("-", " ")),
+              link: `/our-team/${role}`,
+            }
+          );
+        }
         break;
     }
 
@@ -113,7 +137,7 @@ export default function AboutHero() {
 
         {/* Breadcrumb */}
         <div className="mt-0 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
-          <div className="flex items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
+          <div className="flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
             {getBreadcrumb().map((item, index) => {
               return (
                 <React.Fragment key={index}>

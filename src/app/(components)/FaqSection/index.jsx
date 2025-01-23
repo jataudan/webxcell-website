@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function FaqSection() {
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative overflow-hidden bg-white mb-[130px]">
       <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center md:min-h-screen py-10 md:p-[112px] lg:py-20 gap-10">
         <div className="relative flex ">
           <div

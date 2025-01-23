@@ -1,11 +1,17 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function OurTeamSection() {
+  const router = useRouter();
+
   const teamMembers = [
     {
       name: "Dan k jatau Ph.D.",
-      role: "CTO & Founder",
+      desgination: "CTO & Founder",
       image: "/assets/about/Circle-lg.png",
+      role: "founder",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -39,8 +45,9 @@ export default function OurTeamSection() {
     },
     {
       name: "Ismail Saleem",
-      role: "CMO",
+      desgination: "CMO",
       image: "/assets/about/Circle-lg.png",
+      role: "cmo",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -74,8 +81,9 @@ export default function OurTeamSection() {
     },
     {
       name: "ashikur Rahman",
-      role: "Head of Engineering",
+      desgination: "Head of Engineering",
       image: "/assets/about/Circle-lg.png",
+      role: "engineering",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -109,8 +117,9 @@ export default function OurTeamSection() {
     },
     {
       name: "Jermaine Jatau",
-      role: "Software Engineer",
+      desgination: "Software Engineer",
       image: "/assets/about/Circle-lg.png",
+      role: "engineer",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -144,8 +153,9 @@ export default function OurTeamSection() {
     },
     {
       name: "Dan K Jatau",
-      role: "Chief Solutions Architect",
+      desgination: "Chief Solutions Architect",
       image: "/assets/about/Circle-lg.png",
+      role: "chief-solutions-architect",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -179,8 +189,9 @@ export default function OurTeamSection() {
     },
     {
       name: "Robert Hartburn",
-      role: "Product Design",
+      desgination: "Product Design",
       image: "/assets/about/Circle-lg.png",
+      role: "product-design",
       socials: [
         {
           icon: "/assets/about/facebook.png",
@@ -215,14 +226,15 @@ export default function OurTeamSection() {
   ];
 
   return (
-    <div className="relative bg-white py-20">
+    <div className="relative bg-white py-20 mb-[130px]">
       <div className="container mx-auto px-6 md:px-10 lg:px-20">
         {/* Team Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 justify-items-center">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="relative bg-white  border border-[#EAF3F8] rounded-lg text-center p-10 justify-between w-[370px] h-[510px]"
+              className="relative bg-white cursor-pointer border border-[#EAF3F8] rounded-lg text-center p-10 justify-between w-[370px] h-[510px]"
+              onClick={() => router.push(`/our-team/${member.role}`)}
             >
               {/* Member Image */}
               <div className=" mx-auto overflow-hidden mb-4">
@@ -239,7 +251,7 @@ export default function OurTeamSection() {
                 {member.name}
               </h3>
               <p className="text-base text-[#101010] font-[plus jakarta sans] mb-4">
-                {member.role}
+                {member.desgination}
               </p>
               <hr className="mb-4 w-[270px] text-[#EAF3F8] px-4" />
               {/* Social Icons */}

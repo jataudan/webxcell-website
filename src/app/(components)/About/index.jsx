@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
@@ -77,18 +78,20 @@ export default function AboutUs() {
 
           {/* Button */}
           <div className="mt-8 flex sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-0">
-            <a
-              href="#"
+            <Link
+              href="/about-us"
               className="bg-orange-500 uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
             >
               About us
-            </a>
-            <Image
-              src="/assets/hero-section/arrow.png"
-              alt="Arrow"
-              width={52}
-              height={52}
-            />
+            </Link>
+            <Link href="/about-us">
+              <Image
+                src="/assets/hero-section/arrow.png"
+                alt="Arrow"
+                width={52}
+                height={52}
+              />
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 
@@ -141,9 +142,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/about-us"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -152,9 +156,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/contact-us"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -163,9 +170,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/blog"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       Blog & News
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -174,12 +184,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a
+                    <Link
                       href="/faq"
                       className="text-[#D9D9D9] hover:text-[#635AD9]"
                     >
                       FAQ's
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image

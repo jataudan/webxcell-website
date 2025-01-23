@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -21,18 +22,20 @@ export default function Hero() {
           Transforming Visions Into Digital Experiences That Inspire And Engage
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
-          <a
-            href="#"
+          <Link
+            href="/services"
             className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
           >
             View Services
-          </a>
-          <Image
-            src="/assets/hero-section/arrow.png"
-            alt="arrow"
-            width={52}
-            height={52}
-          />
+          </Link>
+          <Link href="/services">
+            <Image
+              src="/assets/hero-section/arrow.png"
+              alt="arrow"
+              width={52}
+              height={52}
+            />
+          </Link>
         </div>
       </div>
       <div className="flex justify-center h-[100vh] items-center gap-2 md:hidden">

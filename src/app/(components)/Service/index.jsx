@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import TextSlider from "../Slider";
+import Link from "next/link";
 
 export default function Service() {
   return (
@@ -160,16 +161,18 @@ export default function Service() {
 
           {/* Right Section */}
           <div className="flex items-center space-x-3">
-            <span className="text-white text-sm span-title">
+            <Link href="/services" className="text-white text-sm span-title">
               VIEW ALL SERVICES
-            </span>
+            </Link>
             <div className="w-10 h-10 bg-[#F26B01] rounded-full flex items-center justify-center">
-              <Image
-                src="/assets/service-section/up-right-arrow.png" // Replace with the actual arrow icon path
-                alt="Arrow"
-                width={16}
-                height={16}
-              />
+              <Link href="/services">
+                <Image
+                  src="/assets/service-section/up-right-arrow.png"
+                  alt="Arrow"
+                  width={16}
+                  height={16}
+                />
+              </Link>
             </div>
           </div>
         </div>

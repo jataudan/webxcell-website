@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const DigitalAgency = () => {
   return (
@@ -74,18 +75,20 @@ const DigitalAgency = () => {
 
           {/* Button */}
           <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center">
-            <a
-              href="#"
+            <Link
+              href="/contact-us"
               className="bg-[#fde9d9] text-[#f26b01] px-6 py-3 rounded-full text-lg sm:text-lg font-bold"
             >
               GET STARTED
-            </a>
-            <Image
-              src="/assets/digital-agency/up-right.png"
-              alt="arrow"
-              width={52}
-              height={52}
-            />
+            </Link>
+            <Link href="/contact-us">
+              <Image
+                src="/assets/digital-agency/up-right.png"
+                alt="arrow"
+                width={52}
+                height={52}
+              />
+            </Link>
           </div>
         </div>
 

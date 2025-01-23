@@ -7,6 +7,11 @@
   --foreground: #171717;
   --primary: #ff6700;
   --brown: #663300;
+  --blog-description: #101010;
+  --white: #fff;
+  --light-gray: #f2eeea;
+  --black: #000;
+  --light-sky-blue: #ecf8ff;
 }
 
 @media (prefers-color-scheme: dark) {
