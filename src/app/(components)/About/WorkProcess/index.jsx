@@ -42,7 +42,7 @@ export default function WorkProcess() {
                 In a free hour, when our power of choice is untrammeled and
               </p>
             </div>
-            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
 
           {/* <!-- Step 2 --> */}
@@ -80,7 +80,7 @@ export default function WorkProcess() {
             </div>
 
             {/* <!-- Connecting Line --> */}
-            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
           {/* <!-- Step 3 --> */}
           <div className="flex relative">
@@ -107,7 +107,7 @@ export default function WorkProcess() {
             </div>
 
             {/* <!-- Connecting Line --> */}
-            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
           {/* <!-- Step 4 --> */}
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">

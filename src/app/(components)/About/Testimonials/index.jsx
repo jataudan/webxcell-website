@@ -98,7 +98,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative bg-white shadow-lg rounded-lg px-6 py-16 text-center border border-gray-200 w-full md:w-[370px] h-[357px]"
+              className="relative bg-white shadow-lg rounded-lg px-6 md:py-16 text-center border border-gray-200 w-full md:w-[410px] h-[327px]"
               style={{ margin: "0 10px" }} // Add margin between slides
             >
               {/* Inverted Comma Image */}
@@ -113,18 +113,18 @@ export default function Testimonials() {
 
               {/* Review Text */}
               <div className="text-[#FF6700] text-xl text-left mb-4">★★★★★</div>
-              <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-[plus jakarta sans]">
+              <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-plus-jakarta">
                 {testimonial.review}
               </p>
 
               {/* Circle Image, Name, and Role */}
               <div className="flex flex-row items-center text-left mt-4 gap-2">
-                <div className="w-16 h-16 rounded-full overflow-hidden mb-2">
+                <div className=" rounded-full overflow-hidden">
                   <Image
                     src="/assets/about/testimonial-circle.png"
                     alt="Person"
-                    width={64}
-                    height={64}
+                    width={44}
+                    height={44}
                   />
                 </div>
                 <div className="flex flex-col">

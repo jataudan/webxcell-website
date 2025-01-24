@@ -31,11 +31,30 @@ const Pagination = ({ totalPages, initialPage = 1, onPageChange }) => {
       <button
         onClick={handlePrevious}
         className={`h-10 w-10 flex items-center justify-center rounded-full ${
-          currentPage === 1 ? "bg-gray-200 cursor-not-allowed" : "bg-blue-50"
+          currentPage === 1
+            ? "bg-gray-200 hover:bg-[--primary]"
+            : "bg-[--primary] hover:bg-[--primary]"
         }`}
         disabled={currentPage === 1}
       >
-        <Image src="/assets/blog/left-arrow.png" alt="" width={9} height={5} />
+        <Image
+          src={
+            currentPage === 1
+              ? "/assets/blog/left-black-arrow.png"
+              : "/assets/blog/left-white-arrow.png"
+          }
+          alt=""
+          width={9}
+          height={5}
+          className="absolute transition-opacity duration-300 opacity-100 hover:opacity-0"
+        />
+        <Image
+          src="/assets/blog/left-white-arrow.png"
+          alt=""
+          width={9}
+          height={5}
+          className="absolute transition-opacity duration-300 opacity-0 hover:opacity-100"
+        />
       </button>
 
       {/* Page Numbers */}
@@ -47,7 +66,7 @@ const Pagination = ({ totalPages, initialPage = 1, onPageChange }) => {
             onClick={() => handlePageClick(page)}
             className={`h-10 w-10 flex items-center justify-center rounded-full border ${
               currentPage === page
-                ? "border-orange-500 text-orange-500"
+                ? "border-[--primary] text-[--primary]"
                 : "bg-blue-50 text-black"
             }`}
           >
@@ -61,12 +80,29 @@ const Pagination = ({ totalPages, initialPage = 1, onPageChange }) => {
         onClick={handleNext}
         className={`h-10 w-10 flex items-center justify-center rounded-full ${
           currentPage === totalPages
-            ? "bg-gray-200 cursor-not-allowed"
-            : "bg-orange-500 text-white"
+            ? "bg-gray-200 cursor-not-allowed hover:bg-[--primary]"
+            : "bg-[--primary] text-white"
         }`}
         disabled={currentPage === totalPages}
       >
-        <Image src="/assets/blog/right-arrow.png" alt="" width={9} height={5} />
+        <Image
+          src={
+            currentPage === 1
+              ? "/assets/blog/right-white-arrow.png"
+              : "/assets/blog/right-black-arrow.png"
+          }
+          alt=""
+          width={9}
+          height={5}
+          className="absolute transition-opacity duration-300 opacity-100 hover:opacity-0"
+        />
+        <Image
+          src="/assets/blog/right-white-arrow.png"
+          alt=""
+          width={9}
+          height={5}
+          className="absolute transition-opacity duration-300 opacity-0 hover:opacity-100"
+        />
       </button>
     </div>
   );

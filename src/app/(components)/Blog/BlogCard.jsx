@@ -25,7 +25,7 @@ const BlogCard = ({ blog }) => {
           <div className="flex items-center">
             <div className="h-8 w-8 rounded-full bg-gray-400"></div>
             <div className="ml-3">
-              <p className="text-sm font-medium">{blog.author}</p>
+              <p className="text-sm font-medium text-[#000]">{blog.author}</p>
               <p className="text-xs text-gray-500">{blog.designation}</p>
             </div>
           </div>
