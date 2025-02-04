@@ -84,7 +84,6 @@ const AllBlogs = () => {
   const totalPages = 3;
 
   const handlePageChange = (page) => {
-    // console.log("Current Page:", page);
     setCurrentPage(page);
   };
   return (

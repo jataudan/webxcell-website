@@ -5,23 +5,32 @@ import Link from "next/link";
 const DigitalAgency = () => {
   return (
     <div className="relative overflow-hidden bg-white">
-      {/* Left Decorative Image */}
+      {/* ====================== */}
+      {/* LEFT DECORATIVE ELEMENT */}
+      {/* ====================== */}
       <div className="absolute bottom-[52px] left-[-200px] lg:left-[-337px] hidden sm:block">
         <Image
           src="/assets/digital-agency/left-vector.png"
-          alt="Spiral Image"
+          alt="Abstract spiral decoration"
           width={522}
           height={587}
         />
       </div>
 
+      {/* ====================== */}
+      {/* MAIN CONTENT CONTAINER */}
+      {/* ====================== */}
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 lg:py-20 gap-10">
-        {/* Right Side - Content */}
+        {/* ====================== */}
+        {/* TEXT CONTENT SECTION */}
+        {/* ====================== */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
+          {/* Gradient title */}
           <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
             your inventory is time
           </span>
 
+          {/* Main headline with gradient accent */}
           <div className="headline mt-4">
             <span className="text-[#000]">Digital Agency</span>
             <br />
@@ -31,18 +40,22 @@ const DigitalAgency = () => {
             <span className="text-[#000]">Services</span>
           </div>
 
+          {/* Description paragraph */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
             And you spend over half of it on non-core functions like Following
             up for Payments or Writing Proposals from scratch or sending Manual
             Updates to your Clients.
           </p>
 
-          {/* Stats */}
+          {/* ====================== */}
+          {/* STATISTICS SECTION */}
+          {/* ====================== */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8">
+            {/* Digital Transformation Stat */}
             <div className="flex items-center gap-4">
               <Image
                 src="/assets/digital-agency/digital-transformation.png"
-                alt="Digital Transformation"
+                alt="Digital transformation icon"
                 width={60}
                 height={60}
               />
@@ -55,10 +68,12 @@ const DigitalAgency = () => {
                 </p>
               </div>
             </div>
+
+            {/* Marketing Strategy Stat */}
             <div className="flex items-center gap-4 translate-x-[-15px] md:translate-x-0">
               <Image
                 src="/assets/digital-agency/marketing-stra.png"
-                alt="Marketing Strategy"
+                alt="Marketing strategy icon"
                 width={60}
                 height={60}
               />
@@ -73,7 +88,9 @@ const DigitalAgency = () => {
             </div>
           </div>
 
-          {/* Button */}
+          {/* ====================== */}
+          {/* CALL TO ACTION BUTTONS */}
+          {/* ====================== */}
           <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center">
             <Link
               href="/contact-us"
@@ -84,7 +101,7 @@ const DigitalAgency = () => {
             <Link href="/contact-us">
               <Image
                 src="/assets/digital-agency/up-right.png"
-                alt="arrow"
+                alt="Arrow icon for navigation"
                 width={52}
                 height={52}
               />
@@ -92,11 +109,13 @@ const DigitalAgency = () => {
           </div>
         </div>
 
-        {/* Left Side - Image */}
+        {/* ====================== */}
+        {/* MAIN IMAGE SECTION */}
+        {/* ====================== */}
         <div className="relative flex-shrink-0 w-full lg:w-1/3 max-w-sm lg:max-w-none mx-auto md:mx-0">
           <Image
             src="/assets/digital-agency/marketing.png"
-            alt="Experience Image"
+            alt="Digital marketing professionals collaborating"
             width={570}
             height={564}
             className="w-full h-auto"
@@ -104,11 +123,13 @@ const DigitalAgency = () => {
         </div>
       </section>
 
-      {/* Right Decorative Image */}
+      {/* ====================== */}
+      {/* RIGHT DECORATIVE ELEMENT */}
+      {/* ====================== */}
       <div className="absolute right-[-200px] lg:right-[-350px] bottom-[0px] hidden sm:block">
         <Image
           src="/assets/digital-agency/right-vector.png"
-          alt="Heavy Waves Image"
+          alt="Abstract wave decoration"
           width={522}
           height={587}
         />

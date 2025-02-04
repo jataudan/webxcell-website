@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function Testimonials() {
+  // Testimonial data array containing client information
   const testimonials = [
     {
       name: "Kristin Watson",
@@ -39,26 +40,28 @@ export default function Testimonials() {
     },
   ];
 
+  // Carousel configuration settings
   const settings = {
-    dots: false,
-    arrows: false,
-    autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 2000,
-    cssEase: "linear",
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    dots: false, // Hide navigation dots
+    arrows: false, // Hide navigation arrows
+    autoplay: true, // Enable auto-play
+    speed: 4000, // Transition animation speed (ms)
+    autoplaySpeed: 2000, // Time between slide transitions (ms)
+    cssEase: "linear", // Animation timing function
+    slidesToShow: 3, // Number of slides to show simultaneously
+    slidesToScroll: 1, // Number of slides to scroll at a time
     responsive: [
+      // Responsive breakpoint configurations
       {
-        breakpoint: 1380,
+        breakpoint: 1380, // Screen width breakpoint
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2, // Show 2 slides on medium screens
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 640, // Mobile breakpoint
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 slide on mobile
         },
       },
     ],
@@ -71,58 +74,63 @@ export default function Testimonials() {
         backgroundImage: `url(/assets/about/testimonial-bg.png)`,
       }}
     >
-      {/* Left Side - Image */}
+      {/* Left Section - Decorative Image (hidden on mobile) */}
       <div className="relative max-w-sm md:max-w-md lg:max-w-none lg:w-1/2 justify-center hidden md:flex">
         <Image
           src="/assets/about/african-woman.png"
-          alt="happy Image"
+          alt="Happy client"
           width={528}
           height={686}
+          priority
         />
       </div>
 
-      {/* Right Side - Content */}
+      {/* Right Section - Content and Testimonials */}
       <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left">
+        {/* Gradient Subheading */}
         <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-[plus jakarta sans]">
           Testimonials
         </span>
 
+        {/* Main Heading */}
         <div className="text-[46px] font-poppins mb-8">
           <span className="text-[#000]">What</span>{" "}
           <span className="text-[#000] font-extrabold">Happy Clients Say</span>{" "}
           <span className="highlight orange font-extrabold">About Us</span>
         </div>
 
-        {/* Testimonials Cards */}
+        {/* Testimonials Carousel */}
         <Slider {...settings} className="h-[357px] rounded-xl space-x-2">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
               className="relative bg-white shadow-lg rounded-lg px-6 md:py-16 text-center border border-gray-200 w-full md:w-[410px] h-[327px]"
-              style={{ margin: "0 10px" }} // Add margin between slides
+              style={{ margin: "0 10px" }}
             >
-              {/* Inverted Comma Image */}
+              {/* Decorative Quotation Mark */}
               <div className="absolute top-4 right-4">
                 <Image
                   src="/assets/about/comma.png"
-                  alt="comma"
+                  alt="Quotation mark"
                   width={45}
                   height={45}
                 />
               </div>
 
-              {/* Review Text */}
+              {/* Star Rating Display */}
               <div className="text-[#FF6700] text-xl text-left mb-4">★★★★★</div>
+
+              {/* Testimonial Text */}
               <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-plus-jakarta">
                 {testimonial.review}
               </p>
 
-              {/* Circle Image, Name, and Role */}
+              {/* Client Profile Section */}
               <div className="flex flex-row items-center text-left mt-4 gap-2">
-                <div className=" rounded-full overflow-hidden">
+                <div className="rounded-full overflow-hidden">
                   <Image
                     src="/assets/about/testimonial-circle.png"
-                    alt="Person"
+                    alt="Client profile"
                     width={44}
                     height={44}
                   />

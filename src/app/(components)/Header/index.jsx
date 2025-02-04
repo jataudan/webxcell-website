@@ -1,32 +1,35 @@
-"use client";
+"use client"; // Client-side component directive for Next.js
 
 import React, { useState } from "react";
-import { usePathname } from "next/navigation"; // Use Next.js hook for current path
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
+  // State for mobile menu toggle
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Get current path for active link styling
+  const pathname = usePathname();
 
-  const pathname = usePathname(); // Automatically gets the current path
-
+  // Toggle mobile menu visibility
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Check if path matches current route
   const isActive = (path) => pathname === path;
 
   return (
     <header className="bg-white fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1350px] z-50 text-white shadow-lg rounded-bl-[20px] rounded-br-[20px]">
-      {/* Top Bar */}
+      {/* Top Contact Information Bar */}
       <div className="bg-black rounded-bl-[20px] rounded-br-[20px]">
         <div className="max-w-[1350px] mx-auto flex items-center justify-between px-4 lg:px-16 py-2 gap-4 overflow-hidden">
-          {/* Contact Information */}
+          {/* Contact Details */}
           <div className="flex items-center gap-4 text-sm flex-nowrap">
             <div className="flex items-center gap-2">
               <Image
                 src="/assets/header/phone.png"
-                alt="phone"
+                alt="Phone icon"
                 width={16}
                 height={16}
               />
@@ -40,7 +43,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <Image
                 src="/assets/header/message.png"
-                alt="message"
+                alt="Email icon"
                 width={16}
                 height={16}
               />
@@ -55,34 +58,34 @@ export default function Header() {
 
           {/* Social Media Links */}
           <div className="flex items-center gap-2 sm:gap-3 text-sm flex-nowrap">
-            <a href="#" className="hover:text-orange-500">
+            <a href="#" className="hover:text-orange-500" aria-label="Facebook">
               <Image
                 src="/assets/header/facebook.png"
-                alt="FaceBook"
+                alt="Facebook icon"
                 width={7}
                 height={12}
               />
             </a>
-            <a href="#" className="hover:text-orange-500">
+            <a href="#" className="hover:text-orange-500" aria-label="Twitter">
               <Image
                 src="/assets/header/twitter.png"
-                alt="Twitter"
+                alt="Twitter icon"
                 width={10}
                 height={12}
               />
             </a>
-            <a href="#" className="hover:text-orange-500">
+            <a href="#" className="hover:text-orange-500" aria-label="LinkedIn">
               <Image
                 src="/assets/header/linkedinIn.png"
-                alt="LinkedIn"
+                alt="LinkedIn icon"
                 width={10}
                 height={12}
               />
             </a>
-            <a href="#" className="hover:text-orange-500">
+            <a href="#" className="hover:text-orange-500" aria-label="YouTube">
               <Image
                 src="/assets/header/youtube.png"
-                alt="YouTube"
+                alt="YouTube icon"
                 width={12}
                 height={12}
               />
@@ -91,23 +94,24 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* Main Navigation Section */}
       <div className="bg-[#eff1fe] text-black rounded-bl-[20px] rounded-br-[20px]">
         <div className="max-w-[1350px] mx-auto flex items-center justify-between py-4 px-4 lg:px-16 rounded-bl-[20px] rounded-br-[20px]">
-          {/* Logo */}
+          {/* Company Logo */}
           <div className="text-2xl font-bold">
             <Image
               src="/assets/header/logo.png"
-              alt="webxcell"
+              alt="Webxcell logo"
               width={187}
               height={38}
             />
           </div>
 
-          {/* Hamburger Menu for Mobile */}
+          {/* Mobile Menu Toggle Button */}
           <button
             className="lg:hidden text-black focus:outline-none"
             onClick={toggleMobileMenu}
+            aria-label="Toggle navigation menu"
           >
             <Image
               src={
@@ -115,13 +119,13 @@ export default function Header() {
                   ? "/assets/menu/close.png"
                   : "/assets/menu/open.png"
               }
-              alt="menu"
+              alt="Menu toggle"
               width={isMobileMenuOpen ? 17 : 24}
               height={isMobileMenuOpen ? 17 : 24}
             />
           </button>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex gap-8 font-medium">
             <Link
               href="/"
@@ -171,21 +175,22 @@ export default function Header() {
             >
               Contact Us
             </Link>
+            {/* Search Icon */}
             <div className="flex items-center">
               <Image
                 src="/assets/header/search.png"
-                alt="search"
+                alt="Search icon"
                 width={16}
                 height={16}
               />
             </div>
           </nav>
 
-          {/* Action Buttons */}
+          {/* Call-to-Action Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="#"
-              className="text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"
+              className="text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg hover:opacity-90 transition-opacity"
             >
               WORK WITH US
             </a>
@@ -193,7 +198,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation Menu */}
       <div
         className={`lg:hidden bg-[#eff1fe] text-black rounded-bl-[20px] rounded-br-[20px] absolute w-full top-[100%] left-0 z-50 shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? "max-h-screen" : "max-h-0"
@@ -254,6 +259,7 @@ export default function Header() {
           >
             Contact Us
           </Link>
+          {/* Mobile CTA Button */}
           <a
             href="#"
             className="mt-4 text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"

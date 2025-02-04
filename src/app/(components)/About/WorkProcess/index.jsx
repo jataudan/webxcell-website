@@ -2,26 +2,33 @@ import Image from "next/image";
 
 export default function WorkProcess() {
   return (
+    // Main section with background image and responsive padding
     <section
-      className=" relative w-full bg-cover bg-center flex flex-col justify-center gap-4 md:p-[112px]"
+      className="relative w-full bg-cover bg-center flex flex-col justify-center gap-4 md:p-[112px]"
       style={{
         backgroundImage: `url(/assets/about/work-process-bg.png)`,
       }}
     >
+      {/* Container with mobile background color override */}
       <div className="container mx-auto bg-[#7fdeff] md:bg-transparent">
-        <div className=" flex flex-col align-center justify-center items-center text-center">
+        {/* Section header with gradient text */}
+        <div className="flex flex-col align-center justify-center items-center text-center">
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-[plus jakarta sans]">
-            Work Process{" "}
+            Work Process
           </span>
 
+          {/* Main section title */}
           <div className="text-[46px] font-extrabold mt-2 font-poppins">
-            <span className="text-[#000]">Our Working Process </span>{" "}
+            <span className="text-[#000]">Our Working Process </span>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row relative items-center justify-between p-8 rounded-lg ">
-          {/* <!-- Step 1 --> */}
+
+        {/* Process steps container with responsive layout */}
+        <div className="flex flex-col md:flex-row relative items-center justify-between p-8 rounded-lg">
+          {/* ---------------- STEP 1 ---------------- */}
           <div className="flex relative">
             <div className="flex flex-col items-center text-center">
+              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -35,35 +42,41 @@ export default function WorkProcess() {
                   1
                 </span>
               </div>
+              {/* Step content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
                 Choose A Service
               </h3>
-              <p className="mt-2  text-base text-gray-700">
+              <p className="mt-2 text-base text-gray-700">
                 In a free hour, when our power of choice is untrammeled and
               </p>
             </div>
+            {/* Connecting line (desktop only) */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
 
-          {/* <!-- Step 2 --> */}
+          {/* ---------------- STEP 2 ---------------- */}
           <div className="flex relative">
+            {/* Responsive content ordering (mobile vs desktop) */}
             <div className="flex flex-col-reverse lg:flex-col items-center text-center">
+              {/* Desktop-only content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans] hidden lg:block">
                 Define Requirements
               </h3>
-              <p className="mt-2  text-base text-gray-700 hidden lg:block">
+              <p className="mt-2 text-base text-gray-700 hidden lg:block">
                 In a free hour, when our power of choice is untrammeled and
               </p>
 
+              {/* Mobile-only content */}
               <div className="block lg:hidden">
                 <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
                   Define Requirements
                 </h3>
-                <p className="mt-2  text-base text-gray-700">
+                <p className="mt-2 text-base text-gray-700">
                   In a free hour, when our power of choice is untrammeled and
                 </p>
               </div>
 
+              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -79,12 +92,14 @@ export default function WorkProcess() {
               </div>
             </div>
 
-            {/* <!-- Connecting Line --> */}
+            {/* Connecting line (desktop only) */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
-          {/* <!-- Step 3 --> */}
+
+          {/* ---------------- STEP 3 ---------------- */}
           <div className="flex relative">
             <div className="flex flex-col items-center text-center">
+              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -98,19 +113,22 @@ export default function WorkProcess() {
                   3
                 </span>
               </div>
+              {/* Step content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
                 Request A Meeting
               </h3>
-              <p className="mt-2  text-base text-gray-700">
+              <p className="mt-2 text-base text-gray-700">
                 In a free hour, when our power of choice is untrammeled and
               </p>
             </div>
 
-            {/* <!-- Connecting Line --> */}
+            {/* Connecting line (desktop only) */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
-          {/* <!-- Step 4 --> */}
+
+          {/* ---------------- STEP 4 ---------------- */}
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">
+            {/* Mobile-only content */}
             <div className="block lg:hidden">
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
                 Final Solution
@@ -119,12 +137,16 @@ export default function WorkProcess() {
                 In a free hour, when our power of choice is untrammeled and
               </p>
             </div>
+
+            {/* Desktop-only content */}
             <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans] hidden lg:block">
               Final Solution
             </h3>
             <p className="mt-2 text-base text-gray-700 hidden lg:block">
               In a free hour, when our power of choice is untrammeled and
             </p>
+
+            {/* Icon container with numbered badge */}
             <div className="relative">
               <div className="flex items-center justify-center text-white">
                 <Image

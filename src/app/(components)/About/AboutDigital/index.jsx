@@ -2,8 +2,9 @@ import Image from "next/image";
 
 export default function AboutDigital() {
   return (
+    // Main container with background and overflow control
     <div className="relative overflow-hidden bg-white">
-      {/* Left Decorative Image */}
+      {/* Decorative background spiral (visible on medium+ screens) */}
       <div className="absolute top-[-126px] right-[613px] hidden sm:block">
         <Image
           layout="responsive"
@@ -14,13 +15,16 @@ export default function AboutDigital() {
         />
       </div>
 
+      {/* Content section container with responsive layout */}
       <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center py-3 md:p-[112px] gap-10">
-        {/* Right Side - Content */}
+        {/* Left content column (text/content area) */}
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
-          {/* Title */}
+          {/* Gradient subtitle */}
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             About Us
           </span>
+
+          {/* Main title with gradient highlight */}
           <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] font-plus-jakarta md:space-y-4">
             <div>
               <span className="text-[#000]">We’re A Leading</span>{" "}
@@ -33,7 +37,7 @@ export default function AboutDigital() {
             </div>
           </div>
 
-          {/* Description */}
+          {/* Description paragraph */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base lg:leading-relaxed">
             In Order To Scale New Customer Acquisition And Retention For
             E-commerce Brands, We Work Across The Entire Customer Journey. Our
@@ -41,8 +45,9 @@ export default function AboutDigital() {
           </p>
           <hr className="mt-6 hidden md:block" />
 
-          {/* Stats */}
+          {/* Statistics section with icons and metrics */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8">
+            {/* First statistic block */}
             <div className="flex items-center gap-4 translate-x-[-8px] md:translate-x-0">
               <Image
                 src="/assets/digital-agency/digital-transformation.png"
@@ -59,6 +64,8 @@ export default function AboutDigital() {
                 </p>
               </div>
             </div>
+
+            {/* Second statistic block */}
             <div className="flex items-center gap-4">
               <Image
                 src="/assets/digital-agency/marketing-stra.png"
@@ -78,7 +85,7 @@ export default function AboutDigital() {
           </div>
           <hr className="mt-9 hidden md:block" />
 
-          {/* Button */}
+          {/* CTA button with arrow icon */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0">
             <a
               href="#"
@@ -95,9 +102,9 @@ export default function AboutDigital() {
           </div>
         </div>
 
-        {/* Left Side - Image */}
+        {/* Right image column with decorative elements */}
         <div className="relative lg:w-1/2 flex items-center justify-center">
-          {/* Background Shape */}
+          {/* Background purple ellipse shape */}
           <div
             className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px] bg-cover bg-center"
             style={{
@@ -105,22 +112,22 @@ export default function AboutDigital() {
             }}
           ></div>
 
-          {/* Happy Clients Section */}
+          {/* Client counter badge (absolute positioned at bottom) */}
           <div className="absolute bottom-[-30px] sm:bottom-[-50px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
-            {/* Profile Images */}
+            {/* Client avatar stack */}
             <div className="flex -space-x-3">
               <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
               <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
               <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
               <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
             </div>
-            {/* Text */}
+            {/* Client counter text */}
             <span className="text-sm sm:text-base font-semibold text-[#17012C]">
               1.5k Happy Clients
             </span>
           </div>
 
-          {/* Foreground Image */}
+          {/* Main profile image with responsive sizing */}
           <div className="relative z-10 mt-8 sm:mt-16">
             <Image
               src="/assets/about/about-digital-girl.png"
