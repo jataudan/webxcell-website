@@ -1,79 +1,83 @@
+import { getContactUs } from "@/lib/queries/getContactUs";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const ContactInfo = () => {
+  const [contact, setContact] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const response = await getContactUs();
+      console.log("Contact Response : ", response?.data);
+      if (response) {
+        setIsLoading(false);
+        setContact(response?.data);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
   return (
-    /**
-     * Main container with black background
-     * Responsive height: auto on mobile, fixed on desktop
-     * Bottom margin creates space for subsequent content
-     */
     <div className="bg-black w-full h-auto md:h-[154px] relative overflow-hidden mb-[173px]">
-      {/* Top decorative element */}
       <div className="absolute">
         <Image
           src="/assets/contact-info/effect.png"
-          alt="Decorative circle element"
+          alt="circle"
           width={198}
           height={68}
         />
       </div>
-
-      {/* Content container with responsive padding */}
       <div className="container mx-auto">
-        {/**
-         * Flex container for contact items
-         * Column layout on mobile, row on desktop
-         * Even spacing around items on desktop
-         */}
         <div className="flex flex-col md:flex-row justify-around p-6 md:p-10">
-          {/* Address section with right border on desktop */}
           <div className="flex flex-col items-center md:items-start md:border-r-[1px] md:px-4 mb-4 md:mb-0">
             <Image
               src="/assets/contact-info/location.png"
-              alt="Location pin icon"
+              alt="location"
               width={46}
               height={46}
             />
             <p className="text-[#fff] text-center md:text-left md:text-[20px] contact-info-title md:pr-16">
-              Webxcell, Courtyard Ctr, Southwold Dr, Nottingham
+              {contact?.contactCard?.location}
             </p>
           </div>
-
-          {/* Phone section with right border on desktop */}
           <div className="flex flex-col items-center md:items-start md:border-r-[1px] md:px-4 mb-4 md:mb-0">
             <Image
               src="/assets/contact-info/phone.png"
-              alt="Phone handset icon"
+              alt="phone"
               width={46}
               height={46}
             />
             <p className="text-[#fff] text-center md:text-left md:text-[20px] contact-info-title md:pr-16">
-              44 (0) 800 195 7512
+              {contact?.contactCard?.phoneNumber}
             </p>
           </div>
-
-          {/* Email section without border */}
           <div className="flex flex-col items-center md:items-start md:px-4">
             <Image
               src="/assets/contact-info/message.png"
-              alt="Email envelope icon"
+              alt="message"
               width={46}
               height={46}
             />
             <p className="text-[#fff] text-center md:text-left md:text-[20px] contact-info-title md:pr-16">
-              team@webxcell.com
+              {contact?.contactCard?.email}
             </p>
           </div>
         </div>
       </div>
-
-      {/* Bottom decorative element (rotated version) */}
       <div className="absolute right-0 bottom-0">
         <Image
           src="/assets/contact-info/effect.png"
           className="rotate-180"
-          alt="Flipped decorative circle element"
+          alt="circle"
           width={198}
           height={68}
         />

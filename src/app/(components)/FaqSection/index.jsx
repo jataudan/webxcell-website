@@ -1,6 +1,31 @@
+"use client";
+import { getFAQ } from "@/lib/queries/getFAQ";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function FaqSection() {
+  const [faq, setFaq] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getFAQ();
+      if (response) {
+        setIsLoading(false);
+        setFaq(response?.data[0]);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative overflow-hidden bg-white mb-[130px]">
       <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center md:min-h-screen py-10 md:p-[112px] lg:py-20 gap-10">
@@ -12,9 +37,13 @@ export default function FaqSection() {
             }}
           ></div>
 
-          <div className="relative  mt-8 ">
+          <div className="relative mt-8 ">
             <Image
-              src="/assets/faq/Rectangle-grey.png"
+              src={
+                faq?.mainImage
+                  ? faq?.mainImage?.url
+                  : "https://placehold.co/600x400.png?text=placeholder"
+              }
               alt="rectangle"
               width={486}
               height={568.71}
@@ -36,95 +65,40 @@ export default function FaqSection() {
 
           <div className="mt-12">
             <div className="space-y-4">
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
-                <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2 w-[47px]">
-                    <Image
-                      src="/assets/faq/icon-plus.png"
-                      alt="plus "
-                      width={45}
-                      height={45}
-                      className="group-open:hidden"
-                    />
-                    <Image
-                      src="/assets/faq/icon-minus.png"
-                      alt="minus "
-                      width={45}
-                      height={45}
-                      className="group-open:block hidden"
-                    />
-                  </div>
-                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
-                    Do you offer a warranty for your work?
-                  </span>
-                </summary>
-                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
-                  Nullam interdum libero vitae pretium aliquam donec nibh purus
-                  laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                  interdum libero vitae pretium aliquam donec nibh purus laoreet
-                  in ullamcorper vel malesuada sit amet enim.
-                </p>
-              </details>
+              {faq?.questions?.map((item, index) => {
+                return (
+                  <details
+                    key={index}
+                    className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]"
+                  >
+                    <summary className="cursor-pointer font-medium flex gap-4 items-center">
+                      <div className="flex items-center gap-2 w-[47px]">
+                        <Image
+                          src="/assets/faq/icon-plus.png"
+                          alt="plus "
+                          width={45}
+                          height={45}
+                          className="group-open:hidden"
+                        />
+                        <Image
+                          src="/assets/faq/icon-minus.png"
+                          alt="minus "
+                          width={45}
+                          height={45}
+                          className="group-open:block hidden"
+                        />
+                      </div>
 
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
-                <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2 w-[75px]">
-                    <Image
-                      src="/assets/faq/icon-plus.png"
-                      alt="plus "
-                      width={45}
-                      height={45}
-                      className="group-open:hidden"
-                    />
-                    <Image
-                      src="/assets/faq/icon-minus.png"
-                      alt="minus "
-                      width={45}
-                      height={45}
-                      className="group-open:block hidden"
-                    />
-                  </div>
-                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta">
-                    Can you help with User Interface and User Experience design?
-                  </span>
-                </summary>
-                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
-                  Nullam interdum libero vitae pretium aliquam donec nibh purus
-                  laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                  interdum libero vitae pretium aliquam donec nibh purus laoreet
-                  in ullamcorper vel malesuada sit amet enim.
-                </p>
-              </details>
-
-              <details className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[570px] transition-all group-open:bg-[#F3F7FB]">
-                <summary className="cursor-pointer font-medium flex gap-4 items-center">
-                  <div className="flex items-center gap-2 w-[75px]">
-                    <Image
-                      src="/assets/faq/icon-plus.png"
-                      alt="plus "
-                      width={45}
-                      height={45}
-                      className="group-open:hidden"
-                    />
-                    <Image
-                      src="/assets/faq/icon-minus.png"
-                      alt="minus "
-                      width={45}
-                      height={45}
-                      className="group-open:block hidden"
-                    />
-                  </div>
-                  <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
-                    Do you help with creating SEO Strategy for total dominance?{" "}
-                  </span>
-                </summary>
-                <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
-                  Nullam interdum libero vitae pretium aliquam donec nibh purus
-                  laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                  interdum libero vitae pretium aliquam donec nibh purus laoreet
-                  in ullamcorper vel malesuada sit amet enim.
-                </p>
-              </details>
+                      <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
+                        {item?.question}
+                      </span>
+                    </summary>
+                    <p className="mt-2 text-sm text-left md:text-base text-[#101010] group-open:block hidden">
+                      {item?.answer}
+                    </p>
+                  </details>
+                );
+              })}
             </div>
           </div>
         </div>

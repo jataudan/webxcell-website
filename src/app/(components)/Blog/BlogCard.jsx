@@ -3,30 +3,56 @@
 import Image from "next/image";
 import ArrowImage from "../../../../public/assets/blog/arrow.png";
 import { useRouter } from "next/navigation";
+import { formatDate } from "@/lib/formatDate";
 
 const BlogCard = ({ blog }) => {
   const router = useRouter();
-
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-[370px] h-[428px] md:max-w-sm">
-      <Image src={blog.image} alt="image" width={370} height={227} />
+    <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-[370px] h-[458px] md:max-w-sm">
+      <Image
+        src={
+          blog?.coverImage
+            ? blog?.coverImage?.url
+            : "https://placehold.co/600x400.png?text=placeholder"
+        }
+        alt="image"
+        width={370}
+        height={227}
+      />
       <div className="p-4">
         <div className="flex items-center gap-3 font-plus-jakarta">
           <span className="text-[14px] text-[#635AD9] font-medium px-4 py-1 border border-[#EAF3F8] rounded-full">
-            {blog.tag}
+            {blog?.tag}
           </span>
-          <span className="text-[16px] block text-[#445375]">{blog.date}</span>
+          <span className="text-[16px] block text-[#445375]">
+            {formatDate(blog?.date)}
+          </span>
         </div>
         <h3 className="text-[20px] font-semibold mt-2 text-[#17012C]">
-          {blog.title}
+          {blog?.title}
         </h3>
         <hr className="mt-4 mb-4" />
         <div className="flex justify-between items-center mt-4 cursor-pointer">
           <div className="flex items-center">
-            <div className="h-8 w-8 rounded-full bg-gray-400"></div>
+            <div className="h-8 w-8 rounded-full bg-gray-400">
+              <Image
+                src={
+                  blog?.author?.avatar
+                    ? blog?.author?.avatar?.url
+                    : "https://placehold.co/600x400.png?text=placeholder"
+                }
+                alt=""
+                width={44}
+                height={44}
+              />
+            </div>
             <div className="ml-3">
-              <p className="text-sm font-medium text-[#000]">{blog.author}</p>
-              <p className="text-xs text-gray-500">{blog.designation}</p>
+              <p className="text-sm font-medium text-[#000]">
+                {blog?.author?.name}
+              </p>
+              <p className="text-xs text-gray-500">
+                {blog?.author?.designation}
+              </p>
             </div>
           </div>
           <Image
@@ -34,7 +60,7 @@ const BlogCard = ({ blog }) => {
             alt=""
             width={44}
             height={44}
-            onClick={() => router.push(`/blog/${blog.slug}`)}
+            onClick={() => router.push(`/blog/${blog?.slug}`)}
           />
         </div>
       </div>

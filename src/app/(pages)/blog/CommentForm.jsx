@@ -1,8 +1,9 @@
 "use client";
 
+import { createBlogComment } from "@/lib/queries/createBlogComment";
 import { useState } from "react";
 
-const CommentForm = () => {
+const CommentForm = ({ blogPostId, setIsFetch }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,8 +16,14 @@ const CommentForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Comment Submitted:", formData);
-    // Add form submission logic here (e.g., send data to API)
+
+    const fetchData = async () => {
+      const response = await createBlogComment(blogPostId, formData);
+      if (response) {
+        setIsFetch(true);
+      }
+    };
+    fetchData();
   };
 
   return (
@@ -33,7 +40,7 @@ const CommentForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="w-full placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
+            className="w-full text-[#000] placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
           />
         </div>
 
@@ -45,7 +52,7 @@ const CommentForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
-            className="w-full placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
+            className="w-full text-[#000] placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
           />
         </div>
 
@@ -57,7 +64,7 @@ const CommentForm = () => {
             onChange={handleChange}
             placeholder="Write Message"
             rows="4"
-            className="placeholder:text-[var(--black)] font-medium placeholder:text-[14px] w-full mt-4 px-4 py-2 bg-[var(--light-sky-blue)] focus:outline-none"
+            className="text-[#000] placeholder:text-[var(--black)] font-medium placeholder:text-[14px] w-full mt-4 px-4 py-2 bg-[var(--light-sky-blue)] focus:outline-none"
           ></textarea>
         </div>
 

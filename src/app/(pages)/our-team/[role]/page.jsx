@@ -4,235 +4,49 @@ import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import TeamHero from "@/app/(components)/About/HeroSection";
-
-// data
-const teamMembers = [
-  {
-    name: "Dan k jatau Ph.D.",
-    desgination: "CTO & Founder",
-    image: "/assets/about/Circle-lg.png",
-    role: "founder",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-  {
-    name: "Ismail Saleem",
-    desgination: "CMO",
-    image: "/assets/about/Circle-lg.png",
-    role: "cmo",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-  {
-    name: "ashikur Rahman",
-    desgination: "Head of Engineering",
-    image: "/assets/about/Circle-lg.png",
-    role: "engineering",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-  {
-    name: "Jermaine Jatau",
-    desgination: "Software Engineer",
-    image: "/assets/about/Circle-lg.png",
-    role: "engineer",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-  {
-    name: "Dan K Jatau",
-    desgination: "Chief Solutions Architect",
-    image: "/assets/about/Circle-lg.png",
-    role: "chief-solutions-architect",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-  {
-    name: "Robert Hartburn",
-    desgination: "Product Design",
-    image: "/assets/about/Circle-lg.png",
-    role: "product-design",
-    socials: [
-      {
-        icon: "/assets/about/facebook.png",
-        hoverIcon: "/assets/about/facebook-orange.png",
-        width: 10.74,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/instagram.png",
-        hoverIcon: "/assets/about/instagram-orange.png",
-        width: 20,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/twitter.png",
-        hoverIcon: "/assets/about/twitter-orange.png",
-        width: 24.63,
-        height: 20,
-        link: "#",
-      },
-      {
-        icon: "/assets/about/pinterest.png",
-        hoverIcon: "/assets/about/pinterest-orange.png",
-        width: 15.38,
-        height: 20,
-        link: "#",
-      },
-    ],
-  },
-];
+import { getTeamByID } from "@/lib/queries/getTeamByID";
+import RichText from "@/lib/richText";
 
 export default function TeamDetail() {
   const params = useParams();
   const router = useRouter();
-  const { role } = params;
+  const { slug } = params;
 
-  const team = teamMembers.find((item) => item.role === role);
+  const [isLoading, setIsLoading] = useState(true);
+  const [teamMember, setTeamMember] = useState({});
 
-  if (!team) {
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      try {
+        const response = await getTeamByID(slug);
+        if (response) {
+          setIsLoading(false);
+          setTeamMember(response?.data[0]);
+        }
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, [slug]);
+
+  const handleClick = (item) => {
+    setActivePortfolio(item.id);
+    router.push(`/portfolio/${item.id}`);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!teamMember) {
     return (
       <div className="text-center py-20">
         <h1 className="text-2xl font-bold text-[#000] mt-[90px]">
@@ -241,24 +55,6 @@ export default function TeamDetail() {
       </div>
     );
   }
-  const [activePortfolio, setActivePortfolio] = useState(role);
-
-  useEffect(() => {
-    setActivePortfolio(role);
-  }, [role]);
-
-  const handleClick = (item) => {
-    setActivePortfolio(item.id);
-    router.push(`/portfolio/${item.id}`);
-  };
-
-  const skills = [
-    { name: "Skill 1", percentage: 95 },
-    { name: "Skill 2", percentage: 45 },
-    { name: "Skill 3", percentage: 55 },
-    { name: "Skill 4", percentage: 25 },
-  ];
-
   return (
     <>
       <TeamHero />
@@ -268,18 +64,27 @@ export default function TeamDetail() {
           {/* Profile Section */}
           <div className="flex flex-col gap-3 md:gap-0 md:flex-row md:space-x-8">
             {/* Image Placeholder */}
-            <div className="w-full lg:w-[391px] h-[300px] lg:h-[474px] bg-[#C4C4C4]"></div>
-
+            <Image
+              src={
+                teamMember?.image
+                  ? teamMember?.image?.url
+                  : "https://placehold.co/600x400.png?text=placeholder"
+              }
+              alt={teamMember?.name}
+              width={294}
+              height={294}
+              className="object-cover"
+            />
             {/* Content Section */}
             <div className="flex-1">
               {/* Name and Role */}
               <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between">
                 <div>
                   <h2 className="text-2xl font-bold text-[var(--black)]">
-                    {team.name}
+                    {teamMember?.name}
                   </h2>
                   <p className="text-sm text-[var(--black)]">
-                    {team.desgination}
+                    {teamMember?.designation}
                   </p>
                 </div>
 
@@ -324,18 +129,9 @@ export default function TeamDetail() {
               <hr className="my-4 border-gray-600" />
 
               {/* Description */}
-              <p className="text-sm leading-relaxed">
-                Nullam interdum libero vitae pretium aliquam donec nibh purus
-                laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                interdum libero vitae pretium aliquam donec nibh purus laoreet
-                in ullamcorper vel malesuada sit amet enim.
-              </p>
-              <p className="text-sm leading-relaxed mt-9">
-                Nullam interdum libero vitae pretium aliquam donec nibh purus
-                laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                interdum libero vitae pretium aliquam donec nibh purus laoreet
-                in ullamcorper vel malesuada sit amet enim.
-              </p>
+              <div className="text-sm leading-relaxed">
+                <RichText content={teamMember?.description} />
+              </div>
 
               {/* Contact Information */}
               <div className="flex flex-col justify-end h-[183px]">
@@ -350,7 +146,7 @@ export default function TeamDetail() {
                         height={36}
                       />
                     </a>
-                    <span>+44 7540 460322</span>
+                    <span>{teamMember?.contactDetails?.phoneNumber}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <a href="#">
@@ -361,7 +157,7 @@ export default function TeamDetail() {
                         height={36}
                       />
                     </a>
-                    <span>Dan.Jatau@Webxcell.com</span>
+                    <span>{teamMember?.contactDetails?.email}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <a href="#">
@@ -372,7 +168,7 @@ export default function TeamDetail() {
                         height={36}
                       />
                     </a>
-                    <span>Nottingham, UK</span>
+                    <span>{teamMember?.contactDetails?.location}</span>
                   </div>
                 </div>
               </div>
@@ -385,65 +181,40 @@ export default function TeamDetail() {
           <div className="p-6 bg-[var(--light-sky-blue)] rounded-lg space-y-8">
             {/* Personal Information Section */}
             <div>
-              <h2 className="text-[24px] font-bold mb-4">
+              <h2 className="text-[24px] text-[#000] font-bold mb-4">
                 Personal Information
               </h2>
               <p className="text-[var(--black)] leading-relaxed">
-                Nullam interdum libero vitae pretium aliquam donec nibh purus
-                laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                interdum libero vitae pretium aliquam donec nibh purus laoreet
-                in ullamcorper vel malesuada sit amet enim. Nullam interdum
-                libero vitae pretium aliquam donec nibh purus laoreet in
-                ullamcorper vel malesuada sit amet enim. Nullam interdum libero
-                vitae pretium aliquam donec nibh purus laoreet in ullamcorper
-                vel malesuada sit amet enim.
-              </p>
-              <p className="text-[var(--black)] leading-relaxed mt-4">
-                Nullam interdum libero vitae pretium aliquam donec nibh purus
-                laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                interdum libero vitae pretium aliquam donec nibh purus laoreet
-                in ullamcorper vel malesuada sit amet enim. Nullam interdum
-                libero vitae pretium aliquam donec nibh purus laoreet in
-                ullamcorper vel malesuada sit amet enim. Nullam interdum libero
-                vitae pretium aliquam donec nibh purus laoreet in ullamcorper
-                vel malesuada sit amet enim.
+                {teamMember?.personalInformation}
               </p>
             </div>
 
             {/* Personal Skills Section */}
             <div className="p-6 bg-white">
-              <h2 className="text-lg font-bold mb-4">Personal Skills</h2>
+              <h2 className="text-lg text-[#000] font-bold mb-4">
+                Personal Skills
+              </h2>
               {/* Responsive Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-                {skills.map((skill, index) => (
+                {teamMember?.skills?.map((skill, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-center">
                       <span className="text-sm font-semibold text-gray-700">
-                        {skill.name}
+                        {skill?.name}
                       </span>
                       <span className="text-sm font-semibold text-orange-500">
-                        {skill.percentage}%
+                        {skill?.percentage}%
                       </span>
                     </div>
                     <div className="relative w-full h-4 mt-2 bg-blue-100">
                       <div
                         className="absolute top-0 left-0 h-4 bg-orange-500 transition-all duration-700 ease-in-out"
-                        style={{ width: `${skill.percentage}%` }}
+                        style={{ width: `${skill?.percentage}%` }}
                       ></div>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-[var(--black)] leading-relaxed mt-6">
-                Nullam interdum libero vitae pretium aliquam donec nibh purus
-                laoreet in ullamcorper vel malesuada sit amet enim. Nullam
-                interdum libero vitae pretium aliquam donec nibh purus laoreet
-                in ullamcorper vel malesuada sit amet enim. Nullam interdum
-                libero vitae pretium aliquam donec nibh purus laoreet in
-                ullamcorper vel malesuada sit amet enim. Nullam interdum libero
-                vitae pretium aliquam donec nibh purus laoreet in ullamcorper
-                vel malesuada sit amet enim.
-              </p>
             </div>
           </div>
         </div>

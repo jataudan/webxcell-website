@@ -1,34 +1,26 @@
 import Image from "next/image";
 
-export default function WorkProcess() {
+export default function WorkProcess({ data }) {
   return (
-    // Main section with background image and responsive padding
     <section
-      className="relative w-full bg-cover bg-center flex flex-col justify-center gap-4 md:p-[112px]"
       style={{
         backgroundImage: `url(/assets/about/work-process-bg.png)`,
       }}
     >
-      {/* Container with mobile background color override */}
       <div className="container mx-auto bg-[#7fdeff] md:bg-transparent">
-        {/* Section header with gradient text */}
-        <div className="flex flex-col align-center justify-center items-center text-center">
+        <div className=" flex flex-col align-center justify-center items-center text-center pt-[40px] md:pt-0">
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-[plus jakarta sans]">
-            Work Process
+            {data?.h2 || ""}
           </span>
 
-          {/* Main section title */}
           <div className="text-[46px] font-extrabold mt-2 font-poppins">
-            <span className="text-[#000]">Our Working Process </span>
+            <span className="text-[#000]">Our Working Process </span>{" "}
           </div>
         </div>
-
-        {/* Process steps container with responsive layout */}
-        <div className="flex flex-col md:flex-row relative items-center justify-between p-8 rounded-lg">
-          {/* ---------------- STEP 1 ---------------- */}
+        <div className="flex flex-col md:flex-row relative items-center justify-between p-8 rounded-lg ">
+          {/* <!-- Step 1 --> */}
           <div className="flex relative">
             <div className="flex flex-col items-center text-center">
-              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -42,41 +34,35 @@ export default function WorkProcess() {
                   1
                 </span>
               </div>
-              {/* Step content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
-                Choose A Service
+                {data.milestones[0]?.title || ""}
               </h3>
-              <p className="mt-2 text-base text-gray-700">
-                In a free hour, when our power of choice is untrammeled and
+              <p className="mt-2  text-base text-gray-700">
+                {data.milestones[0]?.description || ""}
               </p>
             </div>
-            {/* Connecting line (desktop only) */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
 
-          {/* ---------------- STEP 2 ---------------- */}
+          {/* <!-- Step 2 --> */}
           <div className="flex relative">
-            {/* Responsive content ordering (mobile vs desktop) */}
             <div className="flex flex-col-reverse lg:flex-col items-center text-center">
-              {/* Desktop-only content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans] hidden lg:block">
-                Define Requirements
+                {data.milestones[1]?.title || ""}
               </h3>
-              <p className="mt-2 text-base text-gray-700 hidden lg:block">
-                In a free hour, when our power of choice is untrammeled and
+              <p className="mt-2  text-base text-gray-700 hidden lg:block">
+                {data.milestones[1]?.description || ""}
               </p>
 
-              {/* Mobile-only content */}
               <div className="block lg:hidden">
                 <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
-                  Define Requirements
+                  {data.milestones[1]?.title || ""}
                 </h3>
-                <p className="mt-2 text-base text-gray-700">
-                  In a free hour, when our power of choice is untrammeled and
+                <p className="mt-2  text-base text-gray-700">
+                  {data.milestones[1]?.description || ""}
                 </p>
               </div>
 
-              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -92,14 +78,12 @@ export default function WorkProcess() {
               </div>
             </div>
 
-            {/* Connecting line (desktop only) */}
+            {/* <!-- Connecting Line --> */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[-23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
-
-          {/* ---------------- STEP 3 ---------------- */}
+          {/* <!-- Step 3 --> */}
           <div className="flex relative">
             <div className="flex flex-col items-center text-center">
-              {/* Icon container with numbered badge */}
               <div className="relative">
                 <div className="flex items-center justify-center text-white">
                   <Image
@@ -113,40 +97,33 @@ export default function WorkProcess() {
                   3
                 </span>
               </div>
-              {/* Step content */}
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
-                Request A Meeting
+                {data.milestones[2]?.title || ""}
               </h3>
-              <p className="mt-2 text-base text-gray-700">
-                In a free hour, when our power of choice is untrammeled and
+              <p className="mt-2  text-base text-gray-700">
+                {data.milestones[2]?.description || ""}
               </p>
             </div>
 
-            {/* Connecting line (desktop only) */}
+            {/* <!-- Connecting Line --> */}
             <hr className="absolute right-[-125px] 2xl-custom:right-[-165px] z-[-2] top-[100px] rotate-[23deg] transform bg-transparent text-transparent w-[250px] 2xl-custom:w-[330px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
-
-          {/* ---------------- STEP 4 ---------------- */}
+          {/* <!-- Step 4 --> */}
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">
-            {/* Mobile-only content */}
             <div className="block lg:hidden">
               <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans]">
-                Final Solution
+                {data.milestones[3]?.title || ""}
               </h3>
               <p className="mt-2 text-base text-gray-700">
-                In a free hour, when our power of choice is untrammeled and
+                {data.milestones[3]?.description || ""}
               </p>
             </div>
-
-            {/* Desktop-only content */}
             <h3 className="mt-4 text-lg font-bold font-[plus jakarta sans] hidden lg:block">
-              Final Solution
+              {data.milestones[3]?.title || ""}
             </h3>
             <p className="mt-2 text-base text-gray-700 hidden lg:block">
-              In a free hour, when our power of choice is untrammeled and
+              {data.milestones[3]?.description || ""}
             </p>
-
-            {/* Icon container with numbered badge */}
             <div className="relative">
               <div className="flex items-center justify-center text-white">
                 <Image

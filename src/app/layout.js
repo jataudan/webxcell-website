@@ -2,6 +2,7 @@ import { Poppins, Oswald, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
+import { AppContextProvider } from "@/context/appContext";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -32,9 +33,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} ${oswald.variable} ${plusJakartaSans.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <AppContextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AppContextProvider>
       </body>
     </html>
   );

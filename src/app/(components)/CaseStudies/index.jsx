@@ -1,23 +1,15 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SliderButtons from "./SliderButtons";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { getProjectDetail } from "@/lib/queries/getProjectDetail";
 
-// Case study data array
-const caseStudiesData = [
-  { id: 1, title: "Generation Of Wealth", category: "Marketing" },
-  { id: 2, title: "Creative Solutions", category: "Design" },
-  { id: 3, title: "Innovative Ideas", category: "Development" },
-  { id: 4, title: "Growth Strategies", category: "Business" },
-];
-
-// Slider configuration settings
 const settings = {
   dots: false,
   arrows: false,
@@ -44,9 +36,26 @@ const settings = {
 };
 
 const CaseStudies = () => {
+  const router = useRouter();
+  const [projectDetail, setProjectDetail] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    const fetchData = async () => {
+      const response = await getProjectDetail();
+
+      if (response) {
+        setIsLoading(false);
+        setProjectDetail(response?.data || []);
+      }
+    };
+    fetchData();
+  }, []);
+
   const sliderRef = useRef(null);
 
-  // Slider navigation handlers
   const handleNext = () => {
     sliderRef.current.slickNext();
   };
@@ -55,74 +64,85 @@ const CaseStudies = () => {
     sliderRef.current.slickPrev();
   };
 
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative overflow-hidden bg-black z-20">
-      {/* Background gradient image */}
       <div className="absolute inset-0 flex items-end justify-center">
         <Image
           src="/assets/case-studies/gradient-bg.png"
-          alt="Background gradient effect"
+          alt="Heavy Waves Image"
           width={2120}
           height={297}
           className="hidden md:block"
         />
       </div>
-
-      {/* Section header with gradient text */}
       <div className="text-center mt-16 text-[16px]">
         <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-          our complete projects
+          Our Success Stories
         </span>
       </div>
-
-      {/* Main title section */}
       <div className="text-center mt-5">
         <h1 className="text-5xl case-studies-title">
           <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
             Case
-          </span>{" "}
+          </span>
           <span className="text-white">Studies</span>
         </h1>
       </div>
 
-      {/* Slider container */}
-      <div className="relative">
-        {/* Slider component with responsive settings */}
+      <div className="relative ">
         <Slider ref={sliderRef} {...settings} className="translate-y-[190px]">
-          {caseStudiesData.map((item, index) => (
-            <div
-              key={index}
-              className="relative bg-[#A9A9A9] border hover:border-[#FF6700] rounded-[20px] px-6 py-16 text-center w-full md:w-[370px] h-[357px] group"
-            >
-              {/* Hover overlay content */}
-              <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
-                <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
-                  <div className="text-left px-5 py-3">
-                    <h2 className="text-[#000] font-plus-jakarta font-semibold">
-                      {item.title}
-                    </h2>
-                    <span className="text-[#F26B01] font-plus-jakarta font-semibold">
-                      {item.category}
-                    </span>
+          {projectDetail?.length > 0 &&
+            projectDetail?.map((item, index) => (
+              <div
+                key={index}
+                className="relative bg-[#A9A9A9] border hover:border-[#FF6700] rounded-[20px] text-center w-full md:w-[370px] h-[357px] group"
+              >
+                <Image
+                  src={
+                    item?.mainImage
+                      ? item?.mainImage?.url
+                      : "https://placehold.co/600x400.png?text=placeholder"
+                  }
+                  alt="Rectangle"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover rounded-[20px]"
+                />
+                {/* Hidden Content on Hover */}
+                <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
+                  <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
+                    <div className="text-left px-5 py-3">
+                      <h2 className="text-[#000] font-plus-jakarta font-semibold">
+                        {item?.title}
+                      </h2>
+                      <span className="text-[#F26B01] font-plus-jakarta font-semibold">
+                        {item?.tag?.name}
+                      </span>
+                    </div>
+                    <button
+                      className="p-6 bg-[#FF6700] rounded-tr-[7px] rounded-br-[7px]"
+                      onClick={() => router.push(`/portfolio/${item?.slug}`)}
+                    >
+                      <Image
+                        src="/assets/case-studies/up-right-arrow.png"
+                        alt="arrow"
+                        width={24}
+                        height={24}
+                      />
+                    </button>
                   </div>
-                  <Link
-                    href=""
-                    className="p-6 bg-[#FF6700] rounded-tr-[7px] rounded-br-[7px]"
-                  >
-                    <Image
-                      src="/assets/case-studies/up-right-arrow.png"
-                      alt="View case study details"
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </Slider>
-
-        {/* Custom slider navigation buttons */}
         <SliderButtons
           onNext={handleNext}
           onPrev={handlePrev}

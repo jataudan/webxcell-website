@@ -1,75 +1,44 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import PortfolioHero from "@/app/(components)/About/HeroSection";
-
-// Portfolio data
-const portfolioData = [
-  {
-    id: 1,
-    pageTitle: "generation-of-wealth",
-    title: "Generation Of Wealth",
-    category: "Marketing",
-  },
-  {
-    id: 2,
-    pageTitle: "creative-solutions",
-    title: "Creative Solutions",
-    category: "Design",
-  },
-  {
-    id: 3,
-    pageTitle: "innovative-ideas",
-    title: "Innovative Ideas",
-    category: "Development",
-  },
-  {
-    id: 4,
-    pageTitle: "growth-strategies",
-    title: "Growth Strategies",
-    category: "Business",
-  },
-];
-
-const projectInfo = [
-  { label: "Client", value: "Jhon Son Smith" },
-  { label: "Category", value: "Building Constractions" },
-  { label: "Start Date", value: "10 June, 2023" },
-  { label: "End Date", value: "10 October, 2023" },
-  { label: "Project Budget", value: "$25800.99" },
-];
+import { getProjectByID } from "@/lib/queries/getProjectByID";
+import RichText from "@/lib/richText";
 
 export default function PortfolioDetail() {
   const params = useParams();
-  const router = useRouter();
-  const { title } = params;
+  const { slug } = params;
 
-  const portfolio = portfolioData.find(
-    (portfolio) => portfolio.pageTitle === title
-  );
+  const [project, setProject] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (!portfolio) {
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      try {
+        const response = await getProjectByID(slug);
+        if (response) {
+          setIsLoading(false);
+          setProject(response?.data[0]);
+        }
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, [slug]);
+
+  if (isLoading) {
     return (
-      <div className="text-center py-20">
-        <h1 className="text-2xl font-bold text-[#000] mt-[90px]">
-          Portfolio Not Found
-        </h1>
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
       </div>
     );
   }
-  const [activePortfolio, setActivePortfolio] = useState(title);
-
-  useEffect(() => {
-    setActivePortfolio(title);
-  }, [title]);
-
-  const handleClick = (item) => {
-    setActivePortfolio(item.id);
-    router.push(`/portfolio/${item.id}`);
-  };
-
   return (
     <>
       <PortfolioHero />
@@ -77,7 +46,11 @@ export default function PortfolioDetail() {
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">
         <div className="mb-4 px-4 py-4 md:px-0 md:py-0">
           <Image
-            src="/assets/Service/Rectangle.png"
+            src={
+              project?.mainImage
+                ? project?.mainImage?.url
+                : "https://placehold.co/600x400.png?text=placeholder"
+            }
             alt="Rectangle"
             width={1170}
             height={550}
@@ -92,101 +65,30 @@ export default function PortfolioDetail() {
             <div className="flex-grow">
               <div className=" mb-12">
                 <div className="text-3xl font-extrabold text-[#101010] font-plus-jakarta mb-6">
-                  {portfolio.title}
+                  {project?.title}
                 </div>
-                <p className="mb-6 text-[#101010]">
-                  At tempus aenean sapien torquent sed diam class efficitur mus
-                  morbi eros dictum quam augue ac laor eet ligula libero mi
-                  commodo nibh hac fermentum orci ad pharetra consequat justo
-                  duis turpis lorem elit dui consectetur magnis lacinia odio per
-                  placerat vestibulum volutpat mauris mollis primis imperdiet
-                  posu ere ex enim gravida cras congue
-                </p>
-                <p className="mb-6 text-[#101010]">
-                  pellentesque vulputate malesuada dictumst fames interdum
-                  cursus an te tellus porta ullamcorper accumsan non eu
-                  adipiscing integer venenatis sagittis arcu curae finibus ridi
-                  culus aliquam velit lobortis senectus vitae sollicitudin sit
-                  consectetuer ultricies rutrum parturient pede nisi nascetur
-                  habitant netus quisque elementum inceptos nam felis penatibus
-                  feugiat
-                </p>
-                <div className="text-3xl font-extrabold text-[#101010] font-plus-jakarta mb-6">
-                  Project Goals
+                <div className="mb-6 text-[#101010]">
+                  <RichText content={project?.description} />
                 </div>
-                <p className="mb-6 text-[#101010]">
-                  At tempus aenean sapien torquent sed diam class efficitur mus
-                  morbi eros dictum quam augue ac laor eet ligula libero mi
-                  commodo nibh hac fermentum orci ad pharetra consequat justo
-                  duis turpis lorem elit dui consectetur magnis lacinia odio per
-                  placerat vestibulum volutpat mauris mollis primis imperdiet
-                  posu ere ex enim gravida cras congue
-                </p>
-                <div className="flex flex-col md:flex-row gap-5 md:gap-14">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex items-start gap-2">
-                      <Image
-                        src="/assets/Service/check.png"
-                        alt="check"
-                        width={20}
-                        height={20}
-                      />
-                      <p className="text-[#101010]">
-                        Various analysis options.
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Image
-                        src="/assets/Service/check.png"
-                        alt="check"
-                        width={20}
-                        height={20}
-                      />{" "}
-                      <p className="text-[#101010]">
-                        Advance Data analysis operation.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-4 ">
-                    <div className="flex items-start gap-2">
-                      <Image
-                        src="/assets/Service/check.png"
-                        alt="check"
-                        width={20}
-                        height={20}
-                      />{" "}
-                      <p className="text-[#101010]">
-                        Page Load (time, size, number of requests).
-                      </p>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Image
-                        src="/assets/Service/check.png"
-                        alt="check"
-                        width={20}
-                        height={20}
-                      />{" "}
-                      <p className="text-[#101010]">
-                        Advance Data analysis operation.
-                      </p>
-                    </div>
-                  </div>
+                <div className="flex flex-col flex-wrap max-w-[780px] md:flex-row gap-8 mb-12">
+                  {project?.projectImages?.length > 0 &&
+                    project?.projectImages?.map((image, index) => {
+                      return (
+                        <Image
+                          key={index}
+                          className="w-full md:w-[370px] h-[390px] rounded-[20px] object-cover"
+                          src={
+                            image
+                              ? image?.url
+                              : "https://placehold.co/600x400.png?text=placeholder"
+                          }
+                          alt="image"
+                          width={370}
+                          height={390}
+                        />
+                      );
+                    })}
                 </div>
-              </div>
-              <div className=" flex flex-col md:flex-row gap-8 mb-12">
-                <div className="flex flex-col items-center text-center bg-[#C4C4C4] w-full md:w-[370px] h-[390px] rounded-[20px] p-8 gap-8"></div>
-                <div className="flex flex-col items-center text-center bg-[#C4C4C4] w-full md:w-[370px] h-[390px] rounded-[20px] p-8 gap-12"></div>
-              </div>
-              <div className="mb-12">
-                <p className="mb-6 text-[#101010]">
-                  At tempus aenean sapien torquent sed diam class efficitur mus
-                  morbi eros dictum quam augue ac laor eet ligula libero mi
-                  commodo nibh hac fermentum orci ad pharetra consequat justo
-                  duis turpis lorem elit dui consectetur magnis lacinia odio per
-                  placerat vestibulum volutpat mauris mollis primis imperdiet
-                  posu ere ex enim gravida cras congue
-                </p>
               </div>
             </div>
 
@@ -201,17 +103,50 @@ export default function PortfolioDetail() {
                   <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2" />
                 </div>
 
-                {projectInfo.map((item, index) => (
-                  <div key={index}>
-                    <div>
-                      <h4 className="text-[#fff] font-semibold">
-                        {item.label}:
-                      </h4>
-                      <span className="text-[#fff]">{item.value}</span>
-                    </div>
-                    <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
-                  </div>
-                ))}
+                <div>
+                  <h4 className="text-[#fff] font-semibold">Client:</h4>
+                  <span className="text-[#fff]">
+                    {project?.projectInfo?.clientName}
+                  </span>
+                </div>
+
+                <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
+
+                <div>
+                  <h4 className="text-[#fff] font-semibold">Category:</h4>
+                  <span className="text-[#fff]">
+                    {project?.projectInfo?.category}
+                  </span>
+                </div>
+
+                <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
+
+                <div>
+                  <h4 className="text-[#fff] font-semibold">Start Date:</h4>
+                  <span className="text-[#fff]">
+                    {project?.projectInfo?.startDate}
+                  </span>
+                </div>
+
+                <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
+
+                <div>
+                  <h4 className="text-[#fff] font-semibold">End Date:</h4>
+                  <span className="text-[#fff]">
+                    {project?.projectInfo?.endDate}
+                  </span>
+                </div>
+
+                <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
+
+                <div>
+                  <h4 className="text-[#fff] font-semibold">Project Budget:</h4>
+                  <span className="text-[#fff]">
+                    {project?.projectInfo?.budget}
+                  </span>
+                </div>
+
+                <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
                 <div className="flex justify-center items-center gap-4 text-xl">
                   <span className="text-[#fff] text-[16px]">Follow on</span>
@@ -251,13 +186,17 @@ export default function PortfolioDetail() {
               </aside>
               <div className="flex flex-col gap-2 justify-center items-center bg-portfolio-custome-gradient w-full h-[351px] rounded-lg text-white font-plus-jakarta font-semibold">
                 <Image
-                  src="/assets/portfolio/phone_icon.png"
+                  src={
+                    project?.contact?.icon
+                      ? project?.contact?.icon?.url
+                      : "https://placehold.co/600x400.png?text=placeholder"
+                  }
                   alt="Rectangle"
                   width={70}
                   height={70}
                 />
-                <h3>Need Help? Connect Here</h3>
-                <h3>+208-555-0112</h3>
+                <h3>{project?.contact?.title}</h3>
+                <h3>{project?.contact?.phoneNumbers}</h3>
               </div>
             </div>
           </div>

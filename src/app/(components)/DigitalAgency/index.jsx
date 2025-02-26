@@ -1,96 +1,70 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const DigitalAgency = () => {
+const DigitalAgency = ({ data }) => {
   return (
     <div className="relative overflow-hidden bg-white">
-      {/* ====================== */}
-      {/* LEFT DECORATIVE ELEMENT */}
-      {/* ====================== */}
+      {/* Left Decorative Image */}
       <div className="absolute bottom-[52px] left-[-200px] lg:left-[-337px] hidden sm:block">
         <Image
           src="/assets/digital-agency/left-vector.png"
-          alt="Abstract spiral decoration"
+          alt="Spiral Image"
           width={522}
           height={587}
         />
       </div>
 
-      {/* ====================== */}
-      {/* MAIN CONTENT CONTAINER */}
-      {/* ====================== */}
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 lg:py-20 gap-10">
-        {/* ====================== */}
-        {/* TEXT CONTENT SECTION */}
-        {/* ====================== */}
+        {/* Right Side - Content */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
-          {/* Gradient title */}
           <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            your inventory is time
+            {data?.subTitle}
           </span>
 
-          {/* Main headline with gradient accent */}
           <div className="headline mt-4">
-            <span className="text-[#000]">Digital Agency</span>
+            <span className="text-[#000]">{data?.h1}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
-              Excellence
+              {data?.h2}
             </span>{" "}
-            <span className="text-[#000]">Services</span>
+            <span className="text-[#000]">{data?.h3}</span>
           </div>
 
-          {/* Description paragraph */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
-            And you spend over half of it on non-core functions like Following
-            up for Payments or Writing Proposals from scratch or sending Manual
-            Updates to your Clients.
+            {data?.p}
           </p>
 
-          {/* ====================== */}
-          {/* STATISTICS SECTION */}
-          {/* ====================== */}
+          {/* Stats */}
           <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8">
-            {/* Digital Transformation Stat */}
-            <div className="flex items-center gap-4">
-              <Image
-                src="/assets/digital-agency/digital-transformation.png"
-                alt="Digital transformation icon"
-                width={60}
-                height={60}
-              />
-              <div className="flex flex-col items-start">
-                <h4 className="text-2xl sm:text-3xl font-bold text-[#17012c]">
-                  94%
-                </h4>
-                <p className="text-[#000] uppercase text-sm">
-                  Digital Transformation
-                </p>
+            {data?.detail?.map((item, index) => (
+              <div
+                key={item.id}
+                className={`flex items-center gap-4 ${
+                  index === 1 ? "translate-x-[-15px] md:translate-x-0" : ""
+                }`}
+              >
+                <Image
+                  src={
+                    item?.image
+                      ? item.image.url
+                      : "https://placehold.co/600x400.png?text=placeholder"
+                  }
+                  alt={item.title}
+                  width={item.image.width}
+                  height={item.image.height}
+                />
+                <div className="flex flex-col items-start">
+                  <h4 className="text-2xl sm:text-3xl font-bold text-[#17012c]">
+                    {item.percentage}
+                  </h4>
+                  <p className="text-[#000] uppercase text-sm">{item.title}</p>
+                </div>
               </div>
-            </div>
-
-            {/* Marketing Strategy Stat */}
-            <div className="flex items-center gap-4 translate-x-[-15px] md:translate-x-0">
-              <Image
-                src="/assets/digital-agency/marketing-stra.png"
-                alt="Marketing strategy icon"
-                width={60}
-                height={60}
-              />
-              <div className="flex flex-col items-start">
-                <h4 className="text-2xl sm:text-3xl font-bold text-[#17012c]">
-                  65%
-                </h4>
-                <p className="text-[#000] uppercase text-sm">
-                  Marketing Strategy
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* ====================== */}
-          {/* CALL TO ACTION BUTTONS */}
-          {/* ====================== */}
+          {/* Button */}
           <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center">
             <Link
               href="/contact-us"
@@ -101,7 +75,7 @@ const DigitalAgency = () => {
             <Link href="/contact-us">
               <Image
                 src="/assets/digital-agency/up-right.png"
-                alt="Arrow icon for navigation"
+                alt="arrow"
                 width={52}
                 height={52}
               />
@@ -109,13 +83,15 @@ const DigitalAgency = () => {
           </div>
         </div>
 
-        {/* ====================== */}
-        {/* MAIN IMAGE SECTION */}
-        {/* ====================== */}
+        {/* Left Side - Image */}
         <div className="relative flex-shrink-0 w-full lg:w-1/3 max-w-sm lg:max-w-none mx-auto md:mx-0">
           <Image
-            src="/assets/digital-agency/marketing.png"
-            alt="Digital marketing professionals collaborating"
+            src={
+              data?.image
+                ? data?.image?.url
+                : "https://placehold.co/600x400.png?text=placeholder"
+            }
+            alt="Experience Image"
             width={570}
             height={564}
             className="w-full h-auto"
@@ -123,13 +99,11 @@ const DigitalAgency = () => {
         </div>
       </section>
 
-      {/* ====================== */}
-      {/* RIGHT DECORATIVE ELEMENT */}
-      {/* ====================== */}
+      {/* Right Decorative Image */}
       <div className="absolute right-[-200px] lg:right-[-350px] bottom-[0px] hidden sm:block">
         <Image
           src="/assets/digital-agency/right-vector.png"
-          alt="Abstract wave decoration"
+          alt="Heavy Waves Image"
           width={522}
           height={587}
         />
