@@ -1,12 +1,13 @@
 "use client";
 
+import React, { useContext, useRef } from "react";
 import { AppContext } from "@/context/appContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useContext } from "react";
 
 const MobileMenu = ({ navigationItems, cta }) => {
-  const { isMobileMenuOpen } = useContext(AppContext);
+  const { isMobileMenuOpen, setIsMobileMenuOpen } = useContext(AppContext);
+
   const pathname = usePathname();
 
   const isActive = (path) => pathname === path;
@@ -30,6 +31,7 @@ const MobileMenu = ({ navigationItems, cta }) => {
               className={`hover:text-orange-500 ${
                 isActive(nav.href) ? "text-orange-500" : ""
               }`}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {nav.text}
             </Link>
@@ -38,6 +40,7 @@ const MobileMenu = ({ navigationItems, cta }) => {
         <a
           href="#"
           className="mt-4 text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           {cta.text}
         </a>

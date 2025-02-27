@@ -65,7 +65,7 @@ export default function ProfessionalTeam() {
 
         {/* Team Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 justify-items-center">
-          {teamMember?.map((member, index) => (
+          {teamMember?.slice(0, 3)?.map((member, index) => (
             <div
               key={index}
               className="relative bg-white cursor-pointer border border-[#EAF3F8] rounded-lg text-center p-10 justify-between w-[370px] h-[510px]"

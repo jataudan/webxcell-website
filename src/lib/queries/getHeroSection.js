@@ -14,6 +14,22 @@ export async function getHomeHeroData() {
   const response = await fetchStrapiData(path, query);
   return response;
 }
+export async function getOtherHeroData() {
+  const path = "/api/hero-sections/?";
+  const query = qs.stringify(
+    {
+      populate: {
+        bgImage: true,
+      },
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+
+  const response = await fetchStrapiData(path, query);
+  return response;
+}
 
 export async function getAboutHeroData() {
   const path = "/api/about-us?";

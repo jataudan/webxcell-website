@@ -33,7 +33,7 @@ export default function Hero() {
     <section
       className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center px-6 md:px-20 lg:px-40"
       style={{
-        backgroundImage: `url(/assets/hero-section/bg.png)`,
+        backgroundImage: `url(${getHero?.image?.formats?.large?.url})`,
       }}
     >
       {/* Content */}

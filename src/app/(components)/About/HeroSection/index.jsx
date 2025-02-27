@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useParams } from "next/navigation";
-import { getHomeHeroData } from "@/lib/queries/getHeroSection";
+import { getOtherHeroData } from "@/lib/queries/getHeroSection";
 
 export default function AboutHero() {
   const pathname = usePathname();
@@ -15,10 +15,10 @@ export default function AboutHero() {
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
-      const response = await getHomeHeroData();
+      const response = await getOtherHeroData();
       if (response) {
         setIsLoading(false);
-        setGetHero(response?.data?.hero);
+        setGetHero(response?.data);
       }
     };
     fetchData();
@@ -31,6 +31,8 @@ export default function AboutHero() {
       </div>
     );
   }
+
+  const filterHero = getHero?.filter((hero) => hero.sectionName === pathname);
 
   const capitalizeFirstLetterOfEachWord = (str) => {
     return str
@@ -152,7 +154,16 @@ export default function AboutHero() {
   };
 
   return (
-    <section className="relative w-full h-[400px] md:h-[537px] bg-custom-gray bg-center flex flex-col items-center px-6 md:px-20 lg:px-40">
+    <section
+      className={`relative w-full h-[400px] md:h-[537px] ${
+        filterHero[0]?.bgColor || "bg-custom-gray"
+      } bg-center flex flex-col items-center px-6 md:px-20 lg:px-40`}
+      style={
+        filterHero[0]?.bgImage && {
+          backgroundImage: `url(${filterHero[0]?.bgImage?.url})`,
+        }
+      }
+    >
       <div className="relative mt-[120px] flex flex-col items-center justify-center text-white px-4 text-center h-screen">
         {/* Heading */}
         <p className="sm:text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4">
@@ -161,7 +172,11 @@ export default function AboutHero() {
 
         {/* Breadcrumb */}
         <div className="mt-0 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
-          <div className="flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full bg-custom-gray text-[10px] md:text-[18px] font-plus-jakarta">
+          <div
+            className={`flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full ${
+              filterHero[0]?.bgColor || "bg-custom-gray"
+            } text-[10px] md:text-[18px] font-plus-jakarta`}
+          >
             {getBreadcrumb().map((item, index) => {
               return (
                 <React.Fragment key={index}>
