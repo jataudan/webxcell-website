@@ -28,8 +28,8 @@ const MobileMenu = ({ navigationItems, cta }) => {
             <Link
               key={nav.id}
               href={nav.href}
-              className={`hover:text-orange-500 ${
-                isActive(nav.href) ? "text-orange-500" : ""
+              className={`hover:text-[--primary] ${
+                isActive(nav.href) ? "text-[--primary]" : ""
               }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >

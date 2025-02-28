@@ -25,7 +25,7 @@ const DigitalAgency = ({ data }) => {
           <div className="headline mt-4">
             <span className="text-[#000]">{data?.h1}</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
               {data?.h2}
             </span>{" "}
             <span className="text-[#000]">{data?.h3}</span>
@@ -36,7 +36,7 @@ const DigitalAgency = ({ data }) => {
           </p>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8">
+          <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8 w-max">
             {data?.detail?.map((item, index) => (
               <div
                 key={item.id}
@@ -68,7 +68,7 @@ const DigitalAgency = ({ data }) => {
           <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center">
             <Link
               href="/contact-us"
-              className="bg-[#fde9d9] text-[#f26b01] px-6 py-3 rounded-full text-lg sm:text-lg font-bold"
+              className="bg-[#fde9d9] text-[--primary] px-6 py-3 rounded-full text-lg sm:text-lg font-bold"
             >
               GET STARTED
             </Link>

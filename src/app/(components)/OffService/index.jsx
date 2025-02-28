@@ -33,7 +33,7 @@ const OffService = ({ data }) => {
 
           <div className="off-service-headline text-3xl md:text-4xl font-bold mt-4">
             <span className="text-[#000]"> {data?.parent?.h2}</span> <br />{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F5AF19]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F5AF19]">
               {data?.parent?.h3}
             </span>{" "}
             <span className="text-[#000]"> {data?.parent?.h4}</span>
@@ -43,7 +43,7 @@ const OffService = ({ data }) => {
           <div className="mt-8 mb-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
             <Link
               href="/contact-us"
-              className="bg-orange-500 uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+              className="bg-[--primary] uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
             >
               get started
             </Link>

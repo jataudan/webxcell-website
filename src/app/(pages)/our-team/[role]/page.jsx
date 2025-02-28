@@ -41,7 +41,7 @@ export default function TeamDetail() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -60,7 +60,7 @@ export default function TeamDetail() {
       <TeamHero />
 
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">
-        <div className="w-full text-[var(--black)] p-4 md:p-8 relative border border-[var(--light-sky-blue)]">
+        <div className="w-full text-[--black] p-4 md:p-8 relative border border-[--sky-blue]">
           {/* Profile Section */}
           <div className="flex flex-col gap-3 md:gap-0 md:flex-row md:space-x-8">
             {/* Image Placeholder */}
@@ -80,10 +80,10 @@ export default function TeamDetail() {
               {/* Name and Role */}
               <div className="flex flex-col gap-3 md:gap-0 md:flex-row justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold text-[var(--black)]">
+                  <h2 className="text-2xl font-bold text-[--black]">
                     {teamMember?.name}
                   </h2>
-                  <p className="text-sm text-[var(--black)]">
+                  <p className="text-sm text-[--black]">
                     {teamMember?.designation}
                   </p>
                 </div>
@@ -176,15 +176,15 @@ export default function TeamDetail() {
           </div>
         </div>
       </div>
-      <div className="bg-[var(--light-sky-blue)]">
-        <div className="relative container mx-auto lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px] font-plus-jakarta">
-          <div className="p-6 bg-[var(--light-sky-blue)] rounded-lg space-y-8">
+      <div className="bg-[--sky-blue]">
+        <div className="relative container mx-auto lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px] --font-plus-jakarta-sans">
+          <div className="p-6 bg-[--sky-blue] rounded-lg space-y-8">
             {/* Personal Information Section */}
             <div>
               <h2 className="text-[24px] text-[#000] font-bold mb-4">
                 Personal Information
               </h2>
-              <p className="text-[var(--black)] leading-relaxed">
+              <p className="text-[--black] leading-relaxed">
                 {teamMember?.personalInformation}
               </p>
             </div>
@@ -202,13 +202,13 @@ export default function TeamDetail() {
                       <span className="text-sm font-semibold text-gray-700">
                         {skill?.name}
                       </span>
-                      <span className="text-sm font-semibold text-orange-500">
+                      <span className="text-sm font-semibold text-[--primary]">
                         {skill?.percentage}%
                       </span>
                     </div>
                     <div className="relative w-full h-4 mt-2 bg-blue-100">
                       <div
-                        className="absolute top-0 left-0 h-4 bg-orange-500 transition-all duration-700 ease-in-out"
+                        className="absolute top-0 left-0 h-4 bg-[--primary] transition-all duration-700 ease-in-out"
                         style={{ width: `${skill?.percentage}%` }}
                       ></div>
                     </div>

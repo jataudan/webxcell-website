@@ -59,15 +59,12 @@ export default function BlogDetail() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-
-    console.log("Search Query:", searchQuery);
-    // Add search functionality here if needed
   };
 
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -81,7 +78,7 @@ export default function BlogDetail() {
           {/* Header Section */}
 
           {/* Main Content */}
-          <div className="w-full flex flex-col lg:flex-row gap-4 font-plus-jakarta">
+          <div className="w-full flex flex-col lg:flex-row gap-4 --font-plus-jakarta-sans">
             {/* Left Content */}
             <div className="flex-grow">
               <div className="relative mb-4 md:px-0 md:py-0">
@@ -96,10 +93,10 @@ export default function BlogDetail() {
                   height={550}
                 />
                 <div className="flex flex-col rounded-[6px] absolute top-0 m-2 md:m-5 bg-[var(--light-gray)] w-[80px]  ">
-                  <span className="text-center py-1 px-2 text-[var(--white)] bg-[var(--primary)] rounded-[6px]">
+                  <span className="text-center py-1 px-2 text-[--white] bg-[--primary] rounded-[6px]">
                     {getDay(blog?.date)}
                   </span>
-                  <span className="text-[var(--black)] text-center py-1 px-2">
+                  <span className="text-[--black] bg-[--snow] text-center py-1 px-2 rounded-[6px]">
                     {getMonth(blog?.date)}
                   </span>
                 </div>
@@ -129,7 +126,7 @@ export default function BlogDetail() {
                     </span>
                   </div>
                 </div>
-                <div className="mt-6 text-lg md:text-3xl font-extrabold text-[#101010] font-plus-jakarta mb-6">
+                <div className="mt-6 text-lg md:text-3xl font-extrabold text-[#101010] --font-plus-jakarta-sans mb-6">
                   {blog?.title}
                 </div>
                 <div className="mb-6 text-[#101010]">
@@ -162,14 +159,14 @@ export default function BlogDetail() {
                   <div>
                     <div className="flex gap-[20px] md:gap-0 flex-col md:flex-row items-center justify-between space-x-4 mb-4">
                       <div className="flex gap-3 items-center">
-                        <span className="font-bold text-[var(--black)]">
+                        <span className="font-bold text-[--black]">
                           CATEGORIES:
                         </span>
                         <div className="flex gap-3">
                           {blog?.categories?.map((category, id) => (
                             <span
                               key={id}
-                              className="px-3 py-1 bg-blue-50 text-sm text-[var(--black)] rounded-lg"
+                              className="px-3 py-1 bg-blue-50 text-sm text-[--black] rounded-lg"
                             >
                               {category?.name}
                             </span>
@@ -177,13 +174,9 @@ export default function BlogDetail() {
                         </div>
                       </div>
                       <div className="flex items-center space-x-4">
-                        <span className="font-bold text-[var(--black)]">
-                          TAGS:
-                        </span>
+                        <span className="font-bold text-[--black]">TAGS:</span>
                         <div className="flex gap-2">
-                          <span className="text-[var(--black)]">
-                            {blog?.tag}
-                          </span>
+                          <span className="text-[--black]">{blog?.tag}</span>
                         </div>
                       </div>
                     </div>
@@ -192,7 +185,7 @@ export default function BlogDetail() {
 
                   {/* Comments Section */}
                   <div>
-                    <h2 className="text-[28px] text-[var(--black)] font-bold mb-4">
+                    <h2 className="text-[28px] text-[--black] font-bold mb-4">
                       {comments?.blog_comments?.length || 0} Comments
                     </h2>
                     <ul className="space-y-6">
@@ -231,20 +224,20 @@ export default function BlogDetail() {
                                 <div className="flex items-center justify-between">
                                   <div>
                                     {/* Display Commenter's Name */}
-                                    <h3 className="font-bold text-[var(--black)]">
+                                    <h3 className="font-bold text-[--black]">
                                       {singleComment?.name || "Anonymous"}
                                     </h3>
                                     {/* Format Date */}
-                                    <p className="text-sm text-[var(--black)]">
+                                    <p className="text-sm text-[--black]">
                                       {getDateTime(singleComment?.dateTime)}
                                     </p>
                                   </div>
-                                  <button className="px-4 py-2 bg-[var(--primary)] text-white text-sm rounded-lg">
+                                  <button className="px-4 py-2 bg-[--primary] text-white text-sm rounded-lg">
                                     Reply
                                   </button>
                                 </div>
                                 {/* Display Comment Message */}
-                                <p className="text-sm text-[var(--black)] mt-5">
+                                <p className="text-sm text-[--black] mt-5">
                                   {singleComment?.message}
                                 </p>
                               </div>
@@ -261,10 +254,10 @@ export default function BlogDetail() {
             </div>
 
             {/* Right Sidebar */}
-            <div className="flex-col gap-[20px] font-plus-jakarta hidden md:flex">
-              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[var(--light-sky-blue)] p-6 rounded-[20px]">
+            <div className="flex-col gap-[20px] --font-plus-jakarta-sans hidden md:flex">
+              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[--sky-blue] p-6 rounded-[20px]">
                 <div className="space-y-2">
-                  <h2 className="text-[22px] text-[var(--black)] font-bold">
+                  <h2 className="text-[22px] text-[--black] font-bold">
                     Search
                   </h2>
                   <form
@@ -276,7 +269,7 @@ export default function BlogDetail() {
                       placeholder="Search Here"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="flex-1 outline-none bg-transparent text-gray-700 placeholder-[var(--black)] placeholder:text-[14px]"
+                      className="flex-1 outline-none bg-transparent text-gray-700 placeholder-[--black] placeholder:text-[14px]"
                     />
                     <button type="submit">
                       <Image
@@ -289,10 +282,10 @@ export default function BlogDetail() {
                   </form>
                 </div>
               </aside>
-              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[var(--light-sky-blue)] p-6 rounded-[20px]">
+              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[--sky-blue] p-6 rounded-[20px]">
                 <div className="space-y-2">
                   <div>
-                    <h2 className="text-[22px] text-[var(--black)] font-bold">
+                    <h2 className="text-[22px] text-[--black] font-bold">
                       Latest Posts
                     </h2>
                     <div className="space-y-4 mt-4">
@@ -324,19 +317,19 @@ export default function BlogDetail() {
                   </div>
                 </div>
               </aside>
-              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[var(--light-sky-blue)] p-6 rounded-[20px]">
+              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[--sky-blue] p-6 rounded-[20px]">
                 <div className="bg-blue-50 rounded-lg">
-                  <h2 className="text-[22px] text-[var(--black)] font-bold mb-4">
+                  <h2 className="text-[22px] text-[--black] font-bold mb-4">
                     Categories
                   </h2>
                   <ul className="space-y-3">
                     {blog?.categories?.map((category, index) => (
                       <li
                         key={index}
-                        className="flex justify-between items-center text-[var(--black)]"
+                        className="flex justify-between items-center text-[--black]"
                       >
                         <span>{category?.name}</span>
-                        <span className="text-[var(--black)]">
+                        <span className="text-[--black]">
                           ({category?.count})
                         </span>
                       </li>
@@ -344,9 +337,9 @@ export default function BlogDetail() {
                   </ul>
                 </div>
               </aside>
-              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[var(--light-sky-blue)] p-6 rounded-[20px]">
+              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[--sky-blue] p-6 rounded-[20px]">
                 <div className="bg-blue-50 rounded-lg">
-                  <h2 className="text-[22px] text-[var(--black)] font-bold mb-4">
+                  <h2 className="text-[22px] text-[--black] font-bold mb-4">
                     Tags
                   </h2>
                   <div className="flex flex-wrap gap-2">
@@ -354,10 +347,7 @@ export default function BlogDetail() {
                       return (
                         <button
                           key={tag?.id}
-                          className={`px-3 py-2 rounded-lg text-sm ${
-                            // "bg-[var(--primary)] text-white"
-                            "bg-[var(--white)] text-gray-700 shadow"
-                          }`}
+                          className="px-3 py-2 rounded-lg text-sm bg-[--white] text-gray-700 shadow"
                         >
                           {tag?.name}
                         </button>

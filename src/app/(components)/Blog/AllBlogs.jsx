@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import BlogCard from "./BlogCard";
-import BlogCardImage from "../../../../public/assets/blog/card-image.png";
 import Pagination from "../Pagination/Pagination";
 import { getBlogPost } from "@/lib/queries/getBlogPosts";
 
@@ -30,7 +29,7 @@ const AllBlogs = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }

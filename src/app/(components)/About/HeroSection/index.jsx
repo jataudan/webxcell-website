@@ -27,7 +27,7 @@ export default function AboutHero() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -175,7 +175,7 @@ export default function AboutHero() {
           <div
             className={`flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full ${
               filterHero[0]?.bgColor || "bg-custom-gray"
-            } text-[10px] md:text-[18px] font-plus-jakarta`}
+            } text-[10px] md:text-[18px] --font-plus-jakarta-sans`}
           >
             {getBreadcrumb().map((item, index) => {
               return (

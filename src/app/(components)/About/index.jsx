@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutUs({ data }) {
+  console.log("data", data);
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Decorative Spiral Image - Hidden on Mobile */}
@@ -33,11 +34,15 @@ export default function AboutUs({ data }) {
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
           <span className="block title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            {data?.subTitle || ""}
+            About us
           </span>
 
           <div className="headline text-2xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]">{data?.h2}</span>
+            <span className="text-[#000]">We’re A Strategic</span>{" "}
+            <span className="highlight brown">Digital</span>
+            <br />
+            <span className="highlight orange">Media</span>{" "}
+            <span className="text-[#000]">Agency</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed px-2 md:px-0">
@@ -46,7 +51,7 @@ export default function AboutUs({ data }) {
 
           {/* Stat */}
           <div className="flex flex-col items-center lg:flex-row lg:items-start justify-center lg:justify-start space-y-6 lg:space-y-0 lg:space-x-8 mt-8">
-            <div className="text-center lg:text-left space-y-7 md:space-y-0">
+            <div className="text-center lg:text-left space-y-7 md:space-y-3">
               <h4 className="text-3xl md:text-4xl font-bold text-gray-800 stylish-text">
                 {data?.campaigns || ""}
               </h4>
@@ -54,7 +59,7 @@ export default function AboutUs({ data }) {
                 {data?.campaignsText || ""}
               </p>
             </div>
-            <div className="text-center lg:text-left space-y-7 md:space-y-0">
+            <div className="text-center lg:text-left space-y-7 md:space-y-3">
               <h4 className="text-3xl md:text-4xl font-bold text-gray-800 stylish-text">
                 {data?.traffic || ""}
               </h4>
@@ -78,7 +83,7 @@ export default function AboutUs({ data }) {
           <div className="mt-8 flex sm:flex-row items-center justify-center md:justify-start gap-4 md:gap-0">
             <Link
               href="/about-us"
-              className="bg-orange-500 uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+              className="bg-[--primary] uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
             >
               About us
             </Link>

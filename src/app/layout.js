@@ -1,26 +1,8 @@
-import { Poppins, Oswald, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import { AppContextProvider } from "@/context/appContext";
-
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
-
-const oswald = Oswald({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-oswald",
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta-sans",
-});
+import RootStyles from "./RootStyles";
 
 export const metadata = {
   title: "WebxCell",
@@ -28,13 +10,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body
-        className={`${poppins.variable} ${oswald.variable} ${plusJakartaSans.variable} antialiased`}
-      >
+      <body>
         <AppContextProvider>
           <Header />
+          <RootStyles />
           {children}
           <Footer />
         </AppContextProvider>

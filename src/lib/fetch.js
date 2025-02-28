@@ -12,12 +12,11 @@ export async function fetchData(url, authToken) {
   try {
     const response = await fetch(url, authToken ? headers : {});
     const data = await response.json();
-    console.log("data", data);
-    // if (!response.ok) {
-    //   console.error("Fetch failed:", response.status, response.statusText);
-    //   throw new Error(`Failed to fetch data: ${response.statusText}`);
-    // }
-    // return flattenAttributes(data);
+    if (!response.ok) {
+      //   console.error("Fetch failed:", response.status, response.statusText);
+      //   throw new Error(`Failed to fetch data: ${response.statusText}`);
+    }
+    return flattenAttributes(data);
   } catch (error) {
     console.log("Error fetching data:", error);
   }

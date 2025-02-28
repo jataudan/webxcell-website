@@ -10,7 +10,6 @@ const ContactInfo = () => {
     setIsLoading(true);
     const fetchData = async () => {
       const response = await getContactUs();
-      console.log("Contact Response : ", response?.data);
       if (response) {
         setIsLoading(false);
         setContact(response?.data);
@@ -22,7 +21,7 @@ const ContactInfo = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }

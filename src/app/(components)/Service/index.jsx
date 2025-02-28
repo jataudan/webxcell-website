@@ -33,7 +33,7 @@ export default function Service({ data }) {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -80,16 +80,16 @@ export default function Service({ data }) {
                 key={index}
                 className="flex md:justify-between md:w-[770px] border hover:border-orange-400 cursor-pointer rounded-2xl bg-white "
               >
-                <div className="flex flex-col pt-5 pb-5 md:pb-0 px-6 w-full md:w-[75%]">
+                <div className="flex flex-col justify-center pt-5 pb-5 md:pb-5 px-6 w-full md:w-[75%]">
                   <h2 className="text-xl font-bold text-[#000]">
                     {item?.title}
                   </h2>
-                  <p className="mt-4 text-sm text-[#000]">
+                  <p className="mt-4 md:h-[55px] text-sm text-[#000]">
                     {item?.shortDescription}
                   </p>
                   <div className="flex items-center justify-between mt-6">
                     <button
-                      className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[#F26B01] text-white rounded-full"
+                      className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[--primary] text-white rounded-full"
                       onClick={() => {
                         router.push(`/services/${item?.slug}`);
                       }}
@@ -102,7 +102,7 @@ export default function Service({ data }) {
                       />
                     </button>
                     <div className="ml-2 service-stylish-text font-bold text-xl">
-                      {item?.number}
+                      {item?.number || "01"}
                     </div>
                   </div>
                 </div>
@@ -131,12 +131,12 @@ export default function Service({ data }) {
                 className="flex flex-col justify-between w-full md:w-1/3 p-6 rounded-2xl bg-white border hover:border-orange-400 cursor-pointer"
               >
                 <h2 className="text-xl font-bold text-[#000]">{item?.title}</h2>
-                <p className="mt-4 text-sm text-[#000]">
+                <p className="mt-4 md:h-[55px] text-sm text-[#000]">
                   {item?.shortDescription}
                 </p>
                 <div className="flex items-center justify-between mt-6">
                   <button
-                    className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[#F26B01] text-white rounded-full"
+                    className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[--primary] text-white rounded-full"
                     onClick={() => {
                       router.push(`/services/${item?.slug}`);
                     }}
@@ -149,7 +149,7 @@ export default function Service({ data }) {
                     />
                   </button>
                   <div className="ml-2 service-stylish-text text-gray-300 font-bold text-xl">
-                    {item?.number}
+                    {item?.number || "02"}
                   </div>
                 </div>
               </div>
@@ -166,12 +166,12 @@ export default function Service({ data }) {
                 className="flex flex-col justify-between w-full md:w-1/3 p-6 rounded-2xl bg-white border hover:border-orange-400 cursor-pointer"
               >
                 <h2 className="text-xl font-bold text-[#000]">{item?.title}</h2>
-                <p className="mt-4 text-sm text-[#000]">
+                <p className="mt-4 md:h-[55px] text-sm text-[#000]">
                   {item?.shortDescription}
                 </p>
                 <div className="flex items-center justify-between mt-6">
                   <button
-                    className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[#F26B01] text-white rounded-full"
+                    className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[--primary] text-white rounded-full"
                     onClick={() => {
                       router.push(`/services/${item?.slug}`);
                     }}
@@ -185,7 +185,7 @@ export default function Service({ data }) {
                   </button>
 
                   <div className="ml-2 service-stylish-text text-gray-300 font-bold text-xl">
-                    {item?.number}
+                    {item?.number || "03"}
                   </div>
                 </div>
               </div>
@@ -199,16 +199,16 @@ export default function Service({ data }) {
                 key={index}
                 className="flex md:justify-between md:w-[770px] rounded-2xl bg-white border hover:border-orange-400 cursor-pointer"
               >
-                <div className="flex flex-col pt-5 pb-5 md:pb-0 px-6 w-full md:w-[75%]">
+                <div className="flex flex-col justify-center pt-5 pb-5 md:pb-0 px-6 w-full md:w-[75%]">
                   <h2 className="text-xl font-bold text-[#000]">
                     {item?.title}
                   </h2>
-                  <p className="mt-4 text-sm text-[#000]">
+                  <p className="mt-4 md:h-[55px] text-sm text-[#000]">
                     {item?.shortDescription}
                   </p>
                   <div className="flex items-center justify-between mt-6">
                     <button
-                      className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[#F26B01] text-white rounded-full"
+                      className="flex items-center justify-center w-12 h-12 bg-black hover:bg-[--primary] text-white rounded-full"
                       onClick={() => {
                         router.push(`/services/${item?.slug}`);
                       }}
@@ -221,7 +221,7 @@ export default function Service({ data }) {
                       />
                     </button>
                     <div className="ml-2 service-stylish-text font-bold text-xl">
-                      {item?.number}
+                      {item?.number || "04"}
                     </div>
                   </div>
                 </div>
@@ -277,10 +277,13 @@ export default function Service({ data }) {
 
           {/* Right Section */}
           <div className="flex items-center space-x-3">
-            <Link href="/services" className="text-white text-sm span-title">
+            <Link
+              href="/services"
+              className="text-white text-sm span-title uppercase"
+            >
               {data?.testimonials?.buttonText}
             </Link>
-            <div className="w-10 h-10 bg-[#F26B01] rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-[--primary] rounded-full flex items-center justify-center">
               <Link href="/services">
                 <Image
                   src="/assets/service-section/up-right-arrow.png"

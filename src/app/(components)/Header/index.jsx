@@ -27,13 +27,12 @@ export default function Header() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
 
   const { topnav, mainTopNav } = data;
-
   return (
     <header className="bg-white fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1350px] z-50 text-white shadow-lg rounded-bl-[20px] rounded-br-[20px]">
       {/* Top Bar */}
@@ -44,7 +43,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <StrapiImage
                 src={topnav?.phoneLink.image.url}
-                alt={topnav?.phoneLink.image.alternativeText}
+                alt="phoneLink image"
                 width={16}
                 height={16}
               />
@@ -58,7 +57,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <StrapiImage
                 src={topnav?.emailLink.image.url}
-                alt={topnav.emailLink.image.alternativeText}
+                alt="email image"
                 width={16}
                 height={16}
               />
@@ -84,7 +83,7 @@ export default function Header() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`hover:text-orange-500 ${iconClass}`}
+                  className={`hover:text-[--primary] ${iconClass}`}
                 >
                   <StrapiImage
                     src={link.image.url}

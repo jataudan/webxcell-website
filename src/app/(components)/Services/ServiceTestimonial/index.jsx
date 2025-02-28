@@ -26,7 +26,7 @@ export default function ServiceTestimonial() {
 
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
-          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-[plus jakarta sans]">
+          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
             Testimonials
           </span>
 
@@ -34,14 +34,13 @@ export default function ServiceTestimonial() {
             <span className="text-[#000]">
               Webxcell Digital Transformed Our Business
             </span>
-            <br />
-            <span className="text-[#000]">solved Our Business Challenges</span>
+            <span className="text-[#000]"> solved Our Business Challenges</span>
           </div>
           <div className="text-[#FF6700] text-xl text-left my-2">
             ⭐⭐⭐⭐⭐
           </div>
 
-          <p className="text-gray-600 my-4 text-base font-[plus jakarta sans] md:text-lg leading-relaxed px-2 md:px-0">
+          <p className="text-gray-600 my-4 text-base --font-plus-jakarta-sans md:text-lg leading-relaxed px-2 md:px-0">
             Partnering with Webxcell Digital was a game-changer for our
             business. Their expertise in digital marketing and automation helped
             us streamline our operations, boost engagement, and achieve

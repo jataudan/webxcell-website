@@ -24,7 +24,7 @@ export default function Hero() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -37,8 +37,8 @@ export default function Hero() {
       }}
     >
       {/* Content */}
-      <div className="relative text-white max-w-3xl px-4 text-center md:text-left mt-[188px] md:mt-0">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold leading-tight">
+      <div className="relative text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
           {getHero?.h1} <br />
           <span className="mt-4 block">{getHero?.subh1}</span>
         </h1>
@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link
             href="/services"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+            className="bg-[--primary] hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
           >
             View Services
           </Link>
@@ -69,7 +69,7 @@ export default function Hero() {
             <a
               key={index}
               href={item.href}
-              className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-orange-500"
+              className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-[--primary]"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -91,7 +91,7 @@ export default function Hero() {
             <a
               key={index}
               href={item.href}
-              className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-orange-500"
+              className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-[--primary]"
               target="_blank"
               rel="noopener noreferrer"
             >

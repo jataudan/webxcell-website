@@ -35,7 +35,7 @@ export default function PortfolioDetail() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -64,7 +64,7 @@ export default function PortfolioDetail() {
             {/* Left Content */}
             <div className="flex-grow">
               <div className=" mb-12">
-                <div className="text-3xl font-extrabold text-[#101010] font-plus-jakarta mb-6">
+                <div className="text-3xl font-extrabold text-[#101010] --font-plus-jakarta-sans mb-6">
                   {project?.title}
                 </div>
                 <div className="mb-6 text-[#101010]">
@@ -93,7 +93,7 @@ export default function PortfolioDetail() {
             </div>
 
             {/* Right Sidebar */}
-            <div className="flex flex-col gap-[20px] font-plus-jakarta">
+            <div className="flex flex-col gap-[20px] --font-plus-jakarta-sans">
               <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-portfolio-gradient p-6 rounded-[20px]">
                 <h3 className="text-[22px] font-bold text-[#fff]">
                   Project Information
@@ -184,7 +184,7 @@ export default function PortfolioDetail() {
                   </a>
                 </div>
               </aside>
-              <div className="flex flex-col gap-2 justify-center items-center bg-portfolio-custome-gradient w-full h-[351px] rounded-lg text-white font-plus-jakarta font-semibold">
+              <div className="flex flex-col gap-2 justify-center items-center bg-portfolio-custome-gradient w-full h-[351px] rounded-lg text-white --font-plus-jakarta-sans font-semibold">
                 <Image
                   src={
                     project?.contact?.icon

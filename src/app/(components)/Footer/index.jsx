@@ -1,12 +1,46 @@
 "use client";
 
+import { getfooterData } from "@/lib/queries/getFooter";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { StrapiImage } from "../StrapiImage/StrapiImage";
+import { getContactUs } from "@/lib/queries/getContactUs";
 
 const Footer = () => {
-  const pathname = usePathname();
+  const [data, setData] = useState({});
+  const [contact, setContact] = useState({});
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const response = await getfooterData();
+      if (response) {
+        setIsLoading(false);
+        setData(response?.data);
+      }
+    };
+    fetchData();
+
+    const fetchContactData = async () => {
+      const response = await getContactUs();
+      if (response) {
+        setContact(response?.data?.contactCard);
+      }
+    };
+    fetchContactData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative">
       <div className="flex absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
@@ -48,7 +82,7 @@ const Footer = () => {
 
         {/* Right Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-white">
-          <h3 className="text-[18px] md:text-[22px] leading-[1.5] font-semibold mb-2 font-plus-jakarta">
+          <h3 className="text-[18px] md:text-[22px] leading-[1.5] font-semibold mb-2 --font-plus-jakarta-sans">
             Stay Abreast of The Latest In Digital with Our Curated Content Every
             Week In Your Inbox
           </h3>
@@ -75,54 +109,56 @@ const Footer = () => {
             <div className="flex flex-wrap justify-start md:justify-around py-10 px-10 md:pt-40 md:pb-28 gap-10">
               {/* Logo and Social Links */}
               <div className="flex flex-col gap-5 justify-end items-start mt-[96px] md:mt-0">
-                <h1 className="font-plus-jakarta text-[#fff] text-[30px]">
-                  Webxcell
-                </h1>
+                {data?.footer?.logoText && (
+                  <h1 className="font-plus-jakarta text-[#fff] text-[30px]">
+                    {data?.footer?.logoText}
+                  </h1>
+                )}
+                {data?.footer?.logo && (
+                  <Image
+                    src={data?.footer?.logo[0]?.url}
+                    alt="message"
+                    width={150}
+                    height={150}
+                  />
+                )}
                 <span className="text-[#D9D9D9] max-w-[300px]">
-                  Nullam interdum libero vitae pretium aliquam donec nibh purus
-                  laoreet in ullamcorper vel malesuada sit amet enim.{" "}
+                  {data?.footer?.description}
                 </span>
-                <button className="uppercase bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white font-semibold px-6 py-2 rounded-full">
+                <Link
+                  href="/contact-us"
+                  className="uppercase bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white font-semibold px-6 py-2 rounded-full"
+                >
                   contact us
-                </button>
+                </Link>
                 <div className="flex gap-5 flex-col md:flex-row items-center md:items-start">
                   <span className="text-[#fff] footer-title relative">
                     <span className="absolute bottom-[11px] left-[-35px] w-6 h-[1px] bg-white hidden md:block" />
                     Follow on
                   </span>
                   <div className="flex items-center gap-4 text-xl">
-                    <a href="#">
-                      <Image
-                        src="/assets/portfolio/facebook.png"
-                        alt="FaceBook"
-                        width={10}
-                        height={16}
-                      />
-                    </a>
-                    <a href="#">
-                      <Image
-                        src="/assets/portfolio/twitter.png"
-                        alt="Twitter"
-                        width={16}
-                        height={16}
-                      />
-                    </a>
-                    <a href="#">
-                      <Image
-                        src="/assets/portfolio/linkedin.png"
-                        alt="LinkedIn"
-                        width={14}
-                        height={14}
-                      />
-                    </a>
-                    <a href="#">
-                      <Image
-                        src="/assets/portfolio/youtube.png"
-                        alt="YouTube"
-                        width={18}
-                        height={16}
-                      />
-                    </a>
+                    {data?.footer?.socialLinks.map((link) => {
+                      const iconName = link.image.name.split(".")[0];
+
+                      const iconClass = `icon-${iconName}`;
+
+                      return (
+                        <a
+                          key={link.id}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`hover:text-[--primary] ${iconClass}`}
+                        >
+                          <StrapiImage
+                            src={link.image.url}
+                            alt={link.image.alternativeText || iconName}
+                            width={link.width}
+                            height={link.width}
+                          />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -289,8 +325,7 @@ const Footer = () => {
                       href="#"
                       className="text-[#D9D9D9] text-left hover:text-[#635AD9] max-w-[290px]"
                     >
-                      Courtyard Business Ctr, Southwold Dr, Nottingham NG8 1PA.
-                      UK
+                      {contact?.location}
                     </a>
                   </li>
                   <li className="flex items-start gap-2 justify-start">
@@ -301,7 +336,7 @@ const Footer = () => {
                       height={18}
                     />
                     <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
-                      +44 800 195 7512
+                      {contact?.phoneNumber}
                     </a>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
@@ -312,7 +347,7 @@ const Footer = () => {
                       height={18}
                     />
                     <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
-                      team@webxcell.com
+                      {contact?.email}
                     </a>
                   </li>
                 </ul>
@@ -322,7 +357,7 @@ const Footer = () => {
             {/* Footer Bottom */}
             <div className="flex flex-col md:flex-row justify-between items-center mt-5 mb-5 space-y-4 md:space-y-0">
               <span className="text-[#D9D9D9] footer-title text-center">
-                © All Copyright 2024 by Webxcell Digital
+                {data?.footer?.footerBottomLeftText}
               </span>
               <span className="footer-title text-center">
                 <span className="text-[#D9D9D9] mr-7">Terms & Conditions</span>

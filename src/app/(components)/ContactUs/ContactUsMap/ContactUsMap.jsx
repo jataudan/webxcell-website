@@ -1,21 +1,21 @@
 import Image from "next/image";
 import React from "react";
 
-const MapWithInfo = () => {
+const MapWithInfo = ({ contact }) => {
   const contactInfo = [
     {
       icon: "/assets/contact-info/white-location.png",
-      text: "Courtyard Business Ctr, Nottingham N6 1FA, UK",
+      text: contact?.location,
       alt: "location",
     },
     {
       icon: "/assets/contact-info/white-phone.png",
-      text: "+44 800 195 7512",
+      text: contact?.phoneNumber,
       alt: "phone",
     },
     {
       icon: "/assets/contact-info/white-message.png",
-      text: "team@webxcell.com",
+      text: contact?.email,
       alt: "message",
     },
   ];
@@ -32,7 +32,7 @@ const MapWithInfo = () => {
       ></iframe>
 
       {/* Information Box with Triangular Shape */}
-      <div className="hidden md:block absolute top-10 right-10 bg-[#00BFFF] text-white p-6 w-[300px] shadow-lg font-plus-jakarta">
+      <div className="hidden md:block absolute top-10 right-10 bg-[#00BFFF] text-white p-6 w-[300px] shadow-lg --font-plus-jakarta-sans">
         {/* Triangular Shape */}
         {/* <div className="absolute -top-[10px] left-[-20px] rotate-[135.9deg] w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-b-[18px] border-b-[#00BFFF]" /> */}
         <h3 className="text-xl font-bold mb-4">Contact Info</h3>

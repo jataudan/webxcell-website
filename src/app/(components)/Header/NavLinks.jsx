@@ -21,8 +21,8 @@ const NavLinks = ({ navigationItems }) => {
           <Link
             key={nav.id}
             href={nav.href}
-            className={`hover:text-orange-500 ${
-              isActive(nav.href) ? "text-orange-500" : ""
+            className={`hover:text-[--primary] font-semibold --font-poppins ${
+              isActive(nav.href) ? "text-[--primary]" : ""
             }`}
           >
             {nav.text}

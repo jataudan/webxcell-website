@@ -28,7 +28,7 @@ const CommentForm = ({ blogPostId, setIsFetch }) => {
 
   return (
     <div className="mt-9 bg-white">
-      <h2 className="text-[28px] text-[var(--black)] font-bold mb-4">
+      <h2 className="text-[28px] text-[--black] font-bold mb-4">
         Leave a Comment
       </h2>
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -40,7 +40,7 @@ const CommentForm = ({ blogPostId, setIsFetch }) => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Your Name"
-            className="w-full text-[#000] placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
+            className="w-full text-[#000] placeholder:text-[--black] font-semibold placeholder:text-[14px] py-2 border-b border-[--sky-blue] focus:outline-none"
           />
         </div>
 
@@ -52,7 +52,7 @@ const CommentForm = ({ blogPostId, setIsFetch }) => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Your Email"
-            className="w-full text-[#000] placeholder:text-[var(--black)] font-semibold placeholder:text-[14px] py-2 border-b border-[var(--light-sky-blue)] focus:outline-none"
+            className="w-full text-[#000] placeholder:text-[--black] font-semibold placeholder:text-[14px] py-2 border-b border-[--sky-blue] focus:outline-none"
           />
         </div>
 
@@ -64,14 +64,14 @@ const CommentForm = ({ blogPostId, setIsFetch }) => {
             onChange={handleChange}
             placeholder="Write Message"
             rows="4"
-            className="text-[#000] placeholder:text-[var(--black)] font-medium placeholder:text-[14px] w-full mt-4 px-4 py-2 bg-[var(--light-sky-blue)] focus:outline-none"
+            className="text-[#000] placeholder:text-[--black] font-medium placeholder:text-[14px] w-full mt-4 px-4 py-2 bg-[--sky-blue] focus:outline-none"
           ></textarea>
         </div>
 
         {/* Submit Button */}
         <button
           type="submit"
-          className="px-6 py-2 bg-orange-500 text-white rounded-lg font-semibold hover:bg-orange-600 transition"
+          className="px-6 py-2 bg-[--primary] text-white rounded-lg font-semibold hover:bg-orange-600 transition"
         >
           POST COMMENT
         </button>

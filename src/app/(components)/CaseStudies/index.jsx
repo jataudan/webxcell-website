@@ -67,13 +67,13 @@ const CaseStudies = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="relative overflow-hidden bg-black z-20">
+    <div className="relative overflow-hidden bg-black z-20 h-[800px]">
       <div className="absolute inset-0 flex items-end justify-center">
         <Image
           src="/assets/case-studies/gradient-bg.png"
@@ -90,7 +90,7 @@ const CaseStudies = () => {
       </div>
       <div className="text-center mt-5">
         <h1 className="text-5xl case-studies-title">
-          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
+          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
             Case
           </span>
           <span className="text-white">Studies</span>
@@ -120,10 +120,10 @@ const CaseStudies = () => {
                 <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
                   <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
                     <div className="text-left px-5 py-3">
-                      <h2 className="text-[#000] font-plus-jakarta font-semibold">
+                      <h2 className="text-[#000] --font-plus-jakarta-sans font-semibold">
                         {item?.title}
                       </h2>
-                      <span className="text-[#F26B01] font-plus-jakarta font-semibold">
+                      <span className="text-[--primary] --font-plus-jakarta-sans font-semibold">
                         {item?.tag?.name}
                       </span>
                     </div>

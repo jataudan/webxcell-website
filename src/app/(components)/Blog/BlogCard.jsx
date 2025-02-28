@@ -8,7 +8,7 @@ import { formatDate } from "@/lib/formatDate";
 const BlogCard = ({ blog }) => {
   const router = useRouter();
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-[370px] h-[458px] md:max-w-sm">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-[370px] h-[470px] md:max-w-sm">
       <Image
         src={
           blog?.coverImage
@@ -20,7 +20,7 @@ const BlogCard = ({ blog }) => {
         height={227}
       />
       <div className="p-4">
-        <div className="flex items-center gap-3 font-plus-jakarta">
+        <div className="flex items-center gap-3 --font-plus-jakarta-sans">
           <span className="text-[14px] text-[#635AD9] font-medium px-4 py-1 border border-[#EAF3F8] rounded-full">
             {blog?.tag}
           </span>
@@ -28,7 +28,7 @@ const BlogCard = ({ blog }) => {
             {formatDate(blog?.date)}
           </span>
         </div>
-        <h3 className="text-[20px] font-semibold mt-2 text-[#17012C]">
+        <h3 className="text-[20px] h-[75px] font-semibold mt-2 text-[#17012C]">
           {blog?.title}
         </h3>
         <hr className="mt-4 mb-4" />

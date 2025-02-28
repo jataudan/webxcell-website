@@ -24,7 +24,7 @@ export default function ServicesSection() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export default function ServicesSection() {
                     <h3 className="text-lg font-bold mb-2 text-[#17012C]">
                       {service?.title}
                     </h3>
-                    <p className="text-base text-[#504E4E] font-[plus jakarta sans] px-12">
+                    <p className="text-base text-[#504E4E] --font-plus-jakarta-sans px-12">
                       {service?.shortDescription}
                     </p>
                   </div>

@@ -32,7 +32,7 @@ const ExpertTeam = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -58,7 +58,7 @@ const ExpertTeam = () => {
       <div className="text-center mt-4 sm:mt-5">
         <h1 className="text-3xl sm:text-5xl case-studies-title">
           <span className="text-black">Our Expert</span>{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
             Team
           </span>
         </h1>
@@ -75,7 +75,7 @@ const ExpertTeam = () => {
                 backgroundImage: "url('/assets/expert-team/Polygon.png')",
               }}
             >
-              <span className="text-3xl sm:text-4xl font-bold text-orange-500">
+              <span className="text-3xl sm:text-4xl font-bold text-[--primary]">
                 X
               </span>
               <div className="flex gap-2 mt-3 sm:mt-5">
@@ -116,8 +116,8 @@ const ExpertTeam = () => {
               <p className="mt-5 sm:mt-7 text-[16px] sm:text-[20px] text-white">
                 {member?.name}
               </p>
-              <p className="text-[16px] sm:text-[20px] text-white">
-                {member?.role}
+              <p className="text-[16px] sm:text-[12px] text-white">
+                {member?.designation}
               </p>
               <div className="absolute bottom-[-12px] right-[47px] hidden md:block">
                 <Image

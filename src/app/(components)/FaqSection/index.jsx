@@ -21,14 +21,14 @@ export default function FaqSection() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
     <div className="relative overflow-hidden bg-white mb-[130px]">
-      <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center md:min-h-screen py-10 md:p-[112px] lg:py-20 gap-10">
+      <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 md:p-[112px] lg:py-20 gap-10">
         <div className="relative flex ">
           <div
             className="absolute w-[62px] h-[325px] left-[-48px] bottom-0 bg-cover bg-center"
@@ -57,7 +57,7 @@ export default function FaqSection() {
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             FAQ{" "}
           </span>
-          <div className="mt-4 font-extrabold font-plus-jakarta ">
+          <div className="mt-4 font-extrabold --font-plus-jakarta-sans ">
             <span className="text-[#000] text-[18px] md:text-[50px]">
               Frequently Asked Questions
             </span>{" "}
@@ -89,7 +89,7 @@ export default function FaqSection() {
                         />
                       </div>
 
-                      <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold font-plus-jakarta ">
+                      <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold--font-plus-jakarta-sans ">
                         {item?.question}
                       </span>
                     </summary>

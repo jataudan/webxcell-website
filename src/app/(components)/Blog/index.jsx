@@ -31,7 +31,7 @@ const BlogSection = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -40,14 +40,14 @@ const BlogSection = () => {
     <div className="container mx-auto px-4 py-10 bg-[#fff]">
       {/* Section Header */}
       <div className="md:max-w-28 text-center md:text-left">
-        <h2 className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
+        <h2 className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC] w-max">
           Latest News
         </h2>
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <h3 className="blog-title text-[24px] md:text-[50px] text-[#000]">
           Latest News{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F26B01] to-[#F29F5C]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
             &
           </span>{" "}
           <span className="text-[#000]">Blog</span>
@@ -55,7 +55,7 @@ const BlogSection = () => {
         <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center ">
           <Link
             href="/blog"
-            className="bg-[#fde9d9] uppercase text-[#f26b01] px-6 py-3 rounded-full text-lg sm:text-lg font-medium"
+            className="bg-[#fde9d9] uppercase text-[--primary] px-6 py-3 rounded-full text-lg sm:text-lg font-medium"
           >
             View All News
           </Link>
@@ -73,8 +73,8 @@ const BlogSection = () => {
       {/* Blog Cards Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Highlighted Blog Card */}
-        <div className="flex flex-col w-full justify-between bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[#f26b01] p-6 rounded-2xl shadow-md relative">
-          <div className="flex flex-col justify-center text-sm max-w-[90px] rounded-lg py-2 px-3 bg-[#f26b01] text-[#fff] font-semibold">
+        <div className="flex flex-col w-full justify-between bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[--primary] p-6 rounded-2xl shadow-md relative">
+          <div className="flex flex-col justify-center text-sm max-w-[90px] rounded-lg py-2 px-3 bg-[--primary] text-[#fff] font-semibold">
             <span className="text-[22px] blog-date-title">
               {getDay(blogData[0]?.date)}
             </span>
@@ -118,8 +118,8 @@ const BlogSection = () => {
               key={index}
               className="flex gap-4 p-2 md:p-4 bg-[#fff] border border-[#EAF3F8] rounded-lg"
             >
-              <div className="bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[#f26b01] w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg">
-                <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[#f26b01] text-[#fff] font-semibold">
+              <div className="bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[--primary] w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg">
+                <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[--primary] text-[#fff] font-semibold">
                   <span className="text-[16px] blog-date-title">
                     {getDay(blog?.date)}
                   </span>
@@ -149,7 +149,7 @@ const BlogSection = () => {
                       alt="tag"
                     />
                     <span className="text-black text-[10px] md:text-[14px]">
-                      {blog?.blog_comments?.length}
+                      {blog?.blog_comments?.length} Comments
                     </span>
                   </div>
                 </div>
@@ -169,7 +169,7 @@ const BlogSection = () => {
                     className="rounded-full h-[50px] w-[50px] object-cover"
                   />
                   <div className="flex flex-col">
-                    <span className="text-[#f26b01] blog-date-title text-[12px] md:text-[14px]">
+                    <span className="text-[--primary] blog-date-title text-[12px] md:text-[14px]">
                       By {blog?.author?.designation}
                     </span>
                     <span className="text-[#000] blog-date-title text-[12px] md:text-[14px]">

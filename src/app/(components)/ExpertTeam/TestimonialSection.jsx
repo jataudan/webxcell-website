@@ -69,13 +69,13 @@ const TestimonialSection = () => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#F26B01] max-w-[400px] md:max-w-[1200px] 2xl-custom:max-w-[1380px] rounded-3xl mx-7 px-6 py-10 sm:px-10 lg:p-10 flex flex-col lg:flex-row items-center justify-center text-white">
+    <div className="bg-[--primary] max-w-[400px] md:max-w-[1200px] 2xl-custom:max-w-[1380px] rounded-3xl mx-7 px-6 py-10 sm:px-10 lg:p-10 flex flex-col lg:flex-row items-center justify-center text-white">
       {/* Left Section */}
       <div className="flex flex-col-reverse md:flex-col items-start w-full lg:w-1/3 gap-6 sm:gap-8">
         {/* Client Info */}

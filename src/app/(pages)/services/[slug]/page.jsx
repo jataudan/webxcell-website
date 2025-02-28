@@ -64,7 +64,7 @@ export default function ServiceDetail() {
             {/* Left Sidebar */}
             <div className="flex flex-col gap-[20px]">
               <aside className="lg:flex-shrink-0 w-full lg:w-[370px] h-[462px] bg-[#ECF8FF] p-6 rounded-lg">
-                <h3 className="text-[22px] font-bold text-[#101A29] font-[plus jakarta sans]">
+                <h3 className="text-[22px] font-bold text-[#101A29] --font-plus-jakarta-sans">
                   All Services
                 </h3>
 
@@ -88,7 +88,7 @@ export default function ServiceDetail() {
                         onClick={() => handleClick(convertToSlug(item?.title))}
                       >
                         <span
-                          className={`text-base font-[plus jakarta sans] ${
+                          className={`text-base --font-plus-jakarta-sans ${
                             slug === activeService
                               ? "text-white"
                               : "text-[#17012C]"
@@ -112,7 +112,7 @@ export default function ServiceDetail() {
                 </ul>
               </aside>
               <aside className="flex-shrink-0 w-full lg:w-[370px] h-[347px] bg-[#ECF8FF] p-6 rounded-lg">
-                <h3 className="text-[22px] font-bold text-[#101A29] font-[plus jakarta sans]">
+                <h3 className="text-[22px] font-bold text-[#101A29] --font-plus-jakarta-sans">
                   Opening Hours
                 </h3>
 
@@ -138,7 +138,7 @@ export default function ServiceDetail() {
                         /> */}
                           {item?.startDay && (
                             <span
-                              className={`text-base font-[plus jakarta sans] ${"text-[#17012C]"}`}
+                              className={`text-base --font-plus-jakarta-sans ${"text-[#17012C]"}`}
                             >
                               {item?.startDay} - {item?.endDay}:{" "}
                               {getTime(item?.startTime)} -
@@ -147,7 +147,7 @@ export default function ServiceDetail() {
                           )}
                           {item?.closeDay && (
                             <span
-                              className={`text-base font-[plus jakarta sans] ${"text-[#17012C]"}`}
+                              className={`text-base --font-plus-jakarta-sans ${"text-[#17012C]"}`}
                             >
                               {item?.closeDay}
                             </span>
@@ -168,7 +168,7 @@ export default function ServiceDetail() {
                   </li>
                 </ul>
               </aside>
-              <div className="flex flex-col gap-2 justify-center items-center bg-mix-gradient w-full h-[351px] rounded-lg text-white font-plus-jakarta font-semibold">
+              <div className="flex flex-col gap-2 justify-center items-center bg-mix-gradient w-full h-[351px] rounded-lg text-white --font-plus-jakarta-sans font-semibold">
                 <Image
                   src={
                     service?.contact?.icon
@@ -186,7 +186,7 @@ export default function ServiceDetail() {
 
             {/* Right Content */}
             <div className="flex-grow">
-              <div className="mb-4">
+              <div className="w-[770px] h-[370px] mb-4 overflow-hidden relative">
                 <Image
                   src={
                     service?.mainImage
@@ -194,12 +194,14 @@ export default function ServiceDetail() {
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"
-                  width={770}
+                  width={470}
                   height={370}
+                  className="object-contain w-full h-full" // Ensures the image fills the container
                 />
               </div>
+
               <div className=" mb-12">
-                <div className="text-3xl font-extrabold text-[#101010] font-[plus jakarta sans] mb-6">
+                <div className="text-3xl font-extrabold text-[#101010] --font-plus-jakarta-sans mb-6">
                   {service.title}
                 </div>
                 <div className="mb-6 text-[#101010]">

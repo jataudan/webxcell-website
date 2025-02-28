@@ -21,10 +21,10 @@ export default function AboutDigital({ data }) {
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             About Us
           </span>
-          <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] font-plus-jakarta md:space-y-4">
+          <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] --font-plus-jakarta-sans md:space-y-4">
             <div>
               <span className="text-[#000]">{data?.h1}</span>{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f26b01] to-[#f26b01] font-extrabold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[--primary] font-extrabold">
                 {data?.h2}
               </span>
             </div>
@@ -68,7 +68,7 @@ export default function AboutDigital({ data }) {
           <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0">
             <a
               href="#"
-              className="bg-[#f26b01] uppercase text-[#fff] px-6 py-3 rounded-full text-sm sm:text-lg font-bold shadow-md hover:shadow-lg"
+              className="bg-[--primary] uppercase text-[#fff] px-6 py-3 rounded-full text-sm sm:text-lg font-bold shadow-md hover:shadow-lg"
             >
               About us
             </a>

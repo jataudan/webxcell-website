@@ -32,7 +32,7 @@ export default function ProfessionalTeam() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -43,11 +43,11 @@ export default function ProfessionalTeam() {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center mb-12">
           <div className="text-center lg:text-left">
-            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-[plus jakarta sans]">
+            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
               Our Digital Expert Team
             </span>
 
-            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] text-[#101010] font-poppins font-extrabold mt-2">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] text-[#101010] --font-poppins font-semibold mt-2">
               Meet Our Professional <br /> Team Members
             </h2>
           </div>
@@ -72,7 +72,7 @@ export default function ProfessionalTeam() {
               onClick={() => router.push(`/our-team/${member?.slug}`)}
             >
               {/* Member Image */}
-              <div className=" bg-[red] w-[294px] h-[300px] rounded-full  mx-auto overflow-hidden mb-4">
+              <div className="w-[294px] h-[300px] rounded-full  mx-auto overflow-hidden mb-4">
                 <Image
                   src={
                     member?.image
@@ -87,10 +87,10 @@ export default function ProfessionalTeam() {
               </div>
 
               {/* Member Info */}
-              <h3 className="font-semibold text-[22px] text-[#101010] font-[plus jakarta sans]">
+              <h3 className="font-semibold text-[22px] text-[#101010] --font-plus-jakarta-sans">
                 {member?.name}
               </h3>
-              <p className="text-base text-[#101010] font-[plus jakarta sans] mb-4">
+              <p className="text-base text-[#101010] --font-plus-jakarta-sans mb-4">
                 {member?.designation}
               </p>
               <hr className="mb-4 w-[270px] text-[#EAF3F8] px-4" />

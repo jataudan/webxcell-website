@@ -1,12 +1,9 @@
 "use client";
 import { createContactUsForm } from "@/lib/queries/createContactUsForm";
-import { getContactUs } from "@/lib/queries/getContactUs";
 import Image from "next/image";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 
-const ContactUsForm = () => {
-  const [contact, setContact] = useState({});
-  const [isLoading, setIsLoading] = useState(true);
+const ContactUsForm = ({ contact }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,21 +15,10 @@ const ContactUsForm = () => {
 
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play(); // Play video
-      setIsPlaying(true); // Hide play icon & background
+      videoRef.current.play();
+      setIsPlaying(true);
     }
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getContactUs();
-      if (response) {
-        setIsLoading(false);
-        setContact(response?.data);
-      }
-    };
-    fetchData();
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,14 +39,6 @@ const ContactUsForm = () => {
     };
     fetchData();
   };
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="w-12 h-12 border-4 border-gray-300 border-t-[#F26B01] rounded-full animate-spin"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8">
@@ -137,7 +115,7 @@ const ContactUsForm = () => {
               value={formData?.name}
               onChange={handleChange}
               placeholder="Name"
-              className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-bg-[--primary]"
             />
             <input
               type="email"
@@ -145,7 +123,7 @@ const ContactUsForm = () => {
               value={formData?.email}
               onChange={handleChange}
               placeholder="Email Address"
-              className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+              className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-bg-[--primary]"
               required
             />
           </div>
@@ -155,13 +133,13 @@ const ContactUsForm = () => {
             onChange={handleChange}
             placeholder="Write Message . . ."
             rows="4"
-            className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full text-[#000] px-4 py-3 bg-[#ECF8FF] rounded-lg focus:outline-none focus:ring-2 focus:ring-bg-[--primary]"
           ></textarea>
           {/* Button */}
           <div className="mt-8 flex sm:flex-row justify-center lg:justify-start items-center">
             <button
               type="submit"
-              className="bg-[#ECF8FF] text-[#f26b01] mr-4 px-6 py-3 rounded-full text-sm sm:text-lg font-bold"
+              className="bg-[#ECF8FF] text-[--primary] mr-4 px-6 py-3 rounded-full text-sm sm:text-lg font-bold"
             >
               GET STARTED
             </button>
