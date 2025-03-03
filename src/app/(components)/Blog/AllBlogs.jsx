@@ -7,20 +7,22 @@ import { getBlogPost } from "@/lib/queries/getBlogPosts";
 
 const AllBlogs = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 3;
+  const [totalPages, setTotalPages] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const [blogData, setBlogData] = useState({});
+  const [blogData, setBlogData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getBlogPost();
+      setIsLoading(true);
+      const response = await getBlogPost(currentPage, 6);
       if (response) {
-        setBlogData(response);
+        setBlogData(response.data);
+        setTotalPages(response.meta.pagination.pageCount);
         setIsLoading(false);
       }
     };
     fetchData();
-  }, []);
+  }, [currentPage]);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -36,8 +38,8 @@ const AllBlogs = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-10 mb-[150px]">
-      <div className="container mx-auto grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-[200px]">
-        {blogData?.data?.map((blog) => (
+      <div className="container mx-auto grid grid-cols-1 place-items-center sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 2xl-custom:px-[200px]">
+        {blogData?.map((blog) => (
           <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
