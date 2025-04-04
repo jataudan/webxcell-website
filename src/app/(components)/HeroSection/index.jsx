@@ -39,12 +39,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
-          {getHero?.h1} <br />
-          <span className="mt-4 block">{getHero?.subh1}</span>
+          {getHero?.primaryHeading} <br />
+          <span className="mt-4 block">{getHero?.secondaryHeading}</span>
         </h1>
 
         <p className="mt-6 sm:mt-10 text-base sm:text-lg md:text-xl">
-          {getHero?.p || ""}
+          {getHero?.paragraph || ""}
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link

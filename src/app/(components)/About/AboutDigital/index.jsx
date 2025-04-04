@@ -19,22 +19,22 @@ export default function AboutDigital({ data }) {
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
           {/* Title */}
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
-            About Us
+            {data?.title}
           </span>
           <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] --font-plus-jakarta-sans md:space-y-4">
             <div>
-              <span className="text-[#000]">{data?.h1}</span>{" "}
+              <span className="text-[#000]">{data?.prefix}</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[--primary] font-extrabold">
-                {data?.h2}
+                {data?.highlighted}
               </span>
             </div>
             <div>
-              <span className="text-[#000]">{data?.h3}</span>
+              <span className="text-[#000]">{data?.suffix}</span>
             </div>
           </div>
           {/* Description */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base lg:leading-relaxed">
-            {data?.p}
+            {data?.paragraph}
           </p>
           <hr className="mt-6 hidden md:block" />
           {/* Stats */}
