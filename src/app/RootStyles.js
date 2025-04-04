@@ -32,7 +32,8 @@ export default function RootStyles() {
     ?.flatMap((scheme) =>
       scheme.colorList.map(
         (color) =>
-          `--${color.colorName.toLowerCase().replace(/ /g, "-")}: ${color.color
+          `--${color.colorName.toLowerCase().replace(/ /g, "-")}: ${
+            color.color
           };`
       )
     )
@@ -44,11 +45,9 @@ export default function RootStyles() {
     })
     .join("\n");
 
-
   return (
     <style jsx global>{`
       :root {
-        
         /* Default color variables */
         --background: ${styles?.background || "#ffffff"};
         --foreground: ${styles?.foreground || "#171717"};
@@ -56,11 +55,10 @@ export default function RootStyles() {
         --white: #fff;
         --black: #000;
         --blog-description: ${styles?.blogDescription || "#101010"};
-       
+
         ${colorVariables}
 
         ${fontVariables}
-      
       }
 
       body {

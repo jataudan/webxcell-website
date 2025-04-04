@@ -19,20 +19,20 @@ const DigitalAgency = ({ data }) => {
         {/* Right Side - Content */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
           <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            {data?.subTitle}
+            {data?.title}
           </span>
 
           <div className="headline mt-4">
-            <span className="text-[#000]">{data?.h1}</span>
+            <span className="text-[#000]">{data?.prefix}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
-              {data?.h2}
+              {data?.highlighted}
             </span>{" "}
-            <span className="text-[#000]">{data?.h3}</span>
+            <span className="text-[#000]">{data?.suffix}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
-            {data?.p}
+            {data?.paragraph}
           </p>
 
           {/* Stats */}

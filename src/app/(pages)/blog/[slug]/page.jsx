@@ -68,7 +68,6 @@ export default function BlogDetail() {
       </div>
     );
   }
-
   return (
     <>
       <BlogHero />
@@ -85,7 +84,7 @@ export default function BlogDetail() {
                 <Image
                   src={
                     blog?.coverImage
-                      ? blog?.coverImage?.url
+                      ? blog?.coverImage?.formats?.small?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="image"

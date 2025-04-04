@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutUs({ data }) {
-  console.log("data", data);
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Decorative Spiral Image - Hidden on Mobile */}
@@ -34,19 +33,21 @@ export default function AboutUs({ data }) {
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
           <span className="block title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            About us
+            {data?.title}
           </span>
 
           <div className="headline text-2xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]">We’re A Strategic</span>{" "}
-            <span className="highlight brown">Digital</span>
+            <span className="text-[#000]">{data?.prefix}</span>{" "}
+            <span className="highlight brown">{data?.primaryHighlighted}</span>
             <br />
-            <span className="highlight orange">Media</span>{" "}
-            <span className="text-[#000]">Agency</span>
+            <span className="highlight orange">
+              {data?.secondaryHighlighted}
+            </span>{" "}
+            <span className="text-[#000]">{data?.suffix}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed px-2 md:px-0">
-            {data?.p || ""}
+            {data?.paragraph || ""}
           </p>
 
           {/* Stat */}
