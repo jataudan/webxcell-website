@@ -17,8 +17,8 @@ const TextSlider = () => {
             <Image
               src={partner.logo}
               alt={`Logo ${index + 1}`}
-              width={partner.width}
-              height={partner.height}
+              width={partner?.width}
+              height={partner?.height}
               className="w-[80%] sm:w-[60%] md:w-[100%]"
             />
           </div>
@@ -30,8 +30,8 @@ const TextSlider = () => {
             <Image
               src={partner.logo}
               alt={`Logo ${index + 1} Duplicate`}
-              width={partner.width}
-              height={partner.height}
+              width={partner?.width}
+              height={partner?.height}
               className="w-[80%] sm:w-[60%] md:w-[100%]"
             />
           </div>

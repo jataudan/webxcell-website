@@ -18,7 +18,7 @@ const TrustStrategySlider = () => {
         <div className="flex justify-center space-x-[90px]">
           {sliderImages.map((partner, index) => (
             <div key={index} className="flex-shrink-0 rounded-full flex items-center justify-center">
-              <Image src={partner.logo} alt={`Logo ${index + 1}`} width={partner.width} height={partner.height} />
+              <Image src={partner.logo} alt={`Logo ${index + 1}`} width={partner.width || 24} height={partner.height || 24} />
             </div>
           ))}
         </div>

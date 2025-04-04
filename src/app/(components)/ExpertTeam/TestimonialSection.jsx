@@ -149,7 +149,7 @@ const TestimonialSection = () => {
                   />
                 </div>
                 <p className="text-base sm:text-lg italic leading-relaxed text-left">
-                  {item?.paragraph}
+                  {item?.p}
                 </p>
                 <div className="flex items-center mt-6 space-x-3 justify-center lg:justify-start">
                   <div className="w-10 h-10 bg-gray-300 rounded-full">

@@ -28,15 +28,15 @@ const OffService = ({ data }) => {
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
           <span className="off-service-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            {data?.parent?.title}
+            {data?.parent?.subTitle}
           </span>
 
           <div className="off-service-headline text-3xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]"> {data?.parent?.prefix}</span> <br />{" "}
+            <span className="text-[#000]"> {data?.parent?.h2}</span> <br />{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F5AF19]">
-              {data?.parent?.highlighted}
+              {data?.parent?.h3}
             </span>{" "}
-            <span className="text-[#000]"> {data?.parent?.suffix}</span>
+            <span className="text-[#000]"> {data?.parent?.h4}</span>
           </div>
 
           {/* Button */}

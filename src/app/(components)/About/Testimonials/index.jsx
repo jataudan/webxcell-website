@@ -55,7 +55,7 @@ export default function Testimonials({ data }) {
       {/* Right Side - Content */}
       <div className="relative w-full lg:w-[60%] mt-8 lg:mt-0 text-center lg:text-left">
         <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
-          {data?.title}
+          Testimonials
         </span>
 
         {/* <div className="text-[46px] --font-poppins mb-8">
@@ -63,13 +63,9 @@ export default function Testimonials({ data }) {
         </div> */}
 
         <div className="text-[46px] font-poppins mb-8">
-          <span className="text-[#000]">{data?.heading}</span>{" "}
-          <span className="text-[#000] font-extrabold">
-            {data?.boldHeading}
-          </span>{" "}
-          <span className="highlight orange font-extrabold">
-            {data?.highlighted}
-          </span>
+          <span className="text-[#000]">What</span>{" "}
+          <span className="text-[#000] font-extrabold">Happy Clients Say</span>{" "}
+          <span className="highlight orange font-extrabold">About Us</span>
         </div>
 
         {/* Testimonials Cards */}
@@ -101,7 +97,7 @@ export default function Testimonials({ data }) {
                   ★★★★★
                 </div>
                 <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic --font-plus-jakarta-sans">
-                  {testimonial?.comments}
+                  {testimonial?.p}
                 </p>
 
                 {/* Client Image, Name, and Role */}

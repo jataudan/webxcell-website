@@ -113,7 +113,7 @@ const BlogSection = () => {
 
         {/* Smaller Blog Cards */}
         <div className="space-y-6">
-          {blogData.slice(1, 3).map((blog, index) => (
+          {blogData?.slice(1, 3).map((blog, index) => (
             <div
               key={index}
               className="flex gap-4 p-2 md:p-4 bg-[#fff] border border-[#EAF3F8] rounded-lg"

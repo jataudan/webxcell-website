@@ -138,23 +138,23 @@ const Footer = () => {
                   </span>
                   <div className="flex items-center gap-4 text-xl">
                     {data?.footer?.socialLinks.map((link) => {
-                      const iconName = link.image.name.split(".")[0];
+                      const iconName = link?.image?.name?.split(".")[0];
 
                       const iconClass = `icon-${iconName}`;
 
                       return (
                         <a
-                          key={link.id}
-                          href={link.href}
+                          key={link?.id}
+                          href={link?.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={`hover:text-[--primary] ${iconClass}`}
                         >
                           <StrapiImage
-                            src={link.image.url}
-                            alt={link.image.alternativeText || iconName}
-                            width={link.width}
-                            height={link.width}
+                            src={link?.image?.url}
+                            alt={link?.image?.alternativeText || iconName}
+                            width={link?.width || 16}
+                            height={link?.width || 16}
                           />
                         </a>
                       );

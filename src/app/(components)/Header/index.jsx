@@ -51,45 +51,45 @@ export default function Header() {
                 href={`tel:${topnav?.phoneLink.text}`}
                 className="text-[10px] sm:text-sm md:text-[13px] whitespace-nowrap truncate"
               >
-                {topnav.phoneLink.text}
+                {topnav?.phoneLink?.text}
               </a>
             </div>
             <div className="flex items-center gap-2">
               <StrapiImage
-                src={topnav?.emailLink.image.url}
+                src={topnav?.emailLink?.image?.url}
                 alt="email image"
                 width={16}
                 height={16}
               />
               <a
-                href={`mailto:${topnav.emailLink.text}`}
+                href={`mailto:${topnav?.emailLink?.text}`}
                 className="text-[10px] sm:text-sm md:text-[13px] whitespace-nowrap truncate"
               >
-                {topnav.emailLink.text}
+                {topnav?.emailLink?.text}
               </a>
             </div>
           </div>
 
           {/* Social Media Links */}
           <div className="flex items-center gap-2 sm:gap-3 text-sm flex-nowrap">
-            {topnav.socialLinks.map((link) => {
-              const iconName = link.image.name.split(".")[0];
+            {topnav?.socialLinks?.map((link) => {
+              const iconName = link?.image?.name?.split(".")[0];
 
               const iconClass = `icon-${iconName}`;
 
               return (
                 <a
-                  key={link.id}
-                  href={link.href}
+                  key={link?.id}
+                  href={link?.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`hover:text-[--primary] ${iconClass}`}
                 >
                   <StrapiImage
-                    src={link.image.url}
-                    alt={link.image.alternativeText || iconName}
-                    width={link.width}
-                    height={link.width}
+                    src={link?.image?.url}
+                    alt={link?.image?.alternativeText || iconName}
+                    width={link?.width || 16}
+                    height={link?.width || 16}
                   />
                 </a>
               );

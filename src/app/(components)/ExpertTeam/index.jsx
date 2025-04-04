@@ -67,7 +67,7 @@ const ExpertTeam = () => {
       {/* Team Members Section */}
       <section className="relative container mx-auto flex flex-col items-center justify-center py-8 sm:py-10 lg:py-20 gap-16 sm:gap-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-4 sm:p-6">
-          {teamMembers.map((member, index) => (
+          {teamMembers?.map((member, index) => (
             <div
               key={index}
               className="relative w-[250px] sm:w-[270px] h-[290px] sm:h-[316px] flex flex-col items-center justify-center bg-no-repeat bg-center bg-cover"

@@ -39,12 +39,12 @@ export default function Hero() {
       {/* Content */}
       <div className="relative text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
-          {getHero?.primaryHeading} <br />
-          <span className="mt-4 block">{getHero?.secondaryHeading}</span>
+          {getHero?.h1} <br />
+          <span className="mt-4 block">{getHero?.subh1}</span>
         </h1>
 
         <p className="mt-6 sm:mt-10 text-base sm:text-lg md:text-xl">
-          {getHero?.paragraph || ""}
+          {getHero?.p || ""}
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link
@@ -68,7 +68,7 @@ export default function Hero() {
           return (
             <a
               key={index}
-              href={item.href}
+              href={item?.href}
               className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-[--primary]"
               target="_blank"
               rel="noopener noreferrer"
@@ -76,8 +76,8 @@ export default function Hero() {
               <Image
                 src={item?.image?.url}
                 alt={item?.image?.name}
-                width={item?.width}
-                height={item?.width}
+                width={item?.width || 40}
+                height={item?.width || 40}
               />
             </a>
           );
@@ -90,7 +90,7 @@ export default function Hero() {
           return (
             <a
               key={index}
-              href={item.href}
+              href={item?.href}
               className="w-10 h-10 border border-[#fff] rounded-full flex items-center justify-center hover:bg-[--primary]"
               target="_blank"
               rel="noopener noreferrer"
@@ -98,8 +98,8 @@ export default function Hero() {
               <Image
                 src={item?.image?.url}
                 alt={item?.image?.name}
-                width={item?.width}
-                height={item?.width}
+                width={item?.width || 40}
+                height={item?.width || 40}
               />
             </a>
           );

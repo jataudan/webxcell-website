@@ -13,7 +13,7 @@ export async function fetchData(url, authToken) {
     const response = await fetch(url, authToken ? headers : {});
     const data = await response.json();
     if (!response.ok) {
-      //   console.log("Fetch failed:", response.status, response.statusText);
+      //   console.error("Fetch failed:", response.status, response.statusText);
       //   throw new Error(`Failed to fetch data: ${response.statusText}`);
     }
     return flattenAttributes(data);

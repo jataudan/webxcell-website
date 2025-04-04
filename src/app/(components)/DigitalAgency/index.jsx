@@ -19,20 +19,20 @@ const DigitalAgency = ({ data }) => {
         {/* Right Side - Content */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
           <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-            {data?.title}
+            {data?.subTitle}
           </span>
 
           <div className="headline mt-4">
-            <span className="text-[#000]">{data?.prefix}</span>
+            <span className="text-[#000]">{data?.h1}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
-              {data?.highlighted}
+              {data?.h2}
             </span>{" "}
-            <span className="text-[#000]">{data?.suffix}</span>
+            <span className="text-[#000]">{data?.h3}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
-            {data?.paragraph}
+            {data?.p}
           </p>
 
           {/* Stats */}
@@ -47,18 +47,18 @@ const DigitalAgency = ({ data }) => {
                 <Image
                   src={
                     item?.image
-                      ? item.image.url
+                      ? item?.image?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
-                  alt={item.title}
-                  width={item.image.width}
-                  height={item.image.height}
+                  alt={item?.title}
+                  width={item?.image?.width || 34}
+                  height={item?.image?.heigh || 34}
                 />
                 <div className="flex flex-col items-start">
                   <h4 className="text-2xl sm:text-3xl font-bold text-[#17012c]">
-                    {item.percentage}
+                    {item?.percentage}
                   </h4>
-                  <p className="text-[#000] uppercase text-sm">{item.title}</p>
+                  <p className="text-[#000] uppercase text-sm">{item?.title}</p>
                 </div>
               </div>
             ))}
