@@ -11,7 +11,7 @@ const query = qs.stringify(
             'contact.icon',
             'questions',
             'openingHours',
-            'mainImage',
+            'mainImage252x286',
             'servicesImages',
         ],
     },
