@@ -7,7 +7,7 @@ const path = "/api/global?";
 export async function getfooterData() {
   const query = qs.stringify(
     {
-      populate: ["footer.bgImage", "footer.logo", "footer.socialLinks.image"],
+      populate: ["footer.bgImage", "footer.logo160x24", "footer.socialLinks.image18x18"],
     },
     { encodeValuesOnly: true }
   );
