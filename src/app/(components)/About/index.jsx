@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutUs({ data }) {
-  console.log('data', data);
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Decorative Spiral Image - Hidden on Mobile */}

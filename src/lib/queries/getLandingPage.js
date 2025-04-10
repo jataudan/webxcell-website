@@ -9,7 +9,7 @@ export async function getLandingData() {
     {
       populate: [
         "about.leftImage553x534",
-        "services.testimonials.clientImages",
+        "services.testimonials.clientImages50x50.image50x50",
         "digital.detail.image60x60",
         "digital.image553x534",
         "offer.parent",

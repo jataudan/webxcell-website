@@ -6,6 +6,8 @@ export function StrapiImage({ src, alt, height, width, className }) {
   const imageUrl = getStrapiMedia(src);
   const imageFallback = `https://placehold.co/${width}x${height}`;
 
+  console.log('imageUrl', imageUrl)
+
   return (
     <Image
       src={imageUrl ?? imageFallback}

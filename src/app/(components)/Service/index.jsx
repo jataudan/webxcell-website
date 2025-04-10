@@ -249,25 +249,28 @@ export default function Service({ data }) {
           <div className="flex items-center space-x-3">
             {/* Circles */}
             <div className="flex -space-x-2">
-              {data?.testimonials?.clientImages?.length > 0 &&
-                data?.testimonials?.clientImages?.map((_, index) => (
-                  <div
-                    key={index}
-                    className="w-10 h-10 bg-[#8d1818] rounded-full border-4 border-white relative"
-                  >
-                    <Image
-                      src={
-                        _
-                          ? _?.url
-                          : "https://placehold.co/600x400.png?text=placeholder"
-                      }
-                      alt="client"
-                      width={50}
-                      height={50}
-                      className="absolute"
-                    />
-                  </div>
-                ))}
+              {data?.testimonials?.clientImages50x50?.length > 0 &&
+                data?.testimonials?.clientImages50x50?.map((_, index) => {
+
+                  return (
+                    <div
+                      key={index}
+                      className="w-10 h-10 rounded-full relative"
+                    >
+                      <Image
+                        src={
+                          _?.image50x50
+                            ? _?.image50x50?.url
+                            : "https://placehold.co/600x400.png?text=placeholder"
+                        }
+                        alt="client"
+                        width={50}
+                        height={50}
+                        className="absolute"
+                      />
+                    </div>
+                  )
+                })}
             </div>
             {/* Text */}
             <span className="text-white text-sm span-title">

@@ -82,8 +82,8 @@ const TestimonialSection = () => {
         <div className="flex items-center space-x-3">
           {/* Circles */}
           <div className="flex -space-x-2">
-            {expertTeamData?.clientImages?.length > 0 &&
-              expertTeamData?.clientImages?.map((_, index) => (
+            {expertTeamData?.clientImages50x50?.length > 0 &&
+              expertTeamData?.clientImages50x50?.map((_, index) => (
                 <div
                   key={index}
                   className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4C4C4] rounded-full border-4 border-white"

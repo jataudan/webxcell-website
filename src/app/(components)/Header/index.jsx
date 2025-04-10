@@ -33,6 +33,9 @@ export default function Header() {
   }
 
   const { topnav, mainTopNav } = data;
+
+  console.log('mainTopNav', mainTopNav?.logoLink?.logo187x38[0]?.url)
+
   return (
     <header className="bg-white fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1350px] z-50 text-white shadow-lg rounded-bl-[20px] rounded-br-[20px]">
       {/* Top Bar */}
@@ -102,14 +105,12 @@ export default function Header() {
       <div className="bg-[#eff1fe] text-black rounded-bl-[20px] rounded-br-[20px]">
         <div className="max-w-[1350px] mx-auto flex items-center justify-between py-4 px-4 lg:px-16 rounded-bl-[20px] rounded-br-[20px]">
           {/* Logo */}
-          <>
             <StrapiImage
-              src={mainTopNav?.logoLink?.logo?.url}
+              src={mainTopNav?.logoLink?.logo187x38[0]?.url}
               alt="webxcell"
               width={187}
               height={38}
             />
-          </>
 
           {/* Hamburger Menu for Mobile */}
           <Hamburger />

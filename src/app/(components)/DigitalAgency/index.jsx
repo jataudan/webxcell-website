@@ -23,20 +23,20 @@ const DigitalAgency = ({ data }) => {
           </span>
 
           <div className="headline mt-4">
-            <span className="text-[#000]">{data?.h1}</span>
+            <span className="text-[#000]">{data?.prefix}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
-              {data?.h2}
+              {data?.highlighted}
             </span>{" "}
-            <span className="text-[#000]">{data?.h3}</span>
+            <span className="text-[#000]">{data?.suffix}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
-            {data?.p}
+            {data?.paragraph || ""}
           </p>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8 w-max">
+          <div className="w-full flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-8 mt-8 md:w-max">
             {data?.detail?.map((item, index) => (
               <div
                 key={item.id}
@@ -46,19 +46,19 @@ const DigitalAgency = ({ data }) => {
               >
                 <Image
                   src={
-                    item?.image
-                      ? item?.image?.url
+                    item?.image60x60
+                      ? item?.image60x60?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
-                  alt={item?.title || "Default Image"}
-                  width={item?.image?.width || 34}
-                  height={item?.image?.heigh || 34}
+                  alt={item?.title || "Default image60x60"}
+                  width={60}
+                  height={60}
                 />
                 <div className="flex flex-col items-start">
-                  <h4 className="text-2xl sm:text-3xl font-bold text-[#17012c]">
+                  <h4 className="text-1xl sm:text-2xl font-bold text-[#17012c]">
                     {item?.percentage}
                   </h4>
-                  <p className="text-[#000] uppercase text-sm">{item?.title}</p>
+                  <p className="text-[#000] uppercase text-[12px]">{item?.title}</p>
                 </div>
               </div>
             ))}
@@ -87,8 +87,8 @@ const DigitalAgency = ({ data }) => {
         <div className="relative flex-shrink-0 w-full lg:w-1/3 max-w-sm lg:max-w-none mx-auto md:mx-0">
           <Image
             src={
-              data?.image
-                ? data?.image?.url
+              data?.image553x534
+                ? data?.image553x534?.url
                 : "https://placehold.co/600x400.png?text=placeholder"
             }
             alt="Experience Image"
