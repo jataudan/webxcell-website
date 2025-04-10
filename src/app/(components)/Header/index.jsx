@@ -74,7 +74,7 @@ export default function Header() {
           {/* Social Media Links */}
           <div className="flex items-center gap-2 sm:gap-3 text-sm flex-nowrap">
             {topnav?.socialLinks?.map((link) => {
-              const iconName = link?.image?.name?.split(".")[0];
+              const iconName = link?.image18x18?.name?.split(".")[0];
 
               const iconClass = `icon-${iconName}`;
 
@@ -87,10 +87,10 @@ export default function Header() {
                   className={`hover:text-[--primary] ${iconClass}`}
                 >
                   <StrapiImage
-                    src={link?.image?.url}
-                    alt={link?.image?.alternativeText || iconName}
+                    src={link?.image18x18?.url}
+                    alt={link?.image18x18?.alternativeText || iconName}
                     width={link?.width || 16}
-                    height={link?.width || 16}
+                    height={link?.height || 16}
                   />
                 </a>
               );
