@@ -187,8 +187,8 @@ export default function PortfolioDetail() {
               <div className="flex flex-col gap-2 justify-center items-center bg-portfolio-custome-gradient w-full h-[351px] rounded-lg text-white --font-plus-jakarta-sans font-semibold">
                 <Image
                   src={
-                    project?.contact?.icon
-                      ? project?.contact?.icon?.url
+                    project?.contact?.icon70x70
+                      ? project?.contact?.icon70x70?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"

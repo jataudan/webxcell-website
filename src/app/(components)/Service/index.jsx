@@ -109,8 +109,8 @@ export default function Service({ data }) {
                 <div className="bg-[#C4C4C4] w-[252px] h-[226px] rounded-2xl hidden md:block">
                   <Image
                     src={
-                      item?.mainImage
-                        ? item?.mainImage?.url
+                      item?.mainImage252x286
+                        ? item?.mainImage252x286?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt="Rectangle"
@@ -228,8 +228,8 @@ export default function Service({ data }) {
                 <div className="bg-[#C4C4C4] w-[252px] h-[226px] rounded-2xl hidden md:block">
                   <Image
                     src={
-                      item?.mainImage
-                        ? item?.mainImage?.url
+                      item?.mainImage252x286
+                        ? item?.mainImage252x286?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt="Rectangle"
