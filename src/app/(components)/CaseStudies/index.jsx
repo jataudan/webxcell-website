@@ -107,8 +107,8 @@ const CaseStudies = () => {
               >
                 <Image
                   src={
-                    item?.mainImage
-                      ? item?.mainImage?.url
+                    item?.mainImage570x455
+                      ? item?.mainImage570x455?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"

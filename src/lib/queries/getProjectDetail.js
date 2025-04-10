@@ -5,12 +5,12 @@ import { fetchStrapiData } from "../getStrapiData";
 const query = qs.stringify(
     {
         populate: {
-            mainImage: true,
+            mainImage570x455: true,
             projectInfo: true,
-            projectImages: true,
+            projectImages1194x543: true,
             tag: true,
             contact: {
-                populate: "icon",
+                populate: "icon70x70",
             },
         },
     },

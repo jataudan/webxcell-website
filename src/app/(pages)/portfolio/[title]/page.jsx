@@ -71,8 +71,8 @@ export default function PortfolioDetail() {
                   <RichText content={project?.description} />
                 </div>
                 <div className="flex flex-col flex-wrap max-w-[780px] md:flex-row gap-8 mb-12">
-                  {project?.projectImages?.length > 0 &&
-                    project?.projectImages?.map((image, index) => {
+                  {project?.projectImages1194x543?.length > 0 &&
+                    project?.projectImages1194x543?.map((image, index) => {
                       return (
                         <Image
                           key={index}

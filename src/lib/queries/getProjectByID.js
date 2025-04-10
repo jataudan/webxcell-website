@@ -16,7 +16,7 @@ export async function getProjectByID(slug) {
             populate: {
                 mainImage: true,
                 projectInfo: true,
-                projectImages: true,
+                projectImages1194x543: true,
                 tag: true,
                 contact: {
                     populate: "icon",
