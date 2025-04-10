@@ -114,9 +114,9 @@ const Footer = () => {
                     {data?.footer?.logoText}
                   </h1>
                 )}
-                {data?.footer?.logo && (
+                {data?.footer?.logo160x24 && (
                   <Image
-                    src={data?.footer?.logo[0]?.url}
+                    src={data?.footer?.logo160x24[0]?.url}
                     alt="message"
                     width={150}
                     height={150}

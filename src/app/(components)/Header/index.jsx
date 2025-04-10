@@ -42,7 +42,7 @@ export default function Header() {
           <div className="flex items-center gap-4 text-sm flex-nowrap">
             <div className="flex items-center gap-2">
               <StrapiImage
-                src={topnav?.phoneLink.image.url}
+                src={topnav?.phoneLink?.image18x18?.url}
                 alt="phoneLink image"
                 width={16}
                 height={16}
