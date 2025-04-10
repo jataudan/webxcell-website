@@ -13,7 +13,7 @@ export async function getLandingData() {
         "digital.detail.image60x60",
         "digital.image553x534",
         "offer.parent",
-        "offer.image"
+        "offer.image733x608",
       ],
     },
     { encodeValuesOnly: true }
@@ -23,15 +23,14 @@ export async function getLandingData() {
   return response;
 }
 
-
 export async function getLandingExpertTestimonials() {
   const query = qs.stringify(
     {
       populate: [
         "expert.testimonials",
-        "expert.clientImages",
-        "expert.testimonials.quoteImage",
-        "expert.testimonials.client.image"
+        "expert.clientImages80x80",
+        "expert.testimonials.quoteImage40x40",
+        "expert.testimonials.client.image70x70",
       ],
     },
     { encodeValuesOnly: true }

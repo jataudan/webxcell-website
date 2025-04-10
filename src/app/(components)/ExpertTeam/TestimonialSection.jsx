@@ -82,8 +82,8 @@ const TestimonialSection = () => {
         <div className="flex items-center space-x-3">
           {/* Circles */}
           <div className="flex -space-x-2">
-            {expertTeamData?.clientImages50x50?.length > 0 &&
-              expertTeamData?.clientImages50x50?.map((_, index) => (
+            {expertTeamData?.clientImages80x80?.length > 0 &&
+              expertTeamData?.clientImages80x80?.map((_, index) => (
                 <div
                   key={index}
                   className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4C4C4] rounded-full border-4 border-white"
@@ -141,7 +141,10 @@ const TestimonialSection = () => {
               <div key={index} className="relative">
                 <div className="text-2xl mb-4 font-bold">
                   <Image
-                    src="/assets/expert-team/qoute.png"
+                    src={
+                      item?.quoteImage40x40?.url ||
+                      "/assets/expert-team/qoute.png"
+                    }
                     width={53}
                     height={42}
                     alt="quote"
@@ -149,14 +152,14 @@ const TestimonialSection = () => {
                   />
                 </div>
                 <p className="text-base sm:text-lg italic leading-relaxed text-left">
-                  {item?.p}
+                  {item?.paragraph}
                 </p>
                 <div className="flex items-center mt-6 space-x-3 justify-center lg:justify-start">
                   <div className="w-10 h-10 bg-gray-300 rounded-full">
                     <Image
                       src={
-                        item?.client?.image
-                          ? item?.client?.image?.url
+                        item?.client?.image70x70
+                          ? item?.client?.image70x70?.url
                           : "https://placehold.co/600x400.png?text=placeholder"
                       }
                       alt="client"

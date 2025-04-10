@@ -36,6 +36,8 @@ const BlogSection = () => {
     );
   }
 
+  console.log("blogData", blogData);
+
   return (
     <div className="container mx-auto px-4 py-10 bg-[#fff]">
       {/* Section Header */}
@@ -73,41 +75,58 @@ const BlogSection = () => {
       {/* Blog Cards Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Highlighted Blog Card */}
-        <div className="flex flex-col w-full justify-between bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[--primary] p-6 rounded-2xl shadow-md relative">
-          <div className="flex flex-col justify-center text-sm max-w-[90px] rounded-lg py-2 px-3 bg-[--primary] text-[#fff] font-semibold">
-            <span className="text-[22px] blog-date-title">
-              {getDay(blogData[0]?.date)}
-            </span>
-            <span className="text-[16px] blog-date-title">
-              {getMonth(blogData[0]?.date)}
-            </span>
-          </div>
-          <div className="flex flex-col">
-            <div className="flex gap-1 md:gap-4 mt-4 text-sm text-[#fff] blog-date-title">
-              <div className="flex gap-3 items-center">
-                <Image
-                  src="/assets/blog/tag.png"
-                  width={20}
-                  height={20}
-                  alt="tag"
-                />
-                <span className="text-white">{blogData[0]?.tag}</span>
-              </div>{" "}
-              <div className="flex gap-3 items-center">
-                <Image
-                  src="/assets/blog/message.png"
-                  width={20}
-                  height={20}
-                  alt="tag"
-                />
-                <span className="text-white">
-                  {blogData[0]?.blog_comments?.length}
-                </span>
-              </div>
+        <div
+          className="relative  cursor-pointer p-6 rounded-2xl shadow-md group overflow-hidden"
+          style={{
+            backgroundImage: `url(${blogData[0]?.coverImage570x582?.url})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* gradient overlay on hover only */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[--primary] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-2xl z-10" />
+
+          {/* content above everything */}
+          <div className="relative z-20 flex flex-col w-full justify-between h-full">
+            {/* Date badge */}
+            <div className="flex flex-col justify-center text-sm max-w-[90px] rounded-lg py-2 px-3 bg-[--primary] text-[#fff] font-semibold">
+              <span className="text-[22px] blog-date-title">
+                {getDay(blogData[0]?.date)}
+              </span>
+              <span className="text-[16px] blog-date-title">
+                {getMonth(blogData[0]?.date)}
+              </span>
             </div>
-            <h4 className="mt-2 text-xl font-bold text-[#fff] blog-date-title">
-              {blogData[0]?.title}
-            </h4>
+
+            {/* Meta info + title */}
+            <div className="flex flex-col">
+              <div className="flex gap-1 md:gap-4 mt-4 text-sm text-[#fff] blog-date-title">
+                <div className="flex gap-3 items-center">
+                  <Image
+                    src="/assets/blog/tag.png"
+                    width={20}
+                    height={20}
+                    alt="tag"
+                  />
+                  <span className="text-white">{blogData[0]?.tag}</span>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Image
+                    src="/assets/blog/message.png"
+                    width={20}
+                    height={20}
+                    alt="comments"
+                  />
+                  <span className="text-white">
+                    {blogData[0]?.blog_comments?.length}
+                  </span>
+                </div>
+              </div>
+              <h4 className="mt-2 text-xl font-bold text-[#fff] blog-date-title">
+                {blogData[0]?.title}
+              </h4>
+            </div>
           </div>
         </div>
 
@@ -118,16 +137,33 @@ const BlogSection = () => {
               key={index}
               className="flex gap-4 p-2 md:p-4 bg-[#fff] border border-[#EAF3F8] rounded-lg"
             >
-              <div className="bg-[#C4C4C4] cursor-pointer hover:bg-gradient-to-b from-gray-200 to-[--primary] w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg">
-                <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[--primary] text-[#fff] font-semibold">
-                  <span className="text-[16px] blog-date-title">
-                    {getDay(blog?.date)}
-                  </span>
-                  <span className="text-[12px] blog-date-title">
-                    {getMonth(blog?.date)}
-                  </span>
+              {/* Left: Image background with hover gradient */}
+              <div
+                className="relative cursor-pointer w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg overflow-hidden group"
+                style={{
+                  backgroundImage: `url(${blog?.coverImage570x582?.url})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                {/* Hover gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[--primary] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-lg z-10" />
+
+                {/* Date badge */}
+                <div className="relative z-20">
+                  <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[--primary] text-[#fff] font-semibold">
+                    <span className="text-[16px] blog-date-title">
+                      {getDay(blog?.date)}
+                    </span>
+                    <span className="text-[12px] blog-date-title">
+                      {getMonth(blog?.date)}
+                    </span>
+                  </div>
                 </div>
               </div>
+
+              {/* Right: Content */}
               <div>
                 <div className="flex gap-4 mt-4 text-sm text-[#fff] blog-date-title">
                   <div className="flex gap-1 md:gap-3 items-center">
@@ -146,21 +182,23 @@ const BlogSection = () => {
                       src="/assets/blog/color-message.png"
                       width={20}
                       height={20}
-                      alt="tag"
+                      alt="comments"
                     />
                     <span className="text-black text-[10px] md:text-[14px]">
                       {blog?.blog_comments?.length} Comments
                     </span>
                   </div>
                 </div>
+
                 <h5 className="mt-2 font-semibold text-[#000] text-[14px] md:text-[24px]">
                   {blog?.title}
                 </h5>
+
                 <div className="flex items-center gap-3 text-sm text-gray-500 mt-14">
                   <Image
                     src={
-                      blog?.author?.avatar
-                        ? blog?.author?.avatar?.url
+                      blog?.author?.avatar56x56
+                        ? blog?.author?.avatar56x56?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     width={56}
