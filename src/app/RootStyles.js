@@ -44,6 +44,13 @@ export default function RootStyles() {
         --primary: ${styles?.primary || "#ff6700"};
         --white: #fff;
         --black: #000;
+        --background: #ffffff;
+        --brown: #663300;
+        --blog-description: #101010;
+        --white: #fff;
+        --light-gray: #f2eeea;
+        --black: #000;
+        --light-sky-blue: #ecf8ff;
        
         ${fontVariables}
       

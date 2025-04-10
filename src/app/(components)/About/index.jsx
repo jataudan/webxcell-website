@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function AboutUs({ data }) {
+  console.log('data', data);
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Decorative Spiral Image - Hidden on Mobile */}
@@ -19,13 +20,13 @@ export default function AboutUs({ data }) {
         <div className="relative w-full max-w-sm md:max-w-md lg:max-w-none lg:w-1/2 flex justify-center">
           <Image
             src={
-              data?.leftImage
-                ? data?.leftImage?.url
+              data?.leftImage553x534
+                ? data?.leftImage553x534?.url
                 : "https://placehold.co/600x400.png?text=placeholder"
             }
-            alt={data?.leftImage?.alternativeText || "Default Image"}
-            width={data?.leftImage?.width || 676}
-            height={data?.leftImage?.height || 534}
+            alt={data?.leftImage553x534?.alternativeText || "Default Image"}
+            width={data?.leftImage553x534?.width || 676}
+            height={data?.leftImage553x534?.height || 534}
             className="w-full h-auto"
           />
         </div>
@@ -37,15 +38,15 @@ export default function AboutUs({ data }) {
           </span>
 
           <div className="headline text-2xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]">We’re A Strategic</span>{" "}
-            <span className="highlight brown">Digital</span>
+            <span className="text-[#000]">{data?.prefix || 'We’re A Strategic'}</span>{" "}
+            <span className="highlight brown">{data?.primaryHightlighted || 'Digital'}</span>
             <br />
-            <span className="highlight orange">Media</span>{" "}
-            <span className="text-[#000]">Agency</span>
+            <span className="highlight orange">{data?.secondaryHighlighted || "Media"}</span>{" "}
+            <span className="text-[#000]">{data?.suffix || 'Agency'}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed px-2 md:px-0">
-            {data?.p || ""}
+            {data?.paragraph || ""}
           </p>
 
           {/* Stat */}
