@@ -48,7 +48,7 @@ export default function AboutDigital({ data }) {
                         ? item?.image?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
-                    alt={item?.title}
+                    alt={item?.title || "Default Image"}
                     width={60}
                     height={60}
                   />

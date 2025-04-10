@@ -50,7 +50,7 @@ const DigitalAgency = ({ data }) => {
                       ? item?.image?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
-                  alt={item?.title}
+                  alt={item?.title || "Default Image"}
                   width={item?.image?.width || 34}
                   height={item?.image?.heigh || 34}
                 />

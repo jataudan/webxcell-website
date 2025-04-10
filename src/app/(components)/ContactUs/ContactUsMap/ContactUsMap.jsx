@@ -46,7 +46,7 @@ const MapWithInfo = ({ contact }) => {
                     src={item.icon}
                     width={38}
                     height={38}
-                    alt={item.alt}
+                    alt={item.alt || "icon"}
                   />
                   <span className="ml-3">{item.text}</span>
                 </div>

@@ -205,8 +205,6 @@ export default function BlogDetail() {
                                 {singleComment?.image?.url && (
                                   <Image
                                     src={
-                                      process?.env
-                                        ?.NEXT_PUBLIC_STRAPI_BASE_URL +
                                       singleComment?.image?.url
                                     }
                                     alt={

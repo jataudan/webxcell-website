@@ -33,18 +33,18 @@ export default function Hero() {
     <section
       className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center px-6 md:px-20 lg:px-40"
       style={{
-        backgroundImage: `url(${getHero?.image?.formats?.large?.url})`,
+        backgroundImage: `url(${getHero?.image1920x1000?.formats?.large?.url})`,
       }}
     >
       {/* Content */}
       <div className="relative text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
-          {getHero?.h1} <br />
-          <span className="mt-4 block">{getHero?.subh1}</span>
+          {getHero?.primaryHeading} <br />
+          <span className="mt-4 block">{getHero?.secondaryHeading}</span>
         </h1>
 
         <p className="mt-6 sm:mt-10 text-base sm:text-lg md:text-xl">
-          {getHero?.p || ""}
+          {getHero?.paragraph || ""}
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link
@@ -74,10 +74,10 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <Image
-                src={item?.image?.url}
-                alt={item?.image?.name}
+                src={item?.image17x17?.url}
+                alt={item?.image17x17?.name || "default"}
                 width={item?.width || 40}
-                height={item?.width || 40}
+                height={item?.height || 40}
               />
             </a>
           );
@@ -97,7 +97,7 @@ export default function Hero() {
             >
               <Image
                 src={item?.image?.url}
-                alt={item?.image?.name}
+                alt={item?.image?.name || "default"}
                 width={item?.width || 40}
                 height={item?.width || 40}
               />

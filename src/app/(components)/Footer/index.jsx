@@ -174,7 +174,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="about"
                       width={18}
                       height={18}
                     />
@@ -188,7 +188,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="contact us"
                       width={18}
                       height={18}
                     />
@@ -202,7 +202,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="blog & news"
                       width={18}
                       height={18}
                     />
@@ -216,7 +216,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="faq"
                       width={18}
                       height={18}
                     />
@@ -230,7 +230,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="login"
                       width={18}
                       height={18}
                     />
@@ -251,7 +251,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="digital marketing"
                       width={18}
                       height={18}
                     />
@@ -262,7 +262,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="web development"
                       width={18}
                       height={18}
                     />
@@ -273,7 +273,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="seo optimized"
                       width={18}
                       height={18}
                     />
@@ -284,7 +284,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="app development"
                       width={18}
                       height={18}
                     />
@@ -295,7 +295,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt=""
+                      alt="email marketing"
                       width={18}
                       height={18}
                     />
@@ -316,7 +316,7 @@ const Footer = () => {
                   <li className="flex items-start gap-2 justify-start">
                     <Image
                       src="/assets/footer/location.png"
-                      alt=""
+                      alt="locaion"
                       width={18}
                       height={18}
                       className="translate-y-[5px]"
@@ -331,7 +331,7 @@ const Footer = () => {
                   <li className="flex items-start gap-2 justify-start">
                     <Image
                       src="/assets/footer/call.png"
-                      alt=""
+                      alt="number"
                       width={18}
                       height={18}
                     />
@@ -342,7 +342,7 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/message-icon.png"
-                      alt=""
+                      alt="email"
                       width={18}
                       height={18}
                     />

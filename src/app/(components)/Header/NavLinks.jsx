@@ -12,20 +12,20 @@ const NavLinks = ({ navigationItems }) => {
 
   return (
     <nav className="hidden lg:flex gap-8 font-medium">
-      {navigationItems.map((nav) => {
+      {navigationItems?.map((nav) => {
         if (!nav.href || !nav.text) {
           return null;
         }
 
         return (
           <Link
-            key={nav.id}
-            href={nav.href}
+            key={nav?.id}
+            href={nav?.href}
             className={`hover:text-[--primary] font-semibold --font-poppins ${
-              isActive(nav.href) ? "text-[--primary]" : ""
+              isActive(nav?.href) ? "text-[--primary]" : ""
             }`}
           >
-            {nav.text}
+            {nav?.text}
           </Link>
         );
       })}

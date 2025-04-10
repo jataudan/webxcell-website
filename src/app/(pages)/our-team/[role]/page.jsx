@@ -70,7 +70,7 @@ export default function TeamDetail() {
                   ? teamMember?.image?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               }
-              alt={teamMember?.name}
+              alt={teamMember?.name || "Default Image"}
               width={294}
               height={294}
               className="object-cover"

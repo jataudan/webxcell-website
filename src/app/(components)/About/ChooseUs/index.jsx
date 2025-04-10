@@ -34,7 +34,7 @@ export default function ChooseUs({ data }) {
                         ? service?.icon?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
-                    alt={service?.name}
+                    alt={service?.name || "Default Image"}
                     width={64}
                     height={62}
                   />

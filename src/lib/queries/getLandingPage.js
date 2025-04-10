@@ -8,10 +8,10 @@ export async function getLandingData() {
   const query = qs.stringify(
     {
       populate: [
-        "about.leftImage",
+        "about.leftImage553x534",
         "services.testimonials.clientImages",
-        "digital.detail.image",
-        "digital.image",
+        "digital.detail.image60x60",
+        "digital.image553x534",
         "offer.parent",
         "offer.image"
       ],

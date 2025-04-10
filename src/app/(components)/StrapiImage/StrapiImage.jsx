@@ -9,7 +9,7 @@ export function StrapiImage({ src, alt, height, width, className }) {
   return (
     <Image
       src={imageUrl ?? imageFallback}
-      alt={alt}
+      alt={alt ?? "Image"}
       height={height}
       width={width}
       className={className}

@@ -43,14 +43,14 @@ const Pagination = ({ totalPages, initialPage = 1, onPageChange }) => {
               ? "/assets/blog/left-black-arrow.png"
               : "/assets/blog/left-white-arrow.png"
           }
-          alt=""
+          alt="arrow"
           width={9}
           height={5}
           className="absolute transition-opacity duration-300 opacity-100 hover:opacity-0"
         />
         <Image
           src="/assets/blog/left-white-arrow.png"
-          alt=""
+          alt="arrow"
           width={9}
           height={5}
           className="absolute transition-opacity duration-300 opacity-0 hover:opacity-100"
@@ -91,14 +91,14 @@ const Pagination = ({ totalPages, initialPage = 1, onPageChange }) => {
               ? "/assets/blog/right-white-arrow.png"
               : "/assets/blog/right-black-arrow.png"
           }
-          alt=""
+          alt="arrow"
           width={9}
           height={5}
           className="absolute transition-opacity duration-300 opacity-100 hover:opacity-0"
         />
         <Image
           src="/assets/blog/right-white-arrow.png"
-          alt=""
+          alt="arrow"
           width={9}
           height={5}
           className="absolute transition-opacity duration-300 opacity-0 hover:opacity-100"

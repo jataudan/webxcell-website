@@ -79,7 +79,7 @@ export default function ProfessionalTeam() {
                       ? member?.image?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
-                  alt={member?.name}
+                  alt={member?.name || "placeholder"}
                   width={300}
                   height={300}
                   className="w-full h-full object-cover"

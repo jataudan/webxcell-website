@@ -25,18 +25,7 @@ export default function RootStyles() {
     );
   }
 
-  console.log("Fetched styles:", styles);
-
-  // Extracting colors into CSS variables
-  const colorVariables = styles?.colorScheme
-    ?.flatMap((scheme) =>
-      scheme.colorList.map(
-        (color) =>
-          `--${color.colorName.toLowerCase().replace(/ /g, "-")}: ${color.color
-          };`
-      )
-    )
-    .join("\n");
+  // console.log("Fetched styles:", styles);
 
   const fontVariables = styles?.fontsFamily
     ?.map((e) => {
@@ -55,10 +44,7 @@ export default function RootStyles() {
         --primary: ${styles?.primary || "#ff6700"};
         --white: #fff;
         --black: #000;
-        --blog-description: ${styles?.blogDescription || "#101010"};
        
-        ${colorVariables}
-
         ${fontVariables}
       
       }

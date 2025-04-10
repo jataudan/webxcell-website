@@ -6,7 +6,7 @@ export async function getHomeHeroData() {
   const path = "/api/landing?";
   const query = qs.stringify(
     {
-      populate: ["hero.image", "hero.socialLinks.image"],
+      populate: ["hero.image1920x1000", "hero.socialLinks.image17x17"],
     },
     { encodeValuesOnly: true }
   );

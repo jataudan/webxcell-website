@@ -8,7 +8,7 @@ export async function getThemeSettings() {
   const query = qs.stringify(
     {
       populate: [
-        'colorScheme.colorList',
+       
         'fontsFamily',
       ],
     },

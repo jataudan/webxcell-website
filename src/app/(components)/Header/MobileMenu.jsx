@@ -19,21 +19,21 @@ const MobileMenu = ({ navigationItems, cta }) => {
       }`}
     >
       <nav className="flex flex-col items-start p-6 space-y-4">
-        {navigationItems.map((nav) => {
-          if (!nav.href || !nav.text) {
+        {navigationItems?.map((nav) => {
+          if (!nav?.href || !nav?.text) {
             return null;
           }
 
           return (
             <Link
-              key={nav.id}
-              href={nav.href}
+              key={nav?.id}
+              href={nav?.href}
               className={`hover:text-[--primary] ${
-                isActive(nav.href) ? "text-[--primary]" : ""
+                isActive(nav?.href) ? "text-[--primary]" : ""
               }`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              {nav.text}
+              {nav?.text}
             </Link>
           );
         })}
@@ -42,7 +42,7 @@ const MobileMenu = ({ navigationItems, cta }) => {
           className="mt-4 text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          {cta.text}
+          {cta?.text}
         </a>
       </nav>
     </div>

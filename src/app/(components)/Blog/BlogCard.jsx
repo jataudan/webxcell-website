@@ -45,7 +45,7 @@ const BlogCard = ({ blog }) => {
                     ? blog?.author?.avatar?.url
                     : "https://placehold.co/600x400.png?text=placeholder"
                 }
-                alt=""
+                alt="avatar"
                 width={44}
                 height={44}
               />
@@ -61,7 +61,7 @@ const BlogCard = ({ blog }) => {
           </div>
           <Image
             src={ArrowImage}
-            alt=""
+            alt="arrow"
             width={44}
             height={44}
             onClick={() => router.push(`/blog/${blog?.slug}`)}
