@@ -14,6 +14,7 @@ export async function getLandingData() {
         "digital.image553x534",
         "offer.parent",
         "offer.image733x608",
+        "strategicPartnersImages.partners.partnerImage113x44",
       ],
     },
     { encodeValuesOnly: true }

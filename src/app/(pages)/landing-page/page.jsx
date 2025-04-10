@@ -18,6 +18,7 @@ const Landing = () => {
   const [service, setService] = useState({});
   const [digitalAgency, setDigitalAgency] = useState({});
   const [offService, setOffService] = useState({});
+  const [trustedPartner, setTrustedPartner] = useState({});
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -31,12 +32,13 @@ const Landing = () => {
         setService(response?.data?.services);
         setDigitalAgency(response?.data?.digital);
         setOffService(response?.data?.offer);
+        setTrustedPartner(response?.data?.strategicPartnersImages);
       }
     };
     fetchData();
   }, []);
 
-  // console.log('service', service)
+  console.log("trustedPartner", trustedPartner);
 
   if (isLoading) {
     return (
@@ -56,7 +58,7 @@ const Landing = () => {
       <OffService data={offService} />
       <ExpertTeam />
       <BlogSection />
-      <TrustStrategySlider />
+      <TrustStrategySlider data={trustedPartner} />
       <MarketingSlider />
       <ContactInfo />
     </>
