@@ -96,8 +96,8 @@ export default function Hero() {
               rel="noopener noreferrer"
             >
               <Image
-                src={item?.image?.url}
-                alt={item?.image?.name || "default"}
+                src={item?.image17x17?.url}
+                alt={item?.image17x17?.name || "default"}
                 width={item?.width || 40}
                 height={item?.width || 40}
               />
