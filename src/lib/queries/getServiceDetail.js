@@ -8,7 +8,7 @@ const path = "/api/services-details?";
 const query = qs.stringify(
     {
         populate: [
-            'contact.icon',
+            'contact.70x70',
             'questions',
             'openingHours',
             'mainImage252x286',
