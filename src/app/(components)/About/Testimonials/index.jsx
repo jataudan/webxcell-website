@@ -6,8 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function Testimonials({ data }) {
-  console.log("Testimonials Data:", data);
-
   const settings = {
     dots: false,
     arrows: false,
