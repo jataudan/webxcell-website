@@ -251,7 +251,6 @@ export default function Service({ data }) {
             <div className="flex -space-x-2">
               {data?.testimonials?.clientImages50x50?.length > 0 &&
                 data?.testimonials?.clientImages50x50?.map((_, index) => {
-
                   return (
                     <div
                       key={index}
@@ -269,7 +268,7 @@ export default function Service({ data }) {
                         className="absolute"
                       />
                     </div>
-                  )
+                  );
                 })}
             </div>
             {/* Text */}

@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 export default function Testimonials({ data }) {
+  console.log("Testimonials Data:", data);
+
   const settings = {
     dots: false,
     arrows: false,
@@ -42,8 +44,8 @@ export default function Testimonials({ data }) {
       <div className="relative max-w-sm md:max-w-md lg:max-w-none lg:w-1/2 justify-center hidden md:flex">
         <Image
           src={
-            data?.sideImage
-              ? data?.sideImage?.url
+            data?.sideImage528x686
+              ? data?.sideImage528x686?.url
               : "https://placehold.co/600x400.png?text=placeholder"
           }
           alt="happy Image"
@@ -63,9 +65,13 @@ export default function Testimonials({ data }) {
         </div> */}
 
         <div className="text-[46px] font-poppins mb-8">
-          <span className="text-[#000]">What</span>{" "}
-          <span className="text-[#000] font-extrabold">Happy Clients Say</span>{" "}
-          <span className="highlight orange font-extrabold">About Us</span>
+          <span className="text-[#000]">{data?.heading || "What"}</span>{" "}
+          <span className="text-[#000] font-extrabold">
+            {data?.boldHeading || "Happy Clients Say"}
+          </span>{" "}
+          <span className="highlight orange font-extrabold">
+            {data?.highlighted || "About Us"}
+          </span>
         </div>
 
         {/* Testimonials Cards */}
@@ -82,8 +88,8 @@ export default function Testimonials({ data }) {
                 <div className="absolute top-4 right-4">
                   <Image
                     src={
-                      testimonial?.quoteImage
-                        ? testimonial?.quoteImage?.url
+                      testimonial?.quoteImage45x45
+                        ? testimonial?.quoteImage45x45?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt="comma"
@@ -97,7 +103,7 @@ export default function Testimonials({ data }) {
                   ★★★★★
                 </div>
                 <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic --font-plus-jakarta-sans">
-                  {testimonial?.p}
+                  {testimonial?.comments}
                 </p>
 
                 {/* Client Image, Name, and Role */}
@@ -105,8 +111,8 @@ export default function Testimonials({ data }) {
                   <div className="rounded-full overflow-hidden">
                     <Image
                       src={
-                        testimonial?.clientImage
-                          ? testimonial?.clientImage?.url
+                        testimonial?.clientImage60x60
+                          ? testimonial?.clientImage60x60?.url
                           : "/assets/user.png"
                       }
                       alt="client"

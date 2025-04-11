@@ -57,7 +57,7 @@ export default function Header() {
             </div>
             <div className="flex items-center gap-2">
               <StrapiImage
-                src={topnav?.emailLink?.image?.url}
+                src={topnav?.emailLink?.image17x17?.url}
                 alt="email image"
                 width={16}
                 height={16}

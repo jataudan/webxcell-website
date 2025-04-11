@@ -1,6 +1,34 @@
+import { getHappyClients } from "@/lib/queries/getAboutUs";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function AboutDigital({ data }) {
+  const [happyClients, setHappyClients] = useState({});
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const response = await getHappyClients();
+      if (response) {
+        setIsLoading(false);
+        setHappyClients(response?.data?.services);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  console.log("happyClients:", happyClients);
+
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Left Decorative Image */}
@@ -23,18 +51,18 @@ export default function AboutDigital({ data }) {
           </span>
           <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] --font-plus-jakarta-sans md:space-y-4">
             <div>
-              <span className="text-[#000]">{data?.h1}</span>{" "}
+              <span className="text-[#000]">{data?.prefix}</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[--primary] font-extrabold">
-                {data?.h2}
+                {data?.highlighted}
               </span>
             </div>
             <div>
-              <span className="text-[#000]">{data?.h3}</span>
+              <span className="text-[#000]">{data?.suffix}</span>
             </div>
           </div>
           {/* Description */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base lg:leading-relaxed">
-            {data?.p}
+            {data?.paragraph}
           </p>
           <hr className="mt-6 hidden md:block" />
           {/* Stats */}
@@ -44,8 +72,8 @@ export default function AboutDigital({ data }) {
                 <div key={item?.id} className="flex items-center gap-4">
                   <Image
                     src={
-                      item?.image
-                        ? item?.image?.url
+                      item?.image60x60
+                        ? item?.image60x60?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt={item?.title || "Default Image"}
@@ -93,25 +121,46 @@ export default function AboutDigital({ data }) {
 
           {/* Happy Clients Section */}
           <div className="absolute bottom-[-30px] sm:bottom-[-50px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
-            {/* Profile Images */}
-            <div className="flex -space-x-3">
-              <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
-              <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
-              <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
-              <span className="w-10 h-10 sm:w-12 sm:h-12 bg-[#C4C4C4] border-2 border-white rounded-full"></span>
+            <div className="flex items-center space-x-3">
+              {/* Circles */}
+              <div className="flex -space-x-2">
+                {happyClients?.testimonials?.clientImages50x50?.length > 0 &&
+                  happyClients?.testimonials?.clientImages50x50?.map(
+                    (_, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className="w-10 h-10 rounded-full relative"
+                        >
+                          <Image
+                            src={
+                              _?.image50x50
+                                ? _?.image50x50?.url
+                                : "https://placehold.co/600x400.png?text=placeholder"
+                            }
+                            alt="client"
+                            width={50}
+                            height={50}
+                            className="absolute"
+                          />
+                        </div>
+                      );
+                    }
+                  )}
+              </div>
+              {/* Text */}
+              <span className="text-black font-semibold text-sm span-title">
+                {happyClients?.testimonials?.count}
+              </span>
             </div>
-            {/* Text */}
-            <span className="text-sm sm:text-base font-semibold text-[#17012C]">
-              1.5k Happy Clients
-            </span>
           </div>
 
           {/* Foreground Image */}
           <div className="relative z-10 mt-8 sm:mt-16">
             <Image
               src={
-                data?.image
-                  ? data?.image?.url
+                data?.image553x534
+                  ? data?.image553x534?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               }
               alt="Business Woman"

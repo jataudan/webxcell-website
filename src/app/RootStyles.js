@@ -33,15 +33,14 @@ export default function RootStyles() {
     })
     .join("\n");
 
-
   return (
     <style jsx global>{`
       :root {
-        
         /* Default color variables */
-        --background: ${styles?.background || "#ffffff"};
-        --foreground: ${styles?.foreground || "#171717"};
-        --primary: ${styles?.primary || "#ff6700"};
+        --background: ${styles?.background};
+        --foreground: ${styles?.foreground};
+        --primary: ${styles?.primary};
+        --secondary: ${styles?.secondary};
         --white: #fff;
         --black: #000;
         --background: #ffffff;
@@ -51,9 +50,8 @@ export default function RootStyles() {
         --light-gray: #f2eeea;
         --black: #000;
         --light-sky-blue: #ecf8ff;
-       
+
         ${fontVariables}
-      
       }
 
       body {

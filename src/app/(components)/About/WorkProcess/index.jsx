@@ -1,8 +1,6 @@
 import Image from "next/image";
 
 export default function WorkProcess({ data }) {
-  console.log("data?.milestones", data?.milestones);
-
   return (
     <section
       style={{

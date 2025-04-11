@@ -38,8 +38,6 @@ const Landing = () => {
     fetchData();
   }, []);
 
-  console.log("trustedPartner", trustedPartner);
-
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">

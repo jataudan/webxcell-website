@@ -11,7 +11,7 @@ export default function ChooseUs({ data }) {
           </span>
 
           <div className="text-[30px] sm:text-[46px] font-semibold mt-4 --font-plus-jakarta-sans">
-            <span className="text-[#000]">{data?.h2}</span>
+            <span className="text-[#000]">{data?.heading}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-8 --font-plus-jakarta-sans">
@@ -30,8 +30,8 @@ export default function ChooseUs({ data }) {
                 >
                   <Image
                     src={
-                      service?.icon
-                        ? service?.icon?.url
+                      service?.icon64x62
+                        ? service?.icon64x62?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt={service?.name || "Default Image"}
@@ -67,8 +67,8 @@ export default function ChooseUs({ data }) {
             <div className="flex items-center gap-4">
               <Image
                 src={
-                  data?.contactInfo?.icon
-                    ? data?.contactInfo?.icon?.url
+                  data?.contactInfo?.icon56x54
+                    ? data?.contactInfo?.icon56x54?.url
                     : "https://placehold.co/600x400.png?text=placeholder"
                 }
                 alt="phone icon"
@@ -101,8 +101,8 @@ export default function ChooseUs({ data }) {
           <div className="relative z-10 mt-8 sm:mt-16">
             <Image
               src={
-                data?.mainImage
-                  ? data?.mainImage?.url
+                data?.mainImage588x583
+                  ? data?.mainImage588x583?.formats?.large?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               }
               alt="Business Woman"
