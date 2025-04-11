@@ -27,8 +27,6 @@ export default function AboutDigital({ data }) {
     );
   }
 
-  console.log("happyClients:", happyClients);
-
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Left Decorative Image */}

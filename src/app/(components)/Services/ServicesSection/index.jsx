@@ -46,8 +46,8 @@ export default function ServicesSection() {
                     <div className="bg-gray-500 w-[300px] h-[300px] rounded-full overflow-hidden relative">
                       <Image
                         src={
-                          service?.mainImage
-                            ? service?.mainImage?.url
+                          service?.thumbnail300x300
+                            ? service?.thumbnail300x300?.url
                             : "https://placehold.co/600x400.png?text=placeholder"
                         }
                         alt="Ellipse"

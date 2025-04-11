@@ -21,3 +21,19 @@ export async function getTopNavData() {
   const response = await fetchStrapiData(path, query);
   return response;
 }
+
+export async function getServiceClient() {
+  const path = "/api/global?";
+  const query = qs.stringify(
+    {
+      populate: [
+        "serviceTestimonials.clientImage585x609",
+        "serviceTestimonials.clientDetails.image70x70",
+      ],
+    },
+    { encodeValuesOnly: true }
+  );
+
+  const response = await fetchStrapiData(path, query);
+  return response;
+}

@@ -171,8 +171,8 @@ export default function ServiceDetail() {
               <div className="flex flex-col gap-2 justify-center items-center bg-mix-gradient w-full h-[351px] rounded-lg text-white --font-plus-jakarta-sans font-semibold">
                 <Image
                   src={
-                    service?.contact?.icon
-                      ? service?.contact?.icon?.url
+                    service?.contact?.icon70x70
+                      ? service?.contact?.icon70x70?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"
@@ -189,8 +189,8 @@ export default function ServiceDetail() {
               <div className="w-[770px] h-[370px] mb-4 overflow-hidden relative">
                 <Image
                   src={
-                    service?.mainImage
-                      ? service?.mainImage?.url
+                    service?.mainImage770x370
+                      ? service?.mainImage770x370?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"

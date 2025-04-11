@@ -1,6 +1,30 @@
+import { getServiceClient } from "@/lib/queries/getTopNav";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function ServiceTestimonial() {
+  const [service, setService] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const response = await getServiceClient();
+      if (response) {
+        setIsLoading(false);
+        setService(response?.data?.serviceTestimonials);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative bg-white my-24 mb-[150px]">
       <div className="absolute left-0 top-[9px] lg:bottom-[120px] hidden sm:block">
@@ -16,7 +40,7 @@ export default function ServiceTestimonial() {
         <div className="relative lg:w-1/2 flex items-center justify-center">
           {/* Background Shape */}
           <Image
-            src="/assets/Service/testimonial.png"
+            src={service?.clientImage585x609?.url}
             alt="Business Woman"
             width={585}
             height={609}
@@ -27,42 +51,35 @@ export default function ServiceTestimonial() {
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
           <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
-            Testimonials
+            {service?.heading}
           </span>
 
           <div className="headline text-2xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]">
-              Webxcell Digital Transformed Our Business
-            </span>
-            <span className="text-[#000]"> solved Our Business Challenges</span>
+            <span className="text-[#000]">{service?.title}</span>
           </div>
           <div className="text-[#FF6700] text-xl text-left my-2">
             ⭐⭐⭐⭐⭐
           </div>
 
           <p className="text-gray-600 my-4 text-base --font-plus-jakarta-sans md:text-lg leading-relaxed px-2 md:px-0">
-            Partnering with Webxcell Digital was a game-changer for our
-            business. Their expertise in digital marketing and automation helped
-            us streamline our operations, boost engagement, and achieve
-            remarkable growth. From strategy to execution, their team provided
-            tailored solutions that addressed our challenges effectively. Highly
-            recommended!
+            {service?.paragraph}
           </p>
           <div className="flex gap-20">
             <div className="flex items-center gap-4">
               <Image
-                src="/assets/Service/testimonial.png"
+                src={service?.clientDetails?.image70x70?.url}
                 alt="cofounder icon"
                 width={50}
                 height={50}
+                className="rounded-full border-2 border-[#FF6700]"
               />
 
               <div className="flex flex-col items-start">
                 <p className="text-sm sm:text-xs  font-semibold text-[#17012C]">
-                  Alex De Luca
+                  {service?.clientDetails?.name}
                 </p>
                 <p className="text-base sm:text-xs text-left text-[#504E4E]">
-                  Co-Founder - Danum Filmworks{" "}
+                  {service?.clientDetails?.designation}
                 </p>
               </div>
             </div>

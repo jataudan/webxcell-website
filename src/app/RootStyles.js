@@ -25,8 +25,6 @@ export default function RootStyles() {
     );
   }
 
-  // console.log("Fetched styles:", styles);
-
   const fontVariables = styles?.fontsFamily
     ?.map((e) => {
       return `--${e?.fontFamily}: ${e?.fontType};`;
