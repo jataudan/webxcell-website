@@ -19,7 +19,7 @@ export async function getOtherHeroData() {
   const query = qs.stringify(
     {
       populate: {
-        bgImage: true,
+        heroSectionImage1920x537: true,
       },
     },
     {

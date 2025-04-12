@@ -153,14 +153,19 @@ export default function AboutHero() {
     return baseBreadcrumb;
   };
 
+  console.log("filterHero", filterHero);
+
   return (
     <section
       className={`relative w-full h-[400px] md:h-[537px] ${
         filterHero[0]?.bgColor || "bg-custom-gray"
       } bg-center flex flex-col items-center px-6 md:px-20 lg:px-40`}
       style={
-        filterHero[0]?.bgImage && {
-          backgroundImage: `url(${filterHero[0]?.bgImage?.url})`,
+        filterHero[0]?.heroSectionImage1920x537 && {
+          backgroundImage: `url(${filterHero[0]?.heroSectionImage1920x537?.url})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }
       }
     >
