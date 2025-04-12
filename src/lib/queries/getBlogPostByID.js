@@ -14,10 +14,10 @@ export async function getBlogPostByID(slug) {
       },
       populate: {
         author: {
-          populate: "avatar",
+          populate: "avatar56x56",
         },
-        coverImage: true,
-        blogImages: true,
+        coverImage570x582: true,
+        blogImages770x350: true,
         comments: {
           populate: "image",
         },

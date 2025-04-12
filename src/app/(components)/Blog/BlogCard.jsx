@@ -12,8 +12,8 @@ const BlogCard = ({ blog }) => {
       <div className="w-full h-[235px] flex items-center justify-center overflow-hidden bg-gray-200">
         <Image
           src={
-            blog?.coverImage
-              ? blog?.coverImage?.url
+            blog?.coverImage570x582
+              ? blog?.coverImage570x582?.url
               : "https://placehold.co/600x400.png?text=placeholder"
           }
           alt="image"
@@ -41,8 +41,8 @@ const BlogCard = ({ blog }) => {
             <div className="h-8 w-8 rounded-full bg-gray-400">
               <Image
                 src={
-                  blog?.author?.avatar
-                    ? blog?.author?.avatar?.url
+                  blog?.author?.avatar56x56
+                    ? blog?.author?.avatar56x56?.url
                     : "https://placehold.co/600x400.png?text=placeholder"
                 }
                 alt="avatar"

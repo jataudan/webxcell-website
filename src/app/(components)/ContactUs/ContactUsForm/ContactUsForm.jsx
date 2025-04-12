@@ -48,8 +48,8 @@ const ContactUsForm = ({ contact }) => {
         <div className="w-full flex items-center justify-center">
           <Image
             src={
-              contact?.image
-                ? contact?.image?.url
+              contact?.image453x349
+                ? contact?.image453x349?.url
                 : "https://placehold.co/600x400.png?text=placeholder"
             }
             alt="customer service"
@@ -69,7 +69,7 @@ const ContactUsForm = ({ contact }) => {
 
           {/* Play Icon (Hide when video plays) */}
           {!isPlaying && (
-            <Image
+            <image453x349
               src="/assets/contact-info/video-icon.svg"
               alt="Play Video"
               width={70}

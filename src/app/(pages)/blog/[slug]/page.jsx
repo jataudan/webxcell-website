@@ -69,6 +69,8 @@ export default function BlogDetail() {
     );
   }
 
+  console.log("blog", blog);
+
   return (
     <>
       <BlogHero />
@@ -82,16 +84,16 @@ export default function BlogDetail() {
             {/* Left Content */}
             <div className="flex-grow">
               <div className="relative mb-4 md:px-0 md:py-0">
-                <Image
+                {/* <Image
                   src={
-                    blog?.coverImage
-                      ? blog?.coverImage?.url
+                    blog?.coverImage570x582
+                      ? blog?.coverImage570x582?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="image"
-                  width={1170}
+                  width={700}
                   height={550}
-                />
+                /> */}
                 <div className="flex flex-col rounded-[6px] absolute top-0 m-2 md:m-5 bg-[var(--light-gray)] w-[80px]  ">
                   <span className="text-center py-1 px-2 text-[--white] bg-[--primary] rounded-[6px]">
                     {getDay(blog?.date)}
@@ -204,9 +206,7 @@ export default function BlogDetail() {
                               <div className="w-[46px] h-[46px] md:w-[96px] md:h-[96px] bg-gray-300 rounded-full overflow-hidden">
                                 {singleComment?.image?.url && (
                                   <Image
-                                    src={
-                                      singleComment?.image?.url
-                                    }
+                                    src={singleComment?.image?.url}
                                     alt={
                                       singleComment?.image?.alternativeText ||
                                       "Comment Image"

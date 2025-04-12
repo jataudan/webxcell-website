@@ -32,7 +32,15 @@ export default function AboutHero() {
     );
   }
 
-  const filterHero = getHero?.filter((hero) => hero.sectionName === pathname);
+  const matchedSections = ["/blog", "/portfolio", "/our-team"];
+
+  const filterHero = getHero?.filter((hero) => {
+    if (hero.sectionName === pathname) return true;
+
+    return matchedSections.some(
+      (prefix) => pathname.startsWith(prefix) && hero.sectionName === prefix
+    );
+  });
 
   const capitalizeFirstLetterOfEachWord = (str) => {
     return str
@@ -152,8 +160,6 @@ export default function AboutHero() {
 
     return baseBreadcrumb;
   };
-
-  console.log("filterHero", filterHero);
 
   return (
     <section

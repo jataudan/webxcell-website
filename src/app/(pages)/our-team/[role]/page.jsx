@@ -66,8 +66,8 @@ export default function TeamDetail() {
             {/* Image Placeholder */}
             <Image
               src={
-                teamMember?.image
-                  ? teamMember?.image?.url
+                teamMember?.teamImage294x294
+                  ? teamMember?.teamImage294x294?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               }
               alt={teamMember?.name || "Default Image"}
