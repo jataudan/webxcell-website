@@ -48,6 +48,7 @@ export default function RootStyles() {
         --light-gray: #f2eeea;
         --black: #000;
         --light-sky-blue: #ecf8ff;
+        --sky-blue: #ecf8ff;
 
         ${fontVariables}
       }
