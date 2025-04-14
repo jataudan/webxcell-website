@@ -151,8 +151,8 @@ const Footer = () => {
                           className={`hover:text-[--primary] ${iconClass}`}
                         >
                           <StrapiImage
-                            src={link?.image?.url}
-                            alt={link?.image?.alternativeText || iconName}
+                            src={link?.image18x18?.url}
+                            alt={link?.image18x18?.alternativeText || iconName}
                             width={link?.width || 16}
                             height={link?.width || 16}
                           />

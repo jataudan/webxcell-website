@@ -32,7 +32,7 @@ export default function AboutHero() {
     );
   }
 
-  const matchedSections = ["/blog", "/portfolio", "/our-team"];
+  const matchedSections = ["/blog", "/portfolio", "/our-team", "/services"];
 
   const filterHero = getHero?.filter((hero) => {
     if (hero.sectionName === pathname) return true;

@@ -45,15 +45,30 @@ export default function PortfolioDetail() {
 
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">
         <div className="mb-4 px-4 py-4 md:px-0 md:py-0">
-          <Image
+          {/* <Image
             src={
-              project?.mainImage
-                ? project?.mainImage?.url
+              project?.mainImage570x455
+                ? project?.mainImage570x455?.url
                 : "https://placehold.co/600x400.png?text=placeholder"
             }
             alt="Rectangle"
-            width={1170}
-            height={550}
+            width={900}
+            height={450}
+          /> */}
+          <div
+            style={{
+              backgroundImage: `url(${
+                project?.mainImage570x455
+                  ? project?.mainImage570x455?.url
+                  : "https://placehold.co/600x400.png?text=placeholder"
+              })`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              width: "100%",
+              height: "450px",
+              borderRadius: "20px",
+            }}
           />
         </div>
         <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center px-4 py-2 md:py-12 md:px-0 gap-10">
