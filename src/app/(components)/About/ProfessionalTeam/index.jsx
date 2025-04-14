@@ -75,8 +75,8 @@ export default function ProfessionalTeam() {
               <div className="w-[294px] h-[300px] rounded-full  mx-auto overflow-hidden mb-4">
                 <Image
                   src={
-                    member?.image
-                      ? member?.image?.url
+                    member?.teamImage294x294
+                      ? member?.teamImage294x294?.url
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt={member?.name || "placeholder"}
