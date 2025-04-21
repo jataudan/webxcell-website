@@ -296,13 +296,16 @@ const Footer = () => {
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
-                      alt="app development"
+                      alt="Brand Design Identiy"
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
-                      App Development
-                    </a>
+                    <Link
+                      href="/services/brand-design-identity"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
+                      Brand Design Identiy"
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
