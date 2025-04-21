@@ -304,7 +304,7 @@ const Footer = () => {
                       href="/services/brand-design-identity"
                       className="text-[#D9D9D9] hover:text-[#635AD9]"
                     >
-                      Brand Design Identiy"
+                      Brand Design Identiy
                     </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
