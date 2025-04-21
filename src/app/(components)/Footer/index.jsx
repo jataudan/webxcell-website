@@ -137,28 +137,31 @@ const Footer = () => {
                     Follow on
                   </span>
                   <div className="flex items-center gap-4 text-xl">
-                    {data?.footer?.socialLinks.map((link) => {
-                      const iconName = link?.image?.name?.split(".")[0];
+                    {data?.footer?.socialLinks &&
+                      data?.footer?.socialLinks.map((link) => {
+                        const iconName = link?.image?.name?.split(".")[0];
 
-                      const iconClass = `icon-${iconName}`;
+                        const iconClass = `icon-${iconName}`;
 
-                      return (
-                        <a
-                          key={link?.id}
-                          href={link?.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`hover:text-[--primary] ${iconClass}`}
-                        >
-                          <StrapiImage
-                            src={link?.image18x18?.url}
-                            alt={link?.image18x18?.alternativeText || iconName}
-                            width={link?.width || 16}
-                            height={link?.width || 16}
-                          />
-                        </a>
-                      );
-                    })}
+                        return (
+                          <a
+                            key={link?.id}
+                            href={link?.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`hover:text-[--primary] ${iconClass}`}
+                          >
+                            <StrapiImage
+                              src={link?.image18x18?.url}
+                              alt={
+                                link?.image18x18?.alternativeText || iconName
+                              }
+                              width={link?.width || 16}
+                              height={link?.width || 16}
+                            />
+                          </a>
+                        );
+                      })}
                   </div>
                 </div>
               </div>
