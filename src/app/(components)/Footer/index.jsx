@@ -255,9 +255,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/services/digital-strategy"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       Digital Marketing
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -266,9 +269,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/services/web-development"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       Web Development
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -277,9 +283,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/services/seo-link-building-optimization"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       SEO Optimized
-                    </a>
+                    </Link>
                   </li>
                   <li className="flex items-center gap-2 justify-start">
                     <Image
@@ -299,9 +308,12 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <Link
+                      href="/services/email-marketing"
+                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                    >
                       Email Marketing
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

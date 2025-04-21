@@ -42,12 +42,14 @@ export default function Header() {
           {/* Contact Information */}
           <div className="flex items-center gap-4 text-sm flex-nowrap">
             <div className="flex items-center gap-2">
-              <StrapiImage
-                src={topnav?.phoneLink?.image18x18?.url}
-                alt="phoneLink image"
-                width={16}
-                height={16}
-              />
+              {topnav?.phoneLink?.image18x18 && (
+                <StrapiImage
+                  src={topnav?.phoneLink?.image18x18?.url}
+                  alt="phoneLink image"
+                  width={16}
+                  height={16}
+                />
+              )}
               <a
                 href={`tel:${topnav?.phoneLink.text}`}
                 className="text-[10px] sm:text-sm md:text-[13px] whitespace-nowrap truncate"
@@ -56,12 +58,14 @@ export default function Header() {
               </a>
             </div>
             <div className="flex items-center gap-2">
-              <StrapiImage
-                src={topnav?.emailLink?.image17x17?.url}
-                alt="email image"
-                width={16}
-                height={16}
-              />
+              {topnav?.emailLink?.image17x17 && (
+                <StrapiImage
+                  src={topnav?.emailLink?.image17x17?.url}
+                  alt="email image"
+                  width={16}
+                  height={16}
+                />
+              )}
               <a
                 href={`mailto:${topnav?.emailLink?.text}`}
                 className="text-[10px] sm:text-sm md:text-[13px] whitespace-nowrap truncate"
@@ -73,28 +77,29 @@ export default function Header() {
 
           {/* Social Media Links */}
           <div className="flex items-center gap-2 sm:gap-3 text-sm flex-nowrap">
-            {topnav?.socialLinks?.map((link) => {
-              const iconName = link?.image18x18?.name?.split(".")[0];
+            {topnav?.socialLinks &&
+              topnav?.socialLinks?.map((link) => {
+                const iconName = link?.image18x18?.name?.split(".")[0];
 
-              const iconClass = `icon-${iconName}`;
+                const iconClass = `icon-${iconName}`;
 
-              return (
-                <a
-                  key={link?.id}
-                  href={link?.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`hover:text-[--primary] ${iconClass}`}
-                >
-                  <StrapiImage
-                    src={link?.image18x18?.url}
-                    alt={link?.image18x18?.alternativeText || iconName}
-                    width={link?.width || 16}
-                    height={link?.height || 16}
-                  />
-                </a>
-              );
-            })}
+                return (
+                  <a
+                    key={link?.id}
+                    href={link?.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`hover:text-[--primary] ${iconClass}`}
+                  >
+                    <StrapiImage
+                      src={link?.image18x18?.url}
+                      alt={link?.image18x18?.alternativeText || iconName}
+                      width={link?.width || 16}
+                      height={link?.height || 16}
+                    />
+                  </a>
+                );
+              })}
           </div>
         </div>
       </div>
@@ -103,12 +108,14 @@ export default function Header() {
       <div className="bg-[#eff1fe] text-black rounded-bl-[20px] rounded-br-[20px]">
         <div className="max-w-[1350px] mx-auto flex items-center justify-between py-4 px-4 lg:px-16 rounded-bl-[20px] rounded-br-[20px]">
           {/* Logo */}
-          <StrapiImage
-            src={mainTopNav?.logoLink?.logo187x38[0]?.url}
-            alt="webxcell"
-            width={187}
-            height={38}
-          />
+          {mainTopNav?.logoLink?.logo187x38 && (
+            <StrapiImage
+              src={mainTopNav?.logoLink?.logo187x38[0]?.url}
+              alt="webxcell"
+              width={187}
+              height={38}
+            />
+          )}
 
           {/* Hamburger Menu for Mobile */}
           <Hamburger />

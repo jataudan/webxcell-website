@@ -4,11 +4,13 @@ import { getDay, getMonth } from "@/lib/formatDate";
 import { getBlogPost } from "@/lib/queries/getBlogPosts";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const BlogSection = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [blogData, setBlogData] = useState({});
+  const router = useRouter();
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,6 +37,8 @@ const BlogSection = () => {
       </div>
     );
   }
+
+  console.log("Blog Data: ", blogData[0]?.slug);
 
   return (
     <div className="container mx-auto px-4 py-10 bg-[#fff]">
@@ -74,6 +78,7 @@ const BlogSection = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Highlighted Blog Card */}
         <div
+          onClick={() => router.push(`/blog/${blogData[0]?.slug}`)}
           className="relative  cursor-pointer p-6 rounded-2xl shadow-md group overflow-hidden"
           style={{
             backgroundImage: `url(${blogData[0]?.coverImage570x582?.url})`,
@@ -130,92 +135,95 @@ const BlogSection = () => {
 
         {/* Smaller Blog Cards */}
         <div className="space-y-6">
-          {blogData?.slice(1, 3).map((blog, index) => (
-            <div
-              key={index}
-              className="flex gap-4 p-2 md:p-4 bg-[#fff] border border-[#EAF3F8] rounded-lg"
-            >
-              {/* Left: Image background with hover gradient */}
+          {blogData?.slice(1, 3).map((blog, index) => {
+            return (
               <div
-                className="relative cursor-pointer w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg overflow-hidden group"
-                style={{
-                  backgroundImage: `url(${blog?.coverImage570x582?.url})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
+                key={index}
+                className="flex gap-4 p-2 md:p-4 bg-[#fff] border border-[#EAF3F8] rounded-lg"
               >
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[--primary] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-lg z-10" />
+                {/* Left: Image background with hover gradient */}
+                <div
+                  onClick={() => router.push(`/blog/${blog?.slug}`)}
+                  className="relative cursor-pointer w-full max-w-[110px] md:max-w-[170px] flex justify-start items-start p-3 rounded-lg overflow-hidden group"
+                  style={{
+                    backgroundImage: `url(${blog?.coverImage570x582?.url})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[--primary] to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-lg z-10" />
 
-                {/* Date badge */}
-                <div className="relative z-20">
-                  <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[--primary] text-[#fff] font-semibold">
-                    <span className="text-[16px] blog-date-title">
-                      {getDay(blog?.date)}
-                    </span>
-                    <span className="text-[12px] blog-date-title">
-                      {getMonth(blog?.date)}
-                    </span>
+                  {/* Date badge */}
+                  <div className="relative z-20">
+                    <div className="flex flex-col justify-center items-center text-sm max-w-[60px] rounded-lg py-1 px-3 bg-[--primary] text-[#fff] font-semibold">
+                      <span className="text-[16px] blog-date-title">
+                        {getDay(blog?.date)}
+                      </span>
+                      <span className="text-[12px] blog-date-title">
+                        {getMonth(blog?.date)}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Content */}
+                <div>
+                  <div className="flex gap-4 mt-4 text-sm text-[#fff] blog-date-title">
+                    <div className="flex gap-1 md:gap-3 items-center">
+                      <Image
+                        src="/assets/blog/color-tag.png"
+                        width={20}
+                        height={20}
+                        alt="tag"
+                      />
+                      <span className="text-black text-[10px] md:text-[14px]">
+                        {blog?.tag}
+                      </span>
+                    </div>
+                    <div className="flex gap-1 md:gap-3 items-center">
+                      <Image
+                        src="/assets/blog/color-message.png"
+                        width={20}
+                        height={20}
+                        alt="comments"
+                      />
+                      <span className="text-black text-[10px] md:text-[14px]">
+                        {blog?.blog_comments?.length} Comments
+                      </span>
+                    </div>
+                  </div>
+
+                  <h5 className="mt-2 font-semibold text-[#000] text-[14px] md:text-[24px]">
+                    {blog?.title}
+                  </h5>
+
+                  <div className="flex items-center gap-3 text-sm text-gray-500 mt-14">
+                    <Image
+                      src={
+                        blog?.author?.avatar56x56
+                          ? blog?.author?.avatar56x56?.url
+                          : "https://placehold.co/600x400.png?text=placeholder"
+                      }
+                      width={56}
+                      height={56}
+                      alt="avatar"
+                      className="rounded-full h-[50px] w-[50px] object-cover"
+                    />
+                    <div className="flex flex-col">
+                      <span className="text-[--primary] blog-date-title text-[12px] md:text-[14px]">
+                        By {blog?.author?.designation}
+                      </span>
+                      <span className="text-[#000] blog-date-title text-[12px] md:text-[14px]">
+                        {blog?.author?.name}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Right: Content */}
-              <div>
-                <div className="flex gap-4 mt-4 text-sm text-[#fff] blog-date-title">
-                  <div className="flex gap-1 md:gap-3 items-center">
-                    <Image
-                      src="/assets/blog/color-tag.png"
-                      width={20}
-                      height={20}
-                      alt="tag"
-                    />
-                    <span className="text-black text-[10px] md:text-[14px]">
-                      {blog?.tag}
-                    </span>
-                  </div>
-                  <div className="flex gap-1 md:gap-3 items-center">
-                    <Image
-                      src="/assets/blog/color-message.png"
-                      width={20}
-                      height={20}
-                      alt="comments"
-                    />
-                    <span className="text-black text-[10px] md:text-[14px]">
-                      {blog?.blog_comments?.length} Comments
-                    </span>
-                  </div>
-                </div>
-
-                <h5 className="mt-2 font-semibold text-[#000] text-[14px] md:text-[24px]">
-                  {blog?.title}
-                </h5>
-
-                <div className="flex items-center gap-3 text-sm text-gray-500 mt-14">
-                  <Image
-                    src={
-                      blog?.author?.avatar56x56
-                        ? blog?.author?.avatar56x56?.url
-                        : "https://placehold.co/600x400.png?text=placeholder"
-                    }
-                    width={56}
-                    height={56}
-                    alt="avatar"
-                    className="rounded-full h-[50px] w-[50px] object-cover"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-[--primary] blog-date-title text-[12px] md:text-[14px]">
-                      By {blog?.author?.designation}
-                    </span>
-                    <span className="text-[#000] blog-date-title text-[12px] md:text-[14px]">
-                      {blog?.author?.name}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

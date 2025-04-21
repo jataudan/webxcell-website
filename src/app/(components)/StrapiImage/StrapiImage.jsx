@@ -7,12 +7,16 @@ export function StrapiImage({ src, alt, height, width, className }) {
   const imageFallback = `https://placehold.co/${width}x${height}`;
 
   return (
-    <Image
-      src={imageUrl ?? imageFallback}
-      alt={alt ?? "Image"}
-      height={height}
-      width={width}
-      className={className}
-    />
+    <>
+      {imageUrl && (
+        <Image
+          src={imageUrl ?? imageFallback}
+          alt={alt ?? "Image"}
+          height={height}
+          width={width}
+          className={className}
+        />
+      )}
+    </>
   );
 }
