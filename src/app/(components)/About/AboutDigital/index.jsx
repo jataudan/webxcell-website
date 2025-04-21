@@ -114,11 +114,28 @@ export default function AboutDigital({ data }) {
             className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px] bg-cover bg-center"
             style={{
               backgroundImage: "url('/assets/about/ellipse-purple.png')",
+              overflow: "hidden",
+              borderRadius: "50%",
             }}
-          ></div>
+          >
+            {/* Foreground Image */}
+            <div className="relative z-10">
+              <Image
+                src={
+                  data?.image553x534
+                    ? data?.image553x534?.url
+                    : "https://placehold.co/600x400.png?text=placeholder"
+                }
+                alt="Business Woman"
+                width={220}
+                height={240}
+                className="w-full object-cover"
+              />
+            </div>
+          </div>
 
           {/* Happy Clients Section */}
-          <div className="absolute bottom-[-30px] sm:bottom-[-50px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
+          <div className="absolute bottom-[-30px] sm:bottom-[-267px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
             <div className="flex items-center space-x-3">
               {/* Circles */}
               <div className="flex -space-x-2">
@@ -151,21 +168,6 @@ export default function AboutDigital({ data }) {
                 {happyClients?.testimonials?.count}
               </span>
             </div>
-          </div>
-
-          {/* Foreground Image */}
-          <div className="relative z-10 mt-8 sm:mt-16">
-            <Image
-              src={
-                data?.image553x534
-                  ? data?.image553x534?.url
-                  : "https://placehold.co/600x400.png?text=placeholder"
-              }
-              alt="Business Woman"
-              width={220}
-              height={240}
-              className="sm:w-[300px] sm:h-[330px] lg:w-[442px] lg:h-[476px]"
-            />
           </div>
         </div>
       </section>
