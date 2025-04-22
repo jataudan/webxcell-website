@@ -38,8 +38,6 @@ const BlogSection = () => {
     );
   }
 
-  console.log("Blog Data: ", blogData[0]?.slug);
-
   return (
     <div className="container mx-auto px-4 py-10 bg-[#fff]">
       {/* Section Header */}

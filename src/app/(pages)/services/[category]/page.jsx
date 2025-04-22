@@ -12,7 +12,7 @@ import RichText from "@/lib/richText";
 export default function ServiceDetail() {
   const params = useParams();
   const router = useRouter();
-  const { slug } = params;
+  const { category } = params;
 
   const [service, setService] = useState({});
   const [allServices, setAllServices] = useState([]);
@@ -22,11 +22,11 @@ export default function ServiceDetail() {
     return text.toLowerCase().replace(/\s+/g, "-");
   };
 
-  const [activeService, setActiveService] = useState(slug);
+  const [activeService, setActiveService] = useState(category);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const services = await getServiceByID(slug);
+        const services = await getServiceByID(category);
         const allServices = await getAllServices();
 
         if (services && allServices) {
@@ -41,11 +41,11 @@ export default function ServiceDetail() {
       }
     };
     fetchData();
-  }, [slug]);
+  }, [category]);
 
-  const handleClick = (slug) => {
-    setActiveService(slug);
-    router.push(`/services/${slug}`);
+  const handleClick = (category) => {
+    setActiveService(category);
+    router.push(`/services/${category}`);
   };
   if (isLoading) {
     return (
