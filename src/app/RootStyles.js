@@ -116,6 +116,14 @@ export default function RootStyles() {
         margin: inherit;
       }
 
+      p {
+        font-family: var(--font-inter);
+        font-size: 1rem; /* ~16px */
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0.5rem 0;
+      }
+
       .span-title {
         font-family: var(--font-plus-jakarta-sans);
       }
