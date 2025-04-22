@@ -64,13 +64,56 @@ export default function RootStyles() {
         font-family: var(--font-poppins);
       }
 
-      h1 {
+      /* h1 {
         font-family: var(--font-oswald);
+        font-size: 35px;
       }
 
       h2,
       h5 {
         font-family: var(--font-plus-jakarta-sans);
+      } */
+
+      h1 {
+        font-family: var(--font-plus-jakarta-sans);
+        font-size: 2.78rem; /* ~48px */
+        font-weight: 700;
+        margin: inherit;
+      }
+
+      h2 {
+        font-family: var(--font-plus-jakarta-sans);
+        font-size: 2.25rem; /* ~36px */
+        font-weight: 600;
+        margin: inherit;
+      }
+
+      h3 {
+        font-family: var(--font-inter);
+        font-size: 1.875rem; /* ~30px */
+        font-weight: 600;
+        margin: inherit;
+      }
+
+      h4 {
+        font-family: var(--font-inter);
+        font-size: 1.5rem; /* ~24px */
+        font-weight: 500;
+        margin: inherit;
+      }
+
+      h5 {
+        font-family: var(--font-plus-jakarta-sans);
+        font-size: 1.25rem; /* ~20px */
+        font-weight: 500;
+        margin: inherit;
+      }
+
+      h6 {
+        font-family: var(--font-inter);
+        font-size: 1rem; /* ~16px */
+        font-weight: 500;
+        margin: inherit;
       }
 
       .span-title {
