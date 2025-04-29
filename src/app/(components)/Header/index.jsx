@@ -109,12 +109,14 @@ export default function Header() {
         <div className="max-w-[1350px] mx-auto flex items-center justify-between py-4 px-4 lg:px-16 rounded-bl-[20px] rounded-br-[20px]">
           {/* Logo */}
           {mainTopNav?.logoLink?.logo187x38 && (
-            <StrapiImage
-              src={mainTopNav?.logoLink?.logo187x38[0]?.url}
-              alt="webxcell"
-              width={187}
-              height={38}
-            />
+            <Link href="/">
+              <StrapiImage
+                src={mainTopNav?.logoLink?.logo187x38[0]?.url}
+                alt="webxcell"
+                width={187}
+                height={38}
+              />
+            </Link>
           )}
 
           {/* Hamburger Menu for Mobile */}
