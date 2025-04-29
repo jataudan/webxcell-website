@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export default function ChooseUs({ data }) {
+  console.log("data?.mainImage588x583", data?.mainImage588x583);
   return (
     <div className="relative overflow-hidden bg-white sm:py-20">
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pb-9 md:pb-0 md:py-10 sm:py-20 gap-10 px-4 sm:px-8">
@@ -104,13 +105,13 @@ export default function ChooseUs({ data }) {
             <Image
               src={
                 data?.mainImage588x583
-                  ? data?.mainImage588x583?.formats?.large?.url
+                  ? data?.mainImage588x583?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               }
               alt="Business Woman"
-              width={180}
+              width={880}
               height={200}
-              className="sm:w-[300px] sm:h-[330px] lg:w-[442px] lg:h-[476px]"
+              className="sm:w-[300px] sm:h-[330px] lg:w-[542px] lg:h-[542px]"
             />
           </div>
         </div>
