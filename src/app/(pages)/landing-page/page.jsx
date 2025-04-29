@@ -20,6 +20,7 @@ const Landing = () => {
   const [offService, setOffService] = useState({});
   const [trustedPartner, setTrustedPartner] = useState({});
   const [caseStudies, setCaseStudies] = useState({});
+  const [blogDetails, setBlogDetails] = useState({});
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -35,6 +36,7 @@ const Landing = () => {
         setOffService(response?.data?.offer);
         setTrustedPartner(response?.data?.strategicPartnersImages);
         setCaseStudies(response?.data?.studies);
+        setBlogDetails(response?.data?.blog);
       }
     };
     fetchData();
@@ -57,7 +59,7 @@ const Landing = () => {
       <CaseStudies caseStudies={caseStudies} />
       <OffService data={offService} />
       {/* <ExpertTeam /> */}
-      <BlogSection />
+      <BlogSection blogDetails={blogDetails} />
       <TrustStrategySlider data={trustedPartner} />
       <MarketingSlider />
       <ContactInfo />

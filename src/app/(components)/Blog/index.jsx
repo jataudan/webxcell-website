@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const BlogSection = () => {
+const BlogSection = ({ blogDetails }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [blogData, setBlogData] = useState({});
   const router = useRouter();
@@ -43,11 +43,11 @@ const BlogSection = () => {
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <h3 className="blog-title text-[24px] md:text-[50px] text-[#000]">
-          Latest News{" "}
+          {blogDetails?.prefix}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
-            &
+            {blogDetails?.highlighted}
           </span>{" "}
-          <span className="text-[#000]">Blog</span>
+          <span className="text-[#000]">{blogDetails?.suffix}</span>
         </h3>
         <div className="mt-8 flex gap-3 md:gap-0 sm:flex-row justify-center lg:justify-start items-center ">
           <Link

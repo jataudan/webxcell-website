@@ -29,8 +29,6 @@ const PortfolioCards = () => {
     );
   }
 
-  console.log("projectDetail", projectDetail);
-
   return (
     <div className="container mx-auto px-4 py-8 md:mb-[130px]">
       {/* First Row */}

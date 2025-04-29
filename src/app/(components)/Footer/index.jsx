@@ -378,8 +378,18 @@ const Footer = () => {
                 {data?.footer?.footerBottomLeftText}
               </span>
               <span className="footer-title text-center">
-                <span className="text-[#D9D9D9] mr-7">Terms & Conditions</span>
-                <span className="text-[#D9D9D9]">Cookies Policy</span>
+                <Link
+                  href="/terms-conditions"
+                  className="text-[#D9D9D9] mr-7 footer-title"
+                >
+                  Terms & Conditions
+                </Link>
+                <Link
+                  href="/cookies-policy"
+                  className="text-[#D9D9D9] footer-title"
+                >
+                  Cookies Policy
+                </Link>
               </span>
             </div>
           </div>

@@ -16,6 +16,7 @@ export async function getLandingData() {
         "offer.image733x608",
         "strategicPartnersImages.partners.partnerImage113x44",
         "studies",
+        "blog",
       ],
     },
     { encodeValuesOnly: true }
