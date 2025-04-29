@@ -11,6 +11,7 @@ export async function getfooterData() {
         "footer.bgImage1920x789",
         "footer.logo160x24",
         "footer.socialLinks.image18x18",
+        "footer.subFooter.image332x379",
       ],
     },
     { encodeValuesOnly: true }

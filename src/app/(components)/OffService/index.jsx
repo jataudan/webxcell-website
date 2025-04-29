@@ -22,6 +22,7 @@ const OffService = ({ data }) => {
             alt="Image"
             width={577}
             height={398}
+            className="max-w-[50%]"
           />
         </div>
 

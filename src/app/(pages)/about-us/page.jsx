@@ -46,7 +46,7 @@ const About = () => {
       <WorkProcess data={workingProcess} />
       <ChooseUs data={chooseUs} />
       <Testimonials data={testimonials} />
-      <ProfessionalTeam />
+      {/* <ProfessionalTeam /> */}
     </>
   );
 };

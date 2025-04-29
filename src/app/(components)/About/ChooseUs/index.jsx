@@ -19,7 +19,7 @@ export default function ChooseUs({ data }) {
           </p>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8 mt-8 mb-8">
+          {/* <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8 mt-8 mb-8">
             {data?.benefits?.length > 0 &&
               data?.benefits?.map((service, index) => (
                 <div
@@ -50,10 +50,10 @@ export default function ChooseUs({ data }) {
                   </div>
                 </div>
               ))}
-          </div>
-          <hr className="w-full sm:w-[440px]" />
+          </div> */}
+          {/* <hr className="w-full sm:w-[440px]" /> */}
 
-          <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8 mt-8 mb-8">
+          {/* <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-8 mt-8 mb-8">
             <div className="flex items-center">
               <div className="flex flex-col items-start">
                 <p className="text-sm sm:text-base font-semibold text-[#101010]">
@@ -84,7 +84,7 @@ export default function ChooseUs({ data }) {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Right Side - Image */}
@@ -92,9 +92,11 @@ export default function ChooseUs({ data }) {
           {/* Background Shape */}
           <div
             className="absolute w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] lg:w-[516px] lg:h-[550px] bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/assets/about/purple-bg.webp')",
-            }}
+            style={
+              {
+                // backgroundImage: "url('/assets/about/purple-bg.webp')",
+              }
+            }
           ></div>
 
           {/* Foreground Image */}

@@ -55,12 +55,14 @@ const Footer = () => {
             />
           </div>
           <div className="absolute hidden lg:block top-[10px] left-[63px]">
-            <Image
-              src="/assets/contact-info/person.png"
-              alt="Person"
-              width={226}
-              height={266}
-            />
+            {data?.footer?.subFooter && (
+              <Image
+                src={data?.footer?.subFooter?.image332x379?.url}
+                alt="Person"
+                width={226}
+                height={266}
+              />
+            )}
           </div>
           <div className="absolute hidden lg:block top-[90px] left-[428px]">
             <Image
@@ -83,8 +85,7 @@ const Footer = () => {
         {/* Right Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-white">
           <h3 className="text-[18px] md:text-[22px] leading-[1.5] font-semibold mb-2 --font-plus-jakarta-sans">
-            Stay Abreast of The Latest In Digital with Our Curated Content Every
-            Week In Your Inbox
+            {data?.footer?.subFooter?.heading}
           </h3>
           <div className="flex items-center mt-4 bg-white rounded-full px-1 py-1">
             <input

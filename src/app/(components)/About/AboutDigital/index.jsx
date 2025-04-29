@@ -135,9 +135,8 @@ export default function AboutDigital({ data }) {
           </div>
 
           {/* Happy Clients Section */}
-          <div className="absolute bottom-[-30px] sm:bottom-[-267px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
+          {/* <div className="absolute bottom-[-30px] sm:bottom-[-267px] w-[360px] z-20 flex items-center gap-4 bg-white px-2 py-2 md:px-6 md:py-4 rounded-full shadow-lg">
             <div className="flex items-center space-x-3">
-              {/* Circles */}
               <div className="flex -space-x-2">
                 {happyClients?.testimonials?.clientImages50x50?.length > 0 &&
                   happyClients?.testimonials?.clientImages50x50?.map(
@@ -163,12 +162,11 @@ export default function AboutDigital({ data }) {
                     }
                   )}
               </div>
-              {/* Text */}
               <span className="text-black font-semibold text-sm span-title">
                 {happyClients?.testimonials?.count}
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
