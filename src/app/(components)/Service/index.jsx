@@ -272,7 +272,7 @@ export default function Service({ data }) {
                 })}
             </div>
             {/* Text */}
-            <span className="text-white text-sm span-title">
+            <span className="text-white text-sm md:text-lg span-title">
               {data?.testimonials?.count}
             </span>
           </div>
