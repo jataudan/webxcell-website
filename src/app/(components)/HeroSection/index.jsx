@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getHomeHeroData } from "@/lib/queries/getHeroSection";
 import Image from "next/image";
 import Link from "next/link";
+import HeroSlider from "../HeroSlider";
 
 export default function Hero() {
   const [getHero, setGetHero] = useState({});
@@ -30,14 +31,11 @@ export default function Hero() {
   }
 
   return (
-    <section
-      className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center px-6 md:px-20 lg:px-40"
-      style={{
-        backgroundImage: `url(${getHero?.image1920x1000?.formats?.large?.url})`,
-      }}
-    >
+    <section className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center">
+      <HeroSlider sliderImages={getHero?.slider} />
+
       {/* Content */}
-      <div className="relative text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto">
+      <div className="absolute text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto left-[15%]">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
           {getHero?.primaryHeading} <br />
           <span className="mt-4 block">{getHero?.secondaryHeading}</span>
@@ -63,7 +61,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="flex justify-center h-[100vh] items-center gap-2 md:hidden">
+      <div className="absolute flex justify-center h-[100vh] items-center gap-2 z-60 bottom-0 left-1/2 transform -translate-x-1/2 md:hidden">
         {getHero?.socialLinks?.map((item, index) => {
           return (
             <a
