@@ -41,11 +41,6 @@ const BlogSection = () => {
   return (
     <div className="container mx-auto px-4 py-10 bg-[#fff]">
       {/* Section Header */}
-      <div className="md:max-w-28 text-center md:text-left">
-        <h2 className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC] w-max">
-          Latest News
-        </h2>
-      </div>
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <h3 className="blog-title text-[24px] md:text-[50px] text-[#000]">
           Latest News{" "}

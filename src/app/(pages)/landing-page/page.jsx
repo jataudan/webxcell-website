@@ -19,6 +19,7 @@ const Landing = () => {
   const [digitalAgency, setDigitalAgency] = useState({});
   const [offService, setOffService] = useState({});
   const [trustedPartner, setTrustedPartner] = useState({});
+  const [caseStudies, setCaseStudies] = useState({});
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,6 +34,7 @@ const Landing = () => {
         setDigitalAgency(response?.data?.digital);
         setOffService(response?.data?.offer);
         setTrustedPartner(response?.data?.strategicPartnersImages);
+        setCaseStudies(response?.data?.studies);
       }
     };
     fetchData();
@@ -52,9 +54,9 @@ const Landing = () => {
       <AboutUs data={about} />
       <Service data={service} />
       <DigitalAgency data={digitalAgency} />
-      <CaseStudies />
+      <CaseStudies caseStudies={caseStudies} />
       <OffService data={offService} />
-      <ExpertTeam />
+      {/* <ExpertTeam /> */}
       <BlogSection />
       <TrustStrategySlider data={trustedPartner} />
       <MarketingSlider />

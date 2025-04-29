@@ -35,7 +35,7 @@ const settings = {
   ],
 };
 
-const CaseStudies = () => {
+const CaseStudies = ({ caseStudies }) => {
   const router = useRouter();
   const [projectDetail, setProjectDetail] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -85,15 +85,15 @@ const CaseStudies = () => {
       </div>
       <div className="text-center mt-16 text-[16px]">
         <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
-          Our Success Stories
+          {caseStudies?.title}
         </span>
       </div>
       <div className="text-center mt-5">
         <h1 className="text-5xl case-studies-title">
           <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
-            Case
+            {caseStudies?.prefix}
           </span>
-          <span className="text-white">Studies</span>
+          <span className="text-white">{caseStudies?.suffix}</span>
         </h1>
       </div>
 
@@ -119,10 +119,10 @@ const CaseStudies = () => {
                 {/* Hidden Content on Hover */}
                 <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
                   <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
-                    <div className="text-left px-5 py-3">
-                      <h2 className="text-[#000] --font-plus-jakarta-sans font-semibold">
+                    <div className="text-left px-5 py-1">
+                      <h4 className="text-[#000] --font-plus-jakarta-sans font-semibold">
                         {item?.title}
-                      </h2>
+                      </h4>
                       <span className="text-[--primary] --font-plus-jakarta-sans font-semibold">
                         {item?.tag?.name}
                       </span>

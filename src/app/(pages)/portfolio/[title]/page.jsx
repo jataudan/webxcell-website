@@ -119,7 +119,7 @@ export default function PortfolioDetail() {
                 </div>
 
                 <div>
-                  <h4 className="text-[#fff] font-semibold">Client:</h4>
+                  <h5 className="text-[#fff] font-semibold">Client:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.clientName}
                   </span>
@@ -128,7 +128,7 @@ export default function PortfolioDetail() {
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
                 <div>
-                  <h4 className="text-[#fff] font-semibold">Category:</h4>
+                  <h5 className="text-[#fff] font-semibold">Category:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.category}
                   </span>
@@ -137,7 +137,7 @@ export default function PortfolioDetail() {
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
                 <div>
-                  <h4 className="text-[#fff] font-semibold">Start Date:</h4>
+                  <h5 className="text-[#fff] font-semibold">Start Date:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.startDate}
                   </span>
@@ -146,7 +146,7 @@ export default function PortfolioDetail() {
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
                 <div>
-                  <h4 className="text-[#fff] font-semibold">End Date:</h4>
+                  <h5 className="text-[#fff] font-semibold">End Date:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.endDate}
                   </span>
@@ -155,7 +155,7 @@ export default function PortfolioDetail() {
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
                 <div>
-                  <h4 className="text-[#fff] font-semibold">Project Budget:</h4>
+                  <h5 className="text-[#fff] font-semibold">Project Budget:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.budget}
                   </span>
@@ -210,8 +210,8 @@ export default function PortfolioDetail() {
                   width={70}
                   height={70}
                 />
-                <h3>{project?.contact?.title}</h3>
-                <h3>{project?.contact?.phoneNumbers}</h3>
+                <h4>{project?.contact?.title}</h4>
+                <h4>{project?.contact?.phoneNumbers}</h4>
               </div>
             </div>
           </div>
