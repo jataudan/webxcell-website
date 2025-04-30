@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <div className="relative">
-      <div className="flex absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
+      <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
         {/* Left Image */}
         <div className="relative hidden lg:block w-1/2 h-[327px]">
           <div className="absolute bottom-[53px] left-[-33px]">
@@ -54,13 +54,14 @@ const Footer = () => {
               height={80}
             />
           </div>
-          <div className="absolute hidden lg:block top-[10px] left-[63px]">
+          <div className="absolute hidden lg:block top-[62px] left-[25px]">
             {data?.footer?.subFooter && (
               <Image
                 src={data?.footer?.subFooter?.image332x379?.url}
                 alt="Person"
                 width={226}
                 height={266}
+                className="w-[307px]"
               />
             )}
           </div>
@@ -230,14 +231,6 @@ const Footer = () => {
                     >
                       FAQ's
                     </Link>
-                  </li>
-                  <li className="flex items-center gap-2 justify-start">
-                    <Image
-                      src="/assets/footer/___icon.png"
-                      alt="login"
-                      width={18}
-                      height={18}
-                    />
                   </li>
                 </ul>
               </div>
