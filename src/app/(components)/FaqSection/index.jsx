@@ -30,13 +30,6 @@ export default function FaqSection() {
     <div className="relative overflow-hidden bg-white mb-[130px]">
       <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 md:p-[112px] lg:py-20 gap-10">
         <div className="relative flex ">
-          <div
-            className="absolute w-[62px] h-[325px] left-[-48px] bottom-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/assets/faq/Rectangle.png')",
-            }}
-          ></div>
-
           <div className="relative mt-8 ">
             <Image
               src={
