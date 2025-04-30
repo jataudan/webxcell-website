@@ -72,7 +72,7 @@ export default function ChooseUs({ data }) {
                     ? data?.contactInfo?.icon56x54?.url
                     : "https://placehold.co/600x400.png?text=placeholder"
                 }
-                alt="phone icon"
+                alt="phone icons"
                 width={56}
                 height={54.27}
               />
