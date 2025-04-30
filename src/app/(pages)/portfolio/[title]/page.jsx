@@ -9,7 +9,7 @@ import RichText from "@/lib/richText";
 
 export default function PortfolioDetail() {
   const params = useParams();
-  const { slug } = params;
+  const { title } = params;
 
   const [project, setProject] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +18,7 @@ export default function PortfolioDetail() {
     setIsLoading(true);
     const fetchData = async () => {
       try {
-        const response = await getProjectByID(slug);
+        const response = await getProjectByID(title);
         if (response) {
           setIsLoading(false);
           setProject(response?.data[0]);
@@ -30,7 +30,7 @@ export default function PortfolioDetail() {
       }
     };
     fetchData();
-  }, [slug]);
+  }, [title]);
 
   if (isLoading) {
     return (

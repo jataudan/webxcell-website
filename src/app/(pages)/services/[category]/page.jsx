@@ -200,7 +200,7 @@ export default function ServiceDetail() {
                   alt="Rectangle"
                   width={470}
                   height={370}
-                  className="object-contain w-full h-full" // Ensures the image fills the container
+                  className="object-contain w-full h-full"
                 />
               </div>
 
