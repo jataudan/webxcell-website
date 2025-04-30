@@ -33,7 +33,7 @@ export default function Testimonials({ data }) {
 
   return (
     <section
-      className="relative w-full h-[650px] bg-cover bg-center flex flex-row lg:flex-row justify-between items-center px-6 md:px-10 lg:px-20 gap-12 mb-4 overflow-hidden"
+      className="relative w-full h-[650px] bg-cover bg-center flex flex-row lg:flex-row justify-between items-center px-6 md:px-10 lg:px-20 gap-12 mb-96 overflow-hidden"
       style={{
         backgroundImage: `url(/assets/about/testimonial-bg.png)`,
       }}
