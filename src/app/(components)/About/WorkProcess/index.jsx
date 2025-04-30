@@ -182,7 +182,7 @@ export default function WorkProcess({ data }) {
             </div>
 
             {/* <!-- Connecting Line --> */}
-            <hr className="absolute right-[120px] 2xl-custom:right-[93px] z-[-2] 2xl-custom:top-[127px] top-[138px] 2xl-custom:rotate-[-33deg] rotate-[-37deg] transform bg-transparent text-transparent w-[260px] 2xl-custom:w-[325px] border-dotted border border-[#219BE4] hidden lg:block" />
+            <hr className="absolute right-[160px] 2xl-custom:right-[181px] z-[-2] 2xl-custom:top-[101px] top-[131px] 2xl-custom:rotate-[-22deg] rotate-[-32deg] transform bg-transparent text-transparent w-[260px] 2xl-custom:w-[325px] border-dotted border border-[#219BE4] hidden lg:block" />
           </div>
         </div>
       </div>
