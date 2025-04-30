@@ -238,9 +238,6 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
-                      Login / Register
-                    </a>
                   </li>
                 </ul>
               </div>
