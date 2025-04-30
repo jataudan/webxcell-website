@@ -1,4 +1,3 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
@@ -8,6 +7,7 @@ const query = qs.stringify(
       image453x349: true,
       video: true,
       contactCard: true,
+      seo: true,
     },
   },
   {

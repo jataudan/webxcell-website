@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function ChooseUs({ data }) {
-  console.log("data?.mainImage588x583", data?.mainImage588x583);
   return (
     <div className="relative overflow-hidden bg-white sm:py-20">
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pb-9 md:pb-0 md:py-10 sm:py-20 gap-10 px-4 sm:px-8">

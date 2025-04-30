@@ -6,7 +6,7 @@ import Service from "@/app/(components)/Service";
 import DigitalAgency from "@/app/(components)/DigitalAgency";
 import CaseStudies from "@/app/(components)/CaseStudies";
 import OffService from "@/app/(components)/OffService";
-import ExpertTeam from "@/app/(components)/ExpertTeam";
+// import ExpertTeam from "@/app/(components)/ExpertTeam";
 import BlogSection from "@/app/(components)/Blog";
 import TrustStrategySlider from "@/app/(components)/TrustStrategySlider";
 import MarketingSlider from "@/app/(components)/MarketingSlider";

@@ -75,7 +75,6 @@ const PortfolioCards = () => {
         {/* Small Boxes */}
         <div className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]">
           {projectDetail.slice(1, 3).map((item) => {
-            console.log("item", item);
             return (
               <div
                 key={item.id}

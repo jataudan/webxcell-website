@@ -1,4 +1,3 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
@@ -21,6 +20,7 @@ const query = qs.stringify(
       "testimonials.sideImage528x686",
       "testimonials.backgroundImage1920x782",
       "chooseUs.mainImage588x583",
+      "seo",
     ],
   },
   { encodeValuesOnly: true }

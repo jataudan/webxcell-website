@@ -1,4 +1,3 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
@@ -29,7 +28,34 @@ export async function getServiceClient() {
       populate: [
         "serviceTestimonials.clientImage585x609",
         "serviceTestimonials.clientDetails.image70x70",
+        "serviceSeo",
       ],
+    },
+    { encodeValuesOnly: true }
+  );
+
+  const response = await fetchStrapiData(path, query);
+  return response;
+}
+
+export async function getProtfolioSeo() {
+  const path = "/api/global?";
+  const query = qs.stringify(
+    {
+      populate: ["protfolioSeo"],
+    },
+    { encodeValuesOnly: true }
+  );
+
+  const response = await fetchStrapiData(path, query);
+  return response;
+}
+
+export async function getBlogSeo() {
+  const path = "/api/global?";
+  const query = qs.stringify(
+    {
+      populate: ["blogSeo"],
     },
     { encodeValuesOnly: true }
   );

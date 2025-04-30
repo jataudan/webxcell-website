@@ -1,3 +1,5 @@
+"use client";
+
 import { getHappyClients } from "@/lib/queries/getAboutUs";
 import Image from "next/image";
 import { useEffect, useState } from "react";

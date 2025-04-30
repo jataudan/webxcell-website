@@ -1,4 +1,3 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
@@ -17,6 +16,7 @@ export async function getLandingData() {
         "strategicPartnersImages.partners.partnerImage113x44",
         "studies",
         "blog",
+        "seo",
       ],
     },
     { encodeValuesOnly: true }

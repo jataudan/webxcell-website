@@ -1,7 +1,32 @@
-import Image from "next/image";
+"use client";
 
-export default function WorkProcess({ data }) {
-  console.log('data', data)
+import { getAboutUs } from "@/lib/queries/getAboutUs";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+export default function WorkProcess() {
+  const [workingProcess, setWorkingProcess] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchData = async () => {
+      const response = await getAboutUs();
+      if (response) {
+        setIsLoading(false);
+        setWorkingProcess(response?.data?.workingProcess);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
   return (
     <section
       style={{
@@ -14,7 +39,7 @@ export default function WorkProcess({ data }) {
       <div className="container mx-auto bg-[#7fdeff] md:bg-transparent pt-10 pb-12 font-plus-jakarta">
         <div className=" flex flex-col align-center justify-center items-center text-center pt-[40px] md:pt-20">
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4]">
-            {data?.h2 || ""}
+            {workingProcess?.h2 || ""}
           </span>
 
           <div className="text-[46px] font-extrabold mt-2 font-poppins">
@@ -29,7 +54,7 @@ export default function WorkProcess({ data }) {
                 <div className="flex items-center justify-center text-white">
                   <Image
                     src={
-                      data?.milestones[0]?.image100x100?.url ||
+                      workingProcess?.milestones[0]?.image100x100?.url ||
                       "/assets/about/icon-1.png"
                     }
                     alt="Service Icon"
@@ -42,10 +67,10 @@ export default function WorkProcess({ data }) {
                 </span>
               </div>
               <h3 className="mt-4 text-lg font-bold">
-                {data?.milestones[0]?.title || ""}
+                {workingProcess?.milestones[0]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
-                {data?.milestones[0]?.description || ""}
+                {workingProcess?.milestones[0]?.description || ""}
               </p>
             </div>
             <hr className="absolute right-[-125px] 2xl-custom:right-[-139px] z-[-2] 2xl-custom:top-[113px] top-[139px] 2xl-custom:rotate-[23deg] rotate-[38deg] transform bg-transparent text-transparent w-[270px] 2xl-custom:w-[313px] border-dotted border border-[#219BE4] hidden lg:block" />
@@ -55,18 +80,18 @@ export default function WorkProcess({ data }) {
           <div className="flex relative">
             <div className="flex flex-col-reverse lg:flex-col items-center text-center">
               <h3 className="mt-4 text-lg font-bold hidden lg:block">
-                {data?.milestones[1]?.title || ""}
+                {workingProcess?.milestones[1]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700 hidden lg:block">
-                {data?.milestones[1]?.description || ""}
+                {workingProcess?.milestones[1]?.description || ""}
               </p>
 
               <div className="block lg:hidden">
                 <h3 className="mt-4 text-lg font-bold">
-                  {data?.milestones[1]?.title || ""}
+                  {workingProcess?.milestones[1]?.title || ""}
                 </h3>
                 <p className="mt-2  text-base text-gray-700">
-                  {data?.milestones[1]?.description || ""}
+                  {workingProcess?.milestones[1]?.description || ""}
                 </p>
               </div>
 
@@ -74,7 +99,7 @@ export default function WorkProcess({ data }) {
                 <div className="flex items-center justify-center text-white">
                   <Image
                     src={
-                      data?.milestones[1]?.image100x100?.url ||
+                      workingProcess?.milestones[1]?.image100x100?.url ||
                       "/assets/about/icon-2.png"
                     }
                     alt="Requirements Icon"
@@ -98,7 +123,7 @@ export default function WorkProcess({ data }) {
                 <div className="flex items-center justify-center text-white">
                   <Image
                     src={
-                      data?.milestones[2]?.image100x100?.url ||
+                      workingProcess?.milestones[2]?.image100x100?.url ||
                       "/assets/about/icon-3.png"
                     }
                     alt="Meeting Icon"
@@ -111,10 +136,10 @@ export default function WorkProcess({ data }) {
                 </span>
               </div>
               <h3 className="mt-4 text-lg font-bold">
-                {data?.milestones[2]?.title || ""}
+                {workingProcess?.milestones[2]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
-                {data?.milestones[2]?.description || ""}
+                {workingProcess?.milestones[2]?.description || ""}
               </p>
             </div>
 
@@ -125,23 +150,23 @@ export default function WorkProcess({ data }) {
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">
             <div className="block lg:hidden">
               <h3 className="mt-4 text-lg font-bold">
-                {data?.milestones[3]?.title || ""}
+                {workingProcess?.milestones[3]?.title || ""}
               </h3>
               <p className="mt-2 text-base text-gray-700">
-                {data?.milestones[3]?.description || ""}
+                {workingProcess?.milestones[3]?.description || ""}
               </p>
             </div>
             <h3 className="mt-4 text-lg font-bold hidden lg:block">
-              {data?.milestones[3]?.title || ""}
+              {workingProcess?.milestones[3]?.title || ""}
             </h3>
             <p className="mt-2 text-base text-gray-700 hidden lg:block">
-              {data?.milestones[3]?.description || ""}
+              {workingProcess?.milestones[3]?.description || ""}
             </p>
             <div className="relative">
               <div className="flex items-center justify-center text-white">
                 <Image
                   src={
-                    data?.milestones[3]?.image100x100?.url ||
+                    workingProcess?.milestones[3]?.image100x100?.url ||
                     "/assets/about/icon-4.png"
                   }
                   alt="Solution Icon"
@@ -161,7 +186,7 @@ export default function WorkProcess({ data }) {
                 <div className="flex items-center justify-center text-white">
                   <Image
                     src={
-                      data?.milestones[4]?.image100x100?.url ||
+                      workingProcess?.milestones[4]?.image100x100?.url ||
                       "/assets/about/icon-3.png"
                     }
                     alt="Meeting Icon"
@@ -174,10 +199,10 @@ export default function WorkProcess({ data }) {
                 </span>
               </div>
               <h3 className="mt-4 text-lg font-bold">
-                {data?.milestones[4]?.title || ""}
+                {workingProcess?.milestones[4]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
-                {data?.milestones[4]?.description || ""}
+                {workingProcess?.milestones[4]?.description || ""}
               </p>
             </div>
 

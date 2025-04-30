@@ -1,3 +1,5 @@
+"use client";
+
 import { getServiceClient } from "@/lib/queries/getTopNav";
 import Image from "next/image";
 import { useEffect, useState } from "react";
