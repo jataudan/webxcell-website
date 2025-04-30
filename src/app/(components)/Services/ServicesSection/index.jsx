@@ -67,10 +67,10 @@ export default function ServicesSection() {
                     </div>
                   </div>
                   <div className="flex flex-col mb-12">
-                    <h3 className="text-lg font-bold mb-2 text-[#17012C]">
+                    <h3 className="text-lg font-bold mb-2 text-[#17012C] group-hover:text-white">
                       {service?.title}
                     </h3>
-                    <p className="text-base text-[#504E4E] --font-plus-jakarta-sans px-12">
+                    <p className="text-base text-[#504E4E] font-plusJakarta px-12 group-hover:text-white">
                       {service?.shortDescription}
                     </p>
                   </div>
@@ -81,7 +81,7 @@ export default function ServicesSection() {
                   onClick={() => router.push(`/services/${service?.slug}`)}
                 >
                   <Image
-                    src="/assets/Service/arrow.png"
+                    src="/assets/Service/arrow-1.png"
                     alt="arrow"
                     width={128}
                     height={138}
