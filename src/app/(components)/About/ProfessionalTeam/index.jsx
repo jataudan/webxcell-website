@@ -47,7 +47,7 @@ export default function ProfessionalTeam() {
               Our Digital Expert Team
             </span>
 
-            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] text-[#101010] --font-poppins font-semibold mt-2">
+            <h2 className="text-[28px] sm:text-[36px] md:text-[46px] text-[#101010] --plus-jakarta font-semibold mt-2">
               Meet Our Professional <br /> Team Members
             </h2>
           </div>

@@ -58,11 +58,11 @@ export default function Testimonials({ data }) {
           Testimonials
         </span>
 
-        {/* <div className="text-[46px] --font-poppins mb-8">
+        {/* <div className="text-[46px] --plus-jakarta mb-8">
           <span className="text-[#000] font-extrabold">{data?.h2}</span>{" "}
         </div> */}
 
-        <div className="text-[46px] font-poppins mb-8">
+        <div className="text-2xl md:text-[46px] plus-jakarta mb-8">
           <span className="text-[#000]">{data?.heading || "What"}</span>{" "}
           <span className="text-[#000] font-extrabold">
             {data?.boldHeading || "Happy Clients Say"}

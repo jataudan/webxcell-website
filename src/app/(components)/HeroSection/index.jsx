@@ -35,8 +35,8 @@ export default function Hero() {
       <HeroSlider sliderImages={getHero?.slider} />
 
       {/* Content */}
-      <div className="absolute text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto left-[15%]">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl --font-oswald font-semibold leading-tight">
+      <div className="absolute text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto md:left-[15%]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-oswald font-semibold leading-tight mt-0">
           {getHero?.primaryHeading} <br />
           <span className="mt-4 block">{getHero?.secondaryHeading}</span>
         </h1>
@@ -61,7 +61,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="absolute flex justify-center h-[100vh] items-center gap-2 z-60 bottom-0 left-1/2 transform -translate-x-1/2 md:hidden">
+      <div className="absolute flex justify-center md:h-[100vh] items-center gap-2 z-60 bottom-[20%] md:bottom-0 left-1/2 transform -translate-x-1/2 md:hidden ">
         {getHero?.socialLinks?.map((item, index) => {
           return (
             <a

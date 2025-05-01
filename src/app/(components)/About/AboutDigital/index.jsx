@@ -113,7 +113,7 @@ export default function AboutDigital({ data }) {
         <div className="relative lg:w-1/2 flex items-center justify-center">
           {/* Background Shape */}
           <div
-            className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px] bg-cover bg-center"
+            className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px] bg-cover bg-center hidden md:flex"
             style={{
               backgroundImage: "url('/assets/about/ellipse-purple.png')",
               overflow: "hidden",
@@ -129,9 +129,9 @@ export default function AboutDigital({ data }) {
                     : "https://placehold.co/600x400.png?text=placeholder"
                 }
                 alt="Business Woman"
-                width={220}
-                height={240}
-                className="w-full object-cover"
+                width={520}
+                height={540}
+                className="w-full object-cover hidden md:flex"
               />
             </div>
           </div>

@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "plus-jakarta": ["var(--font-plus-jakarta-sans)", "sans-serif"],
+        "plus-jakarta": ["var(--font-montserrat)", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

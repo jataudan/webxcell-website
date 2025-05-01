@@ -61,7 +61,7 @@ export default function RootStyles() {
 
       a,
       p {
-        font-family: var(--font-poppins);
+        font-family: var(--plus-jakarta);
       }
 
       /* h1 {

@@ -36,12 +36,18 @@ export default function AboutUs({ data }) {
             About us
           </span>
 
-          <div className="headline text-2xl md:text-4xl font-bold mt-4">
-            <span className="text-[#000]">{data?.prefix || 'We’re A Strategic'}</span>{" "}
-            <span className="highlight brown">{data?.primaryHightlighted || 'Digital'}</span>
+          <div className="md:headline text-2xl md:text-4xl font-bold mt-4">
+            <span className="text-[#000]">
+              {data?.prefix || "We’re A Strategic"}
+            </span>{" "}
+            <span className="highlight brown">
+              {data?.primaryHightlighted || "Digital"}
+            </span>
             <br />
-            <span className="highlight orange">{data?.secondaryHighlighted || "Media"}</span>{" "}
-            <span className="text-[#000]">{data?.suffix || 'Agency'}</span>
+            <span className="highlight orange">
+              {data?.secondaryHighlighted || "Media"}
+            </span>{" "}
+            <span className="text-[#000]">{data?.suffix || "Agency"}</span>
           </div>
 
           <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed px-2 md:px-0">

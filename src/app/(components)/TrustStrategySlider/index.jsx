@@ -4,7 +4,7 @@ import React from "react";
 const TrustStrategySlider = ({ data }) => {
   return (
     <div className="container mx-auto">
-      <h1 className="text-[#000] trust-title md:text-[24px] text-center">
+      <h1 className="text-[#000] text-[22px] md:trust-title md:text-[24px] text-center">
         Trusted Strategic Partners
       </h1>
       <div className="overflow-hidden mt-5 mb-5">

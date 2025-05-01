@@ -37,13 +37,15 @@ export default function WorkProcess() {
       }}
     >
       <div className="container mx-auto bg-[#7fdeff] md:bg-transparent pt-10 pb-12 font-plus-jakarta">
-        <div className=" flex flex-col align-center justify-center items-center text-center pt-[40px] md:pt-20">
+        <div className=" flex flex-col align-center justify-center items-center text-center pt-[40px]">
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4]">
             {workingProcess?.h2 || ""}
           </span>
 
-          <div className="text-[46px] font-extrabold mt-2 font-poppins">
-            <span className="text-[#000] ">Our Working Process</span>{" "}
+          <div className="text-[46px] font-extrabold mt-2 plus-jakarta">
+            <span className="text-[#000] text-2xl md:text-[36px]">
+              Our Working Process
+            </span>{" "}
           </div>
         </div>
         <div className="flex flex-col md:flex-row relative items-center justify-between p-8 rounded-lg ">

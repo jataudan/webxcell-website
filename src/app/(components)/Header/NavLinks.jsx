@@ -21,7 +21,7 @@ const NavLinks = ({ navigationItems }) => {
           <Link
             key={nav?.id}
             href={nav?.href}
-            className={`hover:text-[--primary] font-semibold --font-poppins ${
+            className={`hover:text-[--primary] font-semibold --plus-jakarta ${
               isActive(nav?.href) ? "text-[--primary]" : ""
             }`}
           >
