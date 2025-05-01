@@ -13,6 +13,7 @@ export default function PortfolioDetail() {
 
   const [project, setProject] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [seo, setSeo] = useState({});
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,6 +23,7 @@ export default function PortfolioDetail() {
         if (response) {
           setIsLoading(false);
           setProject(response?.data[0]);
+          setSeo(response?.data[0]?.seo);
         }
       } catch (error) {
         console.log("error", error);
@@ -39,8 +41,21 @@ export default function PortfolioDetail() {
       </div>
     );
   }
+
   return (
     <>
+      <head>
+        <title name="title">{seo?.metaTitle || "Webxcell"}</title>
+        <meta
+          name="description"
+          content={seo?.metaDescription || "Default description"}
+        />
+        <meta
+          name="keywords"
+          content={seo?.metaKeywords || "default, keywords"}
+        />
+      </head>
+
       <PortfolioHero />
 
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">

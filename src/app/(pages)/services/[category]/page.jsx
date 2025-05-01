@@ -17,6 +17,7 @@ export default function ServiceDetail() {
   const [service, setService] = useState({});
   const [allServices, setAllServices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [seo, setSeo] = useState({});
 
   const convertToSlug = (text) => {
     return text.toLowerCase().replace(/\s+/g, "-");
@@ -30,9 +31,11 @@ export default function ServiceDetail() {
         const allServices = await getAllServices();
 
         if (services && allServices) {
+          console.log("services", services?.data[0]?.seo);
           setIsLoading(false);
           setService(services?.data[0]);
           setAllServices(allServices?.data[0]?.serviceList);
+          setSeo(services?.data[0]?.seo);
         }
       } catch (error) {
         console.log("error", error);
@@ -57,6 +60,18 @@ export default function ServiceDetail() {
 
   return (
     <>
+      <head>
+        <title name="title">{seo?.metaTitle || "Webxcell"}</title>
+        <meta
+          name="description"
+          content={seo?.metaDescription || "Default description"}
+        />
+        <meta
+          name="keywords"
+          content={seo?.metaKeywords || "default, keywords"}
+        />
+      </head>
+
       <ServicesHero />
 
       <div className="relative bg-white lg:py-12 lg:px-12 mb-[150px]">
@@ -205,9 +220,6 @@ export default function ServiceDetail() {
               </div>
 
               <div className=" mb-12">
-                <div className="text-3xl font-extrabold text-[#101010] --font-plus-jakarta-sans mb-6">
-                  {service.title}
-                </div>
                 <div className="mb-6 text-[#101010]">
                   <RichText content={service?.description} />
                 </div>

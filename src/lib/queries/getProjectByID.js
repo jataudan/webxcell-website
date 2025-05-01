@@ -20,6 +20,7 @@ export async function getProjectByID(slug) {
         contact: {
           populate: "icon70x70",
         },
+        seo: true,
       },
     },
     {

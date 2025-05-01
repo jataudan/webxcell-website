@@ -31,6 +31,7 @@ export default function BlogDetail() {
   const [blog, setBlog] = useState({});
   const [tags, setTags] = useState({});
   const [comments, setComments] = useState({});
+  const [seo, setSeo] = useState({});
 
   useEffect(() => {
     setIsLoading(true);
@@ -45,6 +46,7 @@ export default function BlogDetail() {
           setIsLoading(false);
           setBlog(blogPost?.data[0]);
           setTags(blogTags?.data[0]?.tag);
+          setSeo(blogPost?.data[0]?.seo);
           setComments(blogComments);
           setIsFetch(false);
         }
@@ -71,6 +73,18 @@ export default function BlogDetail() {
 
   return (
     <>
+      <head>
+        <title name="title">{seo?.metaTitle || "Webxcell"}</title>
+        <meta
+          name="description"
+          content={seo?.metaDescription || "Default description"}
+        />
+        <meta
+          name="keywords"
+          content={seo?.metaKeywords || "default, keywords"}
+        />
+      </head>
+
       <BlogHero />
 
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">

@@ -22,6 +22,7 @@ export async function getBlogPostByID(slug) {
           populate: "image",
         },
         categories: true,
+        seo: true,
       },
     },
     {

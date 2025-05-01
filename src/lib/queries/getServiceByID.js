@@ -19,6 +19,7 @@ export async function getServiceByID(slug) {
         "mainImage770x370",
         "thumbnail300x300",
         "servicesImages",
+        "seo",
       ],
     },
     { encodeValuesOnly: true }
