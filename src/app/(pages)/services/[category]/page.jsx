@@ -31,7 +31,6 @@ export default function ServiceDetail() {
         const allServices = await getAllServices();
 
         if (services && allServices) {
-          console.log("services", services?.data[0]?.seo);
           setIsLoading(false);
           setService(services?.data[0]);
           setAllServices(allServices?.data[0]?.serviceList);
