@@ -101,7 +101,7 @@ export default function ServiceDetail() {
                         key={index}
                         className={`cursor-pointer p-3 rounded-lg flex justify-between items-center ${
                           slug === activeService
-                            ? "bg-[#FF6700] text-white"
+                            ? "bg-[--primary] text-white"
                             : "bg-white hover:bg-gray-200"
                         }`}
                         onClick={() => handleClick(convertToSlug(item?.title))}
@@ -119,7 +119,7 @@ export default function ServiceDetail() {
                           src={
                             slug === activeService
                               ? "/assets/Service/white-arrow.png"
-                              : "/assets/Service/purple-arrow.png"
+                              : "/assets/Service/orange.png"
                           }
                           alt="Arrow"
                           width={16}
