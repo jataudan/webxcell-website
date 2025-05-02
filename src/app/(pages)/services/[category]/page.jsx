@@ -89,8 +89,8 @@ export default function ServiceDetail() {
 
                 {/* Horizontal Rules */}
                 <div className="flex space-x-3 mb-4">
-                  <hr className="border-t-2 border-[#219BE4] w-5" />
-                  <hr className="border-t-2 border-[#635AD9] w-14 " />
+                  <hr className="border-t-2 border-[--primary] w-5" />
+                  <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
                 <ul className="space-y-3">
@@ -131,14 +131,14 @@ export default function ServiceDetail() {
                 </ul>
               </aside>
               <aside className="flex-shrink-0 w-full lg:w-[370px] h-[347px] bg-[#ECF8FF] p-6 rounded-lg">
-                <h3 className="text-[22px] font-bold text-[#101A29] --font-plus-jakarta-sans">
+                <h3 className="text-[22px] font-bold text-[#101A29]">
                   Opening Hours
                 </h3>
 
                 {/* Horizontal Rules */}
                 <div className="flex space-x-3 mb-4">
-                  <hr className="border-t-2 border-[#219BE4] w-5" />
-                  <hr className="border-t-2 border-[#635AD9] w-14 " />
+                  <hr className="border-t-2 border-[--primary] w-5" />
+                  <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
                 <ul className="space-y-3">
@@ -175,7 +175,7 @@ export default function ServiceDetail() {
                       );
                     })}
                   <li>
-                    <button className="flex items-center justify-center gap-3 w-full bg-[#FF6700] text-white cursor-pointer p-3 rounded-lg">
+                    <button className="flex items-center justify-center gap-3 w-full bg-[--primary] text-white cursor-pointer p-3 rounded-lg">
                       Book Appointment Now
                       <Image
                         src="/assets/Service/white-arrow.png"
@@ -198,14 +198,18 @@ export default function ServiceDetail() {
                   width={70}
                   height={70}
                 />
-                <h3>{service?.contact?.title}</h3>
-                <h3>{service?.contact?.phoneNumbers}</h3>
+                <h3 className="text-xl md:text-2xl">
+                  {service?.contact?.title}
+                </h3>
+                <h3 className="text-xl md:text-2xl">
+                  {service?.contact?.phoneNumbers}
+                </h3>
               </div>
             </div>
 
             {/* Right Content */}
             <div className="flex-grow">
-              <div className="w-[770px] h-[370px] mb-4 overflow-hidden relative">
+              <div className="w-full max-w-[770px] aspect-[770/370] mb-4 overflow-hidden relative max-w-[640px]:mx-auto">
                 <Image
                   src={
                     service?.mainImage770x370
@@ -213,9 +217,8 @@ export default function ServiceDetail() {
                       : "https://placehold.co/600x400.png?text=placeholder"
                   }
                   alt="Rectangle"
-                  width={470}
-                  height={370}
-                  className="object-contain w-full h-full"
+                  fill
+                  className="object-contain rounded-md"
                 />
               </div>
 

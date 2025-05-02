@@ -112,7 +112,7 @@ const PortfolioCards = () => {
       </div>
 
       {/* Second Row */}
-      <div className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center mt-[20px]">
+      <div className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center mt-[20px] mb-[120px] md:mb-0">
         {/* Small Boxes */}
         <div className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]">
           {projectDetail.slice(4).map((item) => (

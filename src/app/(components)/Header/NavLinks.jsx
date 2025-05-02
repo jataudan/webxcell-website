@@ -29,14 +29,14 @@ const NavLinks = ({ navigationItems }) => {
           </Link>
         );
       })}
-      <div className="flex items-center">
+      {/* <div className="flex items-center">
         <Image
           src="/assets/header/search.png"
           alt="search"
           width={16}
           height={16}
         />
-      </div>
+      </div> */}
     </nav>
   );
 };

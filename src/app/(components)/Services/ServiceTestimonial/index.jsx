@@ -28,7 +28,7 @@ export default function ServiceTestimonial() {
   }
 
   return (
-    <div className="relative bg-white my-24 mb-[150px]">
+    <div className="relative bg-white md:my-24 mb-[150px]">
       <div className="absolute left-0 top-[9px] lg:bottom-[120px] hidden sm:block">
         <Image
           src="/assets/Service/pattern-left.png"
@@ -46,12 +46,12 @@ export default function ServiceTestimonial() {
             alt="Business Woman"
             width={585}
             height={609}
-            className="sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px]"
+            // className="sm:w-[400px] sm:h-[400px] lg:w-[516px] lg:h-[516px]"
           />
         </div>
 
         {/* Right Side - Content */}
-        <div className="relative w-full lg:w-1/2 mt-8 lg:mt-0 text-center lg:text-left px-4">
+        <div className="relative w-full lg:w-1/2 md:mt-8 lg:mt-0 text-center lg:text-left px-4">
           <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
             {service?.heading}
           </span>

@@ -7,8 +7,6 @@ const RichText = ({ content }) => {
 
   const imageCount = countImages(content);
 
-  console.log("imageCount", imageCount);
-
   return (
     <ReactMarkdown
       rehypePlugins={[rehypeSanitize]}
@@ -45,8 +43,6 @@ const RichText = ({ content }) => {
           const imageParagraph = node.children?.filter(
             (child) => child.type === "element" && child.tagName === "img"
           );
-
-          console.log("imageParagraph", imageParagraph);
 
           if (imageCount === 2 && imageParagraph) {
             return (

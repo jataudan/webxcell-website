@@ -58,7 +58,7 @@ export default function PortfolioDetail() {
 
       <PortfolioHero />
 
-      <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px]">
+      <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[132px]">
         <div className="mb-4 px-4 py-4 md:px-0 md:py-0">
           {/* <Image
             src={

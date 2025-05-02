@@ -76,49 +76,49 @@ export default function RootStyles() {
 
       h1 {
         font-family: var(--font-plus-jakarta-sans);
-        font-size: 2.78rem; /* ~48px */
+        font-size: clamp(2rem, 5vw, 2.78rem); /* ~32px to 48px */
         font-weight: 700;
         margin: inherit;
       }
 
       h2 {
         font-family: var(--font-plus-jakarta-sans);
-        font-size: 2.25rem; /* ~36px */
+        font-size: clamp(1.75rem, 4vw, 2.25rem); /* ~28px to 36px */
         font-weight: 600;
         margin: inherit;
       }
 
       h3 {
         font-family: var(--font-inter);
-        font-size: 1.875rem; /* ~30px */
+        font-size: clamp(1.5rem, 3.5vw, 1.875rem); /* ~24px to 30px */
         font-weight: 600;
         margin: inherit;
       }
 
       h4 {
         font-family: var(--font-inter);
-        font-size: 1.5rem; /* ~24px */
+        font-size: clamp(1.25rem, 3vw, 1.5rem); /* ~20px to 24px */
         font-weight: 500;
         margin: inherit;
       }
 
       h5 {
         font-family: var(--font-plus-jakarta-sans);
-        font-size: 1.25rem; /* ~20px */
+        font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* ~18px to 20px */
         font-weight: 500;
         margin: inherit;
       }
 
       h6 {
         font-family: var(--font-inter);
-        font-size: 1rem; /* ~16px */
+        font-size: clamp(0.9rem, 2vw, 1rem); /* ~14.4px to 16px */
         font-weight: 500;
         margin: inherit;
       }
 
       p {
         font-family: var(--font-inter);
-        font-size: 1rem; /* ~16px */
+        font-size: clamp(0.9rem, 2vw, 1rem); /* ~14.4px to 16px */
         font-weight: 400;
         line-height: 1.5;
         margin: 0.5rem 0;
