@@ -13,6 +13,7 @@ const query = qs.stringify(
       "mainImage770x370",
       "thumbnail300x300",
       "servicesImages",
+      "iconImage88x102",
     ],
   },
   { encodeValuesOnly: true }

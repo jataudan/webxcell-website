@@ -34,6 +34,7 @@ export default function ServicesSection() {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-12 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {serviceDetail.map((service) => {
+            console.log("service?.servicesList", service?.iconImage88x102);
             return (
               <div
                 key={service.id}
@@ -56,15 +57,16 @@ export default function ServicesSection() {
                         className="object-cover w-full h-full absolute"
                       />
                     </div>
-
-                    <div className="absolute flex items-center right-[110px] top-[250px] z-10">
-                      <Image
-                        src={`/assets/Service/${service?.servicesList}.png`}
-                        alt={"Service Logo"}
-                        width={88}
-                        height={102}
-                      />
-                    </div>
+                    {service?.iconImage88x102 && (
+                      <div className="absolute flex items-center right-[110px] top-[250px] z-10">
+                        <Image
+                          src={service?.iconImage88x102?.url}
+                          alt={"Service Logo"}
+                          width={88}
+                          height={102}
+                        />
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-col mb-12">
                     <h3 className="text-lg font-bold mb-2 text-[#17012C] group-hover:text-white">

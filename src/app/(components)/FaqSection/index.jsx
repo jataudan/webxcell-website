@@ -28,9 +28,22 @@ export default function FaqSection() {
 
   return (
     <div className="relative overflow-hidden bg-white mb-[130px]">
-      <section className="container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 md:p-[112px] lg:py-20 gap-10">
+      <section className="container mx-auto flex flex-col lg:flex-row justify-center py-10 md:p-[112px] lg:py-20 gap-10">
         <div className="relative flex ">
           <div className="relative mt-8 ">
+            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-2xl">
+              FAQ{" "}
+            </span>
+            <div className="mt-5 font-extrabold --font-plus-jakarta-sans mb-[70px]">
+              <span className="text-[#000] text-[18px] md:text-[50px] leading-[1.2]">
+                Frequently Asked Questions
+              </span>{" "}
+              <p className="mt-6">
+                You can find relevant information about our company and services
+                by browsing through the following FAQs. Please get in touch with
+                us for more details.
+              </p>
+            </div>
             <Image
               src={
                 faq?.mainImage
@@ -47,17 +60,17 @@ export default function FaqSection() {
         {/* Right Side - Content */}
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
           {/* Title */}
-          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
+          {/* <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             FAQ{" "}
           </span>
           <div className="mt-4 font-extrabold --font-plus-jakarta-sans ">
             <span className="text-[#000] text-[18px] md:text-[50px]">
               Frequently Asked Questions
             </span>{" "}
-          </div>
+          </div> */}
 
           <div className="mt-12">
-            <div className="space-y-4">
+            <div className="space-y-2">
               {faq?.questions?.map((item, index) => {
                 return (
                   <details
