@@ -172,7 +172,7 @@ const Footer = () => {
               <div className="flex flex-col gap-5">
                 <h3 className="text-lg font-semibold mb-4 footer-title relative">
                   <span className="text-white">Quick Links</span>
-                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[#219BE4]" />
+                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
                 <ul className="space-y-4 text-center md:text-left">
@@ -185,7 +185,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/about-us"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       About
                     </Link>
@@ -199,7 +199,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/contact-us"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Contact Us
                     </Link>
@@ -213,7 +213,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/blog"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Blog & News
                     </Link>
@@ -227,7 +227,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/faq"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       FAQ's
                     </Link>
@@ -238,7 +238,7 @@ const Footer = () => {
               <div className="flex flex-col gap-5">
                 <h3 className="text-lg font-semibold mb-4 footer-title relative">
                   <span className="text-white">Our Services</span>
-                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[#219BE4]" />
+                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
                 <ul className="space-y-4 text-center md:text-left">
@@ -251,7 +251,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/services/digital-strategy"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Digital Marketing
                     </Link>
@@ -265,7 +265,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/services/web-development"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Web Development
                     </Link>
@@ -279,7 +279,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/services/seo-link-building-optimization"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       SEO Optimized
                     </Link>
@@ -293,7 +293,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/services/brand-design-identity"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Brand Design Identiy
                     </Link>
@@ -307,7 +307,7 @@ const Footer = () => {
                     />
                     <Link
                       href="/services/email-marketing"
-                      className="text-[#D9D9D9] hover:text-[#635AD9]"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
                     >
                       Email Marketing
                     </Link>
@@ -318,7 +318,7 @@ const Footer = () => {
               <div className="flex flex-col gap-5 items-start">
                 <h3 className="text-lg font-semibold mb-4 footer-title max-w-[235px] relative">
                   <span className="text-white">Contact Us</span>
-                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[#219BE4]" />
+                  <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
                 <ul className="space-y-4 text-center md:text-left">
@@ -332,7 +332,7 @@ const Footer = () => {
                     />
                     <a
                       href="#"
-                      className="text-[#D9D9D9] text-left hover:text-[#635AD9] max-w-[290px]"
+                      className="text-[#D9D9D9] text-left hover:text-[--primary] max-w-[290px]"
                     >
                       {contact?.location}
                     </a>
@@ -344,7 +344,10 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <a
+                      href="#"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
+                    >
                       {contact?.phoneNumber}
                     </a>
                   </li>
@@ -355,7 +358,10 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a href="#" className="text-[#D9D9D9] hover:text-[#635AD9]">
+                    <a
+                      href="#"
+                      className="text-[#D9D9D9] hover:text-[--primary]"
+                    >
                       {contact?.email}
                     </a>
                   </li>
