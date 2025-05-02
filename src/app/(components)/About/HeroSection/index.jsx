@@ -182,7 +182,7 @@ export default function AboutHero() {
         </p>
 
         {/* Breadcrumb */}
-        <div className="mt-0 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#BF20FC] to-[#077EEC] p-[2px]">
+        <div className="mt-0 sm:mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-[#B46431] to-[#FFFFFF] p-[2px]">
           <div
             className={`flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full ${
               filterHero[0]?.bgColor || "bg-custom-gray"
