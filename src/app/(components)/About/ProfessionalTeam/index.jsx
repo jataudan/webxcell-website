@@ -43,7 +43,7 @@ export default function ProfessionalTeam() {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center mb-12">
           <div className="text-center lg:text-left">
-            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
+            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
               Our Digital Expert Team
             </span>
 
@@ -87,10 +87,10 @@ export default function ProfessionalTeam() {
               </div>
 
               {/* Member Info */}
-              <h3 className="font-semibold text-[22px] text-[#101010] --font-plus-jakarta-sans">
+              <h3 className="font-semibold text-[22px] text-[#101010] font-montserrat">
                 {member?.name}
               </h3>
-              <p className="text-base text-[#101010] --font-plus-jakarta-sans mb-4">
+              <p className="text-base text-[#101010] font-montserrat mb-4">
                 {member?.designation}
               </p>
               <hr className="mb-4 w-[270px] text-[#EAF3F8] px-4" />

@@ -28,7 +28,7 @@ export default function ServiceTestimonial() {
   }
 
   return (
-    <div className="relative bg-white md:my-24 mb-[150px]">
+    <div className="relative bg-white md:my-24 mb-[150px] font-montserrat">
       <div className="absolute left-0 top-[9px] lg:bottom-[120px] hidden sm:block">
         <Image
           src="/assets/Service/pattern-left.png"
@@ -52,7 +52,7 @@ export default function ServiceTestimonial() {
 
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 md:mt-8 lg:mt-0 text-center lg:text-left px-4">
-          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
+          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
             {service?.heading}
           </span>
 
@@ -63,7 +63,7 @@ export default function ServiceTestimonial() {
             ⭐⭐⭐⭐⭐
           </div>
 
-          <p className="text-gray-600 my-4 text-base --font-plus-jakarta-sans md:text-lg leading-relaxed px-2 md:px-0">
+          <p className="text-gray-600 my-4 text-base font-montserrat md:text-lg leading-relaxed px-2 md:px-0">
             {service?.paragraph}
           </p>
           <div className="flex gap-20">

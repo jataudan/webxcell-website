@@ -54,7 +54,7 @@ export default function Testimonials({ data }) {
 
       {/* Right Side - Content */}
       <div className="relative w-full lg:w-[60%] mt-8 lg:mt-0 text-center lg:text-left">
-        <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans">
+        <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
           Testimonials
         </span>
 
@@ -96,7 +96,7 @@ export default function Testimonials({ data }) {
                 <div className="text-[#FF6700] text-xl text-left mb-2 mt-4">
                   ★★★★★
                 </div>
-                <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic --font-plus-jakarta-sans">
+                <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-montserrat">
                   {testimonial?.comments}
                 </p>
 

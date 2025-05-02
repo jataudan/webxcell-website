@@ -42,7 +42,7 @@ const Footer = () => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative font-montserrat">
       <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
         {/* Left Image */}
         <div className="relative hidden lg:block w-1/2 h-[327px]">
@@ -85,7 +85,7 @@ const Footer = () => {
 
         {/* Right Content */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-white">
-          <h3 className="text-[18px] md:text-[22px] leading-[1.5] font-semibold mb-2 --font-plus-jakarta-sans">
+          <h3 className="text-[18px] md:text-[22px] leading-[1.5] font-semibold mb-2 font-montserrat">
             {data?.footer?.subFooter?.heading}
           </h3>
           <div className="flex items-center mt-4 bg-white rounded-full px-1 py-1">
@@ -112,7 +112,7 @@ const Footer = () => {
               {/* Logo and Social Links */}
               <div className="flex flex-col gap-5 justify-end items-start mt-[96px] md:mt-0">
                 {data?.footer?.logoText && (
-                  <h1 className="font-plus-jakarta text-[#fff] text-[30px]">
+                  <h1 className="font-montserrat text-[#fff] text-[30px]">
                     {data?.footer?.logoText}
                   </h1>
                 )}

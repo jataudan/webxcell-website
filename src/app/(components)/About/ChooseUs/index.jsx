@@ -6,15 +6,15 @@ export default function ChooseUs({ data }) {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pb-9 md:pb-0 md:py-10 sm:py-20 gap-10 px-4 sm:px-8">
         {/* Left Side - Content */}
         <div className="relative w-full lg:w-1/2 md:mt-8 lg:mt-0 text-center lg:text-left pt-[25px] md:pt-0">
-          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] --font-plus-jakarta-sans text-sm sm:text-base ">
+          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat text-sm sm:text-base ">
             Why Choose Us
           </span>
 
-          <div className="text-[30px] sm:text-[46px] font-semibold mt-4 --font-plus-jakarta-sans">
+          <div className="text-[30px] sm:text-[46px] font-semibold mt-4 font-montserrat">
             <span className="text-[#000]">{data?.heading}</span>
           </div>
 
-          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-8 --font-plus-jakarta-sans">
+          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-8 font-montserrat">
             {data?.paragraph}
           </p>
 

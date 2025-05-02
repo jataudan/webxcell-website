@@ -34,7 +34,7 @@ export default function FaqSection() {
             <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-2xl">
               FAQ{" "}
             </span>
-            <div className="mt-5 font-extrabold --font-plus-jakarta-sans mb-[70px]">
+            <div className="mt-5 font-extrabold font-montserrat mb-[70px]">
               <span className="text-[#000] text-[18px] md:text-[50px] leading-[1.2]">
                 Frequently Asked Questions
               </span>{" "}
@@ -63,7 +63,7 @@ export default function FaqSection() {
           {/* <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             FAQ{" "}
           </span>
-          <div className="mt-4 font-extrabold --font-plus-jakarta-sans ">
+          <div className="mt-4 font-extrabold font-montserrat ">
             <span className="text-[#000] text-[18px] md:text-[50px]">
               Frequently Asked Questions
             </span>{" "}
@@ -95,7 +95,7 @@ export default function FaqSection() {
                         />
                       </div>
 
-                      <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-bold--font-plus-jakarta-sans ">
+                      <span className="faq-heading text-sm text-left md:text-base text-[#101010] font-boldfont-montserrat ">
                         {item?.question}
                       </span>
                     </summary>

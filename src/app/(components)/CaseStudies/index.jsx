@@ -120,10 +120,10 @@ const CaseStudies = ({ caseStudies }) => {
                 <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
                   <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
                     <div className="text-left px-5 py-1">
-                      <h4 className="text-[#000] --font-plus-jakarta-sans font-semibold">
+                      <h4 className="text-[#000] font-montserrat font-semibold">
                         {item?.title}
                       </h4>
-                      <span className="text-[--primary] --font-plus-jakarta-sans font-semibold">
+                      <span className="text-[--primary] font-montserrat font-semibold">
                         {item?.tag?.name}
                       </span>
                     </div>

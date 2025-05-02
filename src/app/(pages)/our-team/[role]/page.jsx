@@ -177,7 +177,7 @@ export default function TeamDetail() {
         </div>
       </div>
       <div className="bg-[--sky-blue]">
-        <div className="relative container mx-auto lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px] --font-plus-jakarta-sans">
+        <div className="relative container mx-auto lg:py-12 md:px-14 2xl-custom:px-48 mb-[100px] font-montserrat">
           <div className="p-6 bg-[--sky-blue] rounded-lg space-y-8">
             {/* Personal Information Section */}
             <div>

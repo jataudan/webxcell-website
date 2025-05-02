@@ -35,7 +35,7 @@ export default function Header() {
   const { topnav, mainTopNav } = data;
 
   return (
-    <header className="bg-white fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1350px] z-50 text-white shadow-lg rounded-bl-[20px] rounded-br-[20px]">
+    <header className="bg-white font-montserrat fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1350px] z-50 text-white shadow-lg rounded-bl-[20px] rounded-br-[20px]">
       {/* Top Bar */}
       <div className="bg-black rounded-bl-[20px] rounded-br-[20px]">
         <div className="max-w-[1350px] mx-auto flex items-center justify-between px-4 lg:px-16 py-2 gap-4 overflow-hidden">
@@ -126,7 +126,7 @@ export default function Header() {
           <NavLinks navigationItems={mainTopNav?.navItems} />
 
           {/* Action Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4 font-montserrat">
             <a
               href={mainTopNav?.cta?.href}
               className="text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"

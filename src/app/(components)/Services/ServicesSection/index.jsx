@@ -30,7 +30,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative overflow-hidden bg-white font-montserrat">
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-12 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {serviceDetail.map((service) => {

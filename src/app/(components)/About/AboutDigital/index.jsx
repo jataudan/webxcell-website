@@ -30,7 +30,7 @@ export default function AboutDigital({ data }) {
   }
 
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative overflow-hidden bg-white font-montserrat">
       {/* Left Decorative Image */}
       <div className="absolute top-[-126px] right-[613px] hidden sm:block">
         <Image
@@ -49,7 +49,7 @@ export default function AboutDigital({ data }) {
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
             About Us
           </span>
-          <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] --font-plus-jakarta-sans md:space-y-4">
+          <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] font-montserrat md:space-y-4">
             <div>
               <span className="text-[#000]">{data?.prefix}</span>{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[--primary] font-extrabold">

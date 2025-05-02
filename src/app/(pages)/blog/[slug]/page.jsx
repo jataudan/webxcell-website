@@ -92,7 +92,7 @@ export default function BlogDetail() {
           {/* Header Section */}
 
           {/* Main Content */}
-          <div className="w-full flex flex-col lg:flex-row gap-4 --font-plus-jakarta-sans">
+          <div className="w-full flex flex-col lg:flex-row gap-4 font-montserrat">
             {/* Left Content */}
             <div className="flex-grow">
               <div className="relative mb-4 md:px-0 md:py-0">
@@ -145,7 +145,7 @@ export default function BlogDetail() {
                     </span>
                   </div>
                 </div>
-                <div className="mt-6 text-lg md:text-3xl font-extrabold text-[#101010] --font-plus-jakarta-sans mb-6">
+                <div className="mt-6 text-lg md:text-3xl font-extrabold text-[#101010] font-montserrat mb-6">
                   {blog?.title}
                 </div>
                 <div className="mb-6 text-[#101010]">
@@ -269,7 +269,7 @@ export default function BlogDetail() {
             </div>
 
             {/* Right Sidebar */}
-            <div className="flex-col gap-[20px] --font-plus-jakarta-sans hidden md:flex">
+            <div className="flex-col gap-[20px] font-montserrat hidden md:flex">
               <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-[--sky-blue] p-6 rounded-[20px]">
                 <div className="space-y-2">
                   <h2 className="text-[22px] text-[--black] font-bold">

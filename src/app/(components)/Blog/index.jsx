@@ -78,6 +78,7 @@ const BlogSection = ({ blogDetails }) => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            height: "100vh",
           }}
         >
           {/* gradient overlay on hover only */}

@@ -186,7 +186,7 @@ export default function AboutHero() {
           <div
             className={`flex gap-[4px] md:gap-0 flex-wrap md:flex-nowrap items-center justify-center p-2 font-bold rounded-full ${
               filterHero[0]?.bgColor || "bg-custom-gray"
-            } text-[10px] md:text-[18px] --font-plus-jakarta-sans`}
+            } text-[10px] md:text-[18px] font-montserrat`}
           >
             {getBreadcrumb().map((item, index) => {
               return (

@@ -64,16 +64,6 @@ export default function RootStyles() {
         font-family: var(${fontVariables});
       }
 
-      /* h1 {
-        font-family: var(--font-oswald);
-        font-size: 35px;
-      }
-
-      h2,
-      h5 {
-        font-family: var(${fontVariables});
-      } */
-
       ul {
         list-style: disc;
         padding-left: 33px;

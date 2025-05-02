@@ -22,7 +22,7 @@ export default function WorkProcess() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen font-montserrat">
         <div className="w-12 h-12 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
       </div>
     );
@@ -36,7 +36,7 @@ export default function WorkProcess() {
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto bg-[#7fdeff] md:bg-transparent pt-10 pb-12 font-plus-jakarta">
+      <div className="container mx-auto bg-[#7fdeff] md:bg-transparent pt-10 pb-12 font-montserrat">
         <div className=" flex flex-col align-center justify-center items-center text-center pt-[40px]">
           <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4]">
             {workingProcess?.h2 || ""}

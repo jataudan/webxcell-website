@@ -66,10 +66,10 @@ export default function OurTeamSection() {
                 </div>
 
                 {/* Member Info */}
-                <h3 className="font-semibold text-[22px] text-[#101010] --font-plus-jakarta-sans">
+                <h3 className="font-semibold text-[22px] text-[#101010] font-montserrat">
                   {member?.name}
                 </h3>
-                <p className="text-base text-[#101010] --font-plus-jakarta-sans mb-4">
+                <p className="text-base text-[#101010] font-montserrat mb-4">
                   {member?.designation}
                 </p>
                 <hr className="mb-4 w-[270px] text-[#EAF3F8] px-4" />
