@@ -74,6 +74,10 @@ export default function RootStyles() {
         font-family: var(--font-plus-jakarta-sans);
       } */
 
+      ul {
+        list-style: disc;
+      }
+
       h1 {
         font-family: var(--font-plus-jakarta-sans);
         font-size: clamp(2rem, 5vw, 2.78rem); /* ~32px to 48px */

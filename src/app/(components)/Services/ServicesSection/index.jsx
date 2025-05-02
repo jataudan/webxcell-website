@@ -34,7 +34,6 @@ export default function ServicesSection() {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-12 gap-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {serviceDetail.map((service) => {
-            console.log("service?.servicesList", service?.iconImage88x102);
             return (
               <div
                 key={service.id}
