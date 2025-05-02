@@ -37,7 +37,7 @@ const MapWithInfo = ({ contact }) => {
         {/* <div className="absolute -top-[10px] left-[-20px] rotate-[135.9deg] w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-b-[18px] border-b-[#00BFFF]" /> */}
         <h3 className="text-xl font-bold mb-4">Contact Info</h3>
         <hr className="bg-white opacity-15 h-[1px] border-none mb-4" />
-        <ul className="space-y-3">
+        <ul className="space-y-3 list-none">
           {contactInfo.map((item, index) => (
             <React.Fragment key={index}>
               <li>

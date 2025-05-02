@@ -92,7 +92,7 @@ export default function ServiceDetail() {
                   <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 list-none">
                   {allServices?.map((item, index) => {
                     const slug = convertToSlug(item?.title);
                     return (
@@ -140,7 +140,7 @@ export default function ServiceDetail() {
                   <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 list-none">
                   {service?.openingHours?.length &&
                     service?.openingHours?.map((item, index) => {
                       return (
