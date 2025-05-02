@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import ArrowImage from "../../../../public/assets/blog/arrow.png";
+import ArrowImage from "../../../../public/assets/blog/arrow-1.png";
 import { useRouter } from "next/navigation";
 import { formatDate } from "@/lib/formatDate";
 
