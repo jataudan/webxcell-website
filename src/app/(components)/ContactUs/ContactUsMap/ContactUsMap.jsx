@@ -24,7 +24,7 @@ const MapWithInfo = ({ contact }) => {
     <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-300">
       {/* Full-Width Map */}
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094575!2d144.95565181562044!3d-37.81732397975179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577dc102a798c12!2sVictoria%20Harbour!5e0!3m2!1sen!2s!4v1632372114771!5m2!1sen!2s"
+        src="https://www.google.com/maps?q=12+Southwold+Dr,+Nottingham+NG8+1PA,+UK&output=embed&z=17"
         className="w-full h-full"
         allowFullScreen=""
         loading="lazy"
@@ -37,7 +37,7 @@ const MapWithInfo = ({ contact }) => {
         {/* <div className="absolute -top-[10px] left-[-20px] rotate-[135.9deg] w-0 h-0 border-l-[18px] border-l-transparent border-r-[18px] border-r-transparent border-b-[18px] border-b-[#00BFFF]" /> */}
         <h3 className="text-xl font-bold mb-4">Contact Info</h3>
         <hr className="bg-white opacity-15 h-[1px] border-none mb-4" />
-        <ul className="space-y-3 list-none">
+        <ul className="space-y-3 list-none p-0">
           {contactInfo.map((item, index) => (
             <React.Fragment key={index}>
               <li>

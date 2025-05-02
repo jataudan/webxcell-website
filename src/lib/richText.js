@@ -19,7 +19,7 @@ const RichText = ({ content }) => {
               height: "500px",
               objectFit: "cover",
               display: "block",
-              margin: "20px auto",
+              // margin: "20px auto",
             };
           } else if (imageCount === 2) {
             style = {

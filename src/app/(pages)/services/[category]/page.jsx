@@ -8,6 +8,7 @@ import { getServiceByID } from "@/lib/queries/getServiceByID";
 import { getAllServices } from "@/lib/queries/getAllServices";
 import { getTime } from "@/lib/formatDate";
 import RichText from "@/lib/richText";
+import Link from "next/link";
 
 export default function ServiceDetail() {
   const params = useParams();
@@ -92,7 +93,7 @@ export default function ServiceDetail() {
                   <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
-                <ul className="space-y-3 list-none">
+                <ul className="space-y-3 list-none p-0">
                   {allServices?.map((item, index) => {
                     const slug = convertToSlug(item?.title);
                     return (
@@ -140,7 +141,7 @@ export default function ServiceDetail() {
                   <hr className="border-t-2 border-[--primary] w-14 " />
                 </div>
 
-                <ul className="space-y-3 list-none">
+                <ul className="space-y-3 list-none p-0">
                   {service?.openingHours?.length &&
                     service?.openingHours?.map((item, index) => {
                       return (
@@ -249,6 +250,31 @@ export default function ServiceDetail() {
                       />
                     );
                   })}
+              </div>
+
+              <div
+                className="w-full"
+                style={{
+                  backgroundImage: `url(/assets/services-details/bg.png)`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  height: "194px",
+                  borderRadius: "20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: "22px",
+                }}
+              >
+                <h2 className="text-[white]">Have New Ideas?? Let’s Discuss</h2>
+                <Link
+                  href="/contact-us"
+                  className="bg-[white] px-5 py-2 text-[--primary] rounded-full font-bold"
+                >
+                  LET’S TALK
+                </Link>
               </div>
             </div>
           </div>

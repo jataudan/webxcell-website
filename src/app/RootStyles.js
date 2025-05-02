@@ -61,7 +61,7 @@ export default function RootStyles() {
 
       a,
       p {
-        font-family: var(--plus-jakarta);
+        font-family: var(${fontVariables});
       }
 
       /* h1 {
@@ -71,57 +71,58 @@ export default function RootStyles() {
 
       h2,
       h5 {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
       } */
 
       ul {
         list-style: disc;
+        padding-left: 33px;
       }
 
       h1 {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-size: clamp(2rem, 5vw, 2.78rem); /* ~32px to 48px */
         font-weight: 700;
         margin: inherit;
       }
 
       h2 {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-size: clamp(1.75rem, 4vw, 2.25rem); /* ~28px to 36px */
         font-weight: 600;
         margin: inherit;
       }
 
       h3 {
-        font-family: var(--font-inter);
+        font-family: var(${fontVariables});
         font-size: clamp(1.5rem, 3.5vw, 1.875rem); /* ~24px to 30px */
         font-weight: 600;
         margin: inherit;
       }
 
       h4 {
-        font-family: var(--font-inter);
+        font-family: var(${fontVariables});
         font-size: clamp(1.25rem, 3vw, 1.5rem); /* ~20px to 24px */
         font-weight: 500;
         margin: inherit;
       }
 
       h5 {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* ~18px to 20px */
         font-weight: 500;
         margin: inherit;
       }
 
       h6 {
-        font-family: var(--font-inter);
+        font-family: var(${fontVariables});
         font-size: clamp(0.9rem, 2vw, 1rem); /* ~14.4px to 16px */
         font-weight: 500;
         margin: inherit;
       }
 
       p {
-        font-family: var(--font-inter);
+        font-family: var(${fontVariables});
         font-size: clamp(0.9rem, 2vw, 1rem); /* ~14.4px to 16px */
         font-weight: 400;
         line-height: 1.5;
@@ -129,7 +130,7 @@ export default function RootStyles() {
       }
 
       .span-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
       }
 
       .title {
@@ -140,50 +141,50 @@ export default function RootStyles() {
 
       .case-studies-title,
       .off-service-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-weight: bold;
       }
 
       .off-service-headline {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-weight: bold;
         line-height: 55px;
       }
 
       .case-studies-sub-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-weight: bold;
       }
 
       .service-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-size: 20px;
         font-weight: bold;
       }
 
       .blog-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         font-weight: bold;
       }
 
       .blog-date-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
       }
 
       .trust-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         line-height: 58px;
         font-weight: 600;
       }
 
       .contact-info-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
         line-height: 36px;
         font-weight: 600;
       }
 
       .footer-title {
-        font-family: var(--font-plus-jakarta-sans);
+        font-family: var(${fontVariables});
       }
 
       .stylish-gradient-text {

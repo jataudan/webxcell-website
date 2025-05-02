@@ -207,7 +207,7 @@ export default function BlogDetail() {
                     <h2 className="text-[28px] text-[--black] font-bold mb-4">
                       {comments?.blog_comments?.length || 0} Comments
                     </h2>
-                    <ul className="space-y-6 list-none">
+                    <ul className="space-y-6 list-none p-0">
                       {comments?.blog_comments?.map((comment, index) => (
                         <li
                           key={index}
@@ -337,7 +337,7 @@ export default function BlogDetail() {
                   <h2 className="text-[22px] text-[--black] font-bold mb-4">
                     Categories
                   </h2>
-                  <ul className="space-y-3 list-none">
+                  <ul className="space-y-3 list-none p-0">
                     {blog?.categories?.map((category, index) => (
                       <li
                         key={index}

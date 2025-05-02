@@ -175,7 +175,7 @@ const Footer = () => {
                   <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
-                <ul className="space-y-4 text-center md:text-left list-none">
+                <ul className="space-y-4 text-center md:text-left list-none p-0">
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
@@ -241,7 +241,7 @@ const Footer = () => {
                   <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
-                <ul className="space-y-4 text-center md:text-left list-none">
+                <ul className="space-y-4 text-center md:text-left list-none p-0">
                   <li className="flex items-center gap-2 justify-start">
                     <Image
                       src="/assets/footer/___icon.png"
@@ -321,7 +321,7 @@ const Footer = () => {
                   <span className="absolute bottom-[-8px] left-0 w-5 h-[1px] bg-[--primary]" />
                   <span className="absolute bottom-[-8px] left-7 w-16 h-[1px] bg-white" />
                 </h3>
-                <ul className="space-y-4 text-center md:text-left list-none">
+                <ul className="space-y-4 text-center md:text-left list-none p-0">
                   <li className="flex items-start gap-2 justify-start">
                     <Image
                       src="/assets/footer/location.png"

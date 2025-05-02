@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        "plus-jakarta": ["var(--font-montserrat)", "sans-serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
       colors: {
         background: "var(--background)",
@@ -21,8 +21,7 @@ export default {
         "dotted-blue":
           "repeating-linear-gradient(to right, #3B82F6 0, #3B82F6 2px, transparent 2px, transparent 4px)",
         "custom-gradient": "linear-gradient(180deg, #ffffff80 0%, #ff6700 85%)",
-        "mix-gradient":
-          "linear-gradient(180deg, rgba(50,205,50,100), rgba(0,191,255,43), rgba(100,191,255,0.6))",
+        "mix-gradient": "linear-gradient(180deg, #D77C42, #B76735, #323332)",
         "portfolio-gradient": "linear-gradient(#635AD9, #219BE4)",
         "portfolio-custome-gradient":
           "linear-gradient(180deg, rgba(99,90,217,100), rgba(97,140,239,43), rgba(96,178,255,0.36))",
