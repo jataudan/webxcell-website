@@ -330,10 +330,7 @@ const Footer = () => {
                       height={18}
                       className="translate-y-[5px]"
                     />
-                    <a
-                      href="#"
-                      className="text-[#D9D9D9] text-left hover:text-[--primary] max-w-[290px]"
-                    >
+                    <a className="text-[#D9D9D9] text-left hover:text-[--primary] max-w-[290px]">
                       {contact?.location}
                     </a>
                   </li>
@@ -344,10 +341,7 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a
-                      href="#"
-                      className="text-[#D9D9D9] hover:text-[--primary]"
-                    >
+                    <a className="text-[#D9D9D9] hover:text-[--primary]">
                       {contact?.phoneNumber}
                     </a>
                   </li>
@@ -358,10 +352,7 @@ const Footer = () => {
                       width={18}
                       height={18}
                     />
-                    <a
-                      href="#"
-                      className="text-[#D9D9D9] hover:text-[--primary]"
-                    >
+                    <a className="text-[#D9D9D9] hover:text-[--primary]">
                       {contact?.email}
                     </a>
                   </li>

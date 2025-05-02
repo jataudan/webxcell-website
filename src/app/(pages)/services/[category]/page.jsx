@@ -174,7 +174,12 @@ export default function ServiceDetail() {
                       );
                     })}
                   <li>
-                    <button className="flex items-center justify-center gap-3 w-full bg-[--primary] text-white cursor-pointer p-3 rounded-lg">
+                    <a
+                      href="https://calendly.com/dan-jatau"
+                      className="flex items-center justify-center gap-3 w-full bg-[--primary] text-white cursor-pointer p-3 rounded-lg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Book Appointment Now
                       <Image
                         src="/assets/Service/white-arrow.png"
@@ -182,7 +187,7 @@ export default function ServiceDetail() {
                         width={16}
                         height={16}
                       />
-                    </button>
+                    </a>
                   </li>
                 </ul>
               </aside>
@@ -221,7 +226,7 @@ export default function ServiceDetail() {
                 />
               </div>
 
-              <div className=" mb-12">
+              <div className=" mb-12 font-plus-jakarta">
                 <div className="mb-6 text-[#101010]">
                   <RichText content={service?.description} />
                 </div>
@@ -244,47 +249,6 @@ export default function ServiceDetail() {
                       />
                     );
                   })}
-              </div>
-
-              {/* FAQ Section */}
-
-              <div className="mt-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Frequently Asked Questions
-                </h3>
-                <div className="w-full space-y-4">
-                  {service?.questions?.map((faq) => (
-                    <details
-                      key={faq.id}
-                      className="faq-item group bg-transparent border border-[#EAF3F8] p-4 rounded-lg w-full md:w-[768px] transition-all group-open:bg-[#F3F7FB]"
-                    >
-                      <summary className="cursor-pointer font-medium flex justify-between items-center">
-                        <span className="faq-heading text-[14px] md:text-lg text-[#101010] font-semibold group-open:text-[#FF6700]">
-                          {faq.question}
-                        </span>
-                        <div className="flex items-center gap-2">
-                          <Image
-                            src="/assets/Service/arrow-right.png"
-                            alt="Arrow Right"
-                            width={20}
-                            height={20}
-                            className="group-open:hidden"
-                          />
-                          <Image
-                            src="/assets/Service/arrow-orange-down.png"
-                            alt="Arrow Down"
-                            width={20}
-                            height={20}
-                            className="group-open:block hidden"
-                          />
-                        </div>
-                      </summary>
-                      <p className="mt-2 text-base text-[#101010] group-open:block hidden">
-                        {faq.answer}
-                      </p>
-                    </details>
-                  ))}
-                </div>
               </div>
             </div>
           </div>

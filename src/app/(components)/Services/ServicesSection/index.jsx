@@ -37,7 +37,8 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.id}
-                className="relative flex flex-col items-center text-center rounded-[185px] w-[370px] h-[560px] p-1 shadow-lg transition-all duration-300 bg-white group"
+                className="relative cursor-pointer flex flex-col items-center text-center rounded-[185px] w-[370px] h-[560px] p-1 shadow-lg transition-all duration-300 bg-white group"
+                onClick={() => router.push(`/services/${service?.slug}`)}
               >
                 {/* Gradient border */}
                 <div className="absolute inset-0 rounded-[185px] bg-gradient-to-r from-[--primary] to-[--primary] p-1 transition-all duration-300 opacity-100 "></div>

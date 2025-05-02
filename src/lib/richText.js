@@ -40,7 +40,6 @@ const RichText = ({ content }) => {
           return <img {...props} style={style} />;
         },
         p: ({ node, children }) => {
-          console.log("node", node);
           const imageParagraph = node.children?.filter(
             (child) => child.type === "element" && child.tagName === "img"
           );

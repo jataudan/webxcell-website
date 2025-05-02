@@ -32,7 +32,10 @@ const PortfolioCards = () => {
   return (
     <div className="container mx-auto px-4 py-8 md:mb-[130px]">
       {/* First Row */}
-      <div className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center">
+      <div
+        className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center"
+        onClick={() => router.push(`/portfolio/${projectDetail[0]?.slug}`)}
+      >
         {/* Large Box - First Item */}
         {projectDetail.length > 0 && (
           <div
@@ -73,7 +76,10 @@ const PortfolioCards = () => {
         )}
 
         {/* Small Boxes */}
-        <div className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]">
+        <div
+          className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]"
+          onClick={() => router.push(`/portfolio/${item?.slug}`)}
+        >
           {projectDetail.slice(1, 3).map((item) => {
             return (
               <div
@@ -112,7 +118,10 @@ const PortfolioCards = () => {
       </div>
 
       {/* Second Row */}
-      <div className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center mt-[20px] mb-[120px] md:mb-0">
+      <div
+        className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center mt-[20px] mb-[120px] md:mb-0"
+        onClick={() => router.push(`/portfolio/${item?.slug}`)}
+      >
         {/* Small Boxes */}
         <div className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]">
           {projectDetail.slice(4).map((item) => (
@@ -160,6 +169,11 @@ const PortfolioCards = () => {
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
+            onClick={() =>
+              router.push(
+                `/portfolio/${projectDetail[projectDetail.length - 1]?.slug}`
+              )
+            }
           >
             {/* gradient overlay on hover only */}
             <div className="absolute inset-0 hover:bg-custom-gradient opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-2xl z-10" />

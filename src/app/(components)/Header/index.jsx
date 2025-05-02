@@ -127,12 +127,14 @@ export default function Header() {
 
           {/* Action Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="/contact-us"
+            <a
+              href={mainTopNav?.cta?.href}
               className="text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {mainTopNav?.cta.text}
-            </Link>
+            </a>
           </div>
         </div>
       </div>

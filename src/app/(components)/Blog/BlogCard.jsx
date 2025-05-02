@@ -9,7 +9,10 @@ const BlogCard = ({ blog }) => {
   const router = useRouter();
   return (
     <div className="bg-white shadow-md rounded-lg overflow-hidden max-w-[370px] h-[470px] md:max-w-sm">
-      <div className="w-full h-[235px] flex items-center justify-center overflow-hidden bg-gray-200">
+      <div
+        className="w-full h-[235px] flex items-center justify-center overflow-hidden bg-gray-200 cursor-pointer"
+        onClick={() => router.push(`/blog/${blog?.slug}`)}
+      >
         <Image
           src={
             blog?.coverImage570x582
