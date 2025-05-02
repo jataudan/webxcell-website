@@ -10,14 +10,7 @@ import { getBlogTags } from "@/lib/queries/getBlogTags";
 import { getDateTime, getDay, getMonth } from "@/lib/formatDate";
 import { fetchBlogPostWithComments } from "@/lib/queries/getBlogByComment";
 import RichText from "@/lib/richText";
-
-// Blog data
-
-const latestPosts = [
-  { title: "How To Grow A Sustainable Business", author: "Dan Jatau" },
-  { title: "How To Grow A Sustainable Business", author: "Dan Jatau" },
-  { title: "How To Grow A Sustainable Business", author: "Dan Jatau" },
-];
+import { getBlogPost } from "@/lib/queries/getBlogPosts";
 
 export default function BlogDetail() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,6 +25,11 @@ export default function BlogDetail() {
   const [tags, setTags] = useState({});
   const [comments, setComments] = useState({});
   const [seo, setSeo] = useState({});
+  const [currentPage, setCurrentPage] = useState(1);
+  const [latestBlog, setLatestBlog] = useState([]);
+
+  const debouncedSearch = useDebounce(searchQuery);
+  const [isBlogFetch, setIsBlogFetch] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -41,6 +39,15 @@ export default function BlogDetail() {
         const blogPost = await getBlogPostByID(slug);
         const blogTags = await getBlogTags();
         const blogComments = await fetchBlogPostWithComments(slug);
+        const response = await getBlogPost(currentPage, 3, "");
+
+        const sortedBlogs = response?.data?.sort(
+          (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+        );
+
+        if (sortedBlogs) {
+          setLatestBlog(sortedBlogs);
+        }
 
         if (blogPost && blogTags && blogComments) {
           setIsLoading(false);
@@ -59,9 +66,38 @@ export default function BlogDetail() {
     fetchData();
   }, [slug, isFetch]);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-  };
+  function useDebounce(value, delay = 500) {
+    const [debounced, setDebounced] = useState(value);
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebounced(value);
+      }, delay);
+
+      return () => clearTimeout(handler);
+    }, [value, delay]);
+
+    return debounced;
+  }
+
+  useEffect(() => {
+    const fetchFilteredBlogs = async () => {
+      try {
+        setIsBlogFetch(true);
+        const response = await getBlogPost(currentPage, 3, debouncedSearch);
+        const sortedBlogs = response?.data?.sort(
+          (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+        );
+        setLatestBlog(sortedBlogs);
+      } catch (error) {
+        console.error("Search fetch error:", error);
+      } finally {
+        setIsBlogFetch(false);
+      }
+    };
+
+    fetchFilteredBlogs();
+  }, [debouncedSearch, currentPage]);
 
   if (isLoading) {
     return (
@@ -275,10 +311,7 @@ export default function BlogDetail() {
                   <h2 className="text-[22px] text-[--black] font-bold">
                     Search
                   </h2>
-                  <form
-                    onSubmit={handleSearch}
-                    className="flex items-center bg-white rounded-lg px-3 py-2"
-                  >
+                  <form className="flex items-center bg-white rounded-lg px-3 py-2">
                     <input
                       type="text"
                       placeholder="Search Here"
@@ -304,30 +337,49 @@ export default function BlogDetail() {
                       Latest Posts
                     </h2>
                     <div className="space-y-4 mt-4">
-                      {latestPosts.map((post, index) => (
-                        <div
-                          key={index}
-                          className="flex items-start space-x-3 rounded-lg"
-                        >
-                          <div className="h-12 w-12 bg-gray-300 rounded-lg"></div>
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2">
-                              <Image
-                                src="/assets/blog/user.png"
-                                alt="Rectangle"
-                                width={12}
-                                height={12}
-                              />{" "}
-                              <span className="text-[#000] text-[12px]">
-                                by {post.author}
-                              </span>
-                            </div>
-                            <h3 className="text-sm font-semibold text-gray-700 mt-1">
-                              {post.title}
-                            </h3>
-                          </div>
+                      {isBlogFetch ? (
+                        <div className="flex justify-center items-center h-[100px]">
+                          <div className="w-6 h-6 border-4 border-gray-300 border-t-[var(--primary)] rounded-full animate-spin"></div>
                         </div>
-                      ))}
+                      ) : (
+                        latestBlog &&
+                        latestBlog?.map((post, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className="flex items-start space-x-3 rounded-lg cursor-pointer"
+                              onClick={() => router.push(`/blog/${post?.slug}`)}
+                            >
+                              <div className="h-[50px] w-[80px] rounded-lg overflow-hidden">
+                                <Image
+                                  src={post?.blogImages770x350[0]?.url}
+                                  alt="Rectangle"
+                                  width={180}
+                                  height={180}
+                                  className="object-cover"
+                                />
+                              </div>
+
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2">
+                                  <Image
+                                    src="/assets/blog/user.png"
+                                    alt="Rectangle"
+                                    width={12}
+                                    height={12}
+                                  />
+                                  <span className="text-[#000] text-[12px]">
+                                    by {post?.author?.name}
+                                  </span>
+                                </div>
+                                <h3 className="text-[12px] font-semibold text-gray-700 mt-1">
+                                  {post?.title}
+                                </h3>
+                              </div>
+                            </div>
+                          );
+                        })
+                      )}
                     </div>
                   </div>
                 </div>
@@ -357,12 +409,12 @@ export default function BlogDetail() {
                   <h2 className="text-[22px] text-[--black] font-bold mb-4">
                     Tags
                   </h2>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 cursor-none">
                     {tags?.map((tag) => {
                       return (
                         <button
                           key={tag?.id}
-                          className="px-3 py-2 rounded-lg text-sm bg-[--white] text-gray-700 shadow"
+                          className="px-3 py-2 rounded-lg text-sm bg-[--white] text-gray-700 shadow cursor-text"
                         >
                           {tag?.name}
                         </button>

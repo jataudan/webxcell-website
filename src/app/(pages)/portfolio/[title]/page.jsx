@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import PortfolioHero from "@/app/(components)/About/HeroSection";
 import { getProjectByID } from "@/lib/queries/getProjectByID";
 import RichText from "@/lib/richText";
+import { getfooterData } from "@/lib/queries/getFooter";
+import { StrapiImage } from "@/app/(components)/StrapiImage/StrapiImage";
 
 export default function PortfolioDetail() {
   const params = useParams();
@@ -14,12 +16,17 @@ export default function PortfolioDetail() {
   const [project, setProject] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [seo, setSeo] = useState({});
+  const [data, setData] = useState({});
 
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
       try {
         const response = await getProjectByID(title);
+        const res = await getfooterData();
+        if (res) {
+          setData(res?.data);
+        }
         if (response) {
           setIsLoading(false);
           setProject(response?.data[0]);
@@ -60,16 +67,6 @@ export default function PortfolioDetail() {
 
       <div className="relative container mx-auto bg-white lg:py-12 md:px-14 2xl-custom:px-48 mb-[132px]">
         <div className="mb-4 px-4 py-4 md:px-0 md:py-0">
-          {/* <Image
-            src={
-              project?.mainImage570x455
-                ? project?.mainImage570x455?.url
-                : "https://placehold.co/600x400.png?text=placeholder"
-            }
-            alt="Rectangle"
-            width={900}
-            height={450}
-          /> */}
           <div
             style={{
               backgroundImage: `url(${
@@ -94,9 +91,9 @@ export default function PortfolioDetail() {
             {/* Left Content */}
             <div className="flex-grow">
               <div className=" mb-12">
-                <div className="text-3xl font-extrabold text-[#101010] font-montserrat mb-6">
+                {/* <div className="text-3xl font-extrabold text-[#101010] font-montserrat mb-6">
                   {project?.title}
-                </div>
+                </div> */}
                 <div className="mb-6 text-[#101010]">
                   <RichText content={project?.description} />
                 </div>
@@ -124,7 +121,7 @@ export default function PortfolioDetail() {
 
             {/* Right Sidebar */}
             <div className="flex flex-col gap-[20px] font-montserrat">
-              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-portfolio-gradient p-6 rounded-[20px]">
+              <aside className="lg:flex-shrink-0 w-full lg:w-[309px] bg-mix-gradient p-6 rounded-[20px]">
                 <h3 className="text-[22px] font-bold text-[#fff]">
                   Project Information
                 </h3>
@@ -180,41 +177,32 @@ export default function PortfolioDetail() {
 
                 <div className="flex justify-center items-center gap-4 text-xl">
                   <span className="text-[#fff] text-[16px]">Follow on</span>
-                  <a href="#">
-                    <Image
-                      src="/assets/portfolio/facebook.png"
-                      alt="FaceBook"
-                      width={10}
-                      height={16}
-                    />
-                  </a>
-                  <a href="#">
-                    <Image
-                      src="/assets/portfolio/twitter.png"
-                      alt="Twitter"
-                      width={16}
-                      height={16}
-                    />
-                  </a>
-                  <a href="#">
-                    <Image
-                      src="/assets/portfolio/linkedin.png"
-                      alt="LinkedIn"
-                      width={14}
-                      height={16}
-                    />
-                  </a>
-                  <a href="#">
-                    <Image
-                      src="/assets/portfolio/youtube.png"
-                      alt="YouTube"
-                      width={18}
-                      height={16}
-                    />
-                  </a>
+                  {data?.footer?.socialLinks &&
+                    data?.footer?.socialLinks?.map((link) => {
+                      const iconName = link?.image?.name?.split(".")[0];
+
+                      const iconClass = `icon-${iconName}`;
+
+                      return (
+                        <a
+                          key={link?.id}
+                          href={link?.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`hover:text-[--primary] ${iconClass}`}
+                        >
+                          <StrapiImage
+                            src={link?.image18x18?.url}
+                            alt={link?.image18x18?.alternativeText || iconName}
+                            width={link?.width || 16}
+                            height={link?.width || 16}
+                          />
+                        </a>
+                      );
+                    })}
                 </div>
               </aside>
-              <div className="flex flex-col gap-2 justify-center items-center bg-portfolio-custome-gradient w-full h-[351px] rounded-lg text-white font-montserrat font-semibold">
+              <div className="flex flex-col gap-2 justify-center items-center bg-mix-gradient w-full h-[351px] rounded-lg text-white font-montserrat font-semibold">
                 <Image
                   src={
                     project?.contact?.icon70x70
@@ -225,8 +213,12 @@ export default function PortfolioDetail() {
                   width={70}
                   height={70}
                 />
-                <h4>{project?.contact?.title}</h4>
-                <h4>{project?.contact?.phoneNumbers}</h4>
+                <h4 className="text-xl md:text-1xl">
+                  {project?.contact?.title}
+                </h4>
+                <h4 className="text-xl md:text-1xl">
+                  {project?.contact?.phoneNumbers}
+                </h4>
               </div>
             </div>
           </div>

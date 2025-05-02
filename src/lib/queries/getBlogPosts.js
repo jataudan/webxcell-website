@@ -1,10 +1,9 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
 const path = "/api/blog-posts?";
 
-export async function getBlogPost(page = 1, pageSize = 6) {
+export async function getBlogPost(page = 1, pageSize = 3, search = "") {
   const query = qs.stringify(
     {
       populate: {
@@ -19,10 +18,18 @@ export async function getBlogPost(page = 1, pageSize = 6) {
         categories: true,
         blog_comments: true,
       },
+      filters: {
+        ...(search && {
+          title: {
+            $containsi: search,
+          },
+        }),
+      },
       pagination: {
         page: page,
         pageSize: pageSize,
       },
+      sort: ["publishedAt:desc"],
     },
     {
       encodeValuesOnly: true,

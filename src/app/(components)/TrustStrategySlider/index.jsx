@@ -5,7 +5,7 @@ const TrustStrategySlider = ({ data }) => {
   return (
     <div className="container mx-auto font-montserrat">
       <h1 className="text-[#000] text-[22px] md:trust-title md:text-[24px] text-center">
-        Trusted Strategic Partners
+        Core Technologies
       </h1>
       <div className="overflow-hidden mt-5 mb-5">
         <div className="overflow-hidden mt-14 mb-14 bg-[#fff]">
