@@ -21,7 +21,7 @@ const MapWithInfo = ({ contact }) => {
   ];
 
   return (
-    <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-300">
+    <div className="relative w-full h-[400px] lg:h-[500px] bg-gray-300 font-montserrat">
       {/* Full-Width Map */}
       <iframe
         src="https://www.google.com/maps?q=12+Southwold+Dr,+Nottingham+NG8+1PA,+UK&output=embed&z=17"

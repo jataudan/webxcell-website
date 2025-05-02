@@ -41,7 +41,7 @@ const ContactUsForm = ({ contact }) => {
   };
 
   return (
-    <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8">
+    <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8 font-montserrat">
       {/* Left Section: Image and Text */}
       <div className="flex flex-col items-center gap-7 md:gap-[60px] lg:items-start w-full lg:w-1/2">
         {/* Placeholder for Image */}

@@ -73,7 +73,7 @@ const CaseStudies = ({ caseStudies }) => {
   }
 
   return (
-    <div className="relative overflow-hidden bg-black z-20 h-[800px]">
+    <div className="relative overflow-hidden bg-black z-20 h-[800px] font-montserrat">
       <div className="absolute inset-0 flex items-end justify-center">
         <Image
           src="/assets/case-studies/gradient-bg.png"

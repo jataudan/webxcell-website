@@ -4,7 +4,7 @@ import React from "react";
 
 const OffService = ({ data }) => {
   return (
-    <div className="bg-[#fef0e6]">
+    <div className="bg-[#fef0e6] font-montserrat">
       <section
         className="relative w-full bg-cover bg-center flex flex-col md:flex-row items-center px-6 md:px-20 lg:px-40"
         style={{

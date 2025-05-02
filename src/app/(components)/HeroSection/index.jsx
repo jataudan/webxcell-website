@@ -31,7 +31,7 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center">
+    <section className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center font-montserrat">
       <HeroSlider sliderImages={getHero?.slider} />
 
       {/* Content */}

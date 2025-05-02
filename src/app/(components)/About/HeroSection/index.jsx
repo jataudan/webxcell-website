@@ -163,7 +163,7 @@ export default function AboutHero() {
 
   return (
     <section
-      className={`relative w-full h-[400px] md:h-[537px] ${
+      className={`font-montserrat relative w-full h-[400px] md:h-[537px] ${
         filterHero[0]?.bgColor || "bg-custom-gray"
       } bg-center flex flex-col items-center px-6 md:px-20 lg:px-40`}
       style={

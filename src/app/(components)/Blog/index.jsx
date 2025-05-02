@@ -39,7 +39,7 @@ const BlogSection = ({ blogDetails }) => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-10 bg-[#fff]">
+    <div className="container mx-auto px-4 py-10 bg-[#fff] font-montserrat">
       {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <h3 className="blog-title text-[24px] md:text-[50px] text-[#000]">
