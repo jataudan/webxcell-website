@@ -1,22 +1,22 @@
-"use client";
 import qs from "qs";
 import { fetchStrapiData } from "../getStrapiData";
 
 const query = qs.stringify(
-    {
-        populate: {
-            questions: true,
-            mainImage: true,
-        },
+  {
+    populate: {
+      questions: true,
+      mainImage: true,
+      seo: true,
     },
-    {
-        encodeValuesOnly: true, // Recommended for cleaner URLs
-    }
+  },
+  {
+    encodeValuesOnly: true, // Recommended for cleaner URLs
+  }
 );
 
 const path = "/api/faqs?";
 
 export async function getFAQ() {
-    const response = await fetchStrapiData(path, query);
-    return response;
+  const response = await fetchStrapiData(path, query);
+  return response;
 }
