@@ -99,9 +99,19 @@ const ContactUsForm = ({ contact }) => {
 
       {/* Right Section: Contact Form */}
       <div className="w-full lg:w-1/2 rounded-lg">
-        <h2 className="text-2xl md:text-[33px] md:max-w-[590px] leading-[1.3] font-bold text-gray-900 mb-9">
-          {contact?.title}{" "}
-        </h2>
+        {contact?.title && (
+          <h2 className="text-2xl md:text-[33px] md:max-w-[590px] leading-[1.3] font-bold text-gray-900 mb-9">
+            {contact?.title}{" "}
+          </h2>
+        )}
+
+        {(contact?.prefix || contact?.suffix) && (
+          <h2 className="text-2xl md:text-[33px] md:max-w-[590px] leading-[1.5] font-bold text-gray-900 mb-7">
+            {contact?.prefix}
+            <br />
+            {contact?.suffix}
+          </h2>
+        )}
 
         <p className="text-gray-600 mb-9">{contact?.description}</p>
 
