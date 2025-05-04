@@ -40,11 +40,12 @@ const PrivacyPolicyComponent = () => {
       <div className="flex flex-col md:flex-row gap-4 w-full h-[364px]">
         <div className="flex flex-col justify-center w-full md:w-1/2">
           <div className="leading-7">
-            <h1 className="text-[--primary]">{privacyData?.highlighted}</h1>
-            <br />
-            <h1>{privacyData?.suffix}</h1>
+            <h1 className="text-[--primary] inline mr-2">
+              {privacyData?.highlighted}
+            </h1>
+            <h1 className="inline">{privacyData?.suffix}</h1>
           </div>
-          <p className="mt-10 mb-10 text-[--blog-description]">
+          <p className="mt-10 mb-10 text-[--blog-description] inline">
             {privacyData?.description}
           </p>
         </div>
