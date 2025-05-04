@@ -121,6 +121,23 @@ export default function AboutHero() {
       case "/our-team":
         baseBreadcrumb.push({ label: "Our Team", link: "/our-team" });
         break;
+      case "/privacy-policy":
+        baseBreadcrumb.push({
+          label: "Privacy Policy",
+          link: "/privacy-policy",
+        });
+        break;
+      case "/terms-conditions":
+        baseBreadcrumb.push({
+          label: "Terms & Conditions",
+          link: "/terms-conditions",
+        });
+        break;
+      case "/cookies-policy":
+        baseBreadcrumb.push({
+          label: "Cookies Policy",
+          link: "/cookies-policy",
+        });
       default:
         if (category) {
           baseBreadcrumb.push(

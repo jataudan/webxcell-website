@@ -42,7 +42,7 @@ export default function WorkProcess() {
             {workingProcess?.h2 || ""}
           </span>
 
-          <div className="text-[46px] font-extrabold mt-2 plus-jakarta">
+          <div className="text-[46px] font-extrabold mt-2 font-montserrat">
             <span className="text-[#000] text-2xl md:text-[36px]">
               Our Working Process
             </span>{" "}

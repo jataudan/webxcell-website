@@ -11,9 +11,10 @@ export default function Testimonials({ data }) {
     arrows: false,
     autoplay: false,
     speed: 4000,
+    centerMode: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     responsive: [
       {
@@ -58,7 +59,7 @@ export default function Testimonials({ data }) {
           Testimonials
         </span>
 
-        <div className="text-2xl md:text-[46px] plus-jakarta mb-8">
+        <div className="text-2xl md:text-[42px] font-montserrat mb-8">
           <span className="text-[#000]">{data?.heading || "What"}</span>{" "}
           <span className="text-[#000] font-extrabold">
             {data?.boldHeading || "Happy Clients Say"}
@@ -75,7 +76,7 @@ export default function Testimonials({ data }) {
             data?.card?.map((testimonial) => (
               <div
                 key={testimonial?.id}
-                className="relative bg-white shadow-lg rounded-lg px-6 md:py-6 text-center border border-gray-200 w-full md:w-[700px] h-[340px]"
+                className="relative bg-white shadow-lg rounded-lg px-6 md:py-6 text-center border border-gray-200 w-full md:w-[800px] h-[340px]"
                 style={{ margin: "0 10px" }}
               >
                 {/* Inverted Comma Image */}
@@ -87,8 +88,8 @@ export default function Testimonials({ data }) {
                         : "https://placehold.co/600x400.png?text=placeholder"
                     }
                     alt="comma"
-                    width={44}
-                    height={44}
+                    width={32}
+                    height={32}
                   />
                 </div>
 
@@ -96,7 +97,7 @@ export default function Testimonials({ data }) {
                 <div className="text-[#FF6700] text-xl text-left mb-2 mt-4">
                   ★★★★★
                 </div>
-                <p className="text-[14] md:text-[16px] text-left mb-4 text-[#101010] italic font-montserrat">
+                <p className="text-[12px] md:text-[18px] text-left mb-4 text-[#101010] italic font-montserrat">
                   {testimonial?.comments}
                 </p>
 
