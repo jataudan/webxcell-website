@@ -73,42 +73,42 @@ export default function RootStyles() {
         font-family: var(${fontVariables});
         font-size: clamp(2rem, 5vw, 2.78rem); /* ~32px to 48px */
         font-weight: 700;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       h2 {
         font-family: var(${fontVariables});
         font-size: clamp(1.75rem, 4vw, 2.25rem); /* ~28px to 36px */
         font-weight: 600;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       h3 {
         font-family: var(${fontVariables});
         font-size: clamp(1.5rem, 3.5vw, 1.875rem); /* ~24px to 30px */
         font-weight: 600;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       h4 {
         font-family: var(${fontVariables});
         font-size: clamp(1.25rem, 3vw, 1.5rem); /* ~20px to 24px */
         font-weight: 500;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       h5 {
         font-family: var(${fontVariables});
         font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* ~18px to 20px */
         font-weight: 500;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       h6 {
         font-family: var(${fontVariables});
         font-size: clamp(0.9rem, 2vw, 1rem); /* ~14.4px to 16px */
         font-weight: 500;
-        margin: inherit;
+        margin: 10px 0px;
       }
 
       p {
@@ -252,6 +252,10 @@ export default function RootStyles() {
           #3b82f6 4px,
           #3b82f6 8px
         );
+      }
+
+      ul {
+        list-style-image: url("https://webxcell.digital/wp-content/uploads/2021/07/Webxcell-Bullet-02-e1627381223592.png");
       }
 
       .slick-current,

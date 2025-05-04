@@ -40,6 +40,8 @@ const ContactUsForm = ({ contact }) => {
     fetchData();
   };
 
+  console.log("contact", contact);
+
   return (
     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8 font-montserrat">
       {/* Left Section: Image and Text */}

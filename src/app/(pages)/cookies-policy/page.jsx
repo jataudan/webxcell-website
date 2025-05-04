@@ -1,22 +1,23 @@
 import React from "react";
-import Head from "next/head";
+import CookiesPolicyHero from "@/app/(components)/About/HeroSection";
+import { getCookiePolicyData } from "@/lib/queries/getPoliciesSeo";
+import CookiesPolicyComponent from "@/app/(components)/Policies/CookiesPolicy";
+
+export async function generateMetadata() {
+  const res = await getCookiePolicyData();
+  const seo = res?.data?.seo;
+  return {
+    title: seo?.metaTitle || "Default Title",
+    description: seo?.metaDescription || "Default description.",
+    keywords: seo?.metaKeywords || "default, keywords",
+  };
+}
 
 const CookiesPolicy = () => {
   return (
     <>
-      <Head>
-        <title>Cookies Policy</title>
-      </Head>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Cookies Policy
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mb-6">
-          Our Cookies Policy will be available here soon. We're working to
-          ensure all legal and privacy details are transparent and clear for our
-          users.
-        </p>
-      </div>
+      <CookiesPolicyHero />
+      <CookiesPolicyComponent />
     </>
   );
 };

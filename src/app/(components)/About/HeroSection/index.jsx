@@ -73,7 +73,12 @@ export default function AboutHero() {
         return "FAQ";
       case "/our-team":
         return "Our Team";
-
+      case "/privacy-policy":
+        return "Privacy Policy";
+      case "/terms-conditions":
+        return "Terms & Conditions";
+      case "/cookies-policy":
+        return "Cookies Policy";
       default:
         if (category) {
           return capitalizeFirstLetterOfEachWord(category.replace("-", " "));

@@ -108,7 +108,7 @@ const Footer = () => {
       <div className="relative w-full bg-[#000] h-auto md:h-[596px] overflow-hidden">
         <div className="container mx-auto relative z-20 px-5">
           <div className="flex flex-col justify-center">
-            <div className="flex flex-wrap justify-start md:justify-around py-10 px-10 md:pt-40 md:pb-28 gap-10">
+            <div className="flex flex-wrap justify-start md:justify-around py-10 px-10 md:pt-40 md:pb-[4.7rem] gap-10">
               {/* Logo and Social Links */}
               <div className="flex flex-col gap-5 justify-end items-start mt-[96px] md:mt-0">
                 {data?.footer?.logoText && (
@@ -366,6 +366,12 @@ const Footer = () => {
                 {data?.footer?.footerBottomLeftText}
               </span>
               <span className="footer-title text-center">
+                <Link
+                  href="/privacy-policy"
+                  className="text-[#D9D9D9] mr-7 footer-title"
+                >
+                  Privacy Policy
+                </Link>
                 <Link
                   href="/terms-conditions"
                   className="text-[#D9D9D9] mr-7 footer-title"
