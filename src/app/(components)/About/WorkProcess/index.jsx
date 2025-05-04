@@ -68,7 +68,7 @@ export default function WorkProcess() {
                   1
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-bold">
+              <h3 className="text-lg font-bold mt-0">
                 {workingProcess?.milestones[0]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
@@ -81,7 +81,7 @@ export default function WorkProcess() {
           {/* <!-- Step 2 --> */}
           <div className="flex relative">
             <div className="flex flex-col-reverse lg:flex-col items-center text-center">
-              <h3 className="mt-4 text-lg font-bold hidden lg:block">
+              <h3 className="text-lg font-bold mt-0 hidden lg:block">
                 {workingProcess?.milestones[1]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700 hidden lg:block">
@@ -89,7 +89,7 @@ export default function WorkProcess() {
               </p>
 
               <div className="block lg:hidden">
-                <h3 className="mt-4 text-lg font-bold">
+                <h3 className="text-lg font-bold mt-0">
                   {workingProcess?.milestones[1]?.title || ""}
                 </h3>
                 <p className="mt-2  text-base text-gray-700">
@@ -137,7 +137,7 @@ export default function WorkProcess() {
                   3
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-bold">
+              <h3 className="text-lg font-bold mt-0">
                 {workingProcess?.milestones[2]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
@@ -151,14 +151,14 @@ export default function WorkProcess() {
           {/* <!-- Step 4 --> */}
           <div className="flex flex-col-reverse lg:flex-col items-center text-center">
             <div className="block lg:hidden">
-              <h3 className="mt-4 text-lg font-bold">
+              <h3 className="text-lg font-bold mt-0">
                 {workingProcess?.milestones[3]?.title || ""}
               </h3>
               <p className="mt-2 text-base text-gray-700">
                 {workingProcess?.milestones[3]?.description || ""}
               </p>
             </div>
-            <h3 className="mt-4 text-lg font-bold hidden lg:block">
+            <h3 className="text-lg font-bold mt-0 hidden lg:block">
               {workingProcess?.milestones[3]?.title || ""}
             </h3>
             <p className="mt-2 text-base text-gray-700 hidden lg:block">
@@ -200,7 +200,7 @@ export default function WorkProcess() {
                   5
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-bold">
+              <h3 className="text-lg font-bold mt-0">
                 {workingProcess?.milestones[4]?.title || ""}
               </h3>
               <p className="mt-2  text-base text-gray-700">
