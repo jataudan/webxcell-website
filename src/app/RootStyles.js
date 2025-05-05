@@ -260,12 +260,7 @@ export default function RootStyles() {
 
       .slick-current,
       .slick-active {
-        margin-right: 5px;
-      }
-
-      .slick-initialized,
-      .slick-slide {
-        margin-right: 5px;
+        margin-right: 25px;
       }
     `}</style>
   );

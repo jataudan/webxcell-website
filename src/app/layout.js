@@ -3,6 +3,8 @@ import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import { AppContextProvider } from "@/context/appContext";
 import RootStyles from "./RootStyles";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function RootLayout({ children }) {
   return (
@@ -21,6 +23,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <AppContextProvider>
+          <ToastContainer />
           <Header />
           <RootStyles />
           {children}

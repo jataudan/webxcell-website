@@ -3,7 +3,10 @@ import { createContactUsForm } from "@/lib/queries/createContactUsForm";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 
+import { toast } from "react-toastify";
+
 const ContactUsForm = ({ contact }) => {
+  const [isLoading, setIsloading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -28,19 +31,31 @@ const ContactUsForm = ({ contact }) => {
     e.preventDefault();
 
     const fetchData = async () => {
-      const response = await createContactUsForm(formData);
-      if (response) {
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
+      setIsloading(true);
+      try {
+        const response = await createContactUsForm(formData);
+        console.log("res", response);
+        if (response) {
+          toast.success(response?.message);
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setIsloading(false);
+        }
+      } catch (error) {
+        console.log("error", error);
+        toast.error("An error occurred while sending your message.");
+        setIsloading(false);
+      } finally {
+        setIsloading(false);
       }
     };
     fetchData();
   };
 
-  console.log("contact", contact);
+  // console.log("contact", contact);
 
   return (
     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8 font-montserrat">
@@ -151,9 +166,16 @@ const ContactUsForm = ({ contact }) => {
           <div className="mt-8 flex sm:flex-row justify-center lg:justify-start items-center">
             <button
               type="submit"
-              className="bg-[#ECF8FF] text-[--primary] mr-4 px-6 py-3 rounded-full text-sm sm:text-lg font-bold"
+              className="bg-[#ECF8FF] text-[--primary] px-6 py-3 rounded-full text-sm sm:text-lg font-bold"
+              disabled={isLoading}
             >
-              GET STARTED
+              {isLoading ? (
+                <div className="flex justify-center items-center">
+                  <div className="w-8 h-8 border-4 border-gray-300 border-t-[--primary] rounded-full animate-spin"></div>
+                </div>
+              ) : (
+                "GET STARTED"
+              )}
             </button>
             <Image
               src="/assets/digital-agency/up-right.png"
