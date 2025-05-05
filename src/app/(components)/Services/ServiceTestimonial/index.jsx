@@ -77,10 +77,10 @@ export default function ServiceTestimonial() {
               />
 
               <div className="flex flex-col items-start">
-                <p className="text-sm sm:text-xs  font-semibold text-[#17012C]">
+                <p className="text-sm sm:text-xs  font-semibold text-[#17012C] m-0">
                   {service?.clientDetails?.name}
                 </p>
-                <p className="text-base sm:text-xs text-left text-[#504E4E]">
+                <p className="text-base sm:text-xs text-left text-[#504E4E] m-0">
                   {service?.clientDetails?.designation}
                 </p>
               </div>

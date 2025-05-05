@@ -256,30 +256,25 @@ export default function BlogDetail() {
                               className="w-full flex items-start space-x-4"
                             >
                               {/* Display Comment Image if Available */}
-                              <div className="w-[46px] h-[46px] md:w-[96px] md:h-[96px] bg-gray-300 rounded-full overflow-hidden">
-                                {singleComment?.image?.url && (
-                                  <Image
-                                    src={singleComment?.image?.url}
-                                    alt={
-                                      singleComment?.image?.alternativeText ||
-                                      "Comment Image"
-                                    }
-                                    width={96}
-                                    height={96}
-                                    className="w-full h-full object-cover"
-                                  />
-                                )}
+                              <div className="w-[46px] h-[46px] md:w-[56px] md:h-[56px] bg-gray-300 rounded-full overflow-hidden">
+                                <Image
+                                  src="/assets/user.png"
+                                  alt={"Comment Image"}
+                                  width={56}
+                                  height={56}
+                                  className="w-full h-full object-cover"
+                                />
                               </div>
 
                               <div className="flex-1">
                                 <div className="flex items-center justify-between">
                                   <div>
                                     {/* Display Commenter's Name */}
-                                    <h3 className="font-bold text-[--black]">
+                                    <h3 className="font-bold m-0 text-[--black]">
                                       {singleComment?.name || "Anonymous"}
                                     </h3>
                                     {/* Format Date */}
-                                    <p className="text-sm text-[--black]">
+                                    <p className="text-sm text-[--black] m-0">
                                       {getDateTime(singleComment?.dateTime)}
                                     </p>
                                   </div>

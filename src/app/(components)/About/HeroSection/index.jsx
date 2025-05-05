@@ -43,15 +43,20 @@ export default function AboutHero() {
   });
 
   const capitalizeFirstLetterOfEachWord = (str) => {
+    const exceptions = ["SEO"];
+
     return str
       .split(" ")
       .map((word) =>
         word
           .split("-")
-          .map(
-            (subWord) =>
+          .map((subWord) => {
+            const upper = subWord.toUpperCase();
+            if (exceptions.includes(upper)) return upper;
+            return (
               subWord.charAt(0).toUpperCase() + subWord.slice(1).toLowerCase()
-          )
+            );
+          })
           .join(" ")
       )
       .join(" ");

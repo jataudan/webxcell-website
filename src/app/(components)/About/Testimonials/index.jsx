@@ -116,10 +116,10 @@ export default function Testimonials({ data }) {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <h4 className="font-bold text-gray-800">
+                    <h4 className="font-bold text-gray-800 m-0">
                       {testimonial?.name}
                     </h4>
-                    <span className="text-gray-500 text-sm">
+                    <span className="text-gray-500 text-sm m-0">
                       {testimonial?.role}
                     </span>
                   </div>
