@@ -254,9 +254,9 @@ export default function RootStyles() {
         );
       }
 
-      ul {
+      /* ul {
         list-style-image: url("https://webxcell.digital/wp-content/uploads/2021/07/Webxcell-Bullet-02-e1627381223592.png");
-      }
+      } */
 
       .slick-current,
       .slick-active {
