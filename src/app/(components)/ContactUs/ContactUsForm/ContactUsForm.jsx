@@ -2,7 +2,6 @@
 import { createContactUsForm } from "@/lib/queries/createContactUsForm";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-
 import { toast } from "react-toastify";
 
 const ContactUsForm = ({ contact }) => {
@@ -30,11 +29,20 @@ const ContactUsForm = ({ contact }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!formData.name.trim()) {
+      toast.error("Please enter your name.");
+      return;
+    }
+
+    if (!formData.message.trim()) {
+      toast.error("Please enter your message.");
+      return;
+    }
+
     const fetchData = async () => {
       setIsloading(true);
       try {
         const response = await createContactUsForm(formData);
-        console.log("res", response);
         if (response) {
           toast.success(response?.message);
           setFormData({
@@ -54,8 +62,6 @@ const ContactUsForm = ({ contact }) => {
     };
     fetchData();
   };
-
-  // console.log("contact", contact);
 
   return (
     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-16 py-12 gap-8 font-montserrat">
