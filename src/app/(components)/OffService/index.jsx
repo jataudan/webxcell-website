@@ -42,20 +42,26 @@ const OffService = ({ data }) => {
 
           {/* Button */}
           <div className="mt-8 mb-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
-            <Link
-              href="/contact-us"
+            <a
+              href="https://calendly.com/dan-jatau"
               className="bg-[--primary] uppercase hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              get started
-            </Link>
-            <Link href="/contact-us">
+              LET'S TALK
+            </a>
+            <a
+              href="https://calendly.com/dan-jatau"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/assets/hero-section/arrow.png"
                 alt="Arrow"
                 width={52}
                 height={52}
               />
-            </Link>
+            </a>
           </div>
         </div>
         <div className="absolute right-[180px] bottom-[24px] hidden sm:block">
