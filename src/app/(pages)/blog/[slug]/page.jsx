@@ -139,7 +139,7 @@ export default function BlogDetail() {
                         ? blog?.coverImage570x582?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     })`,
-                    backgroundSize: "cover",
+                    backgroundSize: "contain",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     width: "100%",
@@ -346,13 +346,15 @@ export default function BlogDetail() {
                               onClick={() => router.push(`/blog/${post?.slug}`)}
                             >
                               <div className="h-[50px] w-[80px] rounded-lg overflow-hidden">
-                                <Image
-                                  src={post?.blogImages770x350[0]?.url}
-                                  alt="Rectangle"
-                                  width={180}
-                                  height={180}
-                                  className="object-cover"
-                                />
+                                {post?.blogImages770x350 && (
+                                  <Image
+                                    src={post?.blogImages770x350[0]?.url}
+                                    alt="Rectangle"
+                                    width={180}
+                                    height={180}
+                                    className="object-cover"
+                                  />
+                                )}
                               </div>
 
                               <div className="flex-1">
