@@ -19,7 +19,7 @@ const RichText = ({ content }) => {
               height: "500px",
               objectFit: "cover",
               display: "block",
-              // margin: "20px auto",
+              margin: "20px 0",
             };
           } else if (imageCount === 2) {
             style = {
@@ -28,12 +28,14 @@ const RichText = ({ content }) => {
               objectFit: "cover",
               display: "inline-block",
               margin: "1%",
+              margin: "20px 0",
             };
           } else {
             style = {
               maxWidth: "40%",
               objectFit: "cover",
               borderRadius: "20px",
+              margin: "30px 0",
             };
           }
 

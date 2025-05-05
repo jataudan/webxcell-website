@@ -135,8 +135,8 @@ export default function BlogDetail() {
                 <div
                   style={{
                     backgroundImage: `url(${
-                      blog?.coverImage570x582
-                        ? blog?.coverImage570x582?.url
+                      blog?.blogImages770x350
+                        ? blog?.blogImages770x350[0]?.url
                         : "https://placehold.co/600x400.png?text=placeholder"
                     })`,
                     backgroundSize: "contain",
@@ -346,9 +346,9 @@ export default function BlogDetail() {
                               onClick={() => router.push(`/blog/${post?.slug}`)}
                             >
                               <div className="h-[50px] w-[80px] rounded-lg overflow-hidden">
-                                {post?.blogImages770x350 && (
+                                {post?.coverImage570x582 && (
                                   <Image
-                                    src={post?.blogImages770x350[0]?.url}
+                                    src={post?.coverImage570x582?.url}
                                     alt="Rectangle"
                                     width={180}
                                     height={180}
