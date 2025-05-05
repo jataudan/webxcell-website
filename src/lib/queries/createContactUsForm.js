@@ -4,7 +4,7 @@ export const createContactUsForm = async (formData) => {
   try {
     const response = await axios.post(
       //   `http://localhost:4008/api/contact/get-in-touch`,
-      `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/contact-us-forms`,
+      `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/contact/get-in-touch`,
       { data: formData },
       {
         headers: {
