@@ -39,7 +39,7 @@ export default function Service({ data }) {
   }
 
   return (
-    <div className="relative bg-[#fef5ed] md:h-[932px] overflow-hidden">
+    <div className="relative bg-[#fef5ed] md:h-[989px] overflow-hidden">
       {/* Decorative Images */}
       <Image
         src="/assets/service-section/shape.png"
