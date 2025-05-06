@@ -31,7 +31,7 @@ export default function FaqSection() {
       <section className="container mx-auto flex flex-col lg:flex-row justify-center py-10 md:p-[112px] lg:py-20 gap-10">
         <div className="relative flex ">
           <div className="relative mt-8 ">
-            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-2xl">
+            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] text-2xl">
               FAQ{" "}
             </span>
             <div className="mt-5 font-extrabold font-montserrat mb-[70px]">
@@ -60,7 +60,7 @@ export default function FaqSection() {
         {/* Right Side - Content */}
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
           {/* Title */}
-          {/* <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
+          {/* <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]] text-sm sm:text-base">
             FAQ{" "}
           </span>
           <div className="mt-4 font-extrabold font-montserrat ">

@@ -28,7 +28,7 @@ const BlogCard = ({ blog }) => {
 
       <div className="p-4">
         <div className="flex items-center gap-3 font-montserrat">
-          <span className="text-[14px] text-[#635AD9] font-medium px-4 py-1 border border-[#EAF3F8] rounded-full">
+          <span className="text-[14px] text-[#D77C42] font-medium px-4 py-1 border border-[#EAF3F8] rounded-full">
             {blog?.tag}
           </span>
           <span className="text-[16px] block text-[#445375]">

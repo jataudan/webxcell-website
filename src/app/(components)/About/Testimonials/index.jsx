@@ -55,7 +55,7 @@ export default function Testimonials({ data }) {
 
       {/* Right Side - Content */}
       <div className="relative w-full lg:w-[60%] mt-8 lg:mt-0 text-center lg:text-left">
-        <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
+        <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] font-montserrat">
           Testimonials
         </span>
 

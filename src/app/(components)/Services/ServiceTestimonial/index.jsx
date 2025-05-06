@@ -52,7 +52,7 @@ export default function ServiceTestimonial() {
 
         {/* Right Side - Content */}
         <div className="relative w-full lg:w-1/2 md:mt-8 lg:mt-0 text-center lg:text-left px-4">
-          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
+          <span className="font-bold uppercase  text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] font-montserrat">
             {service?.heading}
           </span>
 

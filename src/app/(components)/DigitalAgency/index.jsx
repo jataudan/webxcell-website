@@ -18,7 +18,10 @@ const DigitalAgency = ({ data }) => {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 lg:py-20 gap-10">
         {/* Right Side - Content */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
-          <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
+        <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
+        {data?.title || ""}
+        </span>
+          <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
             {data?.subTitle}
           </span>
 

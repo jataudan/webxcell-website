@@ -43,7 +43,7 @@ export default function ProfessionalTeam() {
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center mb-12">
           <div className="text-center lg:text-left">
-            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] font-montserrat">
+            <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] font-montserrat">
               Our Digital Expert Team
             </span>
 

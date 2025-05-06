@@ -51,7 +51,7 @@ const ExpertTeam = () => {
 
       {/* Title Section */}
       <div className="text-center mt-8 sm:mt-16 text-[14px] sm:text-[16px]">
-        <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
+        <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
           Our Expert Team
         </span>
       </div>

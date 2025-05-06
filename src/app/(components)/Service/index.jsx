@@ -65,7 +65,7 @@ export default function Service({ data }) {
 
       {/* Title and Text Slider */}
       <div className="text-center mt-16">
-        <span className="service-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
+        <span className="service-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
           Services
         </span>
       </div>

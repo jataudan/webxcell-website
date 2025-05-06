@@ -46,7 +46,7 @@ export default function AboutDigital({ data }) {
         {/* Right Side - Content */}
         <div className="relative lg:w-1/2 w-full px-4 text-center lg:text-left">
           {/* Title */}
-          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#635AD9] to-[#219BE4] text-sm sm:text-base">
+          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] text-sm sm:text-base">
             About Us
           </span>
           <div className="text-2xl sm:text-2xl md:text-[42px] mt-4 font-bold leading-[1.2] font-montserrat md:space-y-4">

@@ -84,7 +84,7 @@ const CaseStudies = ({ caseStudies }) => {
         />
       </div>
       <div className="text-center mt-16 text-[16px]">
-        <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#F29F5C] to-[#6461FC]">
+        <span className="case-studies-sub-title uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#eaeaea]">
           {caseStudies?.title}
         </span>
       </div>
