@@ -181,9 +181,6 @@ export default function BlogDetail() {
                     </span>
                   </div>
                 </div>
-                <div className="mt-6 text-lg md:text-3xl font-extrabold text-[#101010] font-montserrat mb-6">
-                  {blog?.title}
-                </div>
                 <div className="mb-6 text-[#101010]">
                   <RichText content={blog?.description} />
                 </div>
