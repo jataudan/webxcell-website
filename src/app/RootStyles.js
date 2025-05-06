@@ -261,6 +261,8 @@ export default function RootStyles() {
       .slick-current,
       .slick-active {
         margin-right: 25px;
+        margin-left: 25px;
+        cursor: pointer;
       }
     `}</style>
   );

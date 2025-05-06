@@ -8,7 +8,7 @@ const TrustStrategySlider = ({ data }) => {
         Core Technologies
       </h1>
       <div className="overflow-hidden mt-5 mb-5">
-        <div className="overflow-hidden mt-14 mb-14 bg-[#fff]">
+        <div className="overflow-hidden mt-5 mb-7 bg-[#fff]">
           <div className="flex space-x-[90px] animate-scroll">
             {data?.partners?.map((partner, index) => (
               <div

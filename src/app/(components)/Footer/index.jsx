@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <div className="relative font-montserrat">
-      <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-[#00BFFF] w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
+      <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-mix-gradient w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
         {/* Left Image */}
         <div className="relative hidden lg:block w-1/2 h-[327px]">
           <div className="absolute bottom-[53px] left-[-33px]">
@@ -96,7 +96,7 @@ const Footer = () => {
             />
             <button>
               <Image
-                src="/assets/contact-info/button.png"
+                src="/assets/contact-info/send.png"
                 alt="message"
                 width={48}
                 height={48}
@@ -129,7 +129,7 @@ const Footer = () => {
                 </span>
                 <Link
                   href="/contact-us"
-                  className="uppercase bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white font-semibold px-6 py-2 rounded-full"
+                  className="uppercase bg-mix-gradient text-white font-semibold px-6 py-2 rounded-full"
                 >
                   contact us
                 </Link>

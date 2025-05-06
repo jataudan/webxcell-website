@@ -9,10 +9,10 @@ export default function Testimonials({ data }) {
   const settings = {
     dots: false,
     arrows: false,
-    autoplay: false,
-    speed: 4000,
+    autoplay: true,
+    speed: 7000,
     centerMode: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     cssEase: "linear",
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -59,7 +59,7 @@ export default function Testimonials({ data }) {
           Testimonials
         </span>
 
-        <div className="text-2xl md:text-[42px] font-montserrat mb-8">
+        <div className="text-2xl md:text-[42px] font-montserrat mt-5 mb-8">
           <span className="text-[#000]">{data?.heading || "What"}</span>{" "}
           <span className="text-[#000] font-extrabold">
             {data?.boldHeading || "Happy Clients Say"}
