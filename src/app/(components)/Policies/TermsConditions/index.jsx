@@ -50,12 +50,12 @@ const TermsConditionComponent = () => {
             {termsConditionData?.description}
           </p>
         </div>
-        <div className="flex flex-col justify-center w-full md:w-1/2">
+        <div className="flex flex-col justify-center w-full md:w-1/2 mt-24">
           <StrapiImage
             src={termsConditionData?.image500x500?.url}
             alt={termsConditionData?.image500x500?.name}
-            width={termsConditionData?.image500x500?.width || 500}
-            height={termsConditionData?.image500x500?.width || 500}
+            width={450}
+            height={400}
             className="mx-auto"
           />
         </div>

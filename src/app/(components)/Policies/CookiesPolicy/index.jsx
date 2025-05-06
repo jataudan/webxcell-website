@@ -49,12 +49,12 @@ const CookiesPolicyComponent = () => {
             {cookiesData?.description}
           </p>
         </div>
-        <div className="flex flex-col justify-center w-full md:w-1/2">
+        <div className="flex flex-col justify-center w-full md:w-1/2 mt-24">
           <StrapiImage
             src={cookiesData?.image500x500?.url}
             alt={cookiesData?.image500x500?.name}
-            width={cookiesData?.image500x500?.width || 500}
-            height={cookiesData?.image500x500?.width || 500}
+            width={450}
+            height={400}
             className="mx-auto"
           />
         </div>
