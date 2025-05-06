@@ -39,7 +39,7 @@ const MobileMenu = ({ navigationItems, cta }) => {
         })}
         <a
           href="#"
-          className="mt-4 text-sm bg-mix-gradient text-white px-6 py-2 rounded-lg shadow-lg"
+          className="mt-4 text-sm bg-orange-gradient text-white px-6 py-2 rounded-lg shadow-lg"
           onClick={() => setIsMobileMenuOpen(false)}
         >
           {cta?.text}

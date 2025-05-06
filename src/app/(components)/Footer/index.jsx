@@ -43,7 +43,7 @@ const Footer = () => {
 
   return (
     <div className="relative font-montserrat">
-      <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-mix-gradient w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
+      <div className="flex overflow-hidden absolute -top-[114px] z-30 left-1/2 transform -translate-x-1/2 justify-between bg-orange-gradient w-[90%] lg:w-[1170px] h-[226px] rounded-lg shadow-lg items-center px-8 lg:px-16">
         {/* Left Image */}
         <div className="relative hidden lg:block w-1/2 h-[327px]">
           <div className="absolute bottom-[53px] left-[-33px]">
@@ -129,7 +129,7 @@ const Footer = () => {
                 </span>
                 <Link
                   href="/contact-us"
-                  className="uppercase bg-mix-gradient text-white font-semibold px-6 py-2 rounded-full"
+                  className="uppercase bg-orange-gradient text-white font-semibold px-6 py-2 rounded-full"
                 >
                   contact us
                 </Link>
