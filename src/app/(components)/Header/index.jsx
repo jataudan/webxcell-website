@@ -129,7 +129,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4 font-montserrat">
             <a
               href={mainTopNav?.cta?.href}
-              className="text-sm bg-gradient-to-r from-[#ff6700] to-[#00bfff] text-white px-6 py-2 rounded-lg shadow-lg"
+              className="text-sm bg-mix-gradient text-white px-6 py-2 rounded-lg shadow-lg"
               target="_blank"
               rel="noopener noreferrer"
             >
