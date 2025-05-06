@@ -128,6 +128,7 @@ export default function Testimonials({ data }) {
             ))}
         </Slider>
       </div>
+      
     </section>
   );
 }
