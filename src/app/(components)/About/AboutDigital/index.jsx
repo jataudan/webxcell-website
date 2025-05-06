@@ -95,17 +95,25 @@ export default function AboutDigital({ data }) {
           {/* Button */}
           <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start items-center space-y-4 sm:space-y-0">
             <a
-              href="#"
+              href="https://calendly.com/dan-jatau"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[--primary] uppercase text-[#fff] px-6 py-3 rounded-full text-sm sm:text-lg font-bold shadow-md hover:shadow-lg"
             >
-              About us
+              LET'S TALK
             </a>
-            <Image
-              src="/assets/hero-section/arrow.png"
-              alt="Arrow"
-              width={52}
-              height={52}
-            />
+            <a
+              href="https://calendly.com/dan-jatau"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/assets/hero-section/arrow.png"
+                alt="Arrow"
+                width={52}
+                height={52}
+              />
+            </a>
           </div>
         </div>
 
