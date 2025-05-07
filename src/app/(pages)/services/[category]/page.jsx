@@ -149,12 +149,12 @@ export default function ServiceDetail() {
                           key={index}
                           className="cursor-pointer p-3 rounded-lg flex gap-3 items-center bg-white hover:bg-gray-200"
                         >
-                          {/* <Image
-                          src={item?.icon}
-                          alt="Arrow"
-                          width={16}
-                          height={16}
-                        /> */}
+                          <Image
+                            src="/assets/Service/clock.svg"
+                            alt="Clock"
+                            width={16}
+                            height={16}
+                          />
                           {item?.startDay && (
                             <span
                               className={`text-base font-montserrat ${"text-[#17012C]"}`}
