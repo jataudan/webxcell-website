@@ -71,6 +71,27 @@ const RichText = ({ content }) => {
 
           return <p>{children}</p>;
         },
+
+        a: ({ node, ...props }) => (
+          <a
+            {...props}
+            style={{
+              color: "#007bff",
+              textDecoration: "underline",
+              fontWeight: "bold",
+            }}
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        ),
+
+        ul: ({ node, children }) => (
+          <ul style={{ paddingLeft: "1.2em", marginBottom: "1em" }}>{children}</ul>
+        ),
+
+        li: ({ node, children }) => (
+          <li style={{ marginBottom: "0.5em" }}>{children}</li>
+        ),
       }}
     >
       {content}
