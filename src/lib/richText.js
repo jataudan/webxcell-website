@@ -54,20 +54,20 @@ const RichText = ({ content }) => {
             );
           }
 
-          if (imageCount > 2) {
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "space-between",
-                  gap: "20px",
-                }}
-              >
-                {children}
-              </div>
-            );
-          }
+          // if (imageCount > 2) {
+          //   return (
+          //     <div
+          //       style={{
+          //         display: "flex",
+          //         flexWrap: "wrap",
+          //         justifyContent: "space-between",
+          //         gap: "20px",
+          //       }}
+          //     >
+          //       {children}
+          //     </div>
+          //   );
+          // }
 
           return <p>{children}</p>;
         },
