@@ -76,9 +76,9 @@ const RichText = ({ content }) => {
           <a
             {...props}
             style={{
-              color: "#007bff",
+              color: "#D77C42",
               textDecoration: "underline",
-              fontWeight: "bold",
+              fontWeight: "500",
             }}
             target="_blank"
             rel="noopener noreferrer"
