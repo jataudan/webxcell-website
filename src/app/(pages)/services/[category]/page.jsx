@@ -214,7 +214,7 @@ export default function ServiceDetail() {
 
             {/* Right Content */}
             <div className="flex-grow">
-              <div className="w-full max-w-[770px] aspect-[770/370] mb-4 overflow-hidden relative max-w-[640px]:mx-auto">
+              <div className="w-full max-w-[770px] aspect-[770/370] mb-4 overflow-hidden relative ">
                 <Image
                   src={
                     service?.mainImage770x370
