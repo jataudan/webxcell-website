@@ -275,9 +275,9 @@ export default function BlogDetail() {
                                       {getDateTime(singleComment?.dateTime)}
                                     </p>
                                   </div>
-                                  <button className="px-4 py-2 bg-[--primary] text-white text-sm rounded-lg">
+                                  {/* <button className="px-4 py-2 bg-[--primary] text-white text-sm rounded-lg">
                                     Reply
-                                  </button>
+                                  </button> */}
                                 </div>
                                 {/* Display Comment Message */}
                                 <p className="text-sm text-[--black] mt-5">
