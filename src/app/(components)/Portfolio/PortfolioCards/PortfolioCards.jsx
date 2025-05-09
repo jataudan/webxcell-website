@@ -36,55 +36,16 @@ const PortfolioCards = () => {
         className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center"
         onClick={() => router.push(`/portfolio/${projectDetail[0]?.slug}`)}
       >
-        {/* Large Box - First Item */}
-        {projectDetail.length > 0 && (
-          <div
-            className="relative w-full flex flex-col justify-end md:max-w-[500px] h-[707px] bg-[#C4C4C4] hover:bg-custom-gradient rounded-[20px] p-6 shadow-lg text-white group cursor-pointer"
-            style={{
-              backgroundImage: `url(${projectDetail[0]?.projectImages1194x543?.url})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-          >
-            {/* gradient overlay on hover only */}
-            <div className="absolute inset-0 hover:bg-custom-gradient opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-2xl z-10" />
-
-            <div className="relative z-20 flex w-full justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div>
-                <h3 className="text-lg font-semibold">
-                  {projectDetail[0]?.title}
-                </h3>
-                <p className="text-sm">
-                  {projectDetail[0]?.tag?.name || "Uncategorized"}
-                </p>
-              </div>
-              <button
-                onClick={() =>
-                  router.push(`/portfolio/${projectDetail[0]?.slug}`)
-                }
-              >
-                <Image
-                  src="/assets/portfolio/arrow.png"
-                  alt="shape"
-                  width={60}
-                  height={60}
-                />
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* Small Boxes */}
         <div
-          className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]"
+          className="w-full grid grid-cols-3 gap-[20px] justify-center items-center"
           onClick={() => router.push(`/portfolio/${item?.slug}`)}
         >
-          {projectDetail.slice(1, 3).map((item) => {
+          {projectDetail.map((item) => {
             return (
               <div
                 key={item.id}
-                className="w-full md:max-w-[570px] h-[343px] bg-[#C4C4C4] rounded-[20px] p-6 text-white group relative overflow-hidden cursor-pointer"
+                className=" w-full md:max-w-[570px] h-[343px] bg-[#C4C4C4] rounded-[20px] p-6 text-white group relative overflow-hidden cursor-pointer"
                 style={{
                   backgroundImage: `url(${item?.projectImages1194x543?.url})`,
                   backgroundSize: "cover",
@@ -117,96 +78,6 @@ const PortfolioCards = () => {
         </div>
       </div>
 
-      {/* Second Row */}
-      <div
-        className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center mt-[20px] mb-[120px] md:mb-0"
-        onClick={() => router.push(`/portfolio/${item?.slug}`)}
-      >
-        {/* Small Boxes */}
-        <div className="w-full flex flex-col gap-[20px] justify-center items-center md:max-w-[502px]">
-          {projectDetail.slice(4).map((item) => (
-            <div
-              key={item.id}
-              className="w-full md:max-w-[570px] h-[343px] bg-[#C4C4C4] rounded-[20px] p-6 text-white group relative overflow-hidden cursor-pointer"
-              style={{
-                backgroundImage: `url(${item?.projectImages1194x543?.url})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              {/* Overlay with hover effect */}
-              <div className="flex w-full justify-between items-end absolute inset-0 bg-custom-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[20px] p-6">
-                <div>
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="text-sm">
-                    {item?.tag?.name || "Uncategorized"}
-                  </p>
-                </div>
-                <button onClick={() => router.push(`/portfolio/${item?.slug}`)}>
-                  <Image
-                    src="/assets/portfolio/arrow.png"
-                    alt="shape"
-                    width={60}
-                    height={60}
-                  />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Large Box - Last Item */}
-        {projectDetail.length > 1 && (
-          <div
-            className="relative w-full flex flex-col justify-end md:max-w-[500px] h-[707px] bg-[#C4C4C4] hover:bg-custom-gradient rounded-[20px] p-6 shadow-lg text-white group transition-colors duration-300 cursor-pointer"
-            style={{
-              backgroundImage: `url(${
-                projectDetail[projectDetail.length - 1]?.projectImages1194x543
-                  ?.url
-              })`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-            onClick={() =>
-              router.push(
-                `/portfolio/${projectDetail[projectDetail.length - 1]?.slug}`
-              )
-            }
-          >
-            {/* gradient overlay on hover only */}
-            <div className="absolute inset-0 hover:bg-custom-gradient opacity-0 group-hover:opacity-90 transition-opacity duration-300 rounded-2xl z-10" />
-            <div className="relative z-20 flex w-full justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div>
-                <h3 className="text-lg font-semibold">
-                  {projectDetail[projectDetail.length - 1]?.title}
-                </h3>
-                <p className="text-sm">
-                  {projectDetail[projectDetail.length - 1]?.tag?.name ||
-                    "Uncategorized"}
-                </p>
-              </div>
-              <button
-                onClick={() =>
-                  router.push(
-                    `/portfolio/${
-                      projectDetail[projectDetail.length - 1]?.slug
-                    }`
-                  )
-                }
-              >
-                <Image
-                  src="/assets/portfolio/arrow.png"
-                  alt="shape"
-                  width={60}
-                  height={60}
-                />
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
     </div>
   );
 };
