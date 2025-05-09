@@ -30,19 +30,19 @@ const PortfolioCards = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 md:mb-[130px]">
+    <div className="container grid grid-cols-3 gap-[20px] mx-auto px-4 py-8 md:mb-[130px]">
       {/* First Row */}
-      <div
-        className="flex flex-col lg:flex-row w-full gap-[20px] justify-center items-center"
-        onClick={() => router.push(`/portfolio/${projectDetail[0]?.slug}`)}
-      >
-        {/* Small Boxes */}
-        <div
-          className="w-full grid grid-cols-3 gap-[20px] justify-center items-center"
-          onClick={() => router.push(`/portfolio/${item?.slug}`)}
-        >
-          {projectDetail.map((item) => {
-            return (
+      {projectDetail.map((item) => {
+        return (
+          <div
+            className=" lg:flex-row w-full  justify-center items-center"
+            onClick={() => router.push(`/portfolio/${item?.slug}`)}
+          >
+            {/* Small Boxes */}
+            <div
+              className="w-full justify-center items-center"
+              onClick={() => router.push(`/portfolio/${item?.slug}`)}
+            >
               <div
                 key={item.id}
                 className=" w-full md:max-w-[570px] h-[343px] bg-[#C4C4C4] rounded-[20px] p-6 text-white group relative overflow-hidden cursor-pointer"
@@ -73,11 +73,10 @@ const PortfolioCards = () => {
                   </button>
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </div>
-
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
