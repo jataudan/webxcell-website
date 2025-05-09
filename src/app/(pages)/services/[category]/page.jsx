@@ -271,7 +271,7 @@ export default function ServiceDetail() {
                 <h2 className="text-[white]">Have New Ideas?? Let’s Discuss</h2>
                 <Link
                   href="/contact-us"
-                  className="bg-[white] px-5 py-2 text-[--primary] rounded-full font-bold"
+                  className="bg-[white] px-8 py-2 text-[--primary] text-2xl rounded-full font-bold"
                 >
                   LET’S TALK
                 </Link>

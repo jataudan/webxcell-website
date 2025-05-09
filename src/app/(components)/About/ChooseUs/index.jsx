@@ -15,11 +15,7 @@ export default function ChooseUs({ data }) {
           </div>
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-5 font-montserrat">
-            {data?.firstParagraph}
-          </p>
-
-          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-8 font-montserrat">
-            {data?.secondParagraph}
+            {data?.paragraph}
           </p>
 
           {/* Stats */}
