@@ -9,6 +9,7 @@ import HeroSlider from "../HeroSlider";
 export default function Hero() {
   const [getHero, setGetHero] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     setIsLoading(true);
@@ -30,19 +31,24 @@ export default function Hero() {
     );
   }
 
+  const currentSlide = getHero?.slider[currentIndex];
+
   return (
     <section className="relative w-full h-[700px] md:h-screen bg-cover bg-center flex flex-col md:flex-row items-center font-montserrat">
-      <HeroSlider sliderImages={getHero?.slider} />
+      <HeroSlider
+        sliderImages={getHero?.slider}
+        onSlideChange={setCurrentIndex}
+      />
 
       {/* Content */}
       <div className="absolute text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto md:left-[15%] font-montserrat">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-oswald font-semibold leading-tight mt-0">
-          {getHero?.primaryHeading} <br />
-          <span className="mt-4 block">{getHero?.secondaryHeading}</span>
+          {currentSlide?.prefix} <br />
+          <span className="mt-4 block">{currentSlide?.suffix}</span>
         </h1>
 
         <p className="mt-6 sm:mt-10 text-base sm:text-lg md:text-xl">
-          {getHero?.paragraph || ""}
+          {currentSlide?.description || ""}
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link
