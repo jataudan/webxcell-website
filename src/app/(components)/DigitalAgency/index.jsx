@@ -26,7 +26,7 @@ const DigitalAgency = ({ data }) => {
             {data?.subTitle}
           </span>
 
-          <div className="headline mt-4">
+          <div className="digital-headline mt-4 ">
             <span className="text-[#000]">{data?.prefix}</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[--primary] to-[#F29F5C]">
@@ -35,7 +35,7 @@ const DigitalAgency = ({ data }) => {
             <span className="text-[#000]">{data?.suffix}</span>
           </div>
 
-          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed text-justify">
+          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
             <RichText content={data?.paragraph} />
           </p>
 

@@ -205,6 +205,12 @@ export default function RootStyles() {
         font-weight: 700;
         line-height: 1.2;
       }
+         .digital-headline {
+        font-family: var(--font-oswald);
+        font-size: 29px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
 
       .highlight.brown {
         color: var(--brown);
