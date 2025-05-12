@@ -46,6 +46,7 @@ export default {
       },
       screens: {
         "2xl-custom": "1400px",
+        "custom-font": "1450px",
       },
     },
   },

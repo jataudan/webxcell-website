@@ -42,7 +42,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="absolute text-white px-4 text-center md:text-left mt-[188px] md:mt-0 max-w-[1280px] mx-auto md:left-[15%] font-montserrat">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-oswald font-semibold leading-tight mt-0">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl custom-font:text-8xl font-oswald font-semibold leading-tight mt-0">
           {currentSlide?.prefix} <br />
           <span className="mt-4 block">{currentSlide?.suffix}</span>
         </h1>

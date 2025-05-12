@@ -268,7 +268,7 @@ export default function ServiceDetail() {
                   gap: "22px",
                 }}
               >
-                <h2 className="text-[white]">Have New Ideas?? Let’s Discuss</h2>
+                <h2 className="text-[white]">Have New Ideas? Let’s Discuss</h2>
                 <Link
                   href="/contact-us"
                   className="bg-[white] px-8 py-2 text-[--primary] text-2xl rounded-full font-bold"
