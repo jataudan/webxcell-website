@@ -47,7 +47,7 @@ export default function Hero() {
           <span className="mt-4 block">{currentSlide?.suffix}</span>
         </h1>
 
-        <p className="mt-6 sm:mt-10 text-base sm:text-lg md:text-xl">
+        <p className="mt-6 sm:mt-10  text-2xl sm:text-1xl md:text-2xl custom-font:text-4xl">
           {currentSlide?.description || ""}
         </p>
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
@@ -67,7 +67,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="absolute flex justify-center md:h-[100vh] items-center gap-2 z-60 bottom-[20%] md:bottom-0 left-1/2 transform -translate-x-1/2 md:hidden ">
+      <div className="absolute flex justify-center md:h-[100vh] items-center gap-2 z-60 bottom-[13%] md:bottom-0 left-1/2 transform -translate-x-1/2 md:hidden ">
         {getHero?.socialLinks?.map((item, index) => {
           return (
             <a

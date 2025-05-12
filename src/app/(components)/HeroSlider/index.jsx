@@ -29,7 +29,7 @@ const HeroSlider = ({ sliderImages = [], onSlideChange }) => {
     if (!isHovered) {
       const interval = setInterval(() => {
         nextSlide();
-      }, 3000);
+      }, 4000);
       return () => clearInterval(interval);
     }
   }, [isHovered]);
