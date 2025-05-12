@@ -3,6 +3,7 @@
 import { getHappyClients } from "@/lib/queries/getAboutUs";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import RichText from "@/lib/richText";
 
 export default function AboutDigital({ data }) {
   const [happyClients, setHappyClients] = useState({});
@@ -62,7 +63,7 @@ export default function AboutDigital({ data }) {
           </div>
           {/* Description */}
           <p className="text-gray-600 mt-6 text-sm sm:text-base lg:leading-relaxed">
-            {data?.paragraph}
+          <RichText content={data?.paragraph} />
           </p>
           <hr className="mt-6 hidden md:block" />
           {/* Stats */}

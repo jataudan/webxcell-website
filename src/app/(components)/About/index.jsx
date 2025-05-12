@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import RichText from "@/lib/richText";
 
 export default function AboutUs({ data }) {
   return (
@@ -51,7 +52,7 @@ export default function AboutUs({ data }) {
           </div>
 
           <p className="text-gray-600 mt-6 text-base md:text-lg leading-relaxed px-2 md:px-0">
-            {data?.paragraph || ""}
+          <RichText content={data?.paragraph} />
           </p>
 
           {/* Stat */}
