@@ -70,8 +70,8 @@ export default function PortfolioDetail() {
           <div
             style={{
               backgroundImage: `url(${
-                project?.mainImage570x455
-                  ? project?.mainImage570x455?.url
+                project?.projectImages1194x543
+                  ? project?.projectImages1194x543?.url
                   : "https://placehold.co/600x400.png?text=placeholder"
               })`,
               backgroundSize: "cover",
@@ -166,12 +166,12 @@ export default function PortfolioDetail() {
 
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 
-                <div>
+                {/* <div>
                   <h5 className="text-[#fff] font-semibold">Project Budget:</h5>
                   <span className="text-[#fff]">
                     {project?.projectInfo?.budget}
                   </span>
-                </div>
+                </div> */}
 
                 <hr className="border-t-1 border-[#FFFFFF15] w-full mt-2 mb-4" />
 

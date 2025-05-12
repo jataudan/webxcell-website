@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import RichText from "@/lib/richText";
 
 const DigitalAgency = ({ data }) => {
   return (
@@ -18,9 +19,9 @@ const DigitalAgency = ({ data }) => {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center py-10 lg:py-20 gap-10">
         {/* Right Side - Content */}
         <div className="relative lg:w-1/3 w-full px-4 text-center lg:text-left">
-        <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
-        {data?.title || ""}
-        </span>
+          <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
+            {data?.title || ""}
+          </span>
           <span className="title font-bold uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332]">
             {data?.subTitle}
           </span>
@@ -34,8 +35,8 @@ const DigitalAgency = ({ data }) => {
             <span className="text-[#000]">{data?.suffix}</span>
           </div>
 
-          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed">
-            {data?.paragraph || ""}
+          <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed text-justify">
+            <RichText content={data?.paragraph} />
           </p>
 
           {/* Stats */}
@@ -61,7 +62,9 @@ const DigitalAgency = ({ data }) => {
                   <h4 className="text-1xl sm:text-2xl font-bold text-[#17012c]">
                     {item?.percentage}
                   </h4>
-                  <p className="text-[#000] uppercase text-[12px]">{item?.title}</p>
+                  <p className="text-[#000] uppercase text-[12px]">
+                    {item?.title}
+                  </p>
                 </div>
               </div>
             ))}

@@ -47,7 +47,7 @@ const PortfolioCards = () => {
                 key={item.id}
                 className=" w-full md:max-w-[570px] h-[343px] bg-[#C4C4C4] rounded-[20px] p-6 text-white group relative overflow-hidden cursor-pointer"
                 style={{
-                  backgroundImage: `url(${item?.projectImages1194x543?.url})`,
+                  backgroundImage: `url(${item?.mainImage570x455?.url})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
