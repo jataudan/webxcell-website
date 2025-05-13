@@ -43,7 +43,7 @@ export default function AboutHero() {
   });
 
   const capitalizeFirstLetterOfEachWord = (str) => {
-    const exceptions = ["SEO"];
+    const exceptions = ["SEO", "CLCK"];
 
     return str
       .split(" ")
@@ -204,7 +204,7 @@ export default function AboutHero() {
     >
       <div className="relative mt-[120px] flex flex-col items-center justify-center text-white px-4 text-center h-screen">
         {/* Heading */}
-        <p className="sm:text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4">
+        <p className="sm:text-3xl md:text-4xl lg:text-6xl font-extrabold mb-4 leading-7 md-leading-10 lg:leading-[70px]">
           {getHeading()}
         </p>
 
