@@ -93,7 +93,7 @@ const ContactUsForm = ({ contact }) => {
           {/* Play Icon (Hide when video plays) */}
           {!isPlaying && (
             <Image
-              src="/assets/contact-info/video-icon.svg"
+              src="/assets/contact-info/video_icon.svg"
               alt="Play Video"
               width={70}
               height={70}
