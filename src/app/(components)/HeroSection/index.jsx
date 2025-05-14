@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="mt-6 sm:mt-8 flex gap-3 md:gap-0 sm:flex-row items-center justify-center md:justify-start">
           <Link
             href="/services"
-            className="bg-[--primary] hover:bg-orange-600 text-white px-6 py-3 rounded-full text-lg shadow-lg"
+            className="bg-[--primary] hover:bg-orange-400 text-white px-6 py-3 rounded-full text-lg shadow-lg"
           >
             View Services
           </Link>
