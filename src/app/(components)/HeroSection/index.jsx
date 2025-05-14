@@ -110,15 +110,6 @@ export default function Hero() {
         })}
       </div>
 
-      {/* Video Icon */}
-      <div className="absolute right-[60px] sm:right-[100px] lg:right-[293px] hidden sm:block">
-        <Image
-          src="/assets/hero-section/video_icon.png"
-          alt="VideoIcon"
-          width={82}
-          height={86}
-        />
-      </div>
 
       {/* Bottom Pattern */}
       <div className="absolute left-0 bottom-0 hidden sm:block">

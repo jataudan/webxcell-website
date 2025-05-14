@@ -166,7 +166,7 @@ export default function PortfolioDetail() {
                 <div>
                   <h5 className="text-[#fff] font-semibold">End Date:</h5>
                   <span className="text-[#fff]">
-                    {project?.projectInfo?.endDate}
+                    {formatDate(project?.projectInfo?.endDate)}
                   </span>
                 </div>
 

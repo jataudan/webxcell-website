@@ -7,13 +7,13 @@ export default function ChooseUs({ data }) {
       <section className="relative container mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between pb-9 md:pb-0 md:py-10 sm:py-20 gap-10 px-4 sm:px-8">
         {/* Left Side - Content */}
         <div className="relative w-full lg:w-1/2 md:mt-8 lg:mt-0 text-center lg:text-left pt-[25px] md:pt-0">
-          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] font-montserrat text-sm sm:text-base ">
+          <span className="font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#D77C42] to-[#323332] font-montserrat text-[30px] sm:text-[30px]  ">
             Why Choose Us
           </span>
 
-          <div className="text-[30px] sm:text-[46px] font-semibold mt-4 font-montserrat">
+          {/* <div className="text-[30px] sm:text-[46px] font-semibold mt-4 font-montserrat">
             <span className="text-[#000]">{data?.heading}</span>
-          </div>
+          </div> */}
 
           <p className="text-gray-600 mt-6 text-sm sm:text-base leading-relaxed sm:pr-9 mb-5 font-montserrat">
             <RichText content={data?.paragraph} />
