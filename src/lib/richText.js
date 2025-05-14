@@ -32,7 +32,7 @@ const RichText = ({ content }) => {
             };
           } else {
             style = {
-              maxWidth: "40%",
+              maxWidth: "55%",
               objectFit: "cover",
               borderRadius: "20px",
               margin: "30px 0",
