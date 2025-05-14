@@ -18,6 +18,12 @@ export default function PortfolioDetail() {
   const [seo, setSeo] = useState({});
   const [data, setData] = useState({});
 
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    const [year, month, day] = dateStr.split("-");
+    return `${day}-${month}-${year}`;
+  };
+
   useEffect(() => {
     setIsLoading(true);
     const fetchData = async () => {
@@ -151,7 +157,7 @@ export default function PortfolioDetail() {
                 <div>
                   <h5 className="text-[#fff] font-semibold">Start Date:</h5>
                   <span className="text-[#fff]">
-                    {project?.projectInfo?.startDate}
+                    {formatDate(project?.projectInfo?.startDate)}
                   </span>
                 </div>
 
