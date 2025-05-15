@@ -34,6 +34,14 @@ const ContactUsForm = ({ contact }) => {
       return;
     }
 
+     if (!formData.email.trim()) {
+      errs.email = "Email is required.";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+    ) {
+      errs.email = "Invalid email address.";
+    }
+
     if (!formData.message.trim()) {
       toast.error("Please enter your message.");
       return;
