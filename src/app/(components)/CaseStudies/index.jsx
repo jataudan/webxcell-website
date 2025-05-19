@@ -119,16 +119,16 @@ const CaseStudies = ({ caseStudies }) => {
                 {/* Hidden Content on Hover */}
                 <div className="w-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute inset-0 flex items-end p-7 rounded-[20px]">
                   <div className="flex items-center justify-between w-full max-w-[446px] bg-white rounded-lg">
-                    <div className="text-left px-5 py-1">
+                    <div className="text-left px-5 py-1 leading-4">
                       <h4 className="text-[#000] font-montserrat font-semibold">
                         {item?.title}
                       </h4>
-                      <span className="text-[--primary] font-montserrat font-semibold">
+                      <span className="text-[#D77C42] font-montserrat font-semibold">
                         {item?.tag?.name}
                       </span>
                     </div>
                     <button
-                      className="p-6 bg-[#FF6700] rounded-tr-[7px] rounded-br-[7px]"
+                      className="p-6 bg-[#D77C42] rounded-tr-[7px] rounded-br-[7px]"
                       onClick={() => router.push(`/portfolio/${item?.slug}`)}
                     >
                       <Image
