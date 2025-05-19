@@ -5,6 +5,7 @@ import { AppContextProvider } from "@/context/appContext";
 import RootStyles from "./RootStyles";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Script from "next/script"; 
 
 export default function RootLayout({ children }) {
   return (
@@ -21,6 +22,14 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.png" />
+
+        <Script
+          id="omapi-loader"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(d,u,ac){var s=d.createElement('script');s.type='text/javascript';s.src='https://a.omappapi.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.account=ac;d.getElementsByTagName('head')[0].appendChild(s);})(document,366531,387306);`,
+          }}
+        />
       </head>
       <body>
         <AppContextProvider>
