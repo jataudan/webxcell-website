@@ -37,7 +37,7 @@ const PrivacyPolicyComponent = () => {
 
   return (
     <div className="container mx-auto min-h-screen py-10 px-5 md:px-0 mb-[150px] font-montserrat">
-      <div className="flex flex-col md:flex-row gap-4 w-full h-[364px]">
+      <div className="flex flex-col md:flex-row gap-4 w-full md:h-[364px]">
         <div className="flex flex-col justify-center w-full md:w-1/2">
           <div className="leading-7">
             <h1 className="text-[--primary] inline mr-2">
@@ -49,13 +49,13 @@ const PrivacyPolicyComponent = () => {
             {privacyData?.description}
           </p>
         </div>
-        <div className="flex flex-col justify-center w-full md:w-1/2 mt-24">
+        <div className="flex flex-col justify-center w-full md:md:w-1/2 mb-[30px] md:mb-0 md:mt-24">
           <StrapiImage
             src={privacyData?.image500x500?.url}
             alt={privacyData?.image500x500?.name}
             width={450}
             height={400}
-            className="mx-auto"
+            className="w-full md:w-[initial] md:mx-auto"
           />
         </div>
       </div>
