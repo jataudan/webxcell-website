@@ -53,7 +53,7 @@ const PrivacyPolicyComponent = () => {
           <StrapiImage
             src={privacyData?.image500x500?.url}
             alt={privacyData?.image500x500?.name}
-            width={450}
+            width={350}
             height={400}
             className="w-full md:w-[initial] md:mx-auto"
           />

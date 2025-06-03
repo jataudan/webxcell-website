@@ -53,7 +53,7 @@ const CookiesPolicyComponent = () => {
           <StrapiImage
             src={cookiesData?.image500x500?.url}
             alt={cookiesData?.image500x500?.name}
-            width={450}
+            width={350}
             height={400}
             className="w-full md:w-[initial] md:mx-auto"
           />

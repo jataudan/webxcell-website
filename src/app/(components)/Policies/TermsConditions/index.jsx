@@ -54,7 +54,7 @@ const TermsConditionComponent = () => {
           <StrapiImage
             src={termsConditionData?.image500x500?.url}
             alt={termsConditionData?.image500x500?.name}
-            width={450}
+            width={350}
             height={400}
             className="w-full md:w-[initial] md:mx-auto"
           />
